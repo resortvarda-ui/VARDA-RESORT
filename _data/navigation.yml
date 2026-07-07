@@ -1,0 +1,17 @@
+- title: Home
+  url: /
+  active: true
+- title: Rooms
+  url: "#rooms"
+- title: Restaurant
+  url: "#restaurant"
+- title: Weddings
+  url: "#weddings"
+- title: Banquet
+  url: "#banquet"
+- title: Gallery
+  url: "#gallery"
+- title: About Us
+  url: "#about"
+- title: Contact
+  url: "#contact"

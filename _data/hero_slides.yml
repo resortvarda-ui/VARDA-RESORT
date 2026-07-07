@@ -1,0 +1,24 @@
+- tagline: Welcome to Varda Resort
+  heading_before: Experience
+  heading_highlight: Luxury
+  heading_after: In The Heart of Buxar
+  description: A perfect blend of luxury, comfort, and elegance. Your destination for unforgettable moments.
+  image: https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80
+  primary_btn: Book Now
+  secondary_btn: Explore Rooms
+- tagline: Culinary Excellence
+  heading_before: Exquisite
+  heading_highlight: Dining
+  heading_after: Awaits Your Presence
+  description: Indulge your culinary senses with extraordinary compositions orchestrated by master chefs.
+  image: https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80
+  primary_btn: Reserve Table
+  secondary_btn: View Menu
+- tagline: Royal Celebrations
+  heading_before: Majestic
+  heading_highlight: Weddings
+  heading_after: "& Grand Banquets"
+  description: Celebrate monumental updates and life milestones in our high-ceiling grand ballrooms.
+  image: https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1920&q=80
+  primary_btn: Plan Event
+  secondary_btn: Tour Venues
