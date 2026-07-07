@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Accommodation | Varda Resort & Restaurant, Buxar</title>
+    <meta name="description" content="Immerse yourself in unparalleled elegance. Explore the ultra-luxury suites and premium rooms at Varda Resort, Buxar, Bihar. Book your royal stay today.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. DESIGN SYSTEM & VARIABLES (Matched perfectly to Master)
+           ========================================================================== */
+        :root {
+            --primary-gold: #C89B3C;
+            --accent-gold: #D4AF37;
+            --bg-black: #000000;
+            --bg-dark: #111111;
+            --text-light: #FFFFFF;
+            --text-muted: #CFCFCF;
+            --border-gold: rgba(200, 155, 60, 0.2);
+            --border-gold-hover: rgba(214, 175, 55, 0.6);
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-black);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        /* Premium Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-black);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+            border-radius: 4px;
+        }
+
+        /* ==========================================================================
+           2. HEADER & NAVIGATION
+           ========================================================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            padding: 25px 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+        }
+
+        .header.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 15px 5%;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .nav-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-box {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .logo-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: var(--text-light);
+        }
+        .logo-subtitle {
+            font-size: 0.65rem;
+            letter-spacing: 0.38em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        .nav-link {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            position: relative;
+            padding: 8px 0;
+            color: var(--text-muted);
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent-gold);
+            transition: var(--transition-fast);
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .cta-gold-btn {
+            border: 1px solid var(--primary-gold);
+            color: var(--text-light);
+            padding: 12px 28px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            display: inline-block;
+            text-align: center;
+        }
+        .cta-gold-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--primary-gold);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            transition: width 0.6s ease, height 0.6s ease;
+            z-index: -1;
+        }
+        .cta-gold-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        .cta-gold-btn:hover {
+            color: var(--bg-black);
+            box-shadow: 0 0 20px rgba(200, 155, 60, 0.4);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 1001;
+        }
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--text-light);
+            transition: var(--transition-fast);
+        }
+
+        /* ==========================================================================
+           3. STATIC ROOMS HERO BANNER
+           ========================================================================== */
+        .rooms-hero {
+            position: relative;
+            height: 65vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1920&q=80');
+            background-position: center 35%;
+            background-size: cover;
+            z-index: 1;
+        }
+        .rooms-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+            z-index: 2;
+        }
+        .rooms-hero-content {
+            position: relative;
+            z-index: 3;
+            padding-left: 8%;
+            max-width: 900px;
+            margin-top: 60px;
+        }
+        .subpage-tagline {
+            font-size: 0.85rem;
+            letter-spacing: 0.4em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 500;
+            display: block;
+        }
+        .subpage-heading {
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+        .subpage-heading span.luxury-text {
+            color: var(--accent-gold);
+            font-weight: 400;
+        }
+
+        /* ==========================================================================
+           4. ACCOMMODATION SHOWCASE ARCHITECTURE
+           ========================================================================== */
+        .showcase-section {
+            background-color: var(--bg-black);
+            padding: 60px 5% 100px;
+            position: relative;
+            z-index: 5;
+        }
+        .showcase-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .room-card-premium {
+            display: grid;
+            grid-template-columns: 1.1.5fr 0.85fr;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        .room-card-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-gold), var(--accent-gold));
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .room-media-box {
+            position: relative;
+            height: 520px;
+            overflow: hidden;
+        }
+        .room-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .room-media-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(17,17,17,0) 70%, rgba(17,17,17,0.9) 100%);
+            z-index: 2;
+        }
+
+        .room-details-box {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 3;
+        }
+        .room-tier {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .room-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .room-description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 35px;
+        }
+
+        /* Amenities System */
+        .room-amenities {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 45px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 25px;
+        }
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .amenity-item svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--primary-gold);
+        }
+
+        /* Action Row System */
+        .room-action-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+        .room-pricing {
+            display: flex;
+            flex-direction: column;
+        }
+        .price-tag {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--accent-gold);
+            font-weight: 400;
+        }
+        .price-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-top: 2px;
+        }
+
+        /* Micro-interactions */
+        .room-card-premium:hover {
+            border-color: var(--border-gold-hover);
+            box-shadow: 0 30px 60px rgba(214, 175, 55, 0.03);
+            transform: translateY(-4px);
+        }
+        .room-card-premium:hover::before {
+            opacity: 1;
+        }
+        .room-card-premium:hover .room-img {
+            transform: scale(1.04);
+        }
+
+        /* ==========================================================================
+           5. GALLERY CORNER (Curated Modular Structural Array)
+           ========================================================================== */
+        .gallery-corner-section {
+            background: var(--bg-dark);
+            padding: 100px 5%;
+            border-top: 1px solid var(--border-gold);
+        }
+        .section-header-center {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-tagline {
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+        .gallery-modular-grid {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-fast);
+        }
+        .gallery-overlay span {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--accent-gold);
+            padding-bottom: 4px;
+            color: var(--text-light);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* ==========================================================================
+           6. CENTRALIZED BOOKING CTA FRAME
+           ========================================================================== */
+        .booking-cta-section {
+            background: var(--bg-black);
+            padding: 100px 5%;
+            text-align: center;
+            position: relative;
+        }
+        .booking-cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--border-gold);
+            padding: 60px 40px;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-black) 100%);
+            border-radius: 8px;
+        }
+        .booking-cta-box h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .booking-cta-box p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           7. GLOBAL FOOTER DESIGN
+           ========================================================================== */
+        .footer {
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border-gold);
+            padding: 80px 5% 40px;
+        }
+        .footer-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .footer-logo-desc p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-top: 20px;
+            max-width: 320px;
+            font-weight: 300;
+        }
+        .footer-column h4 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column ul li {
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .footer-column ul li a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+        .footer-bottom {
+            max-width: 1800px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.05em;
+        }
+
+        /* ==========================================================================
+           8. RESPONSIVE BREAKPOINTS (TABLET & MOBILE ARCHITECTURE)
+           ========================================================================== */
+        @media (max-width: 1400px) {
+            .subpage-heading { font-size: 3.8rem; }
+            .room-title { font-size: 2.2rem; }
+            .room-details-box { padding: 40px; }
+            .gallery-modular-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 1100px) {
+            .room-card-premium { grid-template-columns: 1fr; }
+            .room-media-box { height: 380px; }
+            .room-media-box::after {
+                background: linear-gradient(180deg, rgba(17,17,17,0) 60%, rgba(17,17,17,1) 100%);
+            }
+            .footer-container { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        }
+
+        @media (max-width: 991px) {
+            .header { padding: 20px 5%; }
+            .mobile-toggle { display: flex; }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: var(--bg-dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                transition: var(--transition-smooth);
+                border-left: 1px solid var(--border-gold);
+                z-index: 1000;
+            }
+            .nav-menu.active { right: 0; }
+            .nav-link { font-size: 1rem; }
+            .header .cta-gold-btn { display: none; }
+            
+            .subpage-heading { font-size: 3rem; }
+            .rooms-hero-content { left: 5%; padding-left: 0; }
+        }
+
+        @media (max-width: 600px) {
+            .subpage-heading { font-size: 2.4rem; }
+            .room-title { font-size: 1.8rem; }
+            .room-amenities { flex-wrap: wrap; gap: 15px; }
+            .room-action-row { flex-direction: column; align-items: flex-start; gap: 25px; }
+            .room-action-row .cta-gold-btn { width: 100%; }
+            .showcase-container { gap: 50px; }
+            .gallery-modular-grid { grid-template-columns: 1fr; }
+            .booking-cta-box h2 { font-size: 2.2rem; }
+            .footer-container { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-box" aria-label="Varda Resort Homepage">
+                <span class="logo-title">VARDA RESORT</span>
+                <span class="logo-subtitle">& Restaurant &bull; Buxar</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="rooms.html" class="nav-link active">Rooms</a></li>
+                    <li><a href="restaurant.html" class="nav-link">Restaurant</a></li>
+                    <li><a href="weddings.html" class="nav-link">Weddings</a></li>
+                    <li><a href="banquet.html" class="nav-link">Banquet</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="rooms-hero">
+            <div class="hero-bg"></div>
+            <div class="rooms-hero-content">
+                <span class="subpage-tagline">Sanctuaries of Rest</span>
+                <h1 class="subpage-heading">
+                    Rooms & <span class="luxury-text">Suites</span>
+                </h1>
+            </div>
+        </section>
+
+        <section class="showcase-section">
+            <div class="showcase-container">
+                
+                <article class="room-card-premium">
+                    <div class="room-media-box">
+                        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80');"></div>
+                    </div>
+                    <div class="room-details-box">
+                        <span class="room-tier">Premium Comfort</span>
+                        <h2 class="room-title">Deluxe Sanctum Room</h2>
+                        <p class="room-description">Exquisitely tailored configurations combining geometric contemporary design lines with serene architectural spaces designed for effortless relaxation.</p>
+                        
+                        <div class="room-amenities">
+                            <div class="amenity-item">
+                                <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm10-5c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 8c-2.33 0-7 1.17-7 3.5V20h14v-1.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                                <span>King Bed</span>
+                            </div>
+                            <div class="amenity-item">
+                                <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+                                <span>Smart TV</span>
+                            </div>
+                            <div class="amenity-item">
+                                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+                                <span>Air Cooled</span>
+                            </div>
+                        </div>
+
+                        <div class="room-action-row">
+                            <div class="room-pricing">
+                                <span class="price-tag">₹4,500</span>
+                                <span class="price-label">Per Night Ex. Taxes</span>
+                            </div>
+                            <a href="#reserve-now" class="cta-gold-btn">Reserve Stay</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="room-card-premium">
+                    <div class="room-media-box">
+                        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80');"></div>
+                    </div>
+                    <div class="room-details-box">
+                        <span class="room-tier">Elite Leisure</span>
+                        <h2 class="room-title">Executive Vista Suite</h2>
+                        <p class="room-description">An exceptional interior environment hosting an integrated living parlor space combined with modern hospitality controls for elite executive workflows or comfort.</p>
+                        
+                        <div class="room-amenities">
+                            <div class="amenity-item">
+                                <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm10-5c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 8c-2.33 0-7 1.17-7 3.5V20h14v-1.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                                <span>Royal King</span>
+                            </div>
+                            <div class="amenity-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 18.58 10.57 19 12 19c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+                                <span>Mini Bar</span>
+                            </div>
+                            <div class="amenity-item">
+                                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+                                <span>Wi-Fi Enabled</span>
+                            </div>
+                        </div>
+
+                        <div class="room-action-row">
+                            <div class="room-pricing">
+                                <span class="price-tag">₹6,800</span>
+                                <span class="price-label">Per Night Ex. Taxes</span>
+                            </div>
+                            <a href="#reserve-now" class="cta-gold-btn">Reserve Stay</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="room-card-premium">
+                    <div class="room-media-box">
+                        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80');"></div>
+                    </div>
+                    <div class="room-details-box">
+                        <span class="room-tier">Uncompromised Sovereign Space</span>
+                        <h2 class="room-title">Varda Presidential Suite</h2>
+                        <p class="room-description">Our definitive luxury presentation. Sprawling floor plans featuring meticulous classic custom craftsmanship, standalone dressing alcoves, and premier views.</p>
+                        
+                        <div class="room-amenities">
+                            <div class="amenity-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                <span>Master Suite</span>
+                            </div>
+                            <div class="amenity-item">
+                                <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-8.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+                                <span>Butler Svc</span>
+                            </div>
+                            <div class="amenity-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L11 15v1c0 1.1.9 2 2 2v1.93zm5.9-3.04c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H9v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                                <span>Private Lounge</span>
+                            </div>
+                        </div>
+
+                        <div class="room-action-row">
+                            <div class="room-pricing">
+                                <span class="price-tag">₹12,500</span>
+                                <span class="price-label">Per Night Ex. Taxes</span>
+                            </div>
+                            <a href="#reserve-now" class="cta-gold-btn">Reserve Stay</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="gallery-corner-section">
+            <div class="section-header-center">
+                <span class="section-tagline">Visual Opulence</span>
+                <h2 class="section-title">Interior Spaces Gallery</h2>
+            </div>
+            <div class="gallery-modular-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80" alt="Varda Interior Setup">
+                    <div class="gallery-overlay"><span>View Space</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80" alt="Varda Suite Bed Architecture">
+                    <div class="gallery-overlay"><span>View Space</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Premium Lounge Framing">
+                    <div class="gallery-overlay"><span>View Space</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d02?auto=format&fit=crop&w=600&q=80" alt="Deluxe Room Rest Details">
+                    <div class="gallery-overlay"><span>View Space</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-cta-section" id="reserve-now">
+            <div class="booking-cta-box">
+                <h2>Begin Your Royal Experience</h2>
+                <p>Contact our dedicated reservation desk directly to arrange personalized customized welcome itineraries, select premium tier suites, or align corporate booking profiles.</p>
+                <a href="contact.html" class="cta-gold-btn">Contact Desk Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column footer-logo-desc">
+                <div class="logo-box">
+                    <span class="logo-title">VARDA RESORT</span>
+                    <span class="logo-subtitle">& Restaurant &bull; Buxar</span>
+                </div>
+                <p>Redefining absolute high-end hospitality frame systems, events, and fine culinary journeys across Bihar.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Exploration</h4>
+                <ul>
+                    <li><a href="index.html">Home Sanctum</a></li>
+                    <li><a href="rooms.html">Rooms & Suites</a></li>
+                    <li><a href="restaurant.html">Fine Dining</a></li>
+                    <li><a href="gallery.html">Visual Registry</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Celebrations</h4>
+                <ul>
+                    <li><a href="weddings.html">Royal Weddings</a></li>
+                    <li><a href="banquet.html">Grand Ballrooms</a></li>
+                    <li><a href="about.html">Our Heritage</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Reservation Desk</h4>
+                <ul>
+                    <li>Buxar Main Highway, Bihar, India</li>
+                    <li>reservations@vardaresort.com</li>
+                    <li>+91 XXXXXXXXXX</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Varda Resort & Restaurant. All Rights Reserved.</span>
+            <span>Designed with Luxury Standards.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Dynamic Sticky Navigation Scroll Processing
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Responsive Navigation Menu Control Action
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const spans = mobileToggle.querySelectorAll('span');
+            spans[0].style.transform = navMenu.classList.contains('active') ? 'rotate(45deg) translate(6px, 6px)' : 'none';
+            spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
+            spans[2].style.transform = navMenu.classList.contains('active') ? 'rotate(-45deg) translate(5px, -5px)' : 'none';
+        });
+    </script>
+</body>
+</html>
