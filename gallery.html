@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Gallery | Varda Resort"
+permalink: /gallery/
+body_class: page-gallery
+hero_image: "/assets/images/v2.webp"
+---
+
+<!-- Hero Section -->
+<section class="hero" style="min-height: 400px; height: 50vh;">
+  <picture>
+    <source srcset="{{ '/assets/images/v2.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/v2.jpg' | relative_url }}" alt="Varda Resort Gallery" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Our Gallery</h1>
+    <span class="hero-subtitle">A glimpse into luxury</span>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;">
+      <img src="{{ '/assets/images/hero-resort.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+      <img src="{{ '/assets/images/room-deluxe.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+      <img src="{{ '/assets/images/room-suite.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+      <img src="{{ '/assets/images/restaurant-main.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+      <img src="{{ '/assets/images/wedding-main.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+      <img src="{{ '/assets/images/banquet-main.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+    </div>
+  </div>
+</section>

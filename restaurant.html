@@ -1,316 +1,56 @@
 ---
 layout: default
-title: "The Grand Dining Room & Lounge | Varda Resort, Buxar"
-description: "Immerse yourself in an elite fine dining experience at Varda Resort. Discover multi-cuisine masterpieces, chef signatures, and private ambient lounges."
+title: "Fine Dining & Restaurant | Varda Resort"
+description: "Savor exquisite flavors at Varda Resort's signature restaurant, offering world-class cuisine in a luxurious setting."
 nav_key: restaurant
 permalink: /restaurant/
 body_class: restaurant-page
-stylesheets:
-  - /assets/css/pages/restaurant.css
+hero_image: "/assets/images/restaurant-main.webp"
 ---
-</div>
 
-    
-        <!-- 1. Fullscreen Parallax Cinematic Hero Banner -->
-        <section class="hero-parallax-container">
-            <div class="hero-bg-layer" id="heroBg"></div>
-            <div class="hero-overlay-shadow"></div>
-            <canvas class="particle-canvas" id="particleCanvas"></canvas>
-            
-            <div class="hero-dining-content">
-                <h1 class="hero-title">Fine Dining Experience</h1>
-                <p class="hero-subtitle">Where culinary mastery meets an atmosphere of absolute luxury. Every plate is engineered as a signature production.</p>
-                <a href="#book-table" class="cta-gold-btn gold-shine">Book A Table</a>
-            </div>
+<!-- Hero Section -->
+<section class="hero" style="min-height: 400px; height: 50vh;">
+  <picture>
+    <source srcset="{{ '/assets/images/restaurant-main.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/restaurant-main.jpg' | relative_url }}" alt="Varda Resort Fine Dining" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Culinary Excellence</h1>
+    <span class="hero-subtitle">Taste the Extraordinary</span>
+  </div>
+</section>
 
-            <div class="scroll-indicator-box">
-                <span>Scroll Down</span>
-                <div class="scroll-line"></div>
-            </div>
-        </section>
-
-        <!-- 2. Welcome Section (Split Structural Narrative Layout) -->
-        <section class="section-padding">
-            <div class="welcome-split">
-                <div class="welcome-visual-frame reveal reveal-left">
-                    <img src="{{ '/assets/images/photo-1550966871-3ed3cdb5ed0c.svg' | relative_url }}" alt="Varda Dining Ambience" class="welcome-img">
-                </div>
-                <div class="welcome-narrative reveal reveal-right">
-                    <span class="tagline">Epicurean Heritage</span>
-                    <h2>A Synaesthetic Culinary Sanctuary</h2>
-                    <div class="gold-signature-line"></div>
-                    <p class="desc">The Grand Dining Room at Varda curated a spatial legacy rooted in gastronomic perfection. Our identity balances historical gastronomy paradigms with local, meticulously tracked fresh organic ingredients to present a distinct multi-cuisine portfolio for seasoned epicureans.</p>
-                    <div class="features-pill-cloud">
-                        <span class="dining-pill">Fine Dining</span>
-                        <span class="dining-pill">Multi Cuisine</span>
-                        <span class="dining-pill">Fresh Ingredients</span>
-                        <span class="dining-pill">Luxury Ambience</span>
-                        <span class="dining-pill">Professional Service</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Signature Dishes Framework (Grid Arrays) -->
-        <section class="section-padding dishes-section">
-            <div class="center-heading-block reveal">
-                <span class="tagline">Curated Masterpieces</span>
-                <h2 class="title">The Culinary Compendium</h2>
-            </div>
-            
-            <div class="dishes-grid">
-                <!-- Card 1 -->
-                <article class="dish-card reveal">
-                    <div class="dish-img-box">
-                        <img src="{{ '/assets/images/photo-1585938338392-50a5a2293b7e.svg' | relative_url }}" alt="Indian Fine Art" class="dish-img">
-                    </div>
-                    <div class="dish-card-content">
-                        <div class="dish-header">
-                            <h3 class="dish-title">Awadhi Shahi Tukda</h3>
-                            <span class="dish-price">â‚¹450</span>
-                        </div>
-                        <p class="dish-desc">Fragrant, gold-leaf crusted royal compilation featuring reduction profiles infused with organic saffron keys.</p>
-                        <a href="#book-table" class="btn-secondary-outline dish-action">Book Table</a>
-                    </div>
-                </article>
-
-                <!-- Card 2 -->
-                <article class="dish-card reveal">
-                    <div class="dish-img-box">
-                        <img src="{{ '/assets/images/photo-1563245372-f21724e3856d.svg' | relative_url }}" alt="Chinese Cuisine Portfolio" class="dish-img">
-                    </div>
-                    <div class="dish-card-content">
-                        <div class="dish-header">
-                            <h3 class="dish-title">Truffle Dim Sums</h3>
-                            <span class="dish-price">â‚¹650</span>
-                        </div>
-                        <p class="dish-desc">Meticulously steamed translucent crystal wraps containing earth-derived wild mushroom mash profiles.</p>
-                        <a href="#book-table" class="btn-secondary-outline dish-action">Book Table</a>
-                    </div>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="dish-card reveal">
-                    <div class="dish-img-box">
-                        <img src="{{ '/assets/images/photo-1633945274405-b6c8069047b0.svg' | relative_url }}" alt="Tandoor Premium Fire" class="dish-img">
-                    </div>
-                    <div class="dish-card-content">
-                        <div class="dish-header">
-                            <h3 class="dish-title">Bharwan Paneer Tikka</h3>
-                            <span class="dish-price">â‚¹550</span>
-                        </div>
-                        <p class="dish-desc">House-pressed cottage structural blocks stuffed with dynamic nuts and flash-charred via heritage clay configurations.</p>
-                        <a href="#book-table" class="btn-secondary-outline dish-action">Book Table</a>
-                    </div>
-                </article>
-
-                <!-- Card 4 -->
-                <article class="dish-card reveal">
-                    <div class="dish-img-box">
-                        <img src="{{ '/assets/images/photo-1546069901-ba9599a7e63c.svg' | relative_url }}" alt="Continental Presentation" class="dish-img">
-                    </div>
-                    <div class="dish-card-content">
-                        <div class="dish-header">
-                            <h3 class="dish-title">Glazed Salmon Fillet</h3>
-                            <span class="dish-price">â‚¹1,250</span>
-                        </div>
-                        <p class="dish-desc">Pan-seared Atlantic salmon balanced precisely alongside continuous rich emulsions of direct citrus-herb reductions.</p>
-                        <a href="#book-table" class="btn-secondary-outline dish-action">Book Table</a>
-                    </div>
-                </article>
-
-                <!-- Card 5 -->
-                <article class="dish-card reveal">
-                    <div class="dish-img-box">
-                        <img src="{{ '/assets/images/photo-1551024601-bec78aea704b.svg' | relative_url }}" alt="Dessert Presentation" class="dish-img">
-                    </div>
-                    <div class="dish-card-content">
-                        <div class="dish-header">
-                            <h3 class="dish-title">Deconstructed Fondant</h3>
-                            <span class="dish-price">â‚¹480</span>
-                        </div>
-                        <p class="dish-desc">Dark luxury cacao fluid core compositions balanced with liquid-nitrogen frozen berry crystals.</p>
-                        <a href="#book-table" class="btn-secondary-outline dish-action">Book Table</a>
-                    </div>
-                </article>
-
-                <!-- Card 6 -->
-                <article class="dish-card reveal">
-                    <div class="dish-img-box">
-                        <img src="{{ '/assets/images/photo-1513558161293-cdaf765ed2fd.svg' | relative_url }}" alt="Beverage Portfolio" class="dish-img">
-                    </div>
-                    <div class="dish-card-content">
-                        <div class="dish-header">
-                            <h3 class="dish-title">Gold Brew Botanical</h3>
-                            <span class="dish-price">â‚¹390</span>
-                        </div>
-                        <p class="dish-desc">Cold-distilled natural zero-proof elements layered dynamically with gold-dust carbonated water profiles.</p>
-                        <a href="#book-table" class="btn-secondary-outline dish-action">Book Table</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- 4. Chef Special Section (Full Width Prominent Layout) -->
-        <section class="section-padding">
-            <div class="chef-special-box reveal">
-                <div class="chef-media-frame">
-                    <div class="chef-img-bg"></div>
-                </div>
-                <div class="chef-content-interior">
-                    <span class="luxury-badge">Chef Recommended</span>
-                    <h2 class="chef-title">The Culinary Vanguard</h2>
-                    <blockquote class="chef-quote">"Gastronomy is an architectural exercise executed via raw organic mediums. We design taste lines to activate deep memory landscapes."</blockquote>
-                    <p class="chef-text">Our Executive Gastronomy Team brings over two decades of technical elite deployment inside premier hotel environments worldwide. Every structural sauce line and fire profile is calculated to offer a highly responsive dining experience.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Restaurant Gallery (Modern Mixed Grid Arrays) -->
-        <section class="section-padding section-alt-bordered">
-            <div class="center-heading-block reveal">
-                <span class="tagline">Atmospheric Frames</span>
-                <h2 class="title">Visual Lounges</h2>
-            </div>
-            
-            <div class="gallery-pinterest-grid">
-                <div class="gallery-item tall reveal" data-src="{{ '/assets/images/photo-1544025162-d76694265947-1.svg' | relative_url }}">
-                    <img src="{{ '/assets/images/photo-1544025162-d76694265947-2.svg' | relative_url }}" alt="Grand Dining Room Varda">
-                    <div class="gallery-glass-overlay">
-                        <span>Grand Space</span>
-                        <h4>Main Vault Room</h4>
-                    </div>
-                </div>
-                <div class="gallery-item reveal" data-src="{{ '/assets/images/photo-1559339352-11d035aa65de.svg' | relative_url }}">
-                    <img src="{{ '/assets/images/photo-1559339352-11d035aa65de-1.svg' | relative_url }}" alt="Elite Mixology Cellar">
-                    <div class="gallery-glass-overlay">
-                        <span>Lounge Section</span>
-                        <h4>The Botanist Bar</h4>
-                    </div>
-                </div>
-                <div class="gallery-item wide reveal" data-src="{{ '/assets/images/photo-1414235077428-338989a2e8c0.svg' | relative_url }}">
-                    <img src="{{ '/assets/images/photo-1414235077428-338989a2e8c0-1.svg' | relative_url }}" alt="Plating Excellence Configuration">
-                    <div class="gallery-glass-overlay">
-                        <span>Plating Line</span>
-                        <h4>Precision Gastronomy</h4>
-                    </div>
-                </div>
-                <div class="gallery-item reveal" data-src="{{ '/assets/images/photo-1514362545857-3bc16c4c7d1b.svg' | relative_url }}">
-                    <img src="{{ '/assets/images/photo-1514362545857-3bc16c4c7d1b-1.svg' | relative_url }}" alt="Artisan Beverage Presentation">
-                    <div class="gallery-glass-overlay">
-                        <span>Distillation Lab</span>
-                        <h4>Artisan Infusions</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Why Dine With Us (High Contrast Utility Matrices) -->
-        <section class="section-padding why-dine-section">
-            <div class="center-heading-block reveal">
-                <span class="tagline">The Dining Standard</span>
-                <h2 class="title">Exceptional Paradigms</h2>
-            </div>
-            
-            <div class="why-dine-grid">
-                <div class="why-dine-card reveal">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
-                    <h3>Fresh Ingredients</h3>
-                    <p>Every micro element is sourced from traceable organic growers and temperature locked to preserve structure.</p>
-                </div>
-                <div class="why-dine-card reveal">
-                    <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2s-2-.9-2-2V4c0-1.1.9-2 2-2zm6 5c1.1 0 2 .9 2 2v7c0 1.1-.9 2-2 2s-2-.9-2-2V9c0-1.1.9-2 2-2zM6 10c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4c0-1.1.9-2 2-2z"/></svg>
-                    <h3>Expert Mixologists</h3>
-                    <p>Our beverage laboratories employ slow-drip distillations to extract clear botanical profiles.</p>
-                </div>
-                <div class="why-dine-card reveal">
-                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg>
-                    <h3>Private Dining Vaults</h3>
-                    <p>Isolated acoustic sanctuaries engineered specifically for high-profile business negotiations and intimate gatherings.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. Glassmorphism Booking System Frame -->
-        <section class="reservation-backdrop" id="book-table">
-            <div class="glass-reservation-card reveal">
-                <div class="booking-heading">
-                    <span class="booking-eyebrow">Secure Portal</span>
-                    <h2 class="booking-title">Reserve Your Table</h2>
-                </div>
-                
-                <form class="form-grid" action="#" method="POST" data-form-message="Reservation logged with the Varda Concierge.">
-                    <div class="form-group">
-                        <label for="res-name">Full Identity Name</label>
-                        <input type="text" id="res-name" class="form-control" placeholder="E.g., Lord Alexander" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="res-phone">Secure Phone Terminal</label>
-                        <input type="tel" id="res-phone" class="form-control" placeholder="+91 XXXXXXXXXX" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="res-guests">Guest Tally Matrix</label>
-                        <select id="res-guests" class="form-control">
-                            <option>1 Guest</option>
-                            <option selected>2 Guests</option>
-                            <option>4 Guests</option>
-                            <option>6+ Guests (Private Vault)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="res-date">Target Date</label>
-                        <input type="date" id="res-date" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="res-time">Target Window Session</label>
-                        <select id="res-time" class="form-control">
-                            <option>Lunch (12:30 PM - 03:30 PM)</option>
-                            <option selected>Imperial Dinner (07:30 PM - 11:30 PM)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="res-requests">Special Culinary Dictates</label>
-                        <input type="text" id="res-requests" class="form-control" placeholder="Allergies, high chair, private vault positioning">
-                    </div>
-                    <div class="form-group full-width submit-container">
-                        <button type="submit" class="cta-gold-btn gold-shine">Transmit Reservation</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <!-- 8. Testimonials Auto Slider System -->
-        <section class="section-padding reviews-section">
-            <div class="slider-viewport">
-                <!-- Review 1 -->
-                <div class="review-slide active">
-                    <img src="{{ '/assets/images/photo-1534528741775-53994a69daeb.svg' | relative_url }}" alt="Reviewer Face Profile" class="customer-avatar">
-                    <div class="star-cluster">â˜…â˜…â˜…â˜…â˜…</div>
-                    <p class="testimonial-text">"The truffle dim sums represent complete execution perfection. The atmospheric luxury layout effortlessly mirrors top tier global venues."</p>
-                    <span class="customer-identity">Rhea Kapoor â€” Food Critic</span>
-                </div>
-                <!-- Review 2 -->
-                <div class="review-slide">
-                    <img src="{{ '/assets/images/photo-1507003211169-0a1dd7228f2d.svg' | relative_url }}" alt="Reviewer Face Profile" class="customer-avatar">
-                    <div class="star-cluster">â˜…â˜…â˜…â˜…â˜…</div>
-                    <p class="testimonial-text">"An absolute triumph for hospitality along this corridor. The private vaults offer total acoustic sealing and flawless service paces."</p>
-                    <span class="customer-identity">Vikram Aditya â€” Corporate Director</span>
-                </div>
-            </div>
-        </section>
-    
-
-    <!-- Global Lightbox Frame Portal -->
-    <div class="varda-lightbox" id="galleryLightbox" role="dialog" aria-modal="true">
-        <div class="lightbox-box">
-            <button class="lightbox-close-btn" id="lightboxClose">&times;</button>
-            <img src="" id="lightboxImg" alt="Varda Full Scale Presentation Frame">
-        </div>
+<!-- Content Section -->
+<section class="section-padding">
+  <div class="container">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 60px;">
+      <h2 class="font-heading" style="font-size: 2.5rem; margin-bottom: 24px;">A Symphony of Flavors</h2>
+      <p class="text-muted" style="font-size: 1.1rem; line-height: 1.8;">
+        Our signature restaurant offers an unforgettable dining experience, blending authentic local ingredients with global culinary techniques. Whether you're enjoying a romantic dinner for two or celebrating with family, our elegant ambiance and impeccable service guarantee a night to remember.
+      </p>
     </div>
 
-    <!-- 9. Standardized Global Footer Framework -->
+    <!-- Menu Grid Placeholder -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 80px;">
+      
+      <div class="glass-panel" style="padding: 40px;">
+        <h3 class="font-heading" style="font-size: 2rem; margin-bottom: 24px; color: var(--primary-gold); text-align: center;">Breakfast</h3>
+        <p class="text-muted" style="text-align: center; margin-bottom: 24px;">Start your day with our lavish buffet featuring fresh pastries, artisanal cheeses, and made-to-order specialties.</p>
+        <p style="text-align: center; font-size: 0.9rem; letter-spacing: 0.1em; color: var(--text-light);">7:00 AM - 10:30 AM</p>
+      </div>
 
-    <!-- ==========================================================================
-       13. VANILLA MICRO INTERACTIONS & LOGICAL ENGINE RUNTIME
-       ========================================================================== */ -->
+      <div class="glass-panel" style="padding: 40px; border-color: var(--primary-gold);">
+        <h3 class="font-heading" style="font-size: 2rem; margin-bottom: 24px; color: var(--primary-gold); text-align: center;">Dinner</h3>
+        <p class="text-muted" style="text-align: center; margin-bottom: 24px;">Experience our chef's tasting menu, a curated journey of modern gastronomy paired with fine wines.</p>
+        <p style="text-align: center; font-size: 0.9rem; letter-spacing: 0.1em; color: var(--text-light);">7:00 PM - 11:00 PM</p>
+      </div>
 
+    </div>
+
+    <div style="text-align: center;">
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Reserve a Table</a>
+    </div>
+
+  </div>
+</section>

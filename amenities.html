@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Amenities | Varda Resort"
+permalink: /amenities/
+body_class: page-amenities
+hero_image: "/assets/images/pool-spa.webp"
+---
+
+<!-- Hero Section -->
+<section class="hero" style="min-height: 400px; height: 50vh;">
+  <picture>
+    <source srcset="{{ '/assets/images/pool-spa.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/pool-spa.jpg' | relative_url }}" alt="Resort Amenities" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Resort Amenities</h1>
+    <span class="hero-subtitle">Unparalleled facilities at your service</span>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container" style="max-width: 800px; text-align: center;">
+    <ul style="list-style: none; padding: 0; color: var(--text-muted); font-size: 1.1rem; line-height: 2.5;">
+      <li>&bull; 24-Hour In-Room Dining</li>
+      <li>&bull; High-Speed Wireless Internet</li>
+      <li>&bull; Concierge Services</li>
+      <li>&bull; Valet Parking</li>
+      <li>&bull; State-of-the-art Fitness Center</li>
+      <li>&bull; Infinity Pool & Spa</li>
+    </ul>
+  </div>
+</section>

@@ -28,8 +28,8 @@
                 preloader.style.opacity = '0';
                 setTimeout(function () {
                     preloader.style.display = 'none';
-                }, 1000);
-            }, 900);
+                }, 400); // reduced from 1000ms
+            }, 50); // reduced from 900ms
         });
     }
 
@@ -370,6 +370,42 @@
         });
     }
 
+    function initBookingDialog() {
+        var dialog = document.getElementById('bookingDialog');
+        var closeBtn = document.getElementById('closeBookingDialog');
+        if (!dialog) return;
+
+        // Find all CTA buttons that should open the dialog
+        var bookBtns = document.querySelectorAll('a[href*="#book"], .cta-gold-btn, .btn-primary[href*="/booking/"]');
+        
+        bookBtns.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                if (btn.getAttribute('href') && btn.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    dialog.classList.add('active');
+                }
+            });
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                dialog.classList.remove('active');
+            });
+        }
+
+        dialog.addEventListener('click', function (e) {
+            if (e.target === dialog) {
+                dialog.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && dialog.classList.contains('active')) {
+                dialog.classList.remove('active');
+            }
+        });
+    }
+
     initPreloader();
 
     ready(function () {
@@ -384,5 +420,6 @@
         initReviewSlides();
         initParticleCanvas();
         initForms();
+        initBookingDialog();
     });
 }());

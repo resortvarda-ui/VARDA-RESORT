@@ -1,0 +1,47 @@
+---
+layout: default
+title: "Book Your Stay | Varda Resort"
+permalink: /booking/
+body_class: page-booking
+hero_image: "/assets/images/v4.webp"
+---
+
+<!-- Hero Section -->
+<section class="hero" style="min-height: 400px; height: 50vh;">
+  <picture>
+    <source srcset="{{ '/assets/images/v4.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/v4.jpg' | relative_url }}" alt="Book Varda Resort" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Reserve Your Sanctuary</h1>
+    <span class="hero-subtitle">Begin your journey</span>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container" style="max-width: 600px;">
+    <div class="glass-panel" style="padding: 40px; border-radius: 4px;">
+      <form action="#" method="POST">
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--text-muted);">Check-in Date</label>
+          <input type="date" required style="width: 100%; padding: 16px; background: rgba(0,0,0,0.5); border: 1px solid var(--glass-border); color: var(--text-light); color-scheme: dark;">
+        </div>
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--text-muted);">Check-out Date</label>
+          <input type="date" required style="width: 100%; padding: 16px; background: rgba(0,0,0,0.5); border: 1px solid var(--glass-border); color: var(--text-light); color-scheme: dark;">
+        </div>
+        <div style="margin-bottom: 32px;">
+          <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--text-muted);">Guests</label>
+          <select required style="width: 100%; padding: 16px; background: rgba(0,0,0,0.5); border: 1px solid var(--glass-border); color: var(--text-light);">
+            <option value="1">1 Adult</option>
+            <option value="2" selected>2 Adults</option>
+            <option value="3">3 Adults</option>
+            <option value="4">4 Adults</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Check Availability</button>
+      </form>
+    </div>
+  </div>
+</section>

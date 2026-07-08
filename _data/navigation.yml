@@ -1,18 +1,24 @@
-- key: home
-  title: Home
+- title: Home
   url: /
-- key: rooms
-  title: Rooms
+  key: home
+- title: Rooms
   url: /rooms/
-- key: restaurant
-  title: Restaurant
+  key: rooms
+- title: Dining
   url: /restaurant/
-- key: weddings
-  title: Weddings
+  key: restaurant
+- title: Weddings
   url: /weddings/
-- key: banquets
-  title: Banquets
+  key: weddings
+- title: Banquets
   url: /banquets/
-- key: contact
-  title: Contact
+  key: banquets
+- title: Gallery
+  url: /gallery/
+  key: gallery
+- title: Offers
+  url: /offers/
+  key: offers
+- title: Contact
   url: /contact/
+  key: contact

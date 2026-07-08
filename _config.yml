@@ -2,7 +2,7 @@ title: Varda Resort & Restaurant
 description: >-
   Experience world-class luxury, fine dining, and majestic banquets at
   Varda Resort & Restaurant, Buxar, Bihar. Book your premium stay today.
-url: ""
+url: "https://vardaresort.com"
 baseurl: ""
 lang: en
 
@@ -11,6 +11,15 @@ location: Buxar, Bihar
 email: info@vardaresort.com
 phone: "+91 00000 00000"
 address: Main Highway Crossing, Buxar, Bihar
+twitter:
+  username: vardaresort
+social:
+  name: Varda Resort
+  links:
+    - https://www.facebook.com/vardaresort
+    - https://www.instagram.com/vardaresort
+logo: /assets/images/logo-placeholder.png
+image: /assets/images/varda-resort-og.jpg
 
 # Build settings
 markdown: kramdown
@@ -24,6 +33,7 @@ exclude:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 defaults:
   - scope:

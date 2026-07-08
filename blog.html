@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Journal | Varda Resort"
+permalink: /blog/
+body_class: page-blog
+hero_image: "/assets/images/v2.webp"
+---
+
+<!-- Hero Section -->
+<section class="hero" style="min-height: 400px; height: 50vh;">
+  <picture>
+    <source srcset="{{ '/assets/images/v2.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/v2.jpg' | relative_url }}" alt="Varda Resort Journal" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Varda Journal</h1>
+    <span class="hero-subtitle">Stories of travel, culture, and luxury living</span>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+      
+      <a href="#" class="luxury-card">
+        <div class="luxury-card-img-wrap" style="aspect-ratio: 16/9;">
+          <img src="{{ '/assets/images/hero-resort.jpg' | relative_url }}" alt="Blog Post" loading="lazy">
+        </div>
+        <div class="luxury-card-content">
+          <p class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Travel &bull; May 2026</p>
+          <h3 style="font-size: 1.5rem; color: var(--text-light); margin-bottom: 12px; font-family: var(--font-heading);">Discovering the Hidden Gems of Buxar</h3>
+          <p class="text-muted">A curated guide to exploring local heritage and culture during your luxury stay with us.</p>
+        </div>
+      </a>
+
+      <a href="#" class="luxury-card">
+        <div class="luxury-card-img-wrap" style="aspect-ratio: 16/9;">
+          <img src="{{ '/assets/images/restaurant-main.jpg' | relative_url }}" alt="Blog Post" loading="lazy">
+        </div>
+        <div class="luxury-card-content">
+          <p class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Culinary &bull; June 2026</p>
+          <h3 style="font-size: 1.5rem; color: var(--text-light); margin-bottom: 12px; font-family: var(--font-heading);">The Art of Fine Dining</h3>
+          <p class="text-muted">An exclusive behind-the-scenes look at how our master chefs craft their seasonal tasting menus.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>

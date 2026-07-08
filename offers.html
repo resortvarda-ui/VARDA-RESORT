@@ -1,0 +1,29 @@
+---
+layout: default
+title: "Special Offers & Packages | Varda Resort"
+permalink: /offers/
+body_class: page-offers
+hero_image: "/assets/images/v3.webp"
+---
+
+<!-- Hero Section -->
+<section class="hero" style="min-height: 400px; height: 50vh;">
+  <picture>
+    <source srcset="{{ '/assets/images/v3.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/v3.jpg' | relative_url }}" alt="Varda Resort Offers" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Exclusive Offers</h1>
+    <span class="hero-subtitle">Curated for your ultimate experience</span>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container" style="max-width: 800px; text-align: center;">
+    <p class="text-muted" style="font-size: 1.1rem; line-height: 1.8;">
+      Discover our curated seasonal packages and exclusive offers, designed to provide you with the ultimate luxury experience at an exceptional value. Please check back regularly for new promotions, or contact our reservations team for personalized packages.
+    </p>
+    <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary" style="margin-top: 32px;">Book Your Stay</a>
+  </div>
+</section>

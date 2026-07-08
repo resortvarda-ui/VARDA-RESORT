@@ -1,0 +1,40 @@
+---
+layout: default
+title: "Packages | Varda Resort"
+permalink: /packages/
+body_class: page-packages
+hero_image: "/assets/images/room-suite.webp"
+---
+
+<!-- Hero Section -->
+<section class="hero" style="min-height: 400px; height: 50vh;">
+  <picture>
+    <source srcset="{{ '/assets/images/room-suite.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/room-suite.jpg' | relative_url }}" alt="Varda Resort Packages" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Curated Packages</h1>
+    <span class="hero-subtitle">Elevate your stay with bespoke experiences</span>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+      
+      <div class="glass-panel" style="padding: 40px; text-align: center;">
+        <h3 class="font-heading" style="font-size: 2rem; color: var(--primary-gold); margin-bottom: 16px;">Romantic Getaway</h3>
+        <p class="text-muted" style="margin-bottom: 24px;">Includes a 2-night stay in our Premium Suite, couples massage at the spa, and a private candlelit dinner.</p>
+        <a href="{{ '/booking/' | relative_url }}" class="btn btn-outline">Enquire Now</a>
+      </div>
+
+      <div class="glass-panel" style="padding: 40px; text-align: center; border-color: var(--primary-gold);">
+        <h3 class="font-heading" style="font-size: 2rem; color: var(--primary-gold); margin-bottom: 16px;">Executive Retreat</h3>
+        <p class="text-muted" style="margin-bottom: 24px;">Designed for the modern professional. Includes high-speed Wi-Fi, executive lounge access, and complimentary breakfast.</p>
+        <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary">Enquire Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>

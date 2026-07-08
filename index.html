@@ -5,9 +5,101 @@ description: "Experience world-class luxury, fine dining, and majestic banquets 
 nav_key: home
 permalink: /
 body_class: home-page
-stylesheets:
-  - /assets/css/pages/home.css
+hero_image: "/assets/images/hero-resort.webp"
 ---
-{% include preloader.html %}
-{% include hero-carousel.html %}
-{% include feature-grid.html %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <picture>
+    <source srcset="{{ '/assets/images/hero-resort.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/hero-resort.jpg' | relative_url }}" alt="Varda Resort Exterior Night View" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-subtitle">Welcome to Varda</span>
+    <h1 class="hero-title">An Oasis of Luxury in Buxar</h1>
+    <div class="hero-actions">
+      <a href="{{ '/rooms/' | relative_url }}" class="btn btn-primary">Discover Our Rooms</a>
+      <a href="{{ '/booking/' | relative_url }}" class="btn btn-outline">Book Your Stay</a>
+    </div>
+  </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="section-padding">
+  <div class="container">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <h2 class="font-heading" style="font-size: 2.5rem; margin-bottom: 24px;">A Sanctuary of Elegance</h2>
+      <p class="text-muted" style="font-size: 1.1rem; line-height: 1.8;">
+        Step into a world where modern sophistication meets timeless elegance. Varda Resort & Restaurant offers an unparalleled experience of luxury, featuring exquisitely designed rooms, world-class dining, and majestic banquet spaces. Whether you are seeking a peaceful retreat or a grand celebration, every moment here is crafted to perfection.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section-padding section-alt">
+  <div class="container">
+    <div class="features-grid">
+      
+      <div class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+        <h3>Luxury Accommodation</h3>
+        <p>Experience unmatched comfort in our meticulously designed rooms and suites, featuring premium amenities and stunning views.</p>
+      </div>
+
+      <div class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.86 3.75 3.97V22h2.5v-9.03C11.34 12.86 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+        <h3>Fine Dining</h3>
+        <p>Indulge in a culinary journey at our signature restaurant, where expert chefs craft exquisite dishes using the finest ingredients.</p>
+      </div>
+
+      <div class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+        <h3>Grand Banquets</h3>
+        <p>Host unforgettable events in our majestic banquet halls, perfectly suited for grand weddings and corporate functions.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Featured Rooms -->
+<section class="section-padding">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <h2 class="font-heading" style="font-size: 2.8rem; margin-bottom: 16px;">Signature Suites</h2>
+      <p class="text-muted">Discover your perfect sanctuary</p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+      
+      <!-- Room Card 1 -->
+      <a href="{{ '/rooms/' | relative_url }}" class="luxury-card">
+        <div class="luxury-card-img-wrap">
+          <img src="{{ '/assets/images/room-deluxe.jpg' | relative_url }}" alt="Deluxe Sanctum Room" loading="lazy">
+        </div>
+        <div class="luxury-card-content">
+          <div class="luxury-card-meta"><span>350 Sq.Ft</span> &bull; <span>King Bed</span></div>
+          <h3 class="luxury-card-title">Deluxe Sanctum</h3>
+          <p class="text-muted" style="margin-bottom: 24px;">A perfect blend of comfort and elegance with premium amenities.</p>
+          <span class="text-gold" style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Explore Room &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Room Card 2 -->
+      <a href="{{ '/rooms/' | relative_url }}" class="luxury-card">
+        <div class="luxury-card-img-wrap">
+          <img src="{{ '/assets/images/room-suite.jpg' | relative_url }}" alt="Premium Suite" loading="lazy">
+        </div>
+        <div class="luxury-card-content">
+          <div class="luxury-card-meta"><span>550 Sq.Ft</span> &bull; <span>Living Area</span></div>
+          <h3 class="luxury-card-title">Premium Suite</h3>
+          <p class="text-muted" style="margin-bottom: 24px;">Expansive luxury featuring a separate living space and city views.</p>
+          <span class="text-gold" style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Explore Room &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>

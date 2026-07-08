@@ -1,323 +1,83 @@
 ---
 layout: default
-title: "Luxury Rooms & Suites | Varda Resort & Restaurant, Buxar"
-description: "Experience unmatched comfort, elegance, and personalized 5-star hospitality. Book our premium deluxe rooms and majestic suites at Varda Resort, Buxar."
+title: "Luxury Rooms & Suites | Varda Resort"
+description: "Experience unparalleled comfort in our exquisitely designed rooms and suites, featuring modern amenities and timeless elegance."
 nav_key: rooms
 permalink: /rooms/
 body_class: rooms-page
-stylesheets: 
-  - /assets/css/pages/rooms.css
+hero_image: "/assets/images/room-deluxe.webp"
 ---
-        <section class="hero-banner">
-            <div class="hero-banner-bg"></div>
-            <div class="hero-banner-content">
-                <span class="breadcrumb-trail"><a href="{{ '/' | relative_url }}">Home</a> / Rooms</span>
-                <h1 class="hero-title">Luxury Rooms & Suites</h1>
-                <p class="hero-subtitle">Experience unmatched comfort, elegance, and personalized hospitality engineered to reflect absolute luxury.</p>
-            </div>
-        </section>
 
-        <!-- 2. Room Categories Structural Layout Section -->
-        <section class="section-padding">
-            <div class="categories-grid">
-                
-                <!-- Room Card 1: Deluxe Room -->
-                <article class="room-card reveal">
-                    <div class="room-card-img-box">
-                        <div class="room-card-img room-card-img--deluxe"></div>
-                        <div class="room-card-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M4 11h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg> 380 Sq. Ft</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg> 2 Guests</span>
-                            <span>King Bed</span>
-                        </div>
-                    </div>
-                    <div class="room-card-content">
-                        <h2 class="room-card-title">Deluxe Sanctum Room</h2>
-                        <p class="room-card-desc">Exquisitely tailored configurations combining contemporary style with serene, premium spaces designed for effortless relaxation.</p>
-                        <div class="room-card-footer">
-                            <div class="room-card-price">
-                                <span class="amt">â‚¹4,500</span>
-                                <span class="lbl">Per Night Ex. Taxes</span>
-                            </div>
-                            <div class="room-card-actions">
-                                <a href="{{ '/#contact' | relative_url }}" class="btn-secondary-outline">View Details</a>
-                                <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+<!-- Hero Section -->
+<section class="hero" style="min-height: 400px; height: 50vh;">
+  <picture>
+    <source srcset="{{ '/assets/images/room-deluxe.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/room-deluxe.jpg' | relative_url }}" alt="Varda Resort Rooms" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Rooms & Suites</h1>
+    <span class="hero-subtitle">Your Personal Sanctuary</span>
+  </div>
+</section>
 
-                <!-- Room Card 2: Executive Room -->
-                <article class="room-card reveal">
-                    <div class="room-card-img-box">
-                        <div class="room-card-img room-card-img--executive"></div>
-                        <div class="room-card-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M4 11h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg> 450 Sq. Ft</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg> 2 Guests</span>
-                            <span>Royal King Bed</span>
-                        </div>
-                    </div>
-                    <div class="room-card-content">
-                        <h2 class="room-card-title">Executive Vista Room</h2>
-                        <p class="room-card-desc">An elevated design template featuring expansive panoramic views and precise digital operational convenience layouts.</p>
-                        <div class="room-card-footer">
-                            <div class="room-card-price">
-                                <span class="amt">â‚¹5,800</span>
-                                <span class="lbl">Per Night Ex. Taxes</span>
-                            </div>
-                            <div class="room-card-actions">
-                                <a href="{{ '/#contact' | relative_url }}" class="btn-secondary-outline">View Details</a>
-                                <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Room Card 3: Premium Suite -->
-                <article class="room-card reveal">
-                    <div class="room-card-img-box">
-                        <div class="room-card-img room-card-img--suite"></div>
-                        <div class="room-card-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M4 11h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg> 650 Sq. Ft</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg> 3 Guests</span>
-                            <span>Imperial Double</span>
-                        </div>
-                    </div>
-                    <div class="room-card-content">
-                        <h2 class="room-card-title">Regal Premium Suite</h2>
-                        <p class="room-card-desc">Hosting an expansive separate customized parlor lounge paired with grand luxury furnishings for elite comfort standard profiles.</p>
-                        <div class="room-card-footer">
-                            <div class="room-card-price">
-                                <span class="amt">â‚¹7,500</span>
-                                <span class="lbl">Per Night Ex. Taxes</span>
-                            </div>
-                            <div class="room-card-actions">
-                                <a href="{{ '/#contact' | relative_url }}" class="btn-secondary-outline">View Details</a>
-                                <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Room Card 4: Family Suite -->
-                <article class="room-card reveal">
-                    <div class="room-card-img-box">
-                        <div class="room-card-img room-card-img--family"></div>
-                        <div class="room-card-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M4 11h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg> 850 Sq. Ft</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg> 4 Guests</span>
-                            <span>2 Grand Beds</span>
-                        </div>
-                    </div>
-                    <div class="room-card-content">
-                        <h2 class="room-card-title">Majestic Family Suite</h2>
-                        <p class="room-card-desc">Dual expansive interlinked bedrooms meticulously structured to offer uninterrupted high-end luxury parameters for entire family units.</p>
-                        <div class="room-card-footer">
-                            <div class="room-card-price">
-                                <span class="amt">â‚¹9,800</span>
-                                <span class="lbl">Per Night Ex. Taxes</span>
-                            </div>
-                            <div class="room-card-actions">
-                                <a href="{{ '/#contact' | relative_url }}" class="btn-secondary-outline">View Details</a>
-                                <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- 3. Room Features Section (SVG Icon Framework) -->
-        <section class="section-padding features-section">
-            <div class="center-heading-block reveal">
-                <span class="tagline">World-Class Fittings</span>
-                <h2 class="title">Luxury Amenities</h2>
-            </div>
-            <div class="features-matrix">
-                <!-- Icon 1 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M12 21l-1.45-1.32C5.4 14.92 2 11.85 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.35-3.4 6.42-8.55 11.19L12 21z"/></svg>
-                    </div>
-                    <h3>Free High WiFi</h3>
-                </div>
-                <!-- Icon 2 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
-                    </div>
-                    <h3>Smart LED TV</h3>
-                </div>
-                <!-- Icon 3 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                    </div>
-                    <h3>Air Conditioning</h3>
-                </div>
-                <!-- Icon 4 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
-                    </div>
-                    <h3>Luxury Bathroom</h3>
-                </div>
-                <!-- Icon 5 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                    </div>
-                    <h3>24Ã—7 Room Service</h3>
-                </div>
-                <!-- Icon 6 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-8.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
-                    </div>
-                    <h3>Complimentary Breakfast</h3>
-                </div>
-                <!-- Icon 7 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M2 21h18v-2H2v2zM20 8h-2V5h2v3zm2-5H2v14h20V3z"/></svg>
-                    </div>
-                    <h3>Tea & Coffee Maker</h3>
-                </div>
-                <!-- Icon 8 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                    </div>
-                    <h3>Secure Parking</h3>
-                </div>
-                <!-- Icon 9 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
-                    </div>
-                    <h3>24Ã—7 Power Backup</h3>
-                </div>
-                <!-- Icon 10 -->
-                <div class="feature-icon-card reveal">
-                    <div class="feature-icon-wrapper">
-                        <svg viewBox="0 0 24 24"><path d="M19.28 4.93l-1.41-1.41-4.76 4.76-4.76-4.76-1.41 1.41 4.76 4.76-4.76 4.76 1.41 1.41 4.76-4.76 4.76 4.76 1.41-1.41-4.76-4.76z"/></svg>
-                    </div>
-                    <h3>Laundry Service</h3>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Featured Luxury Sovereign Suite (Full Width Frame) -->
-        <section class="section-padding">
-            <div class="featured-suite-box reveal">
-                <div class="suite-media">
-                    <div class="suite-media-bg"></div>
-                </div>
-                <div class="suite-content-interior">
-                    <span class="suite-tag">Signature Space</span>
-                    <h2 class="suite-title">Varda Sovereign Presidential Suite</h2>
-                    <p class="suite-desc">Our flagship presentation. A sprawling master structural statement absolute with private panoramic framing, custom high-ceiling craftsmanship, and dedicated signature privileges engineered to serve royal standards flawlessly.</p>
-                    <ul class="suite-amenities-list">
-                        <li>Personalized Butler Service</li>
-                        <li>Private Champagne Bar</li>
-                        <li>Integrated Workspace Terminal</li>
-                        <li>Walk-in Wardrobe Dressing Room</li>
-                    </ul>
-                    <div>
-                        <a href="{{ '/#contact' | relative_url }}" class="cta-gold-btn gold-shine-effect">Reserve Master Suite</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Room Interior Gallery (Masonry Layout Grid Array) -->
-        <section class="section-padding section-alt-bordered">
-            <div class="center-heading-block reveal">
-                <span class="tagline">The Gallery</span>
-                <h2 class="title">Visual Heritage</h2>
-            </div>
-            <div class="gallery-mosaic">
-                <div class="mosaic-item reveal" data-src="{{ '/assets/images/photo-1582719508461-905c673771fd.svg' | relative_url }}">
-                    <img src="{{ '/assets/images/photo-1582719508461-905c673771fd-1.svg' | relative_url }}" alt="Varda Space Frame">
-                    <div class="mosaic-overlay">
-                        <span>Lounge Layout</span>
-                        <h4>Imperial Foyer</h4>
-                    </div>
-                </div>
-                <div class="mosaic-item tall reveal" data-src="{{ '/assets/images/photo-1578683010236-d716f9a3f461-1.svg' | relative_url }}">
-                    <img src="{{ '/assets/images/photo-1578683010236-d716f9a3f461-2.svg' | relative_url }}" alt="Presidential Vista Suite">
-                    <div class="mosaic-overlay">
-                        <span>Sovereign Suite</span>
-                        <h4>Presidential Architecture</h4>
-                    </div>
-                </div>
-                <div class="mosaic-item reveal" data-src="{{ '/assets/images/photo-1611892440504-42a792e24d02.svg' | relative_url }}">
-                    <img src="{{ '/assets/images/photo-1611892440504-42a792e24d02-1.svg' | relative_url }}" alt="Deluxe Bed Craftsmanship">
-                    <div class="mosaic-overlay">
-                        <span>Rest Environment</span>
-                        <h4>Deluxe Sanctum Bed</h4>
-                    </div>
-                </div>
-                <div class="mosaic-item reveal" data-src="{{ '/assets/images/photo-1591088398332-8a7791972843.svg' | relative_url }}">
-                    <img src="{{ '/assets/images/photo-1591088398332-8a7791972843-1.svg' | relative_url }}" alt="Executive Parlor Detail">
-                    <div class="mosaic-overlay">
-                        <span>Executive Space</span>
-                        <h4>Vista Living Corner</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Why Stay With Us (Value Proposition System) -->
-        <section class="section-padding proposition-section">
-            <div class="center-heading-block reveal">
-                <span class="tagline">The Varda Standard</span>
-                <h2 class="title">Why Stay With Us</h2>
-            </div>
-            <div class="proposition-grid">
-                <div class="proposition-card reveal">
-                    <span class="num">01</span>
-                    <h3>Luxury Experience</h3>
-                    <p>Meticulously conceptualized architectural environments calculated to reflect premier aesthetic properties.</p>
-                </div>
-                <div class="proposition-card reveal">
-                    <span class="num">02</span>
-                    <h3>Prime Location</h3>
-                    <p>Positioned dynamically on the highway grid network of Buxar, guaranteeing seamless transport access lines.</p>
-                </div>
-                <div class="proposition-card reveal">
-                    <span class="num">03</span>
-                    <h3>Fine Hospitality</h3>
-                    <p>Highly trained professional concierge operatives deployed 24 hours a day to handle individual tailored requests.</p>
-                </div>
-                <div class="proposition-card reveal">
-                    <span class="num">04</span>
-                    <h3>Uncompromised Value</h3>
-                    <p>A balanced synthesis of elite structural luxury parameters and competitive modern pricing tier schedules.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. Booking CTA Section -->
-        <section class="booking-cta" id="reserve-now">
-            <div class="cta-enclosure reveal">
-                <h2>Reserve Your Perfect Stay</h2>
-                <p>Align with absolute luxury comfort. Reach out directly to our global ticketing desk to lock in seasonal premium reservation packages.</p>
-                <div class="cta-actions-row">
-                    <a href="{{ '/#contact' | relative_url }}" class="cta-gold-btn gold-shine-effect">Book Now</a>
-                    <a href="{{ '/#contact' | relative_url }}" class="btn-secondary-outline">Contact Us</a>
-                </div>
-            </div>
-        </section>
+<!-- Rooms Listing -->
+<section class="section-padding">
+  <div class="container">
     
-
-    <!-- Lightbox Element Frame Portal -->
-    <div class="varda-lightbox" id="galleryLightbox" role="dialog" aria-modal="true">
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose" aria-label="Close visual display">&times;</button>
-            <img src="" id="lightboxImg" alt="Varda Blown Frame View">
+    <!-- Room 1 -->
+    <div style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center; margin-bottom: 100px;">
+      <div style="flex: 1 1 500px;">
+        <div class="luxury-card-img-wrap" style="aspect-ratio: 16/10;">
+          <picture>
+            <source srcset="{{ '/assets/images/room-deluxe.webp' | relative_url }}" type="image/webp">
+            <img src="{{ '/assets/images/room-deluxe.jpg' | relative_url }}" alt="Deluxe Sanctum" loading="lazy">
+          </picture>
         </div>
+      </div>
+      <div style="flex: 1 1 400px;">
+        <h2 class="font-heading" style="font-size: 2.5rem; margin-bottom: 16px;">Deluxe Sanctum</h2>
+        <div class="luxury-card-meta" style="margin-bottom: 24px;"><span>350 Sq.Ft</span> &bull; <span>King Bed</span> &bull; <span>2 Adults</span></div>
+        <p class="text-muted" style="margin-bottom: 32px; font-size: 1.05rem;">
+          Immerse yourself in tranquility in our Deluxe Sanctum. Designed with meticulous attention to detail, these rooms feature plush bedding, a beautifully appointed en-suite bathroom, and ambient lighting to ensure a restful stay.
+        </p>
+        <div style="display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; color: var(--text-light); font-size: 0.9rem;">
+          <span>✓ Free Wi-Fi</span>
+          <span>✓ Smart TV</span>
+          <span>✓ Mini Bar</span>
+          <span>✓ Room Service</span>
+        </div>
+        <a href="{{ '/booking/' | relative_url }}" class="btn btn-outline">Check Availability</a>
+      </div>
     </div>
 
-    <!-- 8. Standardized Global Footer -->
+    <hr style="border: 0; border-top: 1px solid var(--border-gold); margin-bottom: 100px; opacity: 0.5;">
+
+    <!-- Room 2 -->
+    <div style="display: flex; flex-wrap: wrap-reverse; gap: 60px; align-items: center;">
+      <div style="flex: 1 1 400px;">
+        <h2 class="font-heading" style="font-size: 2.5rem; margin-bottom: 16px;">Premium Suite</h2>
+        <div class="luxury-card-meta" style="margin-bottom: 24px;"><span>550 Sq.Ft</span> &bull; <span>Separate Living Area</span> &bull; <span>City View</span></div>
+        <p class="text-muted" style="margin-bottom: 32px; font-size: 1.05rem;">
+          Our Premium Suite offers an expansive retreat for those who seek the highest level of luxury. Featuring a separate living area, luxurious bathroom with a deep soaking tub, and bespoke furnishings, it's the ultimate urban escape.
+        </p>
+        <div style="display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; color: var(--text-light); font-size: 0.9rem;">
+          <span>✓ Express Check-in</span>
+          <span>✓ Premium Toiletries</span>
+          <span>✓ Free Wi-Fi</span>
+          <span>✓ Bathtub</span>
+        </div>
+        <a href="{{ '/booking/' | relative_url }}" class="btn btn-outline">Check Availability</a>
+      </div>
+      <div style="flex: 1 1 500px;">
+        <div class="luxury-card-img-wrap" style="aspect-ratio: 16/10;">
+          <picture>
+            <source srcset="{{ '/assets/images/room-suite.webp' | relative_url }}" type="image/webp">
+            <img src="{{ '/assets/images/room-suite.jpg' | relative_url }}" alt="Premium Suite" loading="lazy">
+          </picture>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

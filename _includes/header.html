@@ -1,29 +1,35 @@
-<header class="header" id="masterHeader">
-  <div class="nav-container">
-    <a href="{{ '/' | relative_url }}" class="logo-box" aria-label="Varda Resort Homepage">
-      <span class="logo-title">VARDA RESORT</span>
-      <span class="logo-subtitle">& Restaurant &bull; {{ site.location }}</span>
-    </a>
+<header class="site-header" id="masterHeader">
+  <div class="container">
+    <div class="nav-inner">
+      
+      <a href="{{ '/' | relative_url }}" class="logo" aria-label="Varda Resort Homepage">
+        <span class="logo-main">VARDA</span>
+        <span class="logo-sub">Resort & Restaurant</span>
+      </a>
 
-    <nav aria-label="Main navigation">
-      <ul class="nav-menu" id="navMenu">
-        {% for item in site.data.navigation %}
-        <li>
-          {% assign first_char = item.url | slice: 0 %}
-          <a href="{% if first_char == '#' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}" class="nav-link{% if page.nav_key == item.key %} active{% endif %}">
-            {{ item.title }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-    </nav>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navMenu">
+          {% for item in site.data.navigation %}
+          <li>
+            {% assign first_char = item.url | slice: 0 %}
+            <a href="{% if first_char == '#' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}" class="nav-link{% if page.nav_key == item.key %} active{% endif %}">
+              {{ item.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
 
-    <a class="cta-gold-btn" href="{{ '/contact/' | relative_url }}">Book Now</a>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="{{ '/booking/' | relative_url }}">Book Now</a>
+      </div>
 
-    <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <button class="mobile-menu-btn" id="mobileToggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
   </div>
 </header>

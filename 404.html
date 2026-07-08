@@ -1,0 +1,21 @@
+---
+layout: default
+title: "404 - Page Not Found | Varda Resort"
+permalink: /404.html
+body_class: page-404
+hero_image: "/assets/images/hero-resort.webp"
+---
+
+<!-- Hero Section -->
+<section class="hero" style="min-height: 400px; height: 60vh;">
+  <picture>
+    <source srcset="{{ '/assets/images/hero-resort.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/hero-resort.jpg' | relative_url }}" alt="404 Page Not Found" class="hero-img" fetchpriority="high">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content text-center">
+    <h1 class="font-heading" style="font-size: 6rem; margin-bottom: 24px; color: var(--primary-gold);">404</h1>
+    <p class="text-muted" style="font-size: 1.2rem; margin-bottom: 32px;">We're sorry, but the page you are looking for does not exist or has been moved.</p>
+    <a href="{{ '/' | relative_url }}" class="btn btn-primary">Return to Homepage</a>
+  </div>
+</section>
