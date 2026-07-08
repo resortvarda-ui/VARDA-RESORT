@@ -1,0 +1,13 @@
+<section class="features-section">
+  <div class="features-grid">
+    {% for feature in site.data.features %}
+    <article class="feature-card">
+      <div class="feature-icon-wrapper">
+        {% include feature-icon.html icon=feature.icon %}
+      </div>
+      <h3 class="feature-title">{{ feature.title }}</h3>
+      <p class="feature-desc">{{ feature.description }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>

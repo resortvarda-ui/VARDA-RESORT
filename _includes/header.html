@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" id="masterHeader">
   <div class="nav-container">
     <a href="{{ '/' | relative_url }}" class="logo-box" aria-label="Varda Resort Homepage">
       <span class="logo-title">VARDA RESORT</span>
@@ -9,7 +9,8 @@
       <ul class="nav-menu" id="navMenu">
         {% for item in site.data.navigation %}
         <li>
-          <a href="{{ item.url | relative_url }}" class="nav-link{% if item.active %} active{% endif %}">
+          {% assign first_char = item.url | slice: 0 %}
+          <a href="{% if first_char == '#' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}" class="nav-link{% if page.nav_key == item.key %} active{% endif %}">
             {{ item.title }}
           </a>
         </li>
@@ -17,7 +18,7 @@
       </ul>
     </nav>
 
-    <button class="cta-gold-btn" type="button">Book Now</button>
+    <a class="cta-gold-btn" href="#contact">Book Now</a>
 
     <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false">
       <span></span>

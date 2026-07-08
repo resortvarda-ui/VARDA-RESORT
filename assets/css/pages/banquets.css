@@ -1,0 +1,1077 @@
+﻿/* ==========================================================================
+           1. MASTER DESIGN SYSTEM & VARIABLE REGISTRY (EXACT MATCH FROM WEDDINGS)
+           ========================================================================== */
+        :root {
+            --primary-gold: #C89B3C;
+            --accent-gold: #D4AF37;
+            --bg-black: #000000;
+            --bg-dark: #0A0A0A;
+            --bg-card: #121212;
+            --text-light: #FFFFFF;
+            --text-muted: #CCCCCC;
+            --text-dark: #777777;
+            --border-gold: rgba(200, 155, 60, 0.2);
+            --border-gold-hover: rgba(214, 175, 55, 0.6);
+            --glass-bg: rgba(10, 10, 10, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.04);
+            --font-heading: Georgia, 'Times New Roman', serif;
+            --font-body: Arial, Helvetica, sans-serif;
+            --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Architectural Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-black);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: var(--bg-black);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        button, input, select, textarea {
+            font-family: var(--font-body);
+            background: none;
+            border: none;
+            outline: none;
+            color: inherit;
+        }
+
+        /* Luxury Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-black);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+        }
+
+        /* Global Layout Systems */
+        .section-luxury-padding {
+            padding: 200px 8% 200px;
+        }
+
+        .gold-shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .gold-shine-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(200, 155, 60, 0.2), transparent);
+            transform: skewX(-30deg);
+            transition: none;
+        }
+        .gold-shine-effect:hover::after {
+            left: 150%;
+            transition: all 0.8s ease-in-out;
+        }
+
+        /* Premium Reveal Framework */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Editorial Typography Architecture */
+        .editorial-header {
+            max-width: 900px;
+            margin: 0 auto 120px;
+            text-align: center;
+        }
+        .editorial-header--booking {
+            margin-bottom: 70px;
+        }
+        .editorial-header .tagline {
+            font-size: 0.75rem;
+            letter-spacing: 0.6em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: block;
+            font-weight: 500;
+        }
+        .editorial-header .title {
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            line-height: 1.15;
+            text-transform: uppercase;
+        }
+        .editorial-header .title--booking {
+            font-size: 3.2rem;
+        }
+        .editorial-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--primary-gold);
+            margin: 40px auto 0;
+            opacity: 0.4;
+        }
+
+        /* ==========================================================================
+           2. HEADER & FIXED NAVIGATION (EXACTLY MATCHING WEDDINGS)
+           ========================================================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            padding: 30px 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        .header.scrolled {
+            background: rgba(5, 5, 5, 0.98);
+            padding: 18px 5%;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-box {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .logo-title {
+            font-family: var(--font-heading);
+            font-size: 1.7rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: var(--text-light);
+        }
+        .logo-subtitle {
+            font-size: 0.65rem;
+            letter-spacing: 0.4em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        .nav-link {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            position: relative;
+            padding: 8px 0;
+            color: var(--text-muted);
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent-gold);
+            transition: var(--transition-fast);
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .cta-gold-btn {
+            border: 1px solid var(--primary-gold);
+            color: var(--text-light);
+            padding: 12px 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .cta-gold-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--primary-gold);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: -1;
+        }
+        .cta-gold-btn:hover::before {
+            width: 101%;
+            height: 101%;
+        }
+        .cta-gold-btn:hover {
+            color: var(--bg-black);
+            box-shadow: 0 0 25px rgba(200, 155, 60, 0.3);
+        }
+
+        .btn-secondary-outline {
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--text-light);
+            padding: 14px 32px;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            display: inline-block;
+        }
+        .btn-secondary-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 7px;
+            z-index: 1001;
+            cursor: pointer;
+        }
+        .mobile-toggle span {
+            width: 26px;
+            height: 1.5px;
+            background-color: var(--text-light);
+            transition: var(--transition-fast);
+        }
+
+        /* ==========================================================================
+           3. HANDCRAFTED CONTENT AREA - LUXURY REDESIGN (BETWEEN NAV & FOOTER)
+           ========================================================================== */
+        
+        /* 1. CINEMATIC HERO */
+        .luxury-hero {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .luxury-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('../../images/banquets\ final\ bg.jpg');
+            background-position: center;
+            background-size: cover;
+            transform: scale(1.1);
+            animation: slowImageZoom 20s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            z-index: 1;
+        }
+        @keyframes slowImageZoom {
+            to { transform: scale(1); }
+        }
+        .luxury-hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1100px;
+            padding: 0 40px;
+            margin-top: 180px; /* Explicit structural restriction: no text near navbar */
+        }
+        .luxury-hero-tag {
+            font-size: 0.8rem;
+            letter-spacing: 0.6em;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+            display: block;
+            font-weight: 500;
+        }
+        .luxury-hero-title {
+            font-family: var(--font-heading);
+            font-size: 5.5rem;
+            font-weight: 300;
+            line-height: 1.15;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: editorialFadeUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+        }
+        .luxury-hero-subtitle {
+            font-size: 1.05rem;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            font-weight: 200;
+            max-width: 800px;
+            margin: 0 auto 55px;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: editorialFadeUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.7s;
+        }
+        .luxury-hero-actions {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: editorialFadeUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards 1s;
+        }
+        @keyframes editorialFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animated-scroll-indicator {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.65rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            opacity: 0.7;
+        }
+        .scroll-pill-line {
+            width: 1px;
+            height: 70px;
+            background: rgba(200,155,60,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .scroll-pill-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: var(--accent-gold);
+            animation: luxuryScrollDrop 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+        }
+        @keyframes luxuryScrollDrop {
+            0% { top: -30px; }
+            70%, 100% { top: 70px; }
+        }
+
+        /* 2. EDITORIAL INTRODUCTION */
+        .signature-intro {
+            background-color: var(--bg-black);
+        }
+        .editorial-wrapper {
+            max-width: 1650px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 140px;
+            align-items: center;
+        }
+        .editorial-text-pane {
+            padding-left: 20px;
+        }
+        .editorial-pre {
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: block;
+        }
+        .editorial-heading {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+        }
+        .editorial-paragraph {
+            font-size: 1rem;
+            line-height: 2;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 45px;
+            text-align: justify;
+        }
+        .editorial-image-frame {
+            position: relative;
+            overflow: hidden;
+        }
+        .editorial-inner-img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+        .editorial-image-frame:hover .editorial-inner-img {
+            transform: scale(1.04);
+        }
+
+        /* 3. LUXURY BANQUET VENUES (ALTERNATING MAPS) */
+        .banquet-spaces-section {
+            background-color: var(--bg-dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        .space-layout-row {
+            max-width: 1700px;
+            margin: 0 auto 200px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 120px;
+            align-items: center;
+        }
+        .space-layout-row:last-child {
+            margin-bottom: 0;
+        }
+        .space-layout-row.inverse-row {
+            grid-template-columns: 0.85fr 1.15fr;
+        }
+        .space-layout-row.inverse-row .space-media-block {
+            order: 2;
+        }
+        .space-media-block {
+            position: relative;
+            overflow: hidden;
+        }
+        .space-hero-img {
+            width: 100%;
+            height: 650px;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+        .space-layout-row:hover .space-hero-img {
+            transform: scale(1.03);
+        }
+        .space-details-block {
+            padding: 40px 0;
+        }
+        .space-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            letter-spacing: 0.02em;
+        }
+        .space-capacity {
+            font-size: 0.85rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            margin-bottom: 35px;
+            display: block;
+            font-weight: 500;
+        }
+        .space-description {
+            font-size: 0.95rem;
+            line-height: 1.95;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .space-features-list {
+            list-style: none;
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+        }
+        .space-features-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            letter-spacing: 0.05em;
+        }
+        .space-features-list li::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: var(--primary-gold);
+            transform: rotate(45deg);
+        }
+
+        /* 4. EXPERIENCES MAGAZINE SPREADS */
+        .experiences-section {
+            background-color: var(--bg-black);
+        }
+        .magazine-spread-grid {
+            max-width: 1700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 160px;
+        }
+        .spread-unit {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: center;
+        }
+        .spread-image-wrapper {
+            grid-column: span 7;
+            position: relative;
+            overflow: hidden;
+        }
+        .spread-image-wrapper img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+        .spread-text-wrapper {
+            grid-column: span 5;
+            padding: 60px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            z-index: 2;
+        }
+        .spread-unit:nth-child(even) .spread-image-wrapper {
+            grid-column: 6 / span 7;
+            order: 2;
+        }
+        .spread-unit:nth-child(even) .spread-text-wrapper {
+            grid-column: span 5;
+            order: 1;
+        }
+        .spread-unit:hover .spread-image-wrapper img {
+            transform: scale(1.05);
+        }
+        .spread-num {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            display: block;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .spread-title {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 0.03em;
+        }
+        .spread-desc {
+            font-size: 0.9rem;
+            line-height: 1.9;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* 5. WHY CHOOSE VARDA PREMIUM GRID */
+        .why-varda-section {
+            background-color: var(--bg-dark);
+            position: relative;
+        }
+        .luxury-matrix-grid {
+            max-width: 1700px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(200, 155, 60, 0.1);
+        }
+        .matrix-cell {
+            background: var(--bg-dark);
+            padding: 100px 60px;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+        .matrix-cell:hover {
+            background: #0F0F0F;
+        }
+        .matrix-cell-icon {
+            width: 36px;
+            height: 36px;
+            margin: 0 auto 35px;
+            fill: var(--primary-gold);
+            transition: var(--transition-fast);
+        }
+        .matrix-cell:hover .matrix-cell-icon {
+            transform: translateY(-5px);
+            fill: var(--accent-gold);
+        }
+        .matrix-cell-title {
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .matrix-cell-desc {
+            font-size: 0.9rem;
+            line-height: 1.85;
+            color: var(--text-dark);
+            font-weight: 300;
+            transition: var(--transition-fast);
+        }
+        .matrix-cell:hover .matrix-cell-desc {
+            color: var(--text-muted);
+        }
+
+        /* 6. LUXURY MASONRY GALLERY */
+        .luxury-gallery-section {
+            background-color: var(--bg-black);
+        }
+        .editorial-masonry {
+            max-width: 1700px;
+            margin: 0 auto;
+            columns: 3 450px;
+            column-gap: 40px;
+        }
+        .masonry-brick {
+            background: var(--bg-card);
+            margin-bottom: 40px;
+            break-inside: avoid;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .masonry-brick img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .masonry-hover-shield {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.88);
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            transition: var(--transition-fast);
+            z-index: 3;
+            border: 25px solid rgba(200, 155, 60, 0.03);
+        }
+        .brick-icon {
+            font-size: 1.2rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            letter-spacing: 0.2em;
+        }
+        .brick-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            letter-spacing: 0.04em;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        .masonry-brick:hover img {
+            transform: scale(1.05);
+        }
+        .masonry-brick:hover .masonry-hover-shield {
+            opacity: 1;
+        }
+
+        /* 7. GUEST STATISTICS */
+        .premium-stats-section {
+            background: #060606;
+            border-top: 1px solid rgba(255,255,255,0.02);
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+        }
+        .stats-editorial-flex {
+            max-width: 1700px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        .stat-numerical {
+            font-family: var(--font-heading);
+            font-size: 6.5rem;
+            font-weight: 300;
+            color: var(--primary-gold);
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* 8. CLIENT TESTIMONIALS */
+        .luxury-testimonials {
+            background-color: var(--bg-black);
+        }
+        .luxury-slider-viewport {
+            max-width: 1300px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .luxury-slider-track {
+            display: flex;
+            transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 300%;
+        }
+        .luxury-slide-block {
+            width: 33.3333%;
+            padding: 0 80px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .luxury-quote-glyph {
+            font-family: var(--font-heading);
+            font-size: 7rem;
+            color: rgba(200, 155, 60, 0.12);
+            line-height: 1;
+            margin-bottom: -15px;
+        }
+        .luxury-quote-text {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            line-height: 1.65;
+            color: var(--text-light);
+            margin-bottom: 45px;
+            font-weight: 300;
+        }
+        .luxury-quote-author {
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            font-weight: 500;
+        }
+        .luxury-quote-meta {
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            margin-top: 10px;
+            display: block;
+        }
+        .luxury-slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 70px;
+        }
+        .luxury-dot-item {
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        .luxury-dot-item.active {
+            background: var(--accent-gold);
+            transform: scale(2);
+        }
+
+        /* 9. LUXURY BOOKING EXPERIENCE */
+        .luxury-booking-wrapper {
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../../images/photo-1469371670807-013ccf25f16a.svg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .glass-editorial-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            padding: 100px 120px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+        }
+        .glass-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+        .span-grid-full {
+            grid-column: span 2;
+        }
+        .luxury-input-frame {
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition-fast);
+        }
+        .luxury-input-frame input, .luxury-input-frame select, .luxury-input-frame textarea {
+            width: 100%;
+            padding: 16px 0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        .luxury-input-frame textarea {
+            height: 120px;
+            resize: none;
+        }
+        .luxury-input-frame label {
+            position: absolute;
+            top: 16px;
+            left: 0;
+            font-size: 0.8rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            pointer-events: none;
+            transition: var(--transition-fast);
+        }
+        .luxury-input-frame input:focus ~ label, 
+        .luxury-input-frame input:valid ~ label, 
+        .luxury-input-frame select:focus ~ label, 
+        .luxury-input-frame select:valid ~ label, 
+        .luxury-input-frame textarea:focus ~ label, 
+        .luxury-input-frame textarea:valid ~ label {
+            top: -16px;
+            font-size: 0.65rem;
+            color: var(--primary-gold);
+        }
+        .luxury-input-frame:focus-within {
+            border-bottom-color: var(--primary-gold);
+        }
+        .luxury-input-frame select option {
+            background-color: #0A0A0A;
+            color: var(--text-light);
+        }
+        .form-action-center {
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        /* ==========================================================================
+           4. MASTER BRAND FOOTER (EXACT MATCH FROM WEDDINGS)
+           ========================================================================== */
+        .footer {
+            background-color: #050505;
+            border-top: 1px solid var(--border-gold);
+            padding: 100px 5% 40px;
+        }
+        .footer-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+        .footer-brand .logo-box {
+            margin-bottom: 25px;
+        }
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            font-weight: 300;
+            max-width: 320px;
+        }
+        .footer-column h4 {
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            font-weight: 300;
+        }
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+        .footer-info-text {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+        .footer-bottom {
+            max-width: 1800px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.03);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--text-dark);
+            font-weight: 300;
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        /* LIGHTBOX CORE STRUCTURAL WRAPPER */
+        .editorial-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .editorial-lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-window {
+            position: relative;
+            max-width: 85%;
+            max-height: 85%;
+        }
+        .lightbox-asset {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border: 1px solid var(--border-gold);
+        }
+        .lightbox-close-trigger {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           5. RESPONSIVE ARCHITECTURE BREAKPOINTS (EXACT MATCH WHERE REQUIRED)
+           ========================================================================== */
+        @media (max-width: 1500px) {
+            .luxury-hero-title { font-size: 4.5rem; }
+            .section-luxury-padding { padding: 150px 6% 150px; }
+            .editorial-wrapper, .space-layout-row { gap: 80px; }
+            .spread-text-wrapper { padding: 40px; }
+        }
+        @media (max-width: 1200px) {
+            .nav-menu, .nav-container > .cta-gold-btn { display: none; }
+            .mobile-toggle { display: flex; }
+            .editorial-wrapper, .space-layout-row, .space-layout-row.inverse-row { grid-template-columns: 1fr; gap: 60px; }
+            .space-layout-row.inverse-row .space-media-block { order: 0; }
+            .spread-unit, .spread-unit:nth-child(even) .spread-unit { display: flex; flex-direction: column; }
+            .spread-image-wrapper, .spread-text-wrapper { width: 100%; }
+            .luxury-matrix-grid, .stats-editorial-flex { grid-template-columns: repeat(2, 1fr); }
+            .footer-container { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            
+            .nav-menu.mobile-active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 320px;
+                height: 100vh;
+                background: #0A0A0A;
+                border-left: 1px solid var(--border-gold);
+                padding: 100px 50px;
+                gap: 30px;
+                z-index: 999;
+                box-shadow: -10px 0 40px rgba(0,0,0,0.8);
+                animation: slideNav 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+            @keyframes slideNav {
+                from { transform: translateX(100%); }
+                to { transform: translateX(0); }
+            }
+        }
+        @media (max-width: 768px) {
+            .luxury-hero-title { font-size: 2.8rem; }
+            .editorial-heading { font-size: 2.4rem; }
+            .space-title { font-size: 2.2rem; }
+            .editorial-header .title { font-size: 2.5rem; }
+            .luxury-matrix-grid, .stats-editorial-flex, .footer-container { grid-template-columns: 1fr; }
+            .space-features-list { grid-template-columns: 1fr; }
+            .glass-editorial-box { padding: 50px 30px; }
+            .glass-form-grid { grid-template-columns: 1fr; gap: 30px; }
+            .span-grid-full { grid-column: span 1; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+            .luxury-slide-block { padding: 0 20px; }
+            .luxury-quote-text { font-size: 1.6rem; }
+            .stat-numerical { font-size: 4.5rem; }
+        }
+

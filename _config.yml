@@ -10,9 +10,7 @@ lang: en
 location: Buxar, Bihar
 email: info@vardaresort.com
 phone: "+91 00000 00000"
-
-# Google Fonts
-google_fonts: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+address: Main Highway Crossing, Buxar, Bihar
 
 # Build settings
 markdown: kramdown

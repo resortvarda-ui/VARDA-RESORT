@@ -1,0 +1,934 @@
+﻿/* ==========================================================================
+           1. MASTER DESIGN SYSTEM & VARIABLE REGISTRY
+           ========================================================================== */
+        :root {
+            --primary-gold: #C89B3C;
+            --accent-gold: #D4AF37;
+            --bg-black: #000000;
+            --bg-dark: #0A0A0A;
+            --bg-card: #121212;
+            --text-light: #FFFFFF;
+            --text-muted: #CCCCCC;
+            --text-dark: #777777;
+            --border-gold: rgba(200, 155, 60, 0.2);
+            --border-gold-hover: rgba(214, 175, 55, 0.6);
+            --glass-bg: rgba(18, 18, 18, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.05);
+            --font-heading: Georgia, 'Times New Roman', serif;
+            --font-body: Arial, Helvetica, sans-serif;
+            --transition-smooth: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Architectural Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-black);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+            outline: none;
+        }
+
+        /* Luxury Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-black);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+        }
+
+        /* Global Structural Reusable Classes */
+        .section-padding {
+            padding: 120px 8% 120px;
+        }
+
+        .section-alt-bordered {
+            background-color: var(--bg-dark);
+            border-top: 1px solid var(--border-gold);
+        }
+
+        .gold-shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .gold-shine-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(200, 155, 60, 0.2), transparent);
+            transform: skewX(-30deg);
+            transition: none;
+        }
+        .gold-shine-effect:hover::after {
+            left: 150%;
+            transition: all 0.8s ease-in-out;
+        }
+
+        /* Scroll Reveal Structural States */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           2. HEADER & TRANSPARENT FIXED NAVIGATION
+           ========================================================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            padding: 30px 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        .header.scrolled {
+            background: rgba(5, 5, 5, 0.98);
+            padding: 18px 5%;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-box {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .logo-title {
+            font-family: var(--font-heading);
+            font-size: 1.7rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: var(--text-light);
+        }
+        .logo-subtitle {
+            font-size: 0.65rem;
+            letter-spacing: 0.4em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        .nav-link {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            position: relative;
+            padding: 8px 0;
+            color: var(--text-muted);
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent-gold);
+            transition: var(--transition-fast);
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .cta-gold-btn {
+            border: 1px solid var(--primary-gold);
+            color: var(--text-light);
+            padding: 12px 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+        }
+        .cta-gold-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--primary-gold);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: -1;
+        }
+        .cta-gold-btn:hover::before {
+            width: 101%;
+            height: 101%;
+        }
+        .cta-gold-btn:hover {
+            color: var(--bg-black);
+            box-shadow: 0 0 25px rgba(200, 155, 60, 0.3);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 7px;
+            z-index: 1001;
+        }
+        .mobile-toggle span {
+            width: 26px;
+            height: 1.5px;
+            background-color: var(--text-light);
+            transition: var(--transition-fast);
+        }
+
+        /* ==========================================================================
+           3. FULLSCREEN CINEMATIC HERO BANNER
+           ========================================================================== */
+        .hero-banner {
+            position: relative;
+            height: 90vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('../../images/rooms\ main\ background\ image.jpg');
+            background-position: center 40%;
+            background-size: cover;
+            transform: scale(1.05);
+            animation: cinematicZoom 10s forwards cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1;
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 100%);
+            z-index: 2;
+        }
+        .hero-banner-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1000px;
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+        .breadcrumb-trail {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+            display: block;
+            font-weight: 500;
+        }
+        .breadcrumb-trail a {
+            color: var(--text-muted);
+        }
+        .breadcrumb-trail a:hover {
+            color: var(--text-light);
+        }
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 5.5rem;
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: subpageFadeUp 1.2s forwards 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-subtitle {
+            font-size: 1.05rem;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: subpageFadeUp 1.2s forwards 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes cinematicZoom {
+            to { transform: scale(1); }
+        }
+        @keyframes subpageFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================================================
+           4. LUXURY ACCOMMODATION CATEGORIES (Grid Framework)
+           ========================================================================== */
+        .categories-grid {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+        .room-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            position: relative;
+            transition: var(--transition-smooth);
+            overflow: hidden;
+        }
+        .room-card-img-box {
+            position: relative;
+            height: 440px;
+            overflow: hidden;
+        }
+        .room-card-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .room-card-img--deluxe {
+            background-image: url('../../images/Deluxe Sanctum Room.jpg');
+        }
+
+        .room-card-img--executive {
+            background-image: url('../../images/photo-1590490360182-c33d57733427.svg');
+        }
+
+        .room-card-img--suite {
+            background-image: url('../../images/photo-1566665797739-1674de7a421a.svg');
+        }
+
+        .room-card-img--family {
+            background-image: url('../../images/photo-1505693416388-ac5ce068fe85.svg');
+        }
+        .room-card-img-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(18,18,18,0) 50%, rgba(18,18,18,1) 100%);
+        }
+        .room-card-meta {
+            position: absolute;
+            bottom: 25px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            gap: 25px;
+            z-index: 5;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 15px;
+        }
+        .room-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .room-card-meta svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--primary-gold);
+        }
+        .room-card-content {
+            padding: 40px;
+            position: relative;
+            z-index: 4;
+        }
+        .room-card-title {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin-bottom: 15px;
+        }
+        .room-card-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 35px;
+            height: 46px;
+            overflow: hidden;
+        }
+        .room-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
+        }
+        .room-card-price {
+            display: flex;
+            flex-direction: column;
+        }
+        .room-card-price .amt {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+        }
+        .room-card-price .lbl {
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            margin-top: 2px;
+        }
+        .room-card-actions {
+            display: flex;
+            gap: 15px;
+        }
+        .btn-secondary-outline {
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--text-light);
+            padding: 12px 22px;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+        .btn-secondary-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        /* Hover Dynamics */
+        .room-card:hover {
+            border-color: var(--border-gold-hover);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            transform: translateY(-5px);
+        }
+        .room-card:hover .room-card-img {
+            transform: scale(1.06);
+        }
+
+        /* ==========================================================================
+           5. ROOM AMENITIES & FEATURES MATRIX
+           ========================================================================== */
+        .features-section {
+            background-color: var(--bg-dark);
+            border-top: 1px solid var(--border-gold);
+            border-bottom: 1px solid var(--border-gold);
+        }
+        .center-heading-block {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 70px;
+        }
+        .center-heading-block .tagline {
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .center-heading-block .title {
+            font-family: var(--font-heading);
+            font-size: 3.2rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+        }
+        .features-matrix {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+        }
+        .feature-icon-card {
+            background: var(--bg-black);
+            border: 1px solid rgba(255,255,255,0.03);
+            padding: 45px 30px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            border-radius: 4px;
+        }
+        .feature-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 25px;
+        }
+        .feature-icon-wrapper svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--primary-gold);
+            transition: var(--transition-fast);
+        }
+        .feature-icon-card h3 {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+        .feature-icon-card:hover {
+            border-color: var(--primary-gold);
+            background: var(--bg-card);
+            transform: translateY(-5px);
+        }
+        .feature-icon-card:hover .feature-icon-wrapper svg {
+            transform: scale(1.1);
+            fill: var(--accent-gold);
+        }
+
+        /* ==========================================================================
+           6. FEATURED SIGNATURE SUITE PROMINENT SECTION
+           ========================================================================== */
+        .featured-suite-box {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+        }
+        .suite-media {
+            position: relative;
+            min-height: 550px;
+            overflow: hidden;
+        }
+        .suite-media-bg {
+            width: 100%;
+            height: 100%;
+            background-image: url('../../images/photo-1578683010236-d716f9a3f461.svg');
+            background-size: cover;
+            background-position: center;
+            transition: var(--transition-smooth);
+        }
+        .suite-content-interior {
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .suite-tag {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .suite-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+        .suite-desc {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 35px;
+        }
+        .suite-amenities-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px 30px;
+            margin-bottom: 45px;
+            list-style: none;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
+        }
+        .suite-amenities-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .suite-amenities-list li::before {
+            content: 'â™¦';
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+        .featured-suite-box:hover .suite-media-bg {
+            transform: scale(1.03);
+        }
+
+        /* ==========================================================================
+           7. LUXURY MASONRY-GRID CALL GALLERY & VANILLA LIGHTBOX
+           ========================================================================== */
+        .gallery-mosaic {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .mosaic-item {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.03);
+            cursor: pointer;
+        }
+        .mosaic-item.tall {
+            grid-row: span 2;
+            height: 660px;
+        }
+        .mosaic-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+        .mosaic-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition-fast);
+            padding: 30px;
+            text-align: center;
+        }
+        .mosaic-overlay span {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .mosaic-overlay h4 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+        .mosaic-item:hover img {
+            transform: scale(1.05);
+        }
+        .mosaic-item:hover .mosaic-overlay {
+            opacity: 1;
+        }
+
+        /* Dynamic Lightbox System */
+        .varda-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .varda-lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 85%;
+            max-height: 85%;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border: 1px solid var(--primary-gold);
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: var(--text-light);
+            font-size: 2rem;
+            font-weight: 200;
+        }
+
+        /* ==========================================================================
+           8. WHY STAY WITH US (VALUE PROPOSITION PROFILES)
+           ========================================================================== */
+        .proposition-section {
+            background-color: var(--bg-dark);
+            border-top: 1px solid var(--border-gold);
+        }
+        .proposition-grid {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .proposition-card {
+            background: var(--bg-black);
+            border: 1px solid var(--border-gold);
+            padding: 50px 40px;
+            transition: var(--transition-smooth);
+        }
+        .proposition-card .num {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: rgba(200, 155, 60, 0.3);
+            display: block;
+            margin-bottom: 20px;
+        }
+        .proposition-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: 0.02em;
+        }
+        .proposition-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+        .proposition-card:hover {
+            background: var(--bg-card);
+            border-color: var(--border-gold-hover);
+            transform: translateY(-5px);
+        }
+        .proposition-card:hover .num {
+            color: var(--accent-gold);
+        }
+
+        /* ==========================================================================
+           9. ARCHITECTURAL BOOKING CTA COMPARTMENT
+           ========================================================================== */
+        .booking-cta {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../../images/photo-1566073771259-6a8506099945.svg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 140px 5%;
+            text-align: center;
+        }
+        .cta-enclosure {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid var(--primary-gold);
+            padding: 80px 40px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 50px rgba(200, 155, 60, 0.1);
+        }
+        .cta-enclosure h2 {
+            font-family: var(--font-heading);
+            font-size: 3.8rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            margin-bottom: 20px;
+        }
+        .cta-enclosure p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        .cta-actions-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* ==========================================================================
+           10. GLOBAL luxury FOOTER DEPLOYMENT
+           ========================================================================== */
+        .footer {
+            background: var(--bg-black);
+            border-top: 1px solid var(--border-gold);
+            padding: 100px 5% 40px;
+        }
+        .footer-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr repeat(3, 1fr);
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+        .footer-desc p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-top: 25px;
+            max-width: 340px;
+            font-weight: 300;
+        }
+        .footer-column h4 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column ul li {
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .footer-column ul li a:hover {
+            color: var(--accent-gold);
+            padding-left: 6px;
+        }
+        .footer-bottom {
+            max-width: 1800px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--text-dark);
+            letter-spacing: 0.05em;
+        }
+
+        /* ==========================================================================
+           11. RESPONSIVE COMPONENT MATRIX BREAKPOINTS
+           ========================================================================== */
+        @media (max-width: 1500px) {
+            .features-matrix { grid-template-columns: repeat(3, 1fr); }
+            .hero-title { font-size: 4.5rem; }
+        }
+
+        @media (max-width: 1200px) {
+            .categories-grid { grid-template-columns: 1fr; gap: 40px; }
+            .featured-suite-box { grid-template-columns: 1fr; }
+            .suite-media { min-height: 400px; }
+            .gallery-mosaic { grid-template-columns: repeat(2, 1fr); }
+            .mosaic-item.tall { height: 320px; grid-row: auto; }
+            .proposition-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 991px) {
+            .header { padding: 22px 5%; }
+            .mobile-toggle { display: flex; }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100vh;
+                background: var(--bg-dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 35px;
+                transition: var(--transition-smooth);
+                border-left: 1px solid var(--border-gold);
+                z-index: 1000;
+            }
+            .nav-menu.active { right: 0; }
+            .nav-link { font-size: 0.95rem; }
+            .header .cta-gold-btn { display: none; }
+            .features-matrix { grid-template-columns: repeat(2, 1fr); }
+            .cta-enclosure h2 { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 650px) {
+            .hero-title { font-size: 2.8rem; }
+            .center-heading-block .title { font-size: 2.2rem; }
+            .room-card-title { font-size: 1.9rem; }
+            .room-card-footer { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .room-card-actions { width: 100%; }
+            .room-card-actions .cta-gold-btn { flex: 1; text-align: center; }
+            .features-matrix { grid-template-columns: 1fr; }
+            .suite-content-interior { padding: 40px 20px; }
+            .suite-title { font-size: 2.2rem; }
+            .suite-amenities-list { grid-template-columns: 1fr; }
+            .gallery-mosaic { grid-template-columns: 1fr; }
+            .proposition-grid { grid-template-columns: 1fr; }
+            .cta-actions-row { flex-direction: column; gap: 15px; }
+            .footer-container { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+

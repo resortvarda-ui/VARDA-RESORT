@@ -1,0 +1,35 @@
+<section class="hero-section">
+  <div class="slider-container" id="heroSlider">
+    {% for slide in site.data.hero_slides %}
+    <div class="slide{% if forloop.first %} active{% endif %}">
+      <div class="slide-image-wrapper">
+        <img class="slide-image" src="{{ slide.image | relative_url }}" alt="{{ slide.image_alt | default: slide.heading_highlight }}">
+      </div>
+      <div class="hero-content">
+        <span class="hero-tagline">{{ slide.tagline }}</span>
+        <h1 class="hero-heading">
+          {{ slide.heading_before }}
+          <span class="luxury-text">{{ slide.heading_highlight }}</span>
+          {{ slide.heading_after }}
+        </h1>
+        <p class="hero-description">{{ slide.description }}</p>
+        <div class="hero-btn-group">
+          {% assign primary_first = slide.primary_url | slice: 0 %}
+          {% assign secondary_first = slide.secondary_url | slice: 0 %}
+          <a class="cta-gold-btn" href="{% if primary_first == '#' %}{{ slide.primary_url }}{% else %}{{ slide.primary_url | relative_url }}{% endif %}">{{ slide.primary_btn }}</a>
+          <a class="btn-secondary" href="{% if secondary_first == '#' %}{{ slide.secondary_url }}{% else %}{{ slide.secondary_url | relative_url }}{% endif %}">{{ slide.secondary_btn }}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <button class="slider-arrow arrow-left" id="prevSlide" type="button" aria-label="Previous Slide">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
+  </button>
+  <button class="slider-arrow arrow-right" id="nextSlide" type="button" aria-label="Next Slide">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+
+  <div class="slider-pagination" id="sliderDots"></div>
+</section>

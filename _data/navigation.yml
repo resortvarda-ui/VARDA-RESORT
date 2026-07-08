@@ -1,17 +1,18 @@
-- title: Home
+- key: home
+  title: Home
   url: /
-  active: true
-- title: Rooms
-  url: "#rooms"
-- title: Restaurant
-  url: "#restaurant"
-- title: Weddings
-  url: "#weddings"
-- title: Banquet
-  url: "#banquet"
-- title: Gallery
-  url: "#gallery"
-- title: About Us
-  url: "#about"
-- title: Contact
+- key: rooms
+  title: Rooms
+  url: /rooms/
+- key: restaurant
+  title: Restaurant
+  url: /restaurant/
+- key: weddings
+  title: Weddings
+  url: /weddings/
+- key: banquets
+  title: Banquets
+  url: /banquets/
+- key: contact
+  title: Contact
   url: "#contact"
