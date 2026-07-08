@@ -1,0 +1,835 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --contact-font-heading: 'Cormorant Garamond', serif;
+    --contact-font-body: 'Montserrat', sans-serif;
+    --contact-gold: #C89B3C;
+    --contact-accent-gold: #D4AF37;
+    --contact-black: #000000;
+    --contact-card: #0F0F0F;
+    --contact-text: #FFFFFF;
+    --contact-muted: #BBBBBB;
+    --glass-bg: rgba(15, 15, 15, 0.6);
+    --glass-border: rgba(200, 155, 60, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --transition-cinematic: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-page {
+    background-color: var(--contact-black);
+    color: var(--contact-text);
+    font-family: var(--contact-font-body);
+}
+
+.contact-page h1, .contact-page h2, .contact-page h3, .contact-page h4, .contact-page .editorial-quote {
+    font-family: var(--contact-font-heading);
+}
+
+/* Common Section Padding (Massive White Space) */
+section {
+    padding: 120px 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 1. Full Screen Cinematic Hero */
+.contact-hero {
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.contact-hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 120%;
+    background: url('/assets/images/photo-1582719508461-905c673771fd.svg') no-repeat center center/cover;
+    background-image: url('https://images.unsplash.com/photo-1542314831-c53cd4b85ca4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'); /* Using real unsplash for a luxury resort feel as placeholder */
+    transform: translateY(0);
+    /* Basic parallax handled softly */
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+    z-index: 2;
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+}
+
+.hero-subtitle {
+    color: var(--contact-accent-gold);
+    font-size: 0.9rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.1;
+    font-weight: 300;
+    color: var(--contact-text);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.7;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.mouse {
+    width: 24px;
+    height: 40px;
+    border: 1px solid var(--contact-gold);
+    border-radius: 12px;
+    position: relative;
+}
+
+.wheel {
+    width: 2px;
+    height: 6px;
+    background: var(--contact-gold);
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 1.5s infinite;
+}
+
+.scroll-indicator span {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--contact-muted);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 10px); }
+}
+@keyframes scrollWheel {
+    0% { top: 6px; opacity: 1; }
+    100% { top: 20px; opacity: 0; }
+}
+
+/* 2. Editorial Welcome */
+.editorial-welcome {
+    text-align: center;
+    background: var(--contact-black);
+}
+
+.editorial-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.editorial-quote {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--contact-text);
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.editorial-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--contact-muted);
+    font-weight: 300;
+}
+
+.elegant-divider {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--contact-gold), transparent);
+    margin: 60px auto 0;
+}
+
+/* 3. Luxury Contact Experience */
+.luxury-contact-experience {
+    background: var(--contact-black);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.glass-contact-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    padding: 50px 40px;
+    text-align: center;
+    border-radius: 4px;
+    transition: var(--transition-cinematic);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-contact-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
+    transform: skewX(-20deg);
+    transition: var(--transition-cinematic);
+}
+
+.glass-contact-item:hover::before {
+    left: 150%;
+    transition: left 0.8s ease-in-out;
+}
+
+.glass-contact-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--contact-accent-gold);
+    box-shadow: 0 20px 40px rgba(200, 155, 60, 0.08);
+}
+
+.item-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 25px;
+    color: var(--contact-gold);
+}
+
+.glass-contact-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.glass-contact-item p {
+    color: var(--contact-muted);
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+}
+
+.hover-link {
+    color: var(--contact-accent-gold);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.hover-link::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0; width: 0; height: 1px;
+    background: var(--contact-accent-gold);
+    transition: width 0.4s ease;
+}
+
+.hover-link:hover::after {
+    width: 100%;
+}
+
+/* 4. Ultra Premium Reservation Form */
+.reservation-section {
+    background: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+    position: relative;
+}
+
+.reservation-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.form-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    padding: 80px;
+    border-radius: 8px;
+    box-shadow: var(--glass-shadow);
+}
+
+.form-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.luxury-form .input-row {
+    display: flex;
+    gap: 40px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 40px;
+    flex: 1;
+}
+
+.luxury-form input, .luxury-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 0;
+    color: var(--contact-text);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition-cinematic);
+    font-family: var(--contact-font-body);
+}
+
+.luxury-form textarea {
+    resize: none;
+}
+
+.luxury-form label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: var(--contact-muted);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.luxury-form input:focus ~ label,
+.luxury-form textarea:focus ~ label,
+.luxury-form label.active {
+    top: -20px;
+    font-size: 0.75rem;
+    color: var(--contact-accent-gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.animated-border {
+    position: absolute;
+    bottom: 0; left: 0; width: 0; height: 1px;
+    background: var(--contact-accent-gold);
+    transition: width 0.5s ease;
+}
+
+.luxury-form input:focus ~ .animated-border,
+.luxury-form textarea:focus ~ .animated-border {
+    width: 100%;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    font-family: var(--contact-font-body);
+}
+
+/* 5. Interactive Resort Information */
+.resort-information {
+    background: var(--contact-card);
+    text-align: center;
+}
+
+.section-heading {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.info-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+}
+
+.info-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px; top: 0; bottom: 0; width: 1px;
+    background: rgba(200, 155, 60, 0.3);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 50px;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.time-marker {
+    position: absolute;
+    left: 11px; top: 5px;
+    width: 9px; height: 9px;
+    background: var(--contact-accent-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--contact-accent-gold);
+    transition: transform 0.4s ease;
+}
+
+.timeline-item:hover .time-marker {
+    transform: scale(1.5);
+}
+
+.info-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--contact-accent-gold);
+    font-weight: 400;
+}
+
+.info-content p {
+    color: var(--contact-muted);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* 6. Location Experience */
+.location-experience {
+    padding: 120px 0; /* Full bleed */
+    background: var(--contact-black);
+}
+
+.split-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.location-image, .location-details {
+    flex: 1;
+    min-width: 400px;
+}
+
+.location-image {
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-img-bg {
+    width: 100%; height: 100%;
+    background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') center/cover;
+    transition: transform 1.5s ease;
+}
+
+.location-image:hover .location-img-bg {
+    transform: scale(1.05);
+}
+
+.location-details {
+    padding: 0 8%;
+}
+
+.location-details h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.location-desc {
+    color: var(--contact-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.distance-list {
+    list-style: none;
+    margin-bottom: 50px;
+}
+
+.distance-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: var(--contact-muted);
+}
+
+.distance-list li span:last-child {
+    color: var(--contact-accent-gold);
+}
+
+.route-btn {
+    font-family: var(--contact-font-body);
+}
+
+.map-container {
+    padding: 60px 5% 0;
+}
+
+.glass-frame {
+    height: 500px;
+    border-radius: 4px;
+    border: 1px solid var(--glass-border);
+    padding: 10px;
+    background: var(--glass-bg);
+}
+
+.glass-frame iframe {
+    border-radius: 2px;
+    filter: grayscale(80%) contrast(1.2) invert(90%) hue-rotate(180deg);
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+.glass-frame:hover iframe {
+    filter: grayscale(20%) contrast(1) invert(90%) hue-rotate(180deg);
+    opacity: 1;
+}
+
+/* 7. Why Guests Love Varda */
+.guest-testimonials {
+    background: var(--contact-card);
+    text-align: center;
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-slide {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: var(--transition-cinematic);
+    pointer-events: none;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    position: relative;
+}
+
+.quote-mark {
+    font-family: var(--contact-font-heading);
+    font-size: 6rem;
+    color: var(--contact-gold);
+    line-height: 0.5;
+    opacity: 0.3;
+    margin-bottom: 20px;
+}
+
+.review-text {
+    font-family: var(--contact-font-heading);
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.4;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.reviewer {
+    color: var(--contact-accent-gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.slider-controls button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--contact-text);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: var(--transition-cinematic);
+}
+
+.slider-controls button:hover {
+    border-color: var(--contact-accent-gold);
+    color: var(--contact-accent-gold);
+    background: rgba(200, 155, 60, 0.1);
+}
+
+/* 8. Luxury FAQ */
+.luxury-faq {
+    background: var(--contact-black);
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--contact-text);
+    font-family: var(--contact-font-heading);
+    font-size: 1.6rem;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--contact-accent-gold);
+}
+
+.faq-question .icon {
+    font-family: var(--contact-font-body);
+    font-weight: 300;
+    font-size: 2rem;
+    color: var(--contact-gold);
+    transition: transform 0.4s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-answer p {
+    padding-bottom: 30px;
+    color: var(--contact-muted);
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-item.active .faq-question .icon {
+    transform: rotate(45deg);
+}
+
+/* 9. Instagram Luxury Gallery */
+.instagram-gallery {
+    padding: 0;
+    background: var(--contact-black);
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: flex;
+    width: 100%;
+}
+
+.gallery-item {
+    flex: 1;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+    filter: brightness(0.8);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(200, 155, 60, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.gallery-item .overlay span {
+    color: var(--contact-black);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-family: var(--contact-font-body);
+    background: var(--contact-text);
+    padding: 10px 20px;
+    border-radius: 2px;
+    transform: translateY(20px);
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .overlay span {
+    transform: translateY(0);
+}
+
+/* 10. Grand Final CTA */
+.grand-final-cta {
+    text-align: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1542314831-c53cd4b85ca4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+    position: relative;
+}
+
+.grand-final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--contact-black) 0%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+}
+
+#particles-js {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+}
+
+.cta-content h2 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Reveal Animation Class */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: var(--transition-cinematic);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .luxury-form .input-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .split-layout {
+        flex-direction: column;
+    }
+    .location-image, .location-details {
+        width: 100%;
+        min-width: unset;
+    }
+    .location-image {
+        height: 400px;
+    }
+    .location-details {
+        padding: 60px 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .form-container {
+        padding: 40px 20px;
+    }
+    .gallery-track {
+        flex-wrap: wrap;
+    }
+    .gallery-item {
+        flex: 1 1 50%;
+        height: 300px;
+    }
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cta-actions a {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%;
+        height: 250px;
+    }
+    .review-text {
+        font-size: 1.5rem;
+    }
+}
