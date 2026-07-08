@@ -3,45 +3,134 @@ layout: default
 title: "Book Your Stay | Varda Resort"
 permalink: /booking/
 body_class: page-booking
-hero_image: "/assets/images/v4.webp"
+hero_image: "https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?auto=format&fit=crop&q=80&w=1920"
 ---
 
-<!-- Hero Section -->
-<section class="hero" style="min-height: 400px; height: 50vh;">
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero hero-half">
   <picture>
-    <source srcset="{{ '/assets/images/v4.webp' | relative_url }}" type="image/webp">
-    <img src="{{ '/assets/images/v4.jpg' | relative_url }}" alt="Book Varda Resort" class="hero-img" fetchpriority="high">
+    <source srcset="{{ "https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+    <img src="{{ "https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Varda Resort luxury view" class="hero-img" fetchpriority="high">
   </picture>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Reserve Your Sanctuary</h1>
-    <span class="hero-subtitle">Begin your journey</span>
+    <span class="hero-label">Reservations</span>
+    <h1 class="hero-title">Reserve Your Sanctuary</h1>
+    <p class="hero-subtitle">Begin your journey</p>
   </div>
 </section>
 
-<section class="section-padding">
-  <div class="container" style="max-width: 600px;">
-    <div class="glass-panel" style="padding: 40px; border-radius: 4px;">
-      <form action="#" method="POST">
-        <div style="margin-bottom: 24px;">
-          <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--text-muted);">Check-in Date</label>
-          <input type="date" required style="width: 100%; padding: 16px; background: rgba(0,0,0,0.5); border: 1px solid var(--glass-border); color: var(--text-light); color-scheme: dark;">
+<!-- ════════════════ BOOKING FORM ════════════════ -->
+<section class="section">
+  <div class="container-narrow reveal">
+    <div class="section-header text-center">
+      <span class="label-luxury">Book Now</span>
+      <h2 class="heading-section">Plan Your <span class="text-gold">Perfect Stay</span></h2>
+      <div class="gold-line-center"></div>
+      <p class="text-body text-muted" style="max-width: 520px; margin: 0 auto;">
+        Complete the form below and our concierge team will confirm your reservation within 24 hours.
+      </p>
+    </div>
+
+    <div class="glass-card" style="padding: 2.5rem; max-width: 640px; margin: 0 auto;">
+      <form id="booking-form" action="#" method="POST">
+        <div class="grid-2" style="gap: 1.5rem;">
+          <!-- Check-in -->
+          <div class="form-group">
+            <label class="form-label" for="checkin">Check-in Date</label>
+            <input type="date" id="checkin" name="checkin" class="form-input" required>
+          </div>
+          <!-- Check-out -->
+          <div class="form-group">
+            <label class="form-label" for="checkout">Check-out Date</label>
+            <input type="date" id="checkout" name="checkout" class="form-input" required>
+          </div>
         </div>
-        <div style="margin-bottom: 24px;">
-          <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--text-muted);">Check-out Date</label>
-          <input type="date" required style="width: 100%; padding: 16px; background: rgba(0,0,0,0.5); border: 1px solid var(--glass-border); color: var(--text-light); color-scheme: dark;">
+
+        <div class="grid-2" style="gap: 1.5rem; margin-top: 1.5rem;">
+          <!-- Room Type -->
+          <div class="form-group">
+            <label class="form-label" for="room-type">Room Type</label>
+            <select id="room-type" name="room_type" class="form-select" required>
+              <option value="" disabled selected>Select a room</option>
+              <option value="deluxe">Deluxe Room</option>
+              <option value="premium-suite">Premium Suite</option>
+              <option value="royal-suite">Royal Suite</option>
+              <option value="presidential">Presidential Suite</option>
+            </select>
+          </div>
+          <!-- Guests -->
+          <div class="form-group">
+            <label class="form-label" for="guests">Number of Guests</label>
+            <select id="guests" name="guests" class="form-select" required>
+              <option value="" disabled selected>Select guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5+ Guests</option>
+            </select>
+          </div>
         </div>
-        <div style="margin-bottom: 32px;">
-          <label style="display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--text-muted);">Guests</label>
-          <select required style="width: 100%; padding: 16px; background: rgba(0,0,0,0.5); border: 1px solid var(--glass-border); color: var(--text-light);">
-            <option value="1">1 Adult</option>
-            <option value="2" selected>2 Adults</option>
-            <option value="3">3 Adults</option>
-            <option value="4">4 Adults</option>
-          </select>
+
+        <!-- Full Name -->
+        <div class="form-group" style="margin-top: 1.5rem;">
+          <label class="form-label" for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full_name" class="form-input" placeholder="Enter your full name" required>
         </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Check Availability</button>
+
+        <!-- Email -->
+        <div class="form-group" style="margin-top: 1.5rem;">
+          <label class="form-label" for="email">Email Address</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group" style="margin-top: 1.5rem;">
+          <label class="form-label" for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX">
+        </div>
+
+        <!-- Special Requests -->
+        <div class="form-group" style="margin-top: 1.5rem;">
+          <label class="form-label" for="requests">Special Requests</label>
+          <textarea id="requests" name="special_requests" class="form-input" rows="4" placeholder="Any special requirements or preferences..."></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center" style="margin-top: 2rem;">
+          <button type="submit" class="btn btn-gold" style="width: 100%; max-width: 320px;">Confirm Reservation</button>
+        </div>
       </form>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ INFO ════════════════ -->
+<section class="section section-dark">
+  <div class="container reveal">
+    <div class="grid-3 stagger">
+      <div class="glass-card" style="padding: 2rem; text-align: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <h3 class="heading-card">Check-in: 2:00 PM</h3>
+        <p class="text-body text-muted">Early check-in subject to availability</p>
+      </div>
+      <div class="glass-card" style="padding: 2rem; text-align: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h3 class="heading-card">Free Cancellation</h3>
+        <p class="text-body text-muted">Cancel up to 48 hours before arrival</p>
+      </div>
+      <div class="glass-card" style="padding: 2rem; text-align: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+        </svg>
+        <h3 class="heading-card">Secure Payment</h3>
+        <p class="text-body text-muted">256-bit SSL encrypted transactions</p>
+      </div>
     </div>
   </div>
 </section>

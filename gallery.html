@@ -3,31 +3,96 @@ layout: default
 title: "Gallery | Varda Resort"
 permalink: /gallery/
 body_class: page-gallery
-hero_image: "/assets/images/v2.webp"
+hero_image: "https://images.unsplash.com/photo-1551882547-ff40c0d129df?auto=format&fit=crop&q=80&w=1920"
 ---
 
-<!-- Hero Section -->
-<section class="hero" style="min-height: 400px; height: 50vh;">
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero hero-half">
   <picture>
-    <source srcset="{{ '/assets/images/v2.webp' | relative_url }}" type="image/webp">
-    <img src="{{ '/assets/images/v2.jpg' | relative_url }}" alt="Varda Resort Gallery" class="hero-img" fetchpriority="high">
+    <source srcset="{{ "https://images.unsplash.com/photo-1551882547-ff40c0d129df?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+    <img src="{{ "https://images.unsplash.com/photo-1551882547-ff40c0d129df?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Varda Resort gallery" class="hero-img" fetchpriority="high">
   </picture>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Our Gallery</h1>
-    <span class="hero-subtitle">A glimpse into luxury</span>
+    <span class="hero-label">Visual Journey</span>
+    <h1 class="hero-title">Gallery</h1>
+    <p class="hero-subtitle">A glimpse into luxury</p>
   </div>
 </section>
 
-<section class="section-padding">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;">
-      <img src="{{ '/assets/images/hero-resort.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
-      <img src="{{ '/assets/images/room-deluxe.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
-      <img src="{{ '/assets/images/room-suite.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
-      <img src="{{ '/assets/images/restaurant-main.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
-      <img src="{{ '/assets/images/wedding-main.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
-      <img src="{{ '/assets/images/banquet-main.jpg' | relative_url }}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+<!-- ════════════════ GALLERY ════════════════ -->
+<section class="section">
+  <div class="container reveal">
+    <div class="section-header text-center">
+      <span class="label-luxury">Explore Varda</span>
+      <h2 class="heading-section">Moments of <span class="text-gold">Elegance</span></h2>
+      <div class="gold-line-center"></div>
+    </div>
+
+    <div class="masonry-grid stagger">
+      <!-- Image 1 -->
+      <div class="masonry-item" data-lightbox="gallery" data-title="The Grand Entrance">
+        <picture>
+          <source srcset="{{ "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+          <img src="{{ "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="The grand entrance of Varda Resort" loading="lazy">
+        </picture>
+      </div>
+      <!-- Image 2 -->
+      <div class="masonry-item" data-lightbox="gallery" data-title="Deluxe Room">
+        <picture>
+          <source srcset="{{ "https://images.unsplash.com/photo-1582719478250-c89d14c10122?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+          <img src="{{ "https://images.unsplash.com/photo-1582719478250-c89d14c10122?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Deluxe room interior" loading="lazy">
+        </picture>
+      </div>
+      <!-- Image 3 -->
+      <div class="masonry-item" data-lightbox="gallery" data-title="Premium Suite">
+        <picture>
+          <source srcset="{{ "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+          <img src="{{ "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Premium suite with panoramic views" loading="lazy">
+        </picture>
+      </div>
+      <!-- Image 4 -->
+      <div class="masonry-item" data-lightbox="gallery" data-title="Fine Dining">
+        <picture>
+          <source srcset="{{ "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+          <img src="{{ "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Fine dining restaurant" loading="lazy">
+        </picture>
+      </div>
+      <!-- Image 5 -->
+      <div class="masonry-item" data-lightbox="gallery" data-title="Wedding Celebration">
+        <picture>
+          <source srcset="{{ "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+          <img src="{{ "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Wedding celebration at Varda" loading="lazy">
+        </picture>
+      </div>
+      <!-- Image 6 -->
+      <div class="masonry-item" data-lightbox="gallery" data-title="Banquet Hall">
+        <picture>
+          <source srcset="{{ "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+          <img src="{{ "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Grand banquet hall" loading="lazy">
+        </picture>
+      </div>
+      <!-- Image 7 -->
+      <div class="masonry-item" data-lightbox="gallery" data-title="Pool & Spa">
+        <picture>
+          <source srcset="{{ "https://images.unsplash.com/photo-1542314831-c6a4d14d837e?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+          <img src="{{ "https://images.unsplash.com/photo-1542314831-c6a4d14d837e?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Infinity pool and spa area" loading="lazy">
+        </picture>
+      </div>
+      <!-- Image 8 -->
+      <div class="masonry-item" data-lightbox="gallery" data-title="Resort Grounds">
+        <picture>
+          <source srcset="{{ "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+          <img src="{{ "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Lush resort grounds" loading="lazy">
+        </picture>
+      </div>
+      <!-- Image 9 -->
+      <div class="masonry-item" data-lightbox="gallery" data-title="Sunset View">
+        <picture>
+          <source srcset="{{ "https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
+          <img src="{{ "https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="Sunset view from the resort" loading="lazy">
+        </picture>
+      </div>
     </div>
   </div>
 </section>

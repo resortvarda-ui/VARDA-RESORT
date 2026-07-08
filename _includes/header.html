@@ -1,8 +1,7 @@
 <header class="site-header" id="masterHeader">
   <div class="container">
     <div class="nav-inner">
-      
-      <a href="{{ '/' | relative_url }}" class="logo" aria-label="Varda Resort Homepage">
+      <a href="/" class="logo" aria-label="Varda Resort Homepage">
         <span class="logo-main">VARDA</span>
         <span class="logo-sub">Resort & Restaurant</span>
       </a>
@@ -11,8 +10,7 @@
         <ul class="nav-links" id="navMenu">
           {% for item in site.data.navigation %}
           <li>
-            {% assign first_char = item.url | slice: 0 %}
-            <a href="{% if first_char == '#' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}" class="nav-link{% if page.nav_key == item.key %} active{% endif %}">
+            <a href="{{ item.url | relative_url }}" class="nav-link {% if page.nav_key == item.key %}active{% endif %}">
               {{ item.title }}
             </a>
           </li>
@@ -21,15 +19,15 @@
       </nav>
 
       <div class="header-cta">
-        <a class="btn btn-primary" href="{{ '/booking/' | relative_url }}">Book Now</a>
+        <a href="/booking/" class="btn btn-gold"><span>Book Now</span></a>
       </div>
 
-      <button class="mobile-menu-btn" id="mobileToggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false">
+      <button class="mobile-menu-btn" id="mobileToggle" type="button"
+              aria-label="Toggle Navigation Menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
     </div>
   </div>
 </header>
