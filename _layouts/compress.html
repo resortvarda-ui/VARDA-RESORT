@@ -1,0 +1,4 @@
+---
+layout: null
+---
+{% capture content %}{{ content | strip_newlines | replace: '    ', ' ' | replace: '   ', ' ' | replace: '  ', ' ' }}{% endcapture %}{{ content }}
