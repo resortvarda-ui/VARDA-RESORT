@@ -147,12 +147,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .heading-display {
-  font-size: clamp(3rem, 6vw, 6rem);
+  font-size: clamp(2.5rem, 6vw, 6rem);
   letter-spacing: -0.02em;
 }
 
 .heading-section {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
   letter-spacing: -0.01em;
 }
 
@@ -507,7 +507,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 40px;
+  padding: 14px 32px;
+  min-height: 48px;
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.2em;
@@ -1129,7 +1130,7 @@ textarea.form-input {
     gap: 40px;
     transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   }
-  .nav-links.active { right: 0; }
+  .nav-links.active { right: 0; overflow-y: auto; padding-top: 100px; padding-bottom: 50px; }
   .nav-links .nav-link {
     font-size: 1.2rem;
     letter-spacing: 3px;
@@ -1480,6 +1481,7 @@ textarea.form-input {
   .split-content { padding: var(--space-xl) 5%; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
   .section { padding: var(--space-2xl) 0; }
+  .hero-title { font-size: clamp(3rem, 7vw, 4.5rem); }
 }
 
 @media (max-width: 768px) {
@@ -1489,14 +1491,48 @@ textarea.form-input {
   .stats-bar { grid-template-columns: 1fr 1fr; }
   .masonry-grid { grid-template-columns: 1fr 1fr; }
   .masonry-item:nth-child(1) { grid-row: span 1; }
-  .hero-title { font-size: clamp(2rem, 8vw, 3.5rem); }
-  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+  .hero-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 400px; margin: 0 auto; }
+  .btn { width: 100%; text-align: center; }
   .section { padding: var(--space-xl) 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  
+  /* Ensure forms are full width */
+  .form-group, .form-input, .form-select, textarea.form-input { width: 100%; }
+  
+  /* Prevent floating widgets from covering footer */
+  body { padding-bottom: 80px; }
 }
 
 @media (max-width: 480px) {
   .masonry-grid { grid-template-columns: 1fr; }
   .stats-bar { grid-template-columns: 1fr; }
+  .hero-title { font-size: clamp(2rem, 10vw, 2.5rem); }
+  .hero-subtitle { font-size: 1rem; }
+  
+  /* Fix padding for very small screens */
+  .container, .container-narrow { padding: 0 20px; }
+  .split-content { padding: var(--space-lg) 20px; }
+  
+  /* Ensure testimonials wrap well */
+  .testimonial-quote { font-size: 1.1rem; }
+}
+
+/* Utilities for grids replacing inline styles */
+.grid-3-2 { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; position: relative; }
+@media (min-width: 992px) {
+  .grid-3-2 { grid-template-columns: 3fr 2fr; gap: 0; }
+}
+
+.ml-neg-100 { margin-left: 0; z-index: 10; position: relative; }
+@media (min-width: 992px) {
+  .ml-neg-100 { margin-left: -100px; }
+}
+
+.h-600 { height: 350px; width: 100%; }
+@media (min-width: 992px) {
+  .h-600 { height: 600px; }
 }
 
 /* ==========================================================================
@@ -1504,7 +1540,7 @@ textarea.form-input {
    ========================================================================== */
 .floating-widgets {
   position: fixed;
-  bottom: var(--space-md);
+  bottom: calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
   right: var(--space-md);
   display: flex;
   flex-direction: column;
