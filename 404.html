@@ -9,8 +9,8 @@ hero_image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=f
 <!-- Hero Section -->
 <section class="hero" style="min-height: 400px; height: 60vh;">
   <picture>
-    <source srcset="{{ "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1920" | relative_url }}" type="image/webp">
-    <img src="{{ "https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=1920" | relative_url }}" alt="404 Page Not Found" class="hero-img" fetchpriority="high" srcset="{{  480w, {{  800w, {{  1200w, {{  1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw">
+    <source srcset="https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="404 Page Not Found" fetchpriority="high">
   </picture>
   <div class="hero-overlay"></div>
   <div class="hero-content text-center">
