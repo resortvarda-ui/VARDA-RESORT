@@ -3,7 +3,7 @@
     {% for slide in site.data.hero_slides %}
     <div class="slide{% if forloop.first %} active{% endif %}">
       <div class="slide-image-wrapper">
-        <img class="slide-image" src="{{ slide.image | relative_url }}" alt="{{ slide.image_alt | default: slide.heading_highlight }}">
+        <img loading="lazy" class="slide-image" src="{{ slide.image | relative_url }}" alt="{{ slide.image_alt | default: slide.heading_highlight }}">
       </div>
       <div class="hero-content">
         <span class="hero-tagline">{{ slide.tagline }}</span>
