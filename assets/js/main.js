@@ -38,15 +38,9 @@
     toggle.addEventListener('click', function () {
       var open = !nav.classList.contains('active');
       nav.classList.toggle('active', open);
+      toggle.classList.toggle('active', open);
       toggle.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
-
-      var spans = toggle.querySelectorAll('span');
-      if (spans.length >= 3) {
-        spans[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : 'none';
-        spans[1].style.opacity = open ? '0' : '1';
-        spans[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : 'none';
-      }
     });
 
     nav.querySelectorAll('.nav-link').forEach(function (link) {

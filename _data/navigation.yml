@@ -4,21 +4,21 @@
 - title: Rooms
   url: /rooms/
   key: rooms
-- title: Dining
+- title: Restaurant
   url: /restaurant/
   key: restaurant
 - title: Weddings
   url: /weddings/
   key: weddings
-- title: Banquets
+- title: Banquet
   url: /banquets/
-  key: banquets
+  key: banquet
 - title: Gallery
   url: /gallery/
   key: gallery
-- title: Offers
-  url: /offers/
-  key: offers
+- title: About Us
+  url: /about/
+  key: about
 - title: Contact
   url: /contact/
   key: contact
