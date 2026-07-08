@@ -25,7 +25,7 @@ layout: compress
   {% endif %}
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   {% for stylesheet in page.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | relative_url }}">
   {% endfor %}
@@ -95,7 +95,7 @@ layout: compress
   </div>
 
   <!-- Scripts -->
-  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   {% for script in page.scripts %}
   <script src="{{ script | relative_url }}" defer></script>
   {% endfor %}
