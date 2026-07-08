@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grand Dining Room & Lounge | Varda Resort, Buxar</title>
+    <meta name="description" content="Immerse yourself in an elite fine dining experience at Varda Resort. Discover multi-cuisine masterpieces, chef signatures, and private ambient lounges.">
+    
+    <!-- Premium Google Fonts Portfolio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. CORE DESIGN SYSTEM & LOGISTICAL VARIABLE REGISTRY
+           ========================================================================== */
+        :root {
+            --primary-gold: #C89B3C;
+            --accent-gold: #D4AF37;
+            --bg-black: #000000;
+            --bg-dark: #0A0A0A;
+            --bg-card: #111111;
+            --text-light: #FFFFFF;
+            --text-muted: #BBBBBB;
+            --text-dark: #666666;
+            --border-gold: rgba(200, 155, 60, 0.15);
+            --border-gold-hover: rgba(214, 175, 55, 0.6);
+            --glass-bg: rgba(10, 10, 10, 0.75);
+            --glass-border: rgba(200, 155, 60, 0.2);
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Architectural Resets */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-black);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
+        button, input, select, textarea { font-family: var(--font-body); background: none; border: none; outline: none; color: inherit; }
+
+        /* Custom luxury Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg-black); }
+        ::-webkit-scrollbar-thumb { background: var(--primary-gold); }
+
+        /* Reusable Utility Classes */
+        .section-padding { padding: 140px 8% 140px; }
+        .gold-shine { position: relative; overflow: hidden; }
+        .gold-shine::after {
+            content: ''; position: absolute; top: 0; left: -50%; width: 30%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(200, 155, 60, 0.25), transparent);
+            transform: skewX(-30deg); transition: none;
+        }
+        .gold-shine:hover::after { left: 150%; transition: all 0.8s ease-in-out; }
+
+        /* Smooth Scroll Reveal Framework States */
+        .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition-smooth); }
+        .reveal.reveal-left { transform: translateX(-40px); }
+        .reveal.reveal-right { transform: translateX(40px); }
+        .reveal.active { opacity: 1; transform: translate(0); }
+
+        
+        /* ==========================================================================
+           2. HEADER NAVIGATION SYSTEM
+           ========================================================================== */
+        .header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            transition: var(--transition-smooth); padding: 30px 5%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+        }
+        .header.scrolled {
+            background: rgba(5, 5, 5, 0.98); padding: 18px 5%;
+            backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-gold);
+        }
+        .nav-container { max-width: 1800px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        
+        .logo-box { display: flex; flex-direction: column; line-height: 1.1; }
+        .logo-title { font-family: var(--font-heading); font-size: 1.7rem; font-weight: 400; letter-spacing: 0.15em; }
+        .logo-subtitle { font-size: 0.65rem; letter-spacing: 0.4em; color: var(--primary-gold); text-transform: uppercase; margin-top: 4px; }
+        
+        .nav-menu { display: flex; list-style: none; gap: 40px; }
+        .nav-link { font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; position: relative; padding: 8px 0; color: var(--text-muted); }
+        .nav-link:hover, .nav-link.active { color: var(--accent-gold); }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background-color: var(--accent-gold); transition: var(--transition-fast); }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .cta-gold-btn {
+            border: 1px solid var(--primary-gold); color: var(--text-light); padding: 12px 30px;
+            font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+            transition: var(--transition-smooth); position: relative; z-index: 1; display: inline-block;
+        }
+        .cta-gold-btn::before {
+            content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+            background: var(--primary-gold); transform: translate(-50%, -50%);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), height 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: -1;
+        }
+        .cta-gold-btn:hover::before { width: 101%; height: 101%; }
+        .cta-gold-btn:hover { color: var(--bg-black); box-shadow: 0 0 30px rgba(200, 155, 60, 0.25); }
+
+        .mobile-toggle { display: none; flex-direction: column; gap: 7px; z-index: 1001; cursor: pointer; }
+        .mobile-toggle span { width: 26px; height: 1.5px; background-color: var(--text-light); transition: var(--transition-fast); }
+
+        /* ==========================================================================
+           3. ATMOSPHERIC PARALLAX HERO BANNER
+           ========================================================================== */
+        .hero-parallax-container {
+            position: relative; height: 100vh; width: 100vw; overflow: hidden;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+        }
+        .hero-bg-layer {
+            position: absolute; top: -10%; left: 0; width: 100%; height: 120%;
+            background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=90');
+            background-size: cover; background-position: center; will-change: transform; z-index: 1;
+        }
+        .hero-overlay-shadow {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(0,0,0,0.9) 100%); z-index: 2;
+        }
+        .particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; }
+        
+        .hero-dining-content { position: relative; z-index: 4; max-width: 1100px; padding: 0 20px; }
+        .hero-title {
+            font-family: var(--font-heading); font-size: 6rem; font-weight: 300;
+            line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 25px;
+            animation: textFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem; letter-spacing: 0.2em; color: var(--text-muted);
+            font-weight: 300; max-width: 750px; margin: 0 auto 40px; line-height: 1.8;
+            animation: textFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; opacity: 0;
+        }
+        
+        .scroll-indicator-box {
+            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 4;
+            display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 0.65rem;
+            letter-spacing: 0.3em; text-transform: uppercase; color: var(--primary-gold);
+        }
+        .scroll-line { width: 1px; height: 50px; background: rgba(200,155,60,0.3); position: relative; overflow: hidden; }
+        .scroll-line::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 20px;
+            background: var(--accent-gold); animation: dropScroll 2s infinite ease-in-out;
+        }
+        @keyframes dropScroll { 0% { top: -20px; } 100% { top: 50px; } }
+        @keyframes textFadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ==========================================================================
+           4. SPLIT LAYOUT WELCOME SECTION
+           ========================================================================== */
+        .welcome-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1800px; margin: 0 auto; }
+        .welcome-visual-frame { position: relative; overflow: hidden; border: 1px solid var(--border-gold); height: 650px; }
+        .welcome-img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth); }
+        .welcome-visual-frame:hover .welcome-img { transform: scale(1.04); }
+        
+        .welcome-narrative .tagline { font-size: 0.8rem; letter-spacing: 0.4em; color: var(--primary-gold); text-transform: uppercase; margin-bottom: 15px; display: block; }
+        .welcome-narrative h2 { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 400; letter-spacing: 0.02em; line-height: 1.2; }
+        .gold-signature-line { width: 80px; height: 2px; background: var(--primary-gold); margin: 25px 0 35px; }
+        .welcome-narrative .desc { font-size: 0.95rem; line-height: 1.8; color: var(--text-muted); font-weight: 300; margin-bottom: 40px; }
+        
+        .features-pill-cloud { display: flex; flex-wrap: wrap; gap: 15px; }
+        .dining-pill { border: 1px solid rgba(255,255,255,0.08); padding: 12px 24px; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 50px; transition: var(--transition-fast); background: var(--bg-dark); }
+        .dining-pill:hover { border-color: var(--primary-gold); color: var(--accent-gold); transform: translateY(-2px); }
+
+        /* ==========================================================================
+           5. SIGNATURE DISHES GRID SECTION
+           ========================================================================== */
+        .dishes-section { background-color: var(--bg-dark); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold); }
+        .center-heading-block { text-align: center; max-width: 750px; margin: 0 auto 80px; }
+        .center-heading-block .tagline { font-size: 0.8rem; letter-spacing: 0.4em; color: var(--primary-gold); text-transform: uppercase; margin-bottom: 15px; display: block; }
+        .center-heading-block .title { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 400; letter-spacing: 0.03em; }
+        
+        .dishes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1800px; margin: 0 auto; }
+        .dish-card { background: var(--bg-black); border: 1px solid var(--border-gold); overflow: hidden; transition: var(--transition-smooth); position: relative; }
+        .dish-img-box { position: relative; height: 280px; overflow: hidden; }
+        .dish-img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth); }
+        .dish-card-content { padding: 35px; }
+        .dish-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
+        .dish-title { font-family: var(--font-heading); font-size: 1.9rem; font-weight: 400; letter-spacing: 0.02em; }
+        .dish-price { font-family: var(--font-heading); font-size: 1.6rem; color: var(--accent-gold); }
+        .dish-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; font-weight: 300; margin-bottom: 30px; height: 42px; overflow: hidden; }
+        
+        /* Hover Structural Adjustments */
+        .dish-card:hover { border-color: var(--border-gold-hover); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .dish-card:hover .dish-img { transform: scale(1.06); }
+
+        /* ==========================================================================
+           6. CHEF SPECIAL INTERREGNUM SECTION
+           ========================================================================== */
+        .chef-special-box { display: grid; grid-template-columns: 0.9fr 1.1fr; max-width: 1800px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-gold); }
+        .chef-media-frame { position: relative; min-height: 550px; overflow: hidden; }
+        .chef-img-bg { width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; transition: var(--transition-smooth); }
+        .chef-content-interior { padding: 80px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+        .luxury-badge { align-self: flex-start; border: 1px solid var(--primary-gold); padding: 6px 16px; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 25px; }
+        .chef-title { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 400; margin-bottom: 25px; }
+        .chef-quote { font-family: var(--font-heading); font-style: italic; font-size: 1.6rem; line-height: 1.5; color: rgba(255,255,255,0.9); margin-bottom: 30px; border-left: 3px solid var(--primary-gold); padding-left: 25px; }
+        .chef-text { font-size: 0.9rem; line-height: 1.8; color: var(--text-muted); font-weight: 300; }
+        .chef-special-box:hover .chef-img-bg { transform: scale(1.03); }
+
+        /* ==========================================================================
+           7. MODERN GALLERY FRAMEWORK
+           ========================================================================== */
+        .gallery-pinterest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1800px; margin: 0 auto; }
+        .gallery-item { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.03); cursor: pointer; height: 300px; }
+        .gallery-item.tall { height: 450px; }
+        .gallery-item.wide { grid-column: span 2; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth); }
+        .gallery-glass-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); opacity: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: var(--transition-fast); }
+        .gallery-glass-overlay span { font-size: 0.65rem; letter-spacing: 0.3em; color: var(--primary-gold); text-transform: uppercase; margin-bottom: 8px; }
+        .gallery-glass-overlay h4 { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-item:hover .gallery-glass-overlay { opacity: 1; }
+
+        /* Lightbox Systems Integration */
+        .varda-lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); z-index: 2000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; }
+        .varda-lightbox.active { display: flex; opacity: 1; }
+        .lightbox-box { position: relative; max-width: 85%; max-height: 85%; }
+        .lightbox-box img { max-width: 100%; max-height: 80vh; border: 1px solid var(--primary-gold); object-fit: contain; }
+        .lightbox-close-btn { position: absolute; top: -50px; right: 0; color: var(--text-light); font-size: 2.5rem; font-weight: 200; background: none; border: none; cursor: pointer; }
+
+        /* ==========================================================================
+           8. WHY DINE WITH US ARCHITECTURE
+           ========================================================================== */
+        .why-dine-section { background-color: var(--bg-dark); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold); }
+        .why-dine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1800px; margin: 0 auto; }
+        .why-dine-card { background: var(--bg-black); border: 1px solid var(--border-gold); padding: 50px 40px; transition: var(--transition-smooth); text-align: center; }
+        .why-dine-card svg { width: 45px; height: 45px; fill: var(--primary-gold); margin-bottom: 25px; transition: var(--transition-fast); }
+        .why-dine-card h3 { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 400; margin-bottom: 15px; letter-spacing: 0.02em; }
+        .why-dine-card p { font-size: 0.85rem; line-height: 1.7; color: var(--text-muted); font-weight: 300; }
+        .why-dine-card:hover { border-color: var(--border-gold-hover); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(200, 155, 60, 0.08); }
+        .why-dine-card:hover svg { transform: scale(1.1); fill: var(--accent-gold); }
+
+        /* ==========================================================================
+           9. GLASSMORPHISM RESERVATION SYSTEM
+           ========================================================================== */
+        .reservation-backdrop {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; background-attachment: fixed; padding: 140px 5%;
+        }
+        .glass-reservation-card {
+            max-width: 1000px; margin: 0 auto; background: var(--glass-bg); backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border); padding: 65px 60px; box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+        }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 45px; }
+        .form-group { display: flex; flex-direction: column; gap: 10px; }
+        .form-group.full-width { grid-column: span 2; }
+        .form-group label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--primary-gold); font-weight: 500; }
+        .form-control {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+            padding: 16px; font-size: 0.85rem; color: var(--text-light); transition: var(--transition-fast);
+        }
+        .form-control:focus { border-color: var(--primary-gold); background: rgba(255,255,255,0.06); }
+        select.form-control option { background-color: var(--bg-dark); color: var(--text-light); }
+        .submit-container { margin-top: 40px; text-align: center; }
+        .submit-container button { width: 100%; max-width: 320px; padding: 18px; font-weight: 600; font-size: 0.75rem; }
+
+        /* ==========================================================================
+           10. CUSTOMER REVIEWS DYNAMIC CAROUSEL
+           ========================================================================== */
+        .reviews-section { overflow: hidden; position: relative; }
+        .slider-viewport { max-width: 850px; margin: 0 auto; position: relative; min-height: 320px; }
+        .review-slide {
+            position: absolute; top: 0; left: 0; width: 100%; opacity: 0;
+            transform: translateX(50px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            text-align: center; pointer-events: none;
+        }
+        .review-slide.active { opacity: 1; transform: translateX(0); pointer-events: auto; position: relative; }
+        .customer-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-gold); margin: 0 auto 25px; }
+        .star-cluster { color: var(--accent-gold); font-size: 0.9rem; margin-bottom: 25px; letter-spacing: 4px; }
+        .testimonial-text { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 300; line-height: 1.6; font-style: italic; color: var(--text-muted); margin-bottom: 25px; }
+        .customer-identity { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--primary-gold); font-weight: 500; }
+
+        /* ==========================================================================
+           11. MASTER FOOTER CONFIGURATION
+           ========================================================================== */
+        .footer { background: var(--bg-black); border-top: 1px solid var(--border-gold); padding: 100px 5% 40px; }
+        .footer-container { max-width: 1800px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 50px; margin-bottom: 80px; }
+        .footer-desc p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; margin-top: 25px; max-width: 340px; font-weight: 300; }
+        .footer-column h4 { font-family: var(--font-heading); font-size: 1.3rem; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 30px; text-transform: uppercase; font-weight: 400; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 15px; font-size: 0.85rem; color: var(--text-muted); }
+        .footer-column ul li a:hover { color: var(--accent-gold); padding-left: 6px; }
+        .footer-bottom { max-width: 1800px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 35px; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--text-dark); letter-spacing: 0.05em; }
+
+        /* ==========================================================================
+           12. RESPONSIVE MEDIA BREAKPOINTS
+           ========================================================================== */
+        @media (max-width: 1400px) {
+            .dishes-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+            .hero-title { font-size: 4.5rem; }
+        }
+        @media (max-width: 1200px) {
+            .welcome-split { grid-template-columns: 1fr; gap: 50px; }
+            .welcome-visual-frame { height: 450px; }
+            .chef-special-box { grid-template-columns: 1fr; }
+            .chef-media-frame { min-height: 400px; }
+            .gallery-pinterest-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item.wide { grid-column: auto; }
+            .why-dine-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 991px) {
+            .mobile-toggle { display: flex; }
+            .nav-menu {
+                position: fixed; top: 0; right: -100%; width: 80%; height: 100vh;
+                background: var(--bg-dark); flex-direction: column; justify-content: center;
+                align-items: center; gap: 35px; transition: var(--transition-smooth);
+                border-left: 1px solid var(--border-gold); z-index: 1000;
+            }
+            .nav-menu.active { right: 0; }
+            .header .cta-gold-btn { display: none; }
+            .dishes-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: auto; }
+        }
+        @media (max-width: 650px) {
+            .hero-title { font-size: 2.6rem; }
+            .center-heading-block .title { font-size: 2.2rem; }
+            .welcome-narrative h2 { font-size: 2.4rem; }
+            .chef-title { font-size: 2.2rem; }
+            .chef-content-interior { padding: 40px 20px; }
+            .gallery-pinterest-grid { grid-template-columns: 1fr; }
+            .glass-reservation-card { padding: 40px 20px; }
+            .footer-container { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+</div>
+
+    <!-- Master Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-box" aria-label="Varda Resort Home">
+                <span class="logo-title">VARDA RESORT</span>
+                <span class="logo-subtitle">& Restaurant &bull; Buxar</span>
+            </a>
+            
+            <nav role="navigation">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+                    <li><a href="restaurant.html" class="nav-link active">Restaurant</a></li>
+                    <li><a href="weddings.html" class="nav-link">Weddings</a></li>
+                    <li><a href="banquet.html" class="nav-link">Banquet</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="#book-table" class="cta-gold-btn gold-shine">Reserve Table</a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Options Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Fullscreen Parallax Cinematic Hero Banner -->
+        <section class="hero-parallax-container">
+            <div class="hero-bg-layer" id="heroBg"></div>
+            <div class="hero-overlay-shadow"></div>
+            <canvas class="particle-canvas" id="particleCanvas"></canvas>
+            
+            <div class="hero-dining-content">
+                <h1 class="hero-title">Fine Dining Experience</h1>
+                <p class="hero-subtitle">Where culinary mastery meets an atmosphere of absolute luxury. Every plate is engineered as a signature production.</p>
+                <a href="#book-table" class="cta-gold-btn gold-shine">Book A Table</a>
+            </div>
+
+            <div class="scroll-indicator-box">
+                <span>Scroll Down</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- 2. Welcome Section (Split Structural Narrative Layout) -->
+        <section class="section-padding">
+            <div class="welcome-split">
+                <div class="welcome-visual-frame reveal reveal-left">
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1000&q=80" alt="Varda Dining Ambience" class="welcome-img">
+                </div>
+                <div class="welcome-narrative reveal reveal-right">
+                    <span class="tagline">Epicurean Heritage</span>
+                    <h2>A Synaesthetic Culinary Sanctuary</h2>
+                    <div class="gold-signature-line"></div>
+                    <p class="desc">The Grand Dining Room at Varda curated a spatial legacy rooted in gastronomic perfection. Our identity balances historical gastronomy paradigms with local, meticulously tracked fresh organic ingredients to present a distinct multi-cuisine portfolio for seasoned epicureans.</p>
+                    <div class="features-pill-cloud">
+                        <span class="dining-pill">Fine Dining</span>
+                        <span class="dining-pill">Multi Cuisine</span>
+                        <span class="dining-pill">Fresh Ingredients</span>
+                        <span class="dining-pill">Luxury Ambience</span>
+                        <span class="dining-pill">Professional Service</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Signature Dishes Framework (Grid Arrays) -->
+        <section class="section-padding dishes-section">
+            <div class="center-heading-block reveal">
+                <span class="tagline">Curated Masterpieces</span>
+                <h2 class="title">The Culinary Compendium</h2>
+            </div>
+            
+            <div class="dishes-grid">
+                <!-- Card 1 -->
+                <article class="dish-card reveal">
+                    <div class="dish-img-box">
+                        <img src="https://images.unsplash.com/photo-1585938338392-50a5a2293b7e?auto=format&fit=crop&w=800&q=80" alt="Indian Fine Art" class="dish-img">
+                    </div>
+                    <div class="dish-card-content">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Awadhi Shahi Tukda</h3>
+                            <span class="dish-price">₹450</span>
+                        </div>
+                        <p class="dish-desc">Fragrant, gold-leaf crusted royal compilation featuring reduction profiles infused with organic saffron keys.</p>
+                        <a href="#book-table" class="btn-secondary-outline" style="border: 1px solid rgba(255,255,255,0.1); padding: 10px 20px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;">Book Table</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="dish-card reveal">
+                    <div class="dish-img-box">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" alt="Chinese Cuisine Portfolio" class="dish-img">
+                    </div>
+                    <div class="dish-card-content">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Truffle Dim Sums</h3>
+                            <span class="dish-price">₹650</span>
+                        </div>
+                        <p class="dish-desc">Meticulously steamed translucent crystal wraps containing earth-derived wild mushroom mash profiles.</p>
+                        <a href="#book-table" class="btn-secondary-outline" style="border: 1px solid rgba(255,255,255,0.1); padding: 10px 20px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;">Book Table</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="dish-card reveal">
+                    <div class="dish-img-box">
+                        <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=800&q=80" alt="Tandoor Premium Fire" class="dish-img">
+                    </div>
+                    <div class="dish-card-content">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Bharwan Paneer Tikka</h3>
+                            <span class="dish-price">₹550</span>
+                        </div>
+                        <p class="dish-desc">House-pressed cottage structural blocks stuffed with dynamic nuts and flash-charred via heritage clay configurations.</p>
+                        <a href="#book-table" class="btn-secondary-outline" style="border: 1px solid rgba(255,255,255,0.1); padding: 10px 20px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;">Book Table</a>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="dish-card reveal">
+                    <div class="dish-img-box">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Continental Presentation" class="dish-img">
+                    </div>
+                    <div class="dish-card-content">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Glazed Salmon Fillet</h3>
+                            <span class="dish-price">₹1,250</span>
+                        </div>
+                        <p class="dish-desc">Pan-seared Atlantic salmon balanced precisely alongside continuous rich emulsions of direct citrus-herb reductions.</p>
+                        <a href="#book-table" class="btn-secondary-outline" style="border: 1px solid rgba(255,255,255,0.1); padding: 10px 20px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;">Book Table</a>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="dish-card reveal">
+                    <div class="dish-img-box">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80" alt="Dessert Presentation" class="dish-img">
+                    </div>
+                    <div class="dish-card-content">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Deconstructed Fondant</h3>
+                            <span class="dish-price">₹480</span>
+                        </div>
+                        <p class="dish-desc">Dark luxury cacao fluid core compositions balanced with liquid-nitrogen frozen berry crystals.</p>
+                        <a href="#book-table" class="btn-secondary-outline" style="border: 1px solid rgba(255,255,255,0.1); padding: 10px 20px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;">Book Table</a>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="dish-card reveal">
+                    <div class="dish-img-box">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" alt="Beverage Portfolio" class="dish-img">
+                    </div>
+                    <div class="dish-card-content">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Gold Brew Botanical</h3>
+                            <span class="dish-price">₹390</span>
+                        </div>
+                        <p class="dish-desc">Cold-distilled natural zero-proof elements layered dynamically with gold-dust carbonated water profiles.</p>
+                        <a href="#book-table" class="btn-secondary-outline" style="border: 1px solid rgba(255,255,255,0.1); padding: 10px 20px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;">Book Table</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. Chef Special Section (Full Width Prominent Layout) -->
+        <section class="section-padding">
+            <div class="chef-special-box reveal">
+                <div class="chef-media-frame">
+                    <div class="chef-img-bg"></div>
+                </div>
+                <div class="chef-content-interior">
+                    <span class="luxury-badge">Chef Recommended</span>
+                    <h2 class="chef-title">The Culinary Vanguard</h2>
+                    <blockquote class="chef-quote">"Gastronomy is an architectural exercise executed via raw organic mediums. We design taste lines to activate deep memory landscapes."</blockquote>
+                    <p class="chef-text">Our Executive Gastronomy Team brings over two decades of technical elite deployment inside premier hotel environments worldwide. Every structural sauce line and fire profile is calculated to offer a highly responsive dining experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Restaurant Gallery (Modern Mixed Grid Arrays) -->
+        <section class="section-padding" style="background-color: var(--bg-dark); border-top: 1px solid var(--border-gold);">
+            <div class="center-heading-block reveal">
+                <span class="tagline">Atmospheric Frames</span>
+                <h2 class="title">Visual Lounges</h2>
+            </div>
+            
+            <div class="gallery-pinterest-grid">
+                <div class="gallery-item tall reveal" data-src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Grand Dining Room Varda">
+                    <div class="gallery-glass-overlay">
+                        <span>Grand Space</span>
+                        <h4>Main Vault Room</h4>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" data-src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600&q=80" alt="Elite Mixology Cellar">
+                    <div class="gallery-glass-overlay">
+                        <span>Lounge Section</span>
+                        <h4>The Botanist Bar</h4>
+                    </div>
+                </div>
+                <div class="gallery-item wide reveal" data-src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Plating Excellence Configuration">
+                    <div class="gallery-glass-overlay">
+                        <span>Plating Line</span>
+                        <h4>Precision Gastronomy</h4>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" data-src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Artisan Beverage Presentation">
+                    <div class="gallery-glass-overlay">
+                        <span>Distillation Lab</span>
+                        <h4>Artisan Infusions</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Why Dine With Us (High Contrast Utility Matrices) -->
+        <section class="section-padding why-dine-section">
+            <div class="center-heading-block reveal">
+                <span class="tagline">The Dining Standard</span>
+                <h2 class="title">Exceptional Paradigms</h2>
+            </div>
+            
+            <div class="why-dine-grid">
+                <div class="why-dine-card reveal">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    <h3>Fresh Ingredients</h3>
+                    <p>Every micro element is sourced from traceable organic growers and temperature locked to preserve structure.</p>
+                </div>
+                <div class="why-dine-card reveal">
+                    <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2s-2-.9-2-2V4c0-1.1.9-2 2-2zm6 5c1.1 0 2 .9 2 2v7c0 1.1-.9 2-2 2s-2-.9-2-2V9c0-1.1.9-2 2-2zM6 10c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4c0-1.1.9-2 2-2z"/></svg>
+                    <h3>Expert Mixologists</h3>
+                    <p>Our beverage laboratories employ slow-drip distillations to extract clear botanical profiles.</p>
+                </div>
+                <div class="why-dine-card reveal">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg>
+                    <h3>Private Dining Vaults</h3>
+                    <p>Isolated acoustic sanctuaries engineered specifically for high-profile business negotiations and intimate gatherings.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Glassmorphism Booking System Frame -->
+        <section class="reservation-backdrop" id="book-table">
+            <div class="glass-reservation-card reveal">
+                <div style="text-align: center;">
+                    <span style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--primary-gold);">Secure Portal</span>
+                    <h2 class="title" style="font-family: var(--font-heading); font-size: 3.2rem; font-weight: 400; margin-top: 10px;">Reserve Your Table</h2>
+                </div>
+                
+                <form class="form-grid" action="#" method="POST" onsubmit="event.preventDefault(); alert('Reservation logged with the Varda Concierge.');">
+                    <div class="form-group">
+                        <label for="res-name">Full Identity Name</label>
+                        <input type="text" id="res-name" class="form-control" placeholder="E.g., Lord Alexander" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-phone">Secure Phone Terminal</label>
+                        <input type="tel" id="res-phone" class="form-control" placeholder="+91 XXXXXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-guests">Guest Tally Matrix</label>
+                        <select id="res-guests" class="form-control">
+                            <option>1 Guest</option>
+                            <option selected>2 Guests</option>
+                            <option>4 Guests</option>
+                            <option>6+ Guests (Private Vault)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-date">Target Date</label>
+                        <input type="date" id="res-date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-time">Target Window Session</label>
+                        <select id="res-time" class="form-control">
+                            <option>Lunch (12:30 PM - 03:30 PM)</option>
+                            <option selected>Imperial Dinner (07:30 PM - 11:30 PM)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-requests">Special Culinary Dictates</label>
+                        <input type="text" id="res-requests" class="form-control" placeholder="Allergies, high chair, private vault positioning">
+                    </div>
+                    <div class="form-group full-width submit-container">
+                        <button type="submit" class="cta-gold-btn gold-shine">Transmit Reservation</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 8. Testimonials Auto Slider System -->
+        <section class="section-padding reviews-section">
+            <div class="slider-viewport">
+                <!-- Review 1 -->
+                <div class="review-slide active">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Reviewer Face Profile" class="customer-avatar">
+                    <div class="star-cluster">★★★★★</div>
+                    <p class="testimonial-text">"The truffle dim sums represent complete execution perfection. The atmospheric luxury layout effortlessly mirrors top tier global venues."</p>
+                    <span class="customer-identity">Rhea Kapoor — Food Critic</span>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-slide">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Reviewer Face Profile" class="customer-avatar">
+                    <div class="star-cluster">★★★★★</div>
+                    <p class="testimonial-text">"An absolute triumph for hospitality along this corridor. The private vaults offer total acoustic sealing and flawless service paces."</p>
+                    <span class="customer-identity">Vikram Aditya — Corporate Director</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Lightbox Frame Portal -->
+    <div class="varda-lightbox" id="galleryLightbox" role="dialog" aria-modal="true">
+        <div class="lightbox-box">
+            <button class="lightbox-close-btn" id="lightboxClose">&times;</button>
+            <img src="" id="lightboxImg" alt="Varda Full Scale Presentation Frame">
+        </div>
+    </div>
+
+    <!-- 9. Standardized Global Footer Framework -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column footer-desc">
+                <div class="logo-box">
+                    <span class="logo-title">VARDA RESORT</span>
+                    <span class="logo-subtitle">& Restaurant &bull; Buxar</span>
+                </div>
+                <p>Setting unmatched elite guidelines for accommodation, high-end private banqueting, and culinary arts in the region.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Exploration</h4>
+                <ul>
+                    <li><a href="index.html">Home Sanctum</a></li>
+                    <li><a href="rooms.html">Rooms & Suites</a></li>
+                    <li><a href="restaurant.html">Fine Culinary</a></li>
+                    <li><a href="gallery.html">Visual Archives</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Events</h4>
+                <ul>
+                    <li><a href="weddings.html">Royal Marriages</a></li>
+                    <li><a href="banquet.html">Grand Ballrooms</a></li>
+                    <li><a href="about.html">Corporate Guilds</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Concierge Desk</h4>
+                <ul>
+                    <li>Main Highway Crossing, Buxar, Bihar</li>
+                    <li>concierge@vardaresort.com</li>
+                    <li>+91 XXXXXXXXXX</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Varda Resort & Restaurant. Preservation Infrastructure Registered.</span>
+            <span>Uncompromising Hospitality Standards.</span>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+       13. VANILLA MICRO INTERACTIONS & LOGICAL ENGINE RUNTIME
+       ========================================================================== */ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 2. Parallax Controller Core Logic
+            const heroBg = document.getElementById('heroBg');
+            window.addEventListener('scroll', () => {
+                let offset = window.pageYOffset;
+                if(heroBg) {
+                    heroBg.style.transform = `translateY(${offset * 0.4}px)`;
+                }
+                
+                // Header state management
+                const header = document.querySelector('.header');
+                if (window.scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // 3. Mobile Navigation Layout Trigger
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    const lines = mobileToggle.querySelectorAll('span');
+                    if(navMenu.classList.contains('active')) {
+                        lines[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                        lines[1].style.opacity = '0';
+                        lines[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                    } else {
+                        lines[0].style.transform = 'none';
+                        lines[1].style.opacity = '1';
+                        lines[2].style.transform = 'none';
+                    }
+                });
+            }
+
+            // 4. Scroll Reveal Intersector
+            const revealElements = document.querySelectorAll('.reveal');
+            const runRevealTrigger = () => {
+                revealElements.forEach(el => {
+                    const topPos = el.getBoundingClientRect().top;
+                    if (topPos < window.innerHeight - 80) {
+                        el.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', runRevealTrigger);
+            runRevealTrigger();
+
+            // 5. Lightbox Display Logistical Controller
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('galleryLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            if (lightbox && lightboxImg) {
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        lightboxImg.setAttribute('src', item.getAttribute('data-src'));
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+                });
+                const closeMode = () => {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                };
+                lightboxClose.addEventListener('click', closeMode);
+                lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeMode(); });
+            }
+
+            // 6. Testimonial Slider Loop Engine
+            const slides = document.querySelectorAll('.review-slide');
+            let slideIdx = 0;
+            setInterval(() => {
+                if(slides.length > 0) {
+                    slides[slideIdx].classList.remove('active');
+                    slideIdx = (slideIdx + 1) % slides.length;
+                    slides[slideIdx].classList.add('active');
+                }
+            }, 5000);
+
+            // 7. Ambient Particle Animation Generator
+            const canvas = document.getElementById('particleCanvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let dots = [];
+                const resize = () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                };
+                window.addEventListener('resize', resize);
+                resize();
+
+                for(let i=0; i<35; i++) {
+                    dots.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        r: Math.random() * 1.5 + 0.5,
+                        v: Math.random() * 0.4 + 0.1
+                    });
+                }
+
+                const loop = () => {
+                    ctx.clearRect(0,0,canvas.width,canvas.height);
+                    ctx.fillStyle = 'rgba(200, 155, 60, 0.3)';
+                    dots.forEach(p => {
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+                        ctx.fill();
+                        p.y -= p.v;
+                        if(p.y < 0) p.y = canvas.height;
+                    });
+                    requestAnimationFrame(loop);
+                };
+                loop();
+            }
+        });
+    </script>
+</body>
+</html>

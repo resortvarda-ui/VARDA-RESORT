@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Accommodation | Varda Resort & Restaurant, Buxar</title>
-    <meta name="description" content="Immerse yourself in unparalleled elegance. Explore the ultra-luxury suites and premium rooms at Varda Resort, Buxar, Bihar. Book your royal stay today.">
+    <title>Luxury Rooms & Suites | Varda Resort & Restaurant, Buxar</title>
+    <meta name="description" content="Experience unmatched comfort, elegance, and personalized 5-star hospitality. Book our premium deluxe rooms and majestic suites at Varda Resort, Buxar.">
     
+    <!-- Premium Google Fonts Portfolio -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
-           1. DESIGN SYSTEM & VARIABLES (Matched perfectly to Master)
+           1. MASTER DESIGN SYSTEM & VARIABLE REGISTRY
            ========================================================================== */
         :root {
             --primary-gold: #C89B3C;
             --accent-gold: #D4AF37;
             --bg-black: #000000;
-            --bg-dark: #111111;
+            --bg-dark: #0A0A0A;
+            --bg-card: #121212;
             --text-light: #FFFFFF;
-            --text-muted: #CFCFCF;
+            --text-muted: #CCCCCC;
+            --text-dark: #777777;
             --border-gold: rgba(200, 155, 60, 0.2);
             --border-gold-hover: rgba(214, 175, 55, 0.6);
+            --glass-bg: rgba(18, 18, 18, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.05);
             --font-heading: 'Cormorant Garamond', serif;
             --font-body: 'Montserrat', sans-serif;
-            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            --transition-fast: all 0.3s ease;
+            --transition-smooth: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* Reset & Base Styles */
+        /* Architectural Reset */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
@@ -59,22 +64,58 @@
             border: none;
             cursor: pointer;
             font-family: var(--font-body);
+            outline: none;
         }
 
-        /* Premium Scrollbar */
+        /* Luxury Scrollbar Styling */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
             background: var(--bg-black);
         }
         ::-webkit-scrollbar-thumb {
             background: var(--primary-gold);
-            border-radius: 4px;
+        }
+
+        /* Global Structural Reusable Classes */
+        .section-padding {
+            padding: 120px 8% 120px;
+        }
+
+        .gold-shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .gold-shine-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(200, 155, 60, 0.2), transparent);
+            transform: skewX(-30deg);
+            transition: none;
+        }
+        .gold-shine-effect:hover::after {
+            left: 150%;
+            transition: all 0.8s ease-in-out;
+        }
+
+        /* Scroll Reveal Structural States */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ==========================================================================
-           2. HEADER & NAVIGATION
+           2. HEADER & TRANSPARENT FIXED NAVIGATION
            ========================================================================== */
         .header {
             position: fixed;
@@ -83,17 +124,17 @@
             width: 100%;
             z-index: 1000;
             transition: var(--transition-smooth);
-            padding: 25px 5%;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(5px);
+            padding: 30px 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
         }
 
         .header.scrolled {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 15px 5%;
-            backdrop-filter: blur(10px);
+            background: rgba(5, 5, 5, 0.98);
+            padding: 18px 5%;
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .nav-container {
@@ -111,14 +152,14 @@
         }
         .logo-title {
             font-family: var(--font-heading);
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 400;
             letter-spacing: 0.15em;
             color: var(--text-light);
         }
         .logo-subtitle {
             font-size: 0.65rem;
-            letter-spacing: 0.38em;
+            letter-spacing: 0.4em;
             color: var(--primary-gold);
             text-transform: uppercase;
             margin-top: 4px;
@@ -127,13 +168,13 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 40px;
         }
         .nav-link {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
             position: relative;
             padding: 8px 0;
             color: var(--text-muted);
@@ -158,17 +199,15 @@
         .cta-gold-btn {
             border: 1px solid var(--primary-gold);
             color: var(--text-light);
-            padding: 12px 28px;
-            font-size: 0.8rem;
+            padding: 12px 30px;
+            font-size: 0.75rem;
             font-weight: 500;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             transition: var(--transition-smooth);
             position: relative;
-            overflow: hidden;
             z-index: 1;
             display: inline-block;
-            text-align: center;
         }
         .cta-gold-btn::before {
             content: '';
@@ -179,259 +218,271 @@
             height: 0;
             background: var(--primary-gold);
             transform: translate(-50%, -50%);
-            border-radius: 50%;
-            transition: width 0.6s ease, height 0.6s ease;
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: -1;
         }
         .cta-gold-btn:hover::before {
-            width: 300px;
-            height: 300px;
+            width: 101%;
+            height: 101%;
         }
         .cta-gold-btn:hover {
             color: var(--bg-black);
-            box-shadow: 0 0 20px rgba(200, 155, 60, 0.4);
+            box-shadow: 0 0 25px rgba(200, 155, 60, 0.3);
         }
 
         .mobile-toggle {
             display: none;
             flex-direction: column;
-            gap: 6px;
+            gap: 7px;
             z-index: 1001;
         }
         .mobile-toggle span {
-            width: 25px;
-            height: 2px;
+            width: 26px;
+            height: 1.5px;
             background-color: var(--text-light);
             transition: var(--transition-fast);
         }
 
         /* ==========================================================================
-           3. STATIC ROOMS HERO BANNER
+           3. FULLSCREEN CINEMATIC HERO BANNER
            ========================================================================== */
-        .rooms-hero {
+        .hero-banner {
             position: relative;
-            height: 65vh;
+            height: 90vh;
             width: 100vw;
             overflow: hidden;
             display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
         }
-        .hero-bg {
+        .hero-banner-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1920&q=80');
-            background-position: center 35%;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1920&q=85');
+            background-position: center 40%;
             background-size: cover;
+            transform: scale(1.05);
+            animation: cinematicZoom 10s forwards cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 1;
         }
-        .rooms-hero::before {
+        .hero-banner::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 100%);
             z-index: 2;
         }
-        .rooms-hero-content {
+        .hero-banner-content {
             position: relative;
             z-index: 3;
-            padding-left: 8%;
-            max-width: 900px;
-            margin-top: 60px;
+            max-width: 1000px;
+            padding: 0 20px;
+            margin-top: 80px;
         }
-        .subpage-tagline {
-            font-size: 0.85rem;
-            letter-spacing: 0.4em;
-            color: var(--primary-gold);
+        .breadcrumb-trail {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            font-weight: 500;
+            color: var(--primary-gold);
+            margin-bottom: 25px;
             display: block;
+            font-weight: 500;
         }
-        .subpage-heading {
+        .breadcrumb-trail a {
+            color: var(--text-muted);
+        }
+        .breadcrumb-trail a:hover {
+            color: var(--text-light);
+        }
+        .hero-title {
             font-family: var(--font-heading);
-            font-size: 4.5rem;
+            font-size: 5.5rem;
             font-weight: 300;
             line-height: 1.1;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.03em;
             text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: subpageFadeUp 1.2s forwards 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .subpage-heading span.luxury-text {
-            color: var(--accent-gold);
-            font-weight: 400;
+        .hero-subtitle {
+            font-size: 1.05rem;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: subpageFadeUp 1.2s forwards 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes cinematicZoom {
+            to { transform: scale(1); }
+        }
+        @keyframes subpageFadeUp {
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ==========================================================================
-           4. ACCOMMODATION SHOWCASE ARCHITECTURE
+           4. LUXURY ACCOMMODATION CATEGORIES (Grid Framework)
            ========================================================================== */
-        .showcase-section {
-            background-color: var(--bg-black);
-            padding: 60px 5% 100px;
-            position: relative;
-            z-index: 5;
-        }
-        .showcase-container {
+        .categories-grid {
             max-width: 1800px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 80px;
-        }
-
-        .room-card-premium {
             display: grid;
-            grid-template-columns: 1.1.5fr 0.85fr;
-            background: var(--bg-dark);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+        .room-card {
+            background: var(--bg-card);
             border: 1px solid var(--border-gold);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: var(--transition-smooth);
             position: relative;
-        }
-        .room-card-premium::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--primary-gold), var(--accent-gold));
-            opacity: 0;
             transition: var(--transition-smooth);
-        }
-
-        .room-media-box {
-            position: relative;
-            height: 520px;
             overflow: hidden;
         }
-        .room-img {
+        .room-card-img-box {
+            position: relative;
+            height: 440px;
+            overflow: hidden;
+        }
+        .room-card-img {
             width: 100%;
             height: 100%;
             background-size: cover;
             background-position: center;
-            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .room-media-box::after {
+        .room-card-img-box::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, rgba(17,17,17,0) 70%, rgba(17,17,17,0.9) 100%);
-            z-index: 2;
+            background: linear-gradient(180deg, rgba(18,18,18,0) 50%, rgba(18,18,18,1) 100%);
         }
-
-        .room-details-box {
-            padding: 50px;
+        .room-card-meta {
+            position: absolute;
+            bottom: 25px;
+            left: 40px;
+            right: 40px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            z-index: 3;
-        }
-        .room-tier {
+            gap: 25px;
+            z-index: 5;
             font-size: 0.75rem;
-            letter-spacing: 0.3em;
-            color: var(--primary-gold);
             text-transform: uppercase;
-            margin-bottom: 12px;
-            font-weight: 500;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 15px;
         }
-        .room-title {
+        .room-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .room-card-meta svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--primary-gold);
+        }
+        .room-card-content {
+            padding: 40px;
+            position: relative;
+            z-index: 4;
+        }
+        .room-card-title {
             font-family: var(--font-heading);
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 400;
-            letter-spacing: 0.03em;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            letter-spacing: 0.02em;
+            margin-bottom: 15px;
         }
-        .room-description {
-            font-size: 0.95rem;
+        .room-card-desc {
+            font-size: 0.9rem;
             line-height: 1.7;
             color: var(--text-muted);
             font-weight: 300;
             margin-bottom: 35px;
+            height: 46px;
+            overflow: hidden;
         }
-
-        /* Amenities System */
-        .room-amenities {
-            display: flex;
-            gap: 25px;
-            margin-bottom: 45px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 25px;
-        }
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-        .amenity-item svg {
-            width: 18px;
-            height: 18px;
-            fill: var(--primary-gold);
-        }
-
-        /* Action Row System */
-        .room-action-row {
+        .room-card-footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
         }
-        .room-pricing {
+        .room-card-price {
             display: flex;
             flex-direction: column;
         }
-        .price-tag {
+        .room-card-price .amt {
             font-family: var(--font-heading);
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--accent-gold);
-            font-weight: 400;
         }
-        .price-label {
-            font-size: 0.65rem;
+        .room-card-price .lbl {
+            font-size: 0.6rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.4);
+            color: var(--text-dark);
             margin-top: 2px;
         }
+        .room-card-actions {
+            display: flex;
+            gap: 15px;
+        }
+        .btn-secondary-outline {
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--text-light);
+            padding: 12px 22px;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+        .btn-secondary-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
 
-        /* Micro-interactions */
-        .room-card-premium:hover {
+        /* Hover Dynamics */
+        .room-card:hover {
             border-color: var(--border-gold-hover);
-            box-shadow: 0 30px 60px rgba(214, 175, 55, 0.03);
-            transform: translateY(-4px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            transform: translateY(-5px);
         }
-        .room-card-premium:hover::before {
-            opacity: 1;
-        }
-        .room-card-premium:hover .room-img {
-            transform: scale(1.04);
+        .room-card:hover .room-card-img {
+            transform: scale(1.06);
         }
 
         /* ==========================================================================
-           5. GALLERY CORNER (Curated Modular Structural Array)
+           5. ROOM AMENITIES & FEATURES MATRIX
            ========================================================================== */
-        .gallery-corner-section {
-            background: var(--bg-dark);
-            padding: 100px 5%;
+        .features-section {
+            background-color: var(--bg-dark);
             border-top: 1px solid var(--border-gold);
+            border-bottom: 1px solid var(--border-gold);
         }
-        .section-header-center {
+        .center-heading-block {
             text-align: center;
-            margin-bottom: 60px;
+            max-width: 700px;
+            margin: 0 auto 70px;
         }
-        .section-tagline {
+        .center-heading-block .tagline {
             font-size: 0.8rem;
             letter-spacing: 0.4em;
             color: var(--primary-gold);
@@ -439,121 +490,352 @@
             margin-bottom: 15px;
             display: block;
         }
-        .section-title {
+        .center-heading-block .title {
             font-family: var(--font-heading);
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 400;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
         }
-        .gallery-modular-grid {
+        .features-matrix {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+        }
+        .feature-icon-card {
+            background: var(--bg-black);
+            border: 1px solid rgba(255,255,255,0.03);
+            padding: 45px 30px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            border-radius: 4px;
+        }
+        .feature-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 25px;
+        }
+        .feature-icon-wrapper svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--primary-gold);
+            transition: var(--transition-fast);
+        }
+        .feature-icon-card h3 {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+        .feature-icon-card:hover {
+            border-color: var(--primary-gold);
+            background: var(--bg-card);
+            transform: translateY(-5px);
+        }
+        .feature-icon-card:hover .feature-icon-wrapper svg {
+            transform: scale(1.1);
+            fill: var(--accent-gold);
+        }
+
+        /* ==========================================================================
+           6. FEATURED SIGNATURE SUITE PROMINENT SECTION
+           ========================================================================== */
+        .featured-suite-box {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+        }
+        .suite-media {
+            position: relative;
+            min-height: 550px;
+            overflow: hidden;
+        }
+        .suite-media-bg {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85');
+            background-size: cover;
+            background-position: center;
+            transition: var(--transition-smooth);
+        }
+        .suite-content-interior {
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .suite-tag {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .suite-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+        .suite-desc {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 35px;
+        }
+        .suite-amenities-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px 30px;
+            margin-bottom: 45px;
+            list-style: none;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
+        }
+        .suite-amenities-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .suite-amenities-list li::before {
+            content: '♦';
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+        .featured-suite-box:hover .suite-media-bg {
+            transform: scale(1.03);
+        }
+
+        /* ==========================================================================
+           7. LUXURY MASONRY-GRID CALL GALLERY & VANILLA LIGHTBOX
+           ========================================================================== */
+        .gallery-mosaic {
             max-width: 1800px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
-        .gallery-item {
+        .mosaic-item {
             position: relative;
-            height: 300px;
+            height: 320px;
             overflow: hidden;
-            border-radius: 4px;
             border: 1px solid rgba(255,255,255,0.03);
+            cursor: pointer;
         }
-        .gallery-item img {
+        .mosaic-item.tall {
+            grid-row: span 2;
+            height: 660px;
+        }
+        .mosaic-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition-smooth);
         }
-        .gallery-overlay {
+        .mosaic-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.75);
             opacity: 0;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             transition: var(--transition-fast);
+            padding: 30px;
+            text-align: center;
         }
-        .gallery-overlay span {
-            font-size: 0.75rem;
+        .mosaic-overlay span {
+            font-size: 0.7rem;
             letter-spacing: 0.3em;
+            color: var(--primary-gold);
             text-transform: uppercase;
-            border-bottom: 1px solid var(--accent-gold);
-            padding-bottom: 4px;
-            color: var(--text-light);
+            margin-bottom: 8px;
         }
-        .gallery-item:hover img {
-            transform: scale(1.08);
+        .mosaic-overlay h4 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
         }
-        .gallery-item:hover .gallery-overlay {
+        .mosaic-item:hover img {
+            transform: scale(1.05);
+        }
+        .mosaic-item:hover .mosaic-overlay {
             opacity: 1;
         }
 
-        /* ==========================================================================
-           6. CENTRALIZED BOOKING CTA FRAME
-           ========================================================================== */
-        .booking-cta-section {
-            background: var(--bg-black);
-            padding: 100px 5%;
-            text-align: center;
+        /* Dynamic Lightbox System */
+        .varda-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .varda-lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        .lightbox-content {
             position: relative;
+            max-width: 85%;
+            max-height: 85%;
         }
-        .booking-cta-box {
-            max-width: 800px;
-            margin: 0 auto;
-            border: 1px solid var(--border-gold);
-            padding: 60px 40px;
-            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-black) 100%);
-            border-radius: 8px;
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border: 1px solid var(--primary-gold);
+            object-fit: contain;
         }
-        .booking-cta-box h2 {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-        .booking-cta-box p {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-weight: 300;
-            line-height: 1.6;
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: var(--text-light);
+            font-size: 2rem;
+            font-weight: 200;
         }
 
         /* ==========================================================================
-           7. GLOBAL FOOTER DESIGN
+           8. WHY STAY WITH US (VALUE PROPOSITION PROFILES)
+           ========================================================================== */
+        .proposition-section {
+            background-color: var(--bg-dark);
+            border-top: 1px solid var(--border-gold);
+        }
+        .proposition-grid {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .proposition-card {
+            background: var(--bg-black);
+            border: 1px solid var(--border-gold);
+            padding: 50px 40px;
+            transition: var(--transition-smooth);
+        }
+        .proposition-card .num {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: rgba(200, 155, 60, 0.3);
+            display: block;
+            margin-bottom: 20px;
+        }
+        .proposition-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: 0.02em;
+        }
+        .proposition-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+        .proposition-card:hover {
+            background: var(--bg-card);
+            border-color: var(--border-gold-hover);
+            transform: translateY(-5px);
+        }
+        .proposition-card:hover .num {
+            color: var(--accent-gold);
+        }
+
+        /* ==========================================================================
+           9. ARCHITECTURAL BOOKING CTA COMPARTMENT
+           ========================================================================== */
+        .booking-cta {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 140px 5%;
+            text-align: center;
+        }
+        .cta-enclosure {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid var(--primary-gold);
+            padding: 80px 40px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 50px rgba(200, 155, 60, 0.1);
+        }
+        .cta-enclosure h2 {
+            font-family: var(--font-heading);
+            font-size: 3.8rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            margin-bottom: 20px;
+        }
+        .cta-enclosure p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        .cta-actions-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* ==========================================================================
+           10. GLOBAL luxury FOOTER DEPLOYMENT
            ========================================================================== */
         .footer {
-            background: var(--bg-dark);
+            background: var(--bg-black);
             border-top: 1px solid var(--border-gold);
-            padding: 80px 5% 40px;
+            padding: 100px 5% 40px;
         }
         .footer-container {
             max-width: 1800px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.5fr repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
+            grid-template-columns: 1.4fr repeat(3, 1fr);
+            gap: 50px;
+            margin-bottom: 80px;
         }
-        .footer-logo-desc p {
+        .footer-desc p {
             font-size: 0.9rem;
             color: var(--text-muted);
-            line-height: 1.7;
-            margin-top: 20px;
-            max-width: 320px;
+            line-height: 1.8;
+            margin-top: 25px;
+            max-width: 340px;
             font-weight: 300;
         }
         .footer-column h4 {
             font-family: var(--font-heading);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             letter-spacing: 0.1em;
             color: var(--text-light);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             text-transform: uppercase;
             font-weight: 400;
         }
@@ -561,89 +843,92 @@
             list-style: none;
         }
         .footer-column ul li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-size: 0.85rem;
             color: var(--text-muted);
         }
         .footer-column ul li a:hover {
             color: var(--accent-gold);
-            padding-left: 5px;
+            padding-left: 6px;
         }
         .footer-bottom {
             max-width: 1800px;
             margin: 0 auto;
             border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 30px;
+            padding-top: 35px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.4);
+            color: var(--text-dark);
             letter-spacing: 0.05em;
         }
 
         /* ==========================================================================
-           8. RESPONSIVE BREAKPOINTS (TABLET & MOBILE ARCHITECTURE)
+           11. RESPONSIVE COMPONENT MATRIX BREAKPOINTS
            ========================================================================== */
-        @media (max-width: 1400px) {
-            .subpage-heading { font-size: 3.8rem; }
-            .room-title { font-size: 2.2rem; }
-            .room-details-box { padding: 40px; }
-            .gallery-modular-grid { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 1500px) {
+            .features-matrix { grid-template-columns: repeat(3, 1fr); }
+            .hero-title { font-size: 4.5rem; }
         }
 
-        @media (max-width: 1100px) {
-            .room-card-premium { grid-template-columns: 1fr; }
-            .room-media-box { height: 380px; }
-            .room-media-box::after {
-                background: linear-gradient(180deg, rgba(17,17,17,0) 60%, rgba(17,17,17,1) 100%);
-            }
-            .footer-container { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        @media (max-width: 1200px) {
+            .categories-grid { grid-template-columns: 1fr; gap: 40px; }
+            .featured-suite-box { grid-template-columns: 1fr; }
+            .suite-media { min-height: 400px; }
+            .gallery-mosaic { grid-template-columns: repeat(2, 1fr); }
+            .mosaic-item.tall { height: 320px; grid-row: auto; }
+            .proposition-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 991px) {
-            .header { padding: 20px 5%; }
+            .header { padding: 22px 5%; }
             .mobile-toggle { display: flex; }
-            
             .nav-menu {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 80%;
+                width: 75%;
                 height: 100vh;
                 background: var(--bg-dark);
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap: 40px;
+                gap: 35px;
                 transition: var(--transition-smooth);
                 border-left: 1px solid var(--border-gold);
                 z-index: 1000;
             }
             .nav-menu.active { right: 0; }
-            .nav-link { font-size: 1rem; }
+            .nav-link { font-size: 0.95rem; }
             .header .cta-gold-btn { display: none; }
-            
-            .subpage-heading { font-size: 3rem; }
-            .rooms-hero-content { left: 5%; padding-left: 0; }
+            .features-matrix { grid-template-columns: repeat(2, 1fr); }
+            .cta-enclosure h2 { font-size: 2.8rem; }
         }
 
-        @media (max-width: 600px) {
-            .subpage-heading { font-size: 2.4rem; }
-            .room-title { font-size: 1.8rem; }
-            .room-amenities { flex-wrap: wrap; gap: 15px; }
-            .room-action-row { flex-direction: column; align-items: flex-start; gap: 25px; }
-            .room-action-row .cta-gold-btn { width: 100%; }
-            .showcase-container { gap: 50px; }
-            .gallery-modular-grid { grid-template-columns: 1fr; }
-            .booking-cta-box h2 { font-size: 2.2rem; }
+        @media (max-width: 650px) {
+            .hero-title { font-size: 2.8rem; }
+            .center-heading-block .title { font-size: 2.2rem; }
+            .room-card-title { font-size: 1.9rem; }
+            .room-card-footer { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .room-card-actions { width: 100%; }
+            .room-card-actions .cta-gold-btn { flex: 1; text-align: center; }
+            .features-matrix { grid-template-columns: 1fr; }
+            .suite-content-interior { padding: 40px 20px; }
+            .suite-title { font-size: 2.2rem; }
+            .suite-amenities-list { grid-template-columns: 1fr; }
+            .gallery-mosaic { grid-template-columns: 1fr; }
+            .proposition-grid { grid-template-columns: 1fr; }
+            .cta-actions-row { flex-direction: column; gap: 15px; }
             .footer-container { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="logo-box" aria-label="Varda Resort Homepage">
@@ -651,7 +936,7 @@
                 <span class="logo-subtitle">& Restaurant &bull; Buxar</span>
             </a>
             
-            <nav>
+            <nav role="navigation">
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="rooms.html" class="nav-link active">Rooms</a></li>
@@ -664,9 +949,9 @@
                 </ul>
             </nav>
 
-            <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
+            <a href="#reserve-now" class="cta-gold-btn gold-shine-effect">Book Now</a>
 
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Options Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -675,117 +960,120 @@
     </header>
 
     <main>
-        <section class="rooms-hero">
-            <div class="hero-bg"></div>
-            <div class="rooms-hero-content">
-                <span class="subpage-tagline">Sanctuaries of Rest</span>
-                <h1 class="subpage-heading">
-                    Rooms & <span class="luxury-text">Suites</span>
-                </h1>
+        <!-- 1. Fullscreen Subpage Hero Banner Frame -->
+        <section class="hero-banner">
+            <div class="hero-banner-bg"></div>
+            <div class="hero-banner-content">
+                <span class="breadcrumb-trail"><a href="index.html">Home</a> / Rooms</span>
+                <h1 class="hero-title">Luxury Rooms & Suites</h1>
+                <p class="hero-subtitle">Experience unmatched comfort, elegance, and personalized hospitality engineered to reflect absolute luxury.</p>
             </div>
         </section>
 
-        <section class="showcase-section">
-            <div class="showcase-container">
+        <!-- 2. Room Categories Structural Layout Section -->
+        <section class="section-padding">
+            <div class="categories-grid">
                 
-                <article class="room-card-premium">
-                    <div class="room-media-box">
-                        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80');"></div>
-                    </div>
-                    <div class="room-details-box">
-                        <span class="room-tier">Premium Comfort</span>
-                        <h2 class="room-title">Deluxe Sanctum Room</h2>
-                        <p class="room-description">Exquisitely tailored configurations combining geometric contemporary design lines with serene architectural spaces designed for effortless relaxation.</p>
-                        
-                        <div class="room-amenities">
-                            <div class="amenity-item">
-                                <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm10-5c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 8c-2.33 0-7 1.17-7 3.5V20h14v-1.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                                <span>King Bed</span>
-                            </div>
-                            <div class="amenity-item">
-                                <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
-                                <span>Smart TV</span>
-                            </div>
-                            <div class="amenity-item">
-                                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
-                                <span>Air Cooled</span>
-                            </div>
+                <!-- Room Card 1: Deluxe Room -->
+                <article class="room-card reveal">
+                    <div class="room-card-img-box">
+                        <div class="room-card-img" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="room-card-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M4 11h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg> 380 Sq. Ft</span>
+                            <span><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg> 2 Guests</span>
+                            <span>King Bed</span>
                         </div>
-
-                        <div class="room-action-row">
-                            <div class="room-pricing">
-                                <span class="price-tag">₹4,500</span>
-                                <span class="price-label">Per Night Ex. Taxes</span>
+                    </div>
+                    <div class="room-card-content">
+                        <h2 class="room-card-title">Deluxe Sanctum Room</h2>
+                        <p class="room-card-desc">Exquisitely tailored configurations combining contemporary style with serene, premium spaces designed for effortless relaxation.</p>
+                        <div class="room-card-footer">
+                            <div class="room-card-price">
+                                <span class="amt">₹4,500</span>
+                                <span class="lbl">Per Night Ex. Taxes</span>
                             </div>
-                            <a href="#reserve-now" class="cta-gold-btn">Reserve Stay</a>
+                            <div class="room-card-actions">
+                                <a href="contact.html" class="btn-secondary-outline">View Details</a>
+                                <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="room-card-premium">
-                    <div class="room-media-box">
-                        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80');"></div>
-                    </div>
-                    <div class="room-details-box">
-                        <span class="room-tier">Elite Leisure</span>
-                        <h2 class="room-title">Executive Vista Suite</h2>
-                        <p class="room-description">An exceptional interior environment hosting an integrated living parlor space combined with modern hospitality controls for elite executive workflows or comfort.</p>
-                        
-                        <div class="room-amenities">
-                            <div class="amenity-item">
-                                <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm10-5c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 8c-2.33 0-7 1.17-7 3.5V20h14v-1.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                                <span>Royal King</span>
-                            </div>
-                            <div class="amenity-item">
-                                <svg viewBox="0 0 24 24"><path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 18.58 10.57 19 12 19c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
-                                <span>Mini Bar</span>
-                            </div>
-                            <div class="amenity-item">
-                                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
-                                <span>Wi-Fi Enabled</span>
-                            </div>
+                <!-- Room Card 2: Executive Room -->
+                <article class="room-card reveal">
+                    <div class="room-card-img-box">
+                        <div class="room-card-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="room-card-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M4 11h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg> 450 Sq. Ft</span>
+                            <span><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg> 2 Guests</span>
+                            <span>Royal King Bed</span>
                         </div>
-
-                        <div class="room-action-row">
-                            <div class="room-pricing">
-                                <span class="price-tag">₹6,800</span>
-                                <span class="price-label">Per Night Ex. Taxes</span>
+                    </div>
+                    <div class="room-card-content">
+                        <h2 class="room-card-title">Executive Vista Room</h2>
+                        <p class="room-card-desc">An elevated design template featuring expansive panoramic views and precise digital operational convenience layouts.</p>
+                        <div class="room-card-footer">
+                            <div class="room-card-price">
+                                <span class="amt">₹5,800</span>
+                                <span class="lbl">Per Night Ex. Taxes</span>
                             </div>
-                            <a href="#reserve-now" class="cta-gold-btn">Reserve Stay</a>
+                            <div class="room-card-actions">
+                                <a href="contact.html" class="btn-secondary-outline">View Details</a>
+                                <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="room-card-premium">
-                    <div class="room-media-box">
-                        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80');"></div>
+                <!-- Room Card 3: Premium Suite -->
+                <article class="room-card reveal">
+                    <div class="room-card-img-box">
+                        <div class="room-card-img" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="room-card-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M4 11h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg> 650 Sq. Ft</span>
+                            <span><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg> 3 Guests</span>
+                            <span>Imperial Double</span>
+                        </div>
                     </div>
-                    <div class="room-details-box">
-                        <span class="room-tier">Uncompromised Sovereign Space</span>
-                        <h2 class="room-title">Varda Presidential Suite</h2>
-                        <p class="room-description">Our definitive luxury presentation. Sprawling floor plans featuring meticulous classic custom craftsmanship, standalone dressing alcoves, and premier views.</p>
-                        
-                        <div class="room-amenities">
-                            <div class="amenity-item">
-                                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                                <span>Master Suite</span>
+                    <div class="room-card-content">
+                        <h2 class="room-card-title">Regal Premium Suite</h2>
+                        <p class="room-card-desc">Hosting an expansive separate customized parlor lounge paired with grand luxury furnishings for elite comfort standard profiles.</p>
+                        <div class="room-card-footer">
+                            <div class="room-card-price">
+                                <span class="amt">₹7,500</span>
+                                <span class="lbl">Per Night Ex. Taxes</span>
                             </div>
-                            <div class="amenity-item">
-                                <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-8.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
-                                <span>Butler Svc</span>
-                            </div>
-                            <div class="amenity-item">
-                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L11 15v1c0 1.1.9 2 2 2v1.93zm5.9-3.04c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H9v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                                <span>Private Lounge</span>
+                            <div class="room-card-actions">
+                                <a href="contact.html" class="btn-secondary-outline">View Details</a>
+                                <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
                             </div>
                         </div>
+                    </div>
+                </article>
 
-                        <div class="room-action-row">
-                            <div class="room-pricing">
-                                <span class="price-tag">₹12,500</span>
-                                <span class="price-label">Per Night Ex. Taxes</span>
+                <!-- Room Card 4: Family Suite -->
+                <article class="room-card reveal">
+                    <div class="room-card-img-box">
+                        <div class="room-card-img" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="room-card-meta">
+                            <span><svg viewBox="0 0 24 24"><path d="M4 11h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg> 850 Sq. Ft</span>
+                            <span><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg> 4 Guests</span>
+                            <span>2 Grand Beds</span>
+                        </div>
+                    </div>
+                    <div class="room-card-content">
+                        <h2 class="room-card-title">Majestic Family Suite</h2>
+                        <p class="room-card-desc">Dual expansive interlinked bedrooms meticulously structured to offer uninterrupted high-end luxury parameters for entire family units.</p>
+                        <div class="room-card-footer">
+                            <div class="room-card-price">
+                                <span class="amt">₹9,800</span>
+                                <span class="lbl">Per Night Ex. Taxes</span>
                             </div>
-                            <a href="#reserve-now" class="cta-gold-btn">Reserve Stay</a>
+                            <div class="room-card-actions">
+                                <a href="contact.html" class="btn-secondary-outline">View Details</a>
+                                <a href="#reserve-now" class="cta-gold-btn">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -793,102 +1081,318 @@
             </div>
         </section>
 
-        <section class="gallery-corner-section">
-            <div class="section-header-center">
-                <span class="section-tagline">Visual Opulence</span>
-                <h2 class="section-title">Interior Spaces Gallery</h2>
+        <!-- 3. Room Features Section (SVG Icon Framework) -->
+        <section class="section-padding features-section">
+            <div class="center-heading-block reveal">
+                <span class="tagline">World-Class Fittings</span>
+                <h2 class="title">Luxury Amenities</h2>
             </div>
-            <div class="gallery-modular-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80" alt="Varda Interior Setup">
-                    <div class="gallery-overlay"><span>View Space</span></div>
+            <div class="features-matrix">
+                <!-- Icon 1 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M12 21l-1.45-1.32C5.4 14.92 2 11.85 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.35-3.4 6.42-8.55 11.19L12 21z"/></svg>
+                    </div>
+                    <h3>Free High WiFi</h3>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80" alt="Varda Suite Bed Architecture">
-                    <div class="gallery-overlay"><span>View Space</span></div>
+                <!-- Icon 2 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+                    </div>
+                    <h3>Smart LED TV</h3>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Premium Lounge Framing">
-                    <div class="gallery-overlay"><span>View Space</span></div>
+                <!-- Icon 3 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                    </div>
+                    <h3>Air Conditioning</h3>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d02?auto=format&fit=crop&w=600&q=80" alt="Deluxe Room Rest Details">
-                    <div class="gallery-overlay"><span>View Space</span></div>
+                <!-- Icon 4 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                    </div>
+                    <h3>Luxury Bathroom</h3>
+                </div>
+                <!-- Icon 5 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    </div>
+                    <h3>24×7 Room Service</h3>
+                </div>
+                <!-- Icon 6 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-8.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+                    </div>
+                    <h3>Complimentary Breakfast</h3>
+                </div>
+                <!-- Icon 7 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M2 21h18v-2H2v2zM20 8h-2V5h2v3zm2-5H2v14h20V3z"/></svg>
+                    </div>
+                    <h3>Tea & Coffee Maker</h3>
+                </div>
+                <!-- Icon 8 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                    </div>
+                    <h3>Secure Parking</h3>
+                </div>
+                <!-- Icon 9 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                    </div>
+                    <h3>24×7 Power Backup</h3>
+                </div>
+                <!-- Icon 10 -->
+                <div class="feature-icon-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M19.28 4.93l-1.41-1.41-4.76 4.76-4.76-4.76-1.41 1.41 4.76 4.76-4.76 4.76 1.41 1.41 4.76-4.76 4.76 4.76 1.41-1.41-4.76-4.76z"/></svg>
+                    </div>
+                    <h3>Laundry Service</h3>
                 </div>
             </div>
         </section>
 
-        <section class="booking-cta-section" id="reserve-now">
-            <div class="booking-cta-box">
-                <h2>Begin Your Royal Experience</h2>
-                <p>Contact our dedicated reservation desk directly to arrange personalized customized welcome itineraries, select premium tier suites, or align corporate booking profiles.</p>
-                <a href="contact.html" class="cta-gold-btn">Contact Desk Now</a>
+        <!-- 4. Featured Luxury Sovereign Suite (Full Width Frame) -->
+        <section class="section-padding">
+            <div class="featured-suite-box reveal">
+                <div class="suite-media">
+                    <div class="suite-media-bg"></div>
+                </div>
+                <div class="suite-content-interior">
+                    <span class="suite-tag">Signature Space</span>
+                    <h2 class="suite-title">Varda Sovereign Presidential Suite</h2>
+                    <p class="suite-desc">Our flagship presentation. A sprawling master structural statement absolute with private panoramic framing, custom high-ceiling craftsmanship, and dedicated signature privileges engineered to serve royal standards flawlessly.</p>
+                    <ul class="suite-amenities-list">
+                        <li>Personalized Butler Service</li>
+                        <li>Private Champagne Bar</li>
+                        <li>Integrated Workspace Terminal</li>
+                        <li>Walk-in Wardrobe Dressing Room</li>
+                    </ul>
+                    <div>
+                        <a href="contact.html" class="cta-gold-btn gold-shine-effect">Reserve Master Suite</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Room Interior Gallery (Masonry Layout Grid Array) -->
+        <section class="section-padding" style="background-color: var(--bg-dark); border-top: 1px solid var(--border-gold);">
+            <div class="center-heading-block reveal">
+                <span class="tagline">The Gallery</span>
+                <h2 class="title">Visual Heritage</h2>
+            </div>
+            <div class="gallery-mosaic">
+                <div class="mosaic-item reveal" data-src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80" alt="Varda Space Frame">
+                    <div class="mosaic-overlay">
+                        <span>Lounge Layout</span>
+                        <h4>Imperial Foyer</h4>
+                    </div>
+                </div>
+                <div class="mosaic-item tall reveal" data-src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=600&q=80" alt="Presidential Vista Suite">
+                    <div class="mosaic-overlay">
+                        <span>Sovereign Suite</span>
+                        <h4>Presidential Architecture</h4>
+                    </div>
+                </div>
+                <div class="mosaic-item reveal" data-src="https://images.unsplash.com/photo-1611892440504-42a792e24d02?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d02?auto=format&fit=crop&w=600&q=80" alt="Deluxe Bed Craftsmanship">
+                    <div class="mosaic-overlay">
+                        <span>Rest Environment</span>
+                        <h4>Deluxe Sanctum Bed</h4>
+                    </div>
+                </div>
+                <div class="mosaic-item reveal" data-src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=600&q=80" alt="Executive Parlor Detail">
+                    <div class="mosaic-overlay">
+                        <span>Executive Space</span>
+                        <h4>Vista Living Corner</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Why Stay With Us (Value Proposition System) -->
+        <section class="section-padding proposition-section">
+            <div class="center-heading-block reveal">
+                <span class="tagline">The Varda Standard</span>
+                <h2 class="title">Why Stay With Us</h2>
+            </div>
+            <div class="proposition-grid">
+                <div class="proposition-card reveal">
+                    <span class="num">01</span>
+                    <h3>Luxury Experience</h3>
+                    <p>Meticulously conceptualized architectural environments calculated to reflect premier aesthetic properties.</p>
+                </div>
+                <div class="proposition-card reveal">
+                    <span class="num">02</span>
+                    <h3>Prime Location</h3>
+                    <p>Positioned dynamically on the highway grid network of Buxar, guaranteeing seamless transport access lines.</p>
+                </div>
+                <div class="proposition-card reveal">
+                    <span class="num">03</span>
+                    <h3>Fine Hospitality</h3>
+                    <p>Highly trained professional concierge operatives deployed 24 hours a day to handle individual tailored requests.</p>
+                </div>
+                <div class="proposition-card reveal">
+                    <span class="num">04</span>
+                    <h3>Uncompromised Value</h3>
+                    <p>A balanced synthesis of elite structural luxury parameters and competitive modern pricing tier schedules.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Booking CTA Section -->
+        <section class="booking-cta" id="reserve-now">
+            <div class="cta-enclosure reveal">
+                <h2>Reserve Your Perfect Stay</h2>
+                <p>Align with absolute luxury comfort. Reach out directly to our global ticketing desk to lock in seasonal premium reservation packages.</p>
+                <div class="cta-actions-row">
+                    <a href="contact.html" class="cta-gold-btn gold-shine-effect">Book Now</a>
+                    <a href="contact.html" class="btn-secondary-outline">Contact Us</a>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- Lightbox Element Frame Portal -->
+    <div class="varda-lightbox" id="galleryLightbox" role="dialog" aria-modal="true">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close visual display">&times;</button>
+            <img src="" id="lightboxImg" alt="Varda Blown Frame View">
+        </div>
+    </div>
+
+    <!-- 8. Standardized Global Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-column footer-logo-desc">
+            <div class="footer-column footer-desc">
                 <div class="logo-box">
                     <span class="logo-title">VARDA RESORT</span>
                     <span class="logo-subtitle">& Restaurant &bull; Buxar</span>
                 </div>
-                <p>Redefining absolute high-end hospitality frame systems, events, and fine culinary journeys across Bihar.</p>
+                <p>Setting unmatched elite guidelines for accommodation, high-end private banqueting, and culinary arts in the region.</p>
             </div>
             <div class="footer-column">
-                <h4>Quick Exploration</h4>
+                <h4>Exploration</h4>
                 <ul>
                     <li><a href="index.html">Home Sanctum</a></li>
                     <li><a href="rooms.html">Rooms & Suites</a></li>
-                    <li><a href="restaurant.html">Fine Dining</a></li>
-                    <li><a href="gallery.html">Visual Registry</a></li>
+                    <li><a href="restaurant.html">Fine Culinary</a></li>
+                    <li><a href="gallery.html">Visual Archives</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Celebrations</h4>
+                <h4>Events</h4>
                 <ul>
-                    <li><a href="weddings.html">Royal Weddings</a></li>
+                    <li><a href="weddings.html">Royal Marriages</a></li>
                     <li><a href="banquet.html">Grand Ballrooms</a></li>
-                    <li><a href="about.html">Our Heritage</a></li>
+                    <li><a href="about.html">Corporate Guilds</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Reservation Desk</h4>
+                <h4>Concierge Desk</h4>
                 <ul>
-                    <li>Buxar Main Highway, Bihar, India</li>
-                    <li>reservations@vardaresort.com</li>
+                    <li>Main Highway Crossing, Buxar, Bihar</li>
+                    <li>concierge@vardaresort.com</li>
                     <li>+91 XXXXXXXXXX</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2026 Varda Resort & Restaurant. All Rights Reserved.</span>
-            <span>Designed with Luxury Standards.</span>
+            <span>&copy; 2026 Varda Resort & Restaurant. Preservation Infrastructure Registered.</span>
+            <span>Uncompromising Hospitality Standards.</span>
         </div>
     </footer>
 
+    <!-- ==========================================================================
+       12. REUSABLE MICRO-INTERACTION SCRIPT ENGINE
+       ========================================================================== */ -->
     <script>
-        // Dynamic Sticky Navigation Scroll Processing
-        const header = document.querySelector('.header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Transparent Fixed Sticky Navigation Controller
+            const header = document.querySelector('.header');
+            const handleScrollSticky = () => {
+                if (window.scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', handleScrollSticky);
+
+            // 2. Mobile Nav Toggle Trigger Engine
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    if(navMenu.classList.contains('active')) {
+                        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                    } else {
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                });
             }
-        });
 
-        // Mobile Responsive Navigation Menu Control Action
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
+            // 3. Scroll Reveal Element Intersection System
+            const revealElements = document.querySelectorAll('.reveal');
+            const elementRevealTrigger = () => {
+                const windowHeight = window.innerHeight;
+                revealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const visibilityThreshold = 100;
+                    if (elementTop < windowHeight - visibilityThreshold) {
+                        element.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', elementRevealTrigger);
+            elementRevealTrigger(); // Run on initial execution context
 
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const spans = mobileToggle.querySelectorAll('span');
-            spans[0].style.transform = navMenu.classList.contains('active') ? 'rotate(45deg) translate(6px, 6px)' : 'none';
-            spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
-            spans[2].style.transform = navMenu.classList.contains('active') ? 'rotate(-45deg) translate(5px, -5px)' : 'none';
+            // 4. Lightbox Interactive Event Engine
+            const galleryItems = document.querySelectorAll('.mosaic-item');
+            const lightbox = document.getElementById('galleryLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            if(lightbox && lightboxImg) {
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const directSource = item.getAttribute('data-src');
+                        lightboxImg.setAttribute('src', directSource);
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+                });
+
+                const terminateLightboxMode = () => {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    lightboxImg.setAttribute('src', '');
+                };
+
+                lightboxClose.addEventListener('click', terminateLightboxMode);
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) terminateLightboxMode();
+                });
+            }
         });
     </script>
 </body>
