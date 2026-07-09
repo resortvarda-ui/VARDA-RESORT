@@ -45,51 +45,96 @@ hero_image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=f
 <!-- ═══════════════════════════════════════════════════════════════
      ROOM 1 — DELUXE SANCTUM
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section split-section reveal">
+<section class="section reveal">
   <div class="container">
-    <div class="split-image reveal-left">
-      <picture>
-        <source srcset="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-        <img src="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Deluxe Sanctum room at Varda Resort" loading="lazy">
-      </picture>
-    </div>
-    <div class="split-content reveal-right">
-      <span class="label-luxury">Room Category</span>
-      <h2 class="heading-section">Deluxe Sanctum</h2>
-      <div class="gold-line"></div>
-      <p class="text-body">
-        The Deluxe Sanctum is a harmonious blend of contemporary elegance and 
-        timeless comfort. Spanning 450 sq. ft., this room features plush king-size 
-        bedding, a curated minibar, and a private balcony overlooking the lush gardens.
-      </p>
-      <ul class="room-amenity-list">
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          <span>55" Smart TV</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <span>Max 3 Guests</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>450 Sq. Ft.</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-          <span>Complimentary Breakfast</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-          <span>Garden View Balcony</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="22" height="14" rx="7" ry="7"/><circle cx="16" cy="12" r="3"/></svg>
-          <span>Rain Shower &amp; Bathtub</span>
-        </li>
-      </ul>
-      <p class="text-gold" style="font-size:1.35rem;margin-top:1.5rem;font-weight:600;">Starting from ₹8,500 / night</p>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold" style="margin-top:1rem;">Book This Room</a>
+    <div class="luxury-room-showcase">
+      <!-- LEFT SIDE: Image -->
+      <div class="luxury-room-image-col reveal-scale">
+        <div class="luxury-badge-top">Luxury Collection</div>
+        <div class="luxury-img-wrapper">
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920" alt="Deluxe Sanctum room at Varda Resort" loading="lazy">
+          </picture>
+          <div class="luxury-img-overlay"></div>
+        </div>
+        <div class="luxury-price-badge">
+          <div class="price">₹8,500</div>
+          <div class="label">Per Night</div>
+        </div>
+        <!-- Thumbnails -->
+        <div class="luxury-gallery-thumbs">
+          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80" alt="Room View"></div>
+          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1631049035182-249067d7618e?auto=format&fit=crop&w=600&q=80" alt="Bathroom"></div>
+          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1618773928120-2992ce57b018?auto=format&fit=crop&w=600&q=80" alt="Interior Details"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: Content -->
+      <div class="luxury-room-info-col reveal-right">
+        <span class="luxury-category-label">Room Category</span>
+        <h2 class="luxury-room-title">Deluxe Sanctum</h2>
+        <div class="luxury-divider"></div>
+        <p class="luxury-desc">
+          The Deluxe Sanctum is a harmonious blend of contemporary elegance and 
+          timeless comfort. Spanning 450 sq. ft., this room features plush king-size 
+          bedding, a curated minibar, and a private balcony overlooking the lush gardens.
+        </p>
+
+        <!-- Feature Cards Grid -->
+        <div class="luxury-feature-grid">
+          <div class="luxury-feature-card">
+            <div class="luxury-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="luxury-feature-text">450 Sq. Ft.</div>
+          </div>
+          <div class="luxury-feature-card">
+            <div class="luxury-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="luxury-feature-text">Max 3 Guests</div>
+          </div>
+          <div class="luxury-feature-card">
+            <div class="luxury-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="luxury-feature-text">Garden View</div>
+          </div>
+          <div class="luxury-feature-card">
+            <div class="luxury-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="luxury-feature-text">55" Smart TV</div>
+          </div>
+        </div>
+
+        <!-- Amenities Chips -->
+        <div class="luxury-amenities-section">
+          <div class="luxury-amenities-title">Room Amenities</div>
+          <div class="luxury-amenity-chips">
+            <span class="luxury-amenity-chip">Complimentary Breakfast</span>
+            <span class="luxury-amenity-chip">Rain Shower & Bathtub</span>
+            <span class="luxury-amenity-chip">Curated Minibar</span>
+            <span class="luxury-amenity-chip">Turndown Service</span>
+          </div>
+        </div>
+
+        <hr class="luxury-hr">
+
+        <!-- Booking Box -->
+        <div class="luxury-booking-card">
+          <div class="luxury-booking-price">
+            <div class="amount">₹8,500</div>
+            <div class="detail">per night (taxes excl.)</div>
+          </div>
+          <div class="luxury-booking-actions">
+            <a href="{{ '/gallery/' | relative_url }}" class="btn btn-outline">View Gallery</a>
+            <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold">Book Now</a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
@@ -97,52 +142,99 @@ hero_image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=f
 <!-- ═══════════════════════════════════════════════════════════════
      ROOM 2 — PREMIUM SUITE
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark split-section split-section--reversed reveal">
+<section class="section section-dark reveal">
   <div class="container">
-    <div class="split-content reveal-left">
-      <span class="label-luxury">Suite Category</span>
-      <h2 class="heading-section">Premium Suite</h2>
-      <div class="gold-line"></div>
-      <p class="text-body">
-        The Premium Suite is the crown jewel of Varda Resort. An expansive 
-        850 sq. ft. suite featuring a separate living area, a private terrace 
-        with panoramic mountain views, a walk-in wardrobe, and an opulent 
-        marble bathroom with a jacuzzi.
-      </p>
-      <ul class="room-amenity-list">
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          <span>65" Smart TV</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <span>Max 4 Guests</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>850 Sq. Ft.</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>24/7 Butler Service</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-          <span>Panoramic Mountain View</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span>Private Jacuzzi</span>
-        </li>
-      </ul>
-      <p class="text-gold" style="font-size:1.35rem;margin-top:1.5rem;font-weight:600;">Starting from ₹18,000 / night</p>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold" style="margin-top:1rem;">Book This Suite</a>
-    </div>
-    <div class="split-image reveal-right">
-      <picture>
-        <source srcset="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Premium Suite at Varda Resort" loading="lazy">
-      </picture>
+    <div class="luxury-room-showcase" style="grid-template-columns: 1.1fr 1fr;">
+      
+      <!-- LEFT SIDE: Content -->
+      <div class="luxury-room-info-col reveal-left" style="padding-right: 40px; padding-left: 0;">
+        <span class="luxury-category-label">Suite Category</span>
+        <h2 class="luxury-room-title">Premium Suite</h2>
+        <div class="luxury-divider"></div>
+        <p class="luxury-desc">
+          The Premium Suite is the crown jewel of Varda Resort. An expansive 
+          850 sq. ft. suite featuring a separate living area, a private terrace 
+          with panoramic mountain views, a walk-in wardrobe, and an opulent 
+          marble bathroom with a jacuzzi.
+        </p>
+
+        <!-- Feature Cards Grid -->
+        <div class="luxury-feature-grid">
+          <div class="luxury-feature-card">
+            <div class="luxury-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="luxury-feature-text">850 Sq. Ft.</div>
+          </div>
+          <div class="luxury-feature-card">
+            <div class="luxury-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="luxury-feature-text">Max 4 Guests</div>
+          </div>
+          <div class="luxury-feature-card">
+            <div class="luxury-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="luxury-feature-text">Mountain View</div>
+          </div>
+          <div class="luxury-feature-card">
+            <div class="luxury-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="luxury-feature-text">24/7 Butler Service</div>
+          </div>
+        </div>
+
+        <!-- Amenities Chips -->
+        <div class="luxury-amenities-section">
+          <div class="luxury-amenities-title">Suite Privileges</div>
+          <div class="luxury-amenity-chips">
+            <span class="luxury-amenity-chip">Private Jacuzzi</span>
+            <span class="luxury-amenity-chip">Separate Living Area</span>
+            <span class="luxury-amenity-chip">Walk-in Wardrobe</span>
+            <span class="luxury-amenity-chip">Premium Lounge Access</span>
+          </div>
+        </div>
+
+        <hr class="luxury-hr">
+
+        <!-- Booking Box -->
+        <div class="luxury-booking-card">
+          <div class="luxury-booking-price">
+            <div class="amount">₹18,000</div>
+            <div class="detail">per night (taxes excl.)</div>
+          </div>
+          <div class="luxury-booking-actions">
+            <a href="{{ '/gallery/' | relative_url }}" class="btn btn-outline">View Gallery</a>
+            <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold">Book Suite</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE: Image -->
+      <div class="luxury-room-image-col reveal-scale">
+        <div class="luxury-badge-top">Signature Suite</div>
+        <div class="luxury-img-wrapper">
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920" alt="Premium Suite at Varda Resort" loading="lazy">
+          </picture>
+          <div class="luxury-img-overlay"></div>
+        </div>
+        <div class="luxury-price-badge" style="left: -20px; right: auto;">
+          <div class="price">₹18,000</div>
+          <div class="label">Per Night</div>
+        </div>
+        <!-- Thumbnails -->
+        <div class="luxury-gallery-thumbs">
+          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" alt="Living Area"></div>
+          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Private Balcony"></div>
+          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=600&q=80" alt="Master Bath"></div>
+        </div>
+      </div>
+      
     </div>
   </div>
 </section>
