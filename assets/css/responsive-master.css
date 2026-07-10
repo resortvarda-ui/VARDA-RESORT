@@ -93,9 +93,16 @@ img, picture, video {
 /* 768px (Tablet Portrait & Mobile Base) */
 @media (max-width: 768px) {
   #main-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/hero-varda-resort-mobile.webp') !important;
-    background-position: center center !important; 
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.5) 100%), url('../images/hero-varda-resort-1920w.webp') !important;
+    background-position: center 85% !important; 
     min-height: 100svh !important; 
+    padding-bottom: 10svh !important; /* Pushes content slightly up to reveal the entrance completely */
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
   }
   .grid-3 { grid-template-columns: 1fr !important; }
   .stats-bar { grid-template-columns: repeat(2, 1fr) !important; gap: 2rem !important; }
@@ -105,8 +112,11 @@ img, picture, video {
 /* 576px (Large Mobile) */
 @media (max-width: 576px) {
   #main-hero { 
-    align-items: flex-start !important;
-    padding-top: 12svh !important;
+    background-position: center 88% !important;
+  }
+  .hero-btn-group {
+    margin-top: 2.5rem;
+    gap: 1.25rem;
   }
   .hero-btn-group .btn { width: 100% !important; }
 }
@@ -117,10 +127,11 @@ img, picture, video {
   .glass-card { padding: 2rem 1.5rem !important; }
 }
 
-/* Micro Phone Adjustments */
-@media (max-width: 430px) { #main-hero { min-height: 100svh !important; } }
-@media (max-width: 412px) { #main-hero { min-height: 100svh !important; } }
-@media (max-width: 390px) { #main-hero { min-height: 100svh !important; } }
-@media (max-width: 375px) { #main-hero { min-height: 100svh !important; } }
-@media (max-width: 360px) { #main-hero { min-height: 100svh !important; } }
-@media (max-width: 320px) { #main-hero { min-height: 100svh !important; } }
+/* Micro Phone Adjustments for perfect building framing */
+@media (max-width: 480px) { #main-hero { background-position: center 90% !important; } }
+@media (max-width: 430px) { #main-hero { background-position: center 92% !important; } }
+@media (max-width: 412px) { #main-hero { background-position: center 94% !important; } }
+@media (max-width: 390px) { #main-hero { background-position: center 96% !important; } }
+@media (max-width: 375px) { #main-hero { background-position: center 98% !important; } }
+@media (max-width: 360px) { #main-hero { background-position: center 100% !important; } }
+@media (max-width: 320px) { #main-hero { background-position: center 100% !important; } }
