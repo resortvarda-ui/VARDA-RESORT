@@ -401,9 +401,23 @@ p {
   font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 0.1em;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   transform: translateY(20px);
   opacity: 0;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a:not(.btn-book)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width 0.3s ease;
 }
 
 .nav-links.active a {
@@ -423,8 +437,14 @@ p {
 .nav-links.active a:nth-child(9) { transition-delay: 0.5s; }
 
 .nav-links a:hover,
-.nav-links a:active {
+.nav-links a:active,
+.nav-links a.current-page {
   color: var(--color-gold);
+}
+
+.nav-links a:not(.btn-book):hover::after,
+.nav-links a:not(.btn-book).current-page::after {
+  width: 100%;
 }
 
 .nav-links a.btn-book {
@@ -506,7 +526,7 @@ p {
     text-transform: uppercase;
     transform: none;
     opacity: 1;
-    transition: color 0.4s ease;
+    transition: color 0.3s ease;
   }
   
   .nav-links a:not(.btn-book)::after {
@@ -518,15 +538,20 @@ p {
     width: 0;
     height: 1px;
     background: var(--color-gold);
-    transition: width 0.4s ease;
+    transition: width 0.3s ease;
   }
   
-  .nav-links a:not(.btn-book):hover::after {
+  .nav-links a:not(.btn-book):hover::after,
+  .nav-links a:not(.btn-book).current-page::after {
     width: 100%;
   }
   
   .nav-links a:hover {
     color: var(--color-white);
+  }
+  
+  .nav-links a.current-page {
+    color: var(--color-gold) !important;
   }
   
   .nav-links a.btn-book {

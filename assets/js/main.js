@@ -349,11 +349,38 @@
   }
 
   /* ==========================================================================
+     Active Navigation State
+     ========================================================================== */
+  function initActiveNav() {
+    var path = window.location.pathname;
+    var normalizedPath = path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path;
+    
+    var navLinks = document.querySelectorAll('.nav-links a:not(.btn-book)');
+    navLinks.forEach(function(link) {
+      var href = link.getAttribute('href');
+      var linkURL;
+      try {
+        linkURL = new URL(href, window.location.origin).pathname;
+      } catch (e) {
+        return; // Skip invalid URLs
+      }
+      var normalizedLink = linkURL.endsWith('/') && linkURL.length > 1 ? linkURL.slice(0, -1) : linkURL;
+      
+      if (normalizedPath === normalizedLink) {
+        link.classList.add('current-page');
+      } else if (normalizedPath !== '/' && normalizedPath !== '/varda-resort' && normalizedLink !== '/' && normalizedLink !== '/varda-resort' && normalizedPath.startsWith(normalizedLink)) {
+        link.classList.add('current-page');
+      }
+    });
+  }
+
+  /* ==========================================================================
      Initialize Everything
      ========================================================================== */
   ready(function () {
     initHeader();
     initMobileNav();
+    initActiveNav();
     initReveal();
     initCounters();
     initParallax();

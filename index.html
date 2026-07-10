@@ -6,15 +6,46 @@ nav_key: home
 ---
 
 <!-- HERO SECTION -->
-<section class="page-hero" style="height: 100vh; min-height: 700px;">
-  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/hero-varda-resort-new.jpg' | relative_url }}'); animation: kenBurns 20s ease-out infinite alternate;"></div>
-  <div class="page-hero-content reveal-up" style="max-width: 900px; padding: 0 20px;">
-    <span class="label-gold" style="margin-bottom: 1rem;">WELCOME TO VARDA</span>
-    <h1 style="margin-bottom: 1rem; line-height: 1.1;">Experience Luxury Beyond Expectations</h1>
-    <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem;">Where timeless elegance, exceptional hospitality, and unforgettable experiences come together in the heart of Buxar.</p>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary" style="min-width: 200px;">Book Your Stay</a>
-      <a href="{{ '/rooms/' | relative_url }}" class="btn btn-outline" style="min-width: 200px;">Explore Rooms</a>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+  
+  .hero-element {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUpStagger 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  
+  html.has-preloader .hero-element {
+    animation: none;
+  }
+  
+  html.has-preloader.preloader-done .hero-element {
+    animation: fadeUpStagger 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  
+  .hero-element:nth-child(1) { animation-delay: 0.2s; }
+  .hero-element:nth-child(2) { animation-delay: 0.4s; }
+  .hero-element:nth-child(3) { animation-delay: 0.6s; }
+  .hero-element:nth-child(4) { animation-delay: 0.8s; }
+
+  @keyframes fadeUpStagger {
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+<section class="page-hero" style="height: 100vh; min-height: 800px; display: flex; align-items: center; justify-content: center; position: relative;">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/hero-varda-resort-new.jpg' | relative_url }}'); animation: kenBurns 20s ease-out infinite alternate; filter: brightness(0.65);"></div>
+  
+  <div class="page-hero-content" style="max-width: 800px; width: 100%; padding: 0 20px; text-align: center; position: relative; z-index: 2;">
+    
+    <p class="hero-element" style="font-family: 'Inter', sans-serif; font-size: 0.85rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-gold); margin-bottom: 1.5rem; font-weight: 400;">LUXURY RESORT IN BUXAR</p>
+
+    <h1 class="hero-element" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 5rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: 0.01em; color: #fff;">Luxury, Redefined.</h1>
+    
+    <p class="hero-element" style="font-family: 'Inter', sans-serif; font-size: 1.05rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 3.5rem; font-weight: 300;">Stay &bull; Dine &bull; Celebrate</p>
+    
+    <div class="hero-element" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+      <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary" style="font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; padding: 1rem 2.5rem; min-width: 180px;">Book Your Stay</a>
+      <a href="{{ '/rooms/' | relative_url }}" class="btn btn-outline" style="font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; padding: 1rem 2.5rem; min-width: 180px;">Explore Rooms</a>
     </div>
   </div>
 </section>
