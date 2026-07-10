@@ -19,6 +19,18 @@ img.save(os.path.join(dest_dir, "hero-varda-resort-1920w.webp"), "WEBP", quality
 # Save original size JPG as fallback
 img.save(os.path.join(dest_dir, "hero-varda-resort-1920w.jpg"), "JPEG", quality=80)
 
+# Generate perfectly framed mobile crop (3:4 aspect ratio)
+mobile_ratio = 3 / 4
+mobile_height = img.height
+mobile_width = int(mobile_height * mobile_ratio)
+left = (img.width - mobile_width) / 2
+top = 0
+right = (img.width + mobile_width) / 2
+bottom = mobile_height
+mobile_crop = img.crop((left, top, right, bottom))
+mobile_crop.save(os.path.join(dest_dir, "hero-varda-resort-mobile.webp"), "WEBP", quality=80)
+mobile_crop.save(os.path.join(dest_dir, "hero-varda-resort-mobile.jpg"), "JPEG", quality=80)
+
 # Generate other sizes
 sizes = {
     "1200w": 1200,

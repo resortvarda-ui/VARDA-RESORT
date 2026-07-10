@@ -29,6 +29,7 @@ layout: compress
   {% for stylesheet in page.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | relative_url }}?v={{ site.time | date: '%s' }}">
   {% endfor %}
+  <link rel="stylesheet" href="{{ '/assets/css/responsive-master.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
   <!-- Schema -->
   <script type="application/ld+json">
