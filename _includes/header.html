@@ -1,33 +1,36 @@
-<header class="site-header" id="masterHeader">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="/" class="logo" aria-label="Varda Resort Homepage">
-        <span class="logo-main">VARDA RESORT</span>
-        <span class="logo-sub">Restaurant &bull; Buxar</span>
-      </a>
-
-      <nav aria-label="Main navigation">
-        <ul class="nav-links" id="navMenu">
-          {% for item in site.data.navigation %}
-          <li>
-            <a href="{{ item.url | relative_url }}" class="nav-link {% if page.nav_key == item.key %}active{% endif %}">
-              {{ item.title }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </nav>
-
-      <div class="header-cta">
-        <a href="/booking/" class="btn-book-now">BOOK NOW</a>
+<header class="site-header">
+  <div class="container nav-container">
+    <a href="{{ '/' | relative_url }}" class="logo">
+      <span class="logo-main">VARDA</span>
+      <span class="logo-sub">Restaurant &bull; Buxar</span>
+    </a>
+    
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav class="nav-links" id="navMenu">
+      <div class="mobile-nav-header">
+        <a href="{{ '/' | relative_url }}" class="logo">
+          <span class="logo-main">VARDA</span>
+        </a>
       </div>
-
-      <button class="mobile-menu-btn" id="mobileToggle" type="button"
-              aria-label="Toggle Navigation Menu" aria-expanded="false">
-        <span class="bar bar-1"></span>
-        <span class="bar bar-2"></span>
-        <span class="bar bar-3"></span>
-      </button>
-    </div>
+      <div class="mobile-nav-scroll">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/rooms/' | relative_url }}">Rooms</a>
+        <a href="{{ '/restaurant/' | relative_url }}">Restaurant</a>
+        <a href="{{ '/weddings/' | relative_url }}">Weddings</a>
+        <a href="{{ '/banquets/' | relative_url }}">Banquet</a>
+        <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        <a href="{{ '/booking/' | relative_url }}" class="btn-book" data-booking>Book Now</a>
+      </div>
+      <div class="mobile-nav-footer">
+        <p>Reservations: +91 7808761001</p>
+      </div>
+    </nav>
   </div>
 </header>

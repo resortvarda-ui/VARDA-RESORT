@@ -62,7 +62,7 @@
      Reveal on Scroll — IntersectionObserver
      ========================================================================== */
   function initReveal() {
-    var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger');
+    var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger, .reveal-up');
     if (!els.length) return;
 
     if ('IntersectionObserver' in window) {
@@ -70,6 +70,7 @@
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
+            entry.target.classList.add('active'); // for reveal-up
             observer.unobserve(entry.target);
           }
         });
@@ -77,7 +78,7 @@
 
       els.forEach(function (el) { observer.observe(el); });
     } else {
-      els.forEach(function (el) { el.classList.add('revealed'); });
+      els.forEach(function (el) { el.classList.add('revealed'); el.classList.add('active'); });
     }
   }
 

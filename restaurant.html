@@ -3,199 +3,133 @@ layout: default
 title: 'Fine Dining | Varda Resort'
 nav_key: restaurant
 permalink: /restaurant/
-body_class: restaurant-page
-hero_image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1920"
 ---
 
-<!-- ═══════════════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="hero hero-half">
-  <picture>
-    <source srcset="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="Fine dining restaurant at Varda Resort" fetchpriority="high">
-  </picture>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-label">Culinary Excellence</span>
-    <h1 class="hero-title">Fine Dining</h1>
-    <p class="hero-subtitle">A symphony of flavors, curated for the connoisseur</p>
+<!-- 1. HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/restaurant%20final%20bg.jpg' | relative_url }}');"></div>
+  <div class="page-hero-content reveal-up">
+    <span class="label-gold">Culinary Excellence</span>
+    <h1>Fine Dining</h1>
+    <p>A symphony of flavors, curated for the connoisseur</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     CHEF'S STORY — SPLIT SECTION
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section split-section reveal">
+<!-- 2. CHEF'S STORY -->
+<section class="section reveal-up">
   <div class="container">
-    <div class="split-image reveal-left">
-      <picture>
-        <source srcset="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Head Chef at Varda Resort" loading="lazy">
-      </picture>
-    </div>
-    <div class="split-content reveal-right">
-      <span class="label-luxury">The Chef's Table</span>
-      <h2 class="heading-section">A Culinary Visionary</h2>
-      <div class="gold-line"></div>
-      <p class="text-body">
-        Our executive chef brings over two decades of culinary mastery, 
-        having trained in the finest kitchens of Paris, Tokyo, and Mumbai. 
-        Every dish is a canvas — blending locally sourced, organic ingredients 
-        with avant-garde techniques to create a dining experience that 
-        celebrates both tradition and innovation.
-      </p>
-      <p class="text-body">
-        From farm-to-fork philosophy to the artful presentation of each course, 
-        dining at Varda is designed to engage all five senses and leave a lasting 
-        impression on your palate.
-      </p>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold" style="margin-top:1.5rem;">Reserve a Table</a>
+    <div class="showcase-row">
+      <div class="showcase-img">
+        <img src="{{ \'/assets/images/v2.jpg\' | relative_url }}" alt="Head Chef at Varda Resort" loading="lazy">
+      </div>
+      <div class="showcase-content">
+        <span class="label-gold">The Chef's Table</span>
+        <h2>A Culinary Visionary</h2>
+        <p>Our executive chef brings over two decades of culinary mastery, having trained in the finest kitchens of Paris, Tokyo, and Mumbai. Every dish is a canvas — blending locally sourced, organic ingredients with avant-garde techniques to create a dining experience that celebrates both tradition and innovation.</p>
+        <p>From farm-to-fork philosophy to the artful presentation of each course, dining at Varda is designed to engage all five senses and leave a lasting impression on your palate.</p>
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="margin-top:1.5rem;">Reserve a Table</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     MENU SECTION
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark reveal">
+<!-- 3. MENU SECTION -->
+<section class="section section-dark reveal-up">
   <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">Our Menu</span>
-      <h2 class="heading-section">Seasonal Selections</h2>
-      <div class="gold-line-center"></div>
-      <p class="text-muted">A carefully curated menu that changes with the seasons, celebrating the finest local produce.</p>
+    <div class="section-header">
+      <span class="label-gold">Our Menu</span>
+      <h2>Seasonal Selections</h2>
+      <p>A carefully curated menu that changes with the seasons, celebrating the finest local produce.</p>
     </div>
 
-    <div class="grid-2" style="gap:3rem;">
-
+    <div class="grid-2" style="gap:3rem; align-items: start;">
       <!-- BREAKFAST COLUMN -->
-      <div class="glass-card reveal-left">
-        <div style="padding:2rem;">
-          <h3 class="heading-card text-center" style="margin-bottom:.5rem;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:.5rem;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            Breakfast
-          </h3>
-          <p class="text-muted text-center" style="margin-bottom:1.5rem;font-size:.9rem;">Served 7:00 AM – 11:00 AM</p>
+      <div class="glass-panel reveal-up">
+        <h3 class="text-center" style="margin-bottom:.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Breakfast
+        </h3>
+        <p class="text-center" style="margin-bottom:2rem; font-size:0.9rem; color: rgba(255,255,255,0.6);">Served 7:00 AM – 11:00 AM</p>
 
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Eggs Royale</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹750</span>
-            </div>
-            <p class="menu-item-desc">Smoked salmon, poached eggs, hollandaise on brioche</p>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Eggs Royale</span>
+            <span class="menu-item-dots"></span>
+            <span class="menu-item-price">₹750</span>
           </div>
+          <p class="menu-item-desc">Smoked salmon, poached eggs, hollandaise on brioche</p>
+        </div>
 
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Masala Dosa</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹450</span>
-            </div>
-            <p class="menu-item-desc">Crispy fermented crepe, spiced potato, coconut chutney</p>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Masala Dosa</span>
+            <span class="menu-item-dots"></span>
+            <span class="menu-item-price">₹450</span>
           </div>
+          <p class="menu-item-desc">Crispy fermented crepe, spiced potato, coconut chutney</p>
+        </div>
 
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Avocado Toast</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹650</span>
-            </div>
-            <p class="menu-item-desc">Sourdough, heirloom tomato, micro greens, poached egg</p>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Avocado Toast</span>
+            <span class="menu-item-dots"></span>
+            <span class="menu-item-price">₹650</span>
           </div>
+          <p class="menu-item-desc">Sourdough, heirloom tomato, micro greens, poached egg</p>
+        </div>
 
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">French Toast Brûlée</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹550</span>
-            </div>
-            <p class="menu-item-desc">Caramelized brioche, vanilla cream, seasonal berries</p>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">French Toast Brûlée</span>
+            <span class="menu-item-dots"></span>
+            <span class="menu-item-price">₹550</span>
           </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Acai Power Bowl</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹600</span>
-            </div>
-            <p class="menu-item-desc">Açaí blend, granola, chia seeds, tropical fruits</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Full English</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹850</span>
-            </div>
-            <p class="menu-item-desc">Eggs, sausages, bacon, beans, toast, grilled tomato</p>
-          </div>
+          <p class="menu-item-desc">Caramelized brioche, vanilla cream, seasonal berries</p>
         </div>
       </div>
 
       <!-- DINNER COLUMN -->
-      <div class="glass-card reveal-right">
-        <div style="padding:2rem;">
-          <h3 class="heading-card text-center" style="margin-bottom:.5rem;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:.5rem;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Dinner
-          </h3>
-          <p class="text-muted text-center" style="margin-bottom:1.5rem;font-size:.9rem;">Served 7:00 PM – 11:00 PM</p>
+      <div class="glass-panel reveal-up" style="transition-delay: 0.2s;">
+        <h3 class="text-center" style="margin-bottom:.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Dinner
+        </h3>
+        <p class="text-center" style="margin-bottom:2rem; font-size:0.9rem; color: rgba(255,255,255,0.6);">Served 7:00 PM – 11:00 PM</p>
 
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Truffle Risotto</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹1,400</span>
-            </div>
-            <p class="menu-item-desc">Arborio rice, black truffle, aged parmesan, wild mushrooms</p>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Truffle Risotto</span>
+            <span class="menu-item-dots"></span>
+            <span class="menu-item-price">₹1,400</span>
           </div>
+          <p class="menu-item-desc">Arborio rice, black truffle, aged parmesan, wild mushrooms</p>
+        </div>
 
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Lamb Rogan Josh</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹1,200</span>
-            </div>
-            <p class="menu-item-desc">Slow-braised lamb, Kashmiri spices, saffron rice</p>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Lamb Rogan Josh</span>
+            <span class="menu-item-dots"></span>
+            <span class="menu-item-price">₹1,200</span>
           </div>
+          <p class="menu-item-desc">Slow-braised lamb, Kashmiri spices, saffron rice</p>
+        </div>
 
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Pan-Seared Sea Bass</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹1,600</span>
-            </div>
-            <p class="menu-item-desc">Lemon beurre blanc, asparagus, roasted potatoes</p>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pan-Seared Sea Bass</span>
+            <span class="menu-item-dots"></span>
+            <span class="menu-item-price">₹1,600</span>
           </div>
+          <p class="menu-item-desc">Lemon beurre blanc, asparagus, roasted potatoes</p>
+        </div>
 
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Wagyu Tenderloin</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹3,200</span>
-            </div>
-            <p class="menu-item-desc">A5 wagyu, red wine jus, truffle mash, grilled vegetables</p>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Wagyu Tenderloin</span>
+            <span class="menu-item-dots"></span>
+            <span class="menu-item-price">₹3,200</span>
           </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Paneer Tikka Royale</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹950</span>
-            </div>
-            <p class="menu-item-desc">Chargrilled paneer, mint chutney, saffron naan</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Chocolate Fondant</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹800</span>
-            </div>
-            <p class="menu-item-desc">Valrhona chocolate, vanilla bean ice cream, gold leaf</p>
-          </div>
+          <p class="menu-item-desc">A5 wagyu, red wine jus, truffle mash, grilled vegetables</p>
         </div>
       </div>
 
@@ -203,256 +137,48 @@ hero_image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=f
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     PRIVATE DINING
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section split-section split-section--reversed reveal">
+<!-- 4. PRIVATE DINING -->
+<section class="section section-cream reveal-up">
   <div class="container">
-    <div class="split-content reveal-left">
-      <span class="label-luxury">Exclusive Experience</span>
-      <h2 class="heading-section">Private Dining</h2>
-      <div class="gold-line"></div>
-      <p class="text-body">
-        For those who desire an intimate setting, our private dining rooms offer 
-        an exclusive culinary experience. Whether it's a romantic anniversary dinner, 
-        a milestone celebration, or a business gathering, our chef will design a 
-        bespoke multi-course menu tailored to your preferences.
-      </p>
-      <ul class="room-amenity-list">
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <span>Seats up to 20 guests</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span>Bespoke menus &amp; wine pairing</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <span>Advance booking required</span>
-        </li>
-      </ul>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold" style="margin-top:1.5rem;">Enquire Now</a>
-    </div>
-    <div class="split-image reveal-right">
-      <picture>
-        <source srcset="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-        <img src="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Private dining at Varda Resort" loading="lazy">
-      </picture>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     CTA
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-emerald text-center reveal">
-  <div class="container-narrow">
-    <span class="label-luxury">Indulge Your Senses</span>
-    <h2 class="heading-section">Reserve Your Dining Experience</h2>
-<!-- ═══════════════════════════════════════════════════════════════
-     MENU SECTION
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark reveal">
-  <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">Our Menu</span>
-      <h2 class="heading-section">Seasonal Selections</h2>
-      <div class="gold-line-center"></div>
-      <p class="text-muted">A carefully curated menu that changes with the seasons, celebrating the finest local produce.</p>
-    </div>
-
-    <div class="grid-2" style="gap:3rem;">
-
-      <!-- BREAKFAST COLUMN -->
-      <div class="glass-card reveal-left">
-        <div style="padding:2rem;">
-          <h3 class="heading-card text-center" style="margin-bottom:.5rem;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:.5rem;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            Breakfast
-          </h3>
-          <p class="text-muted text-center" style="margin-bottom:1.5rem;font-size:.9rem;">Served 7:00 AM – 11:00 AM</p>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Eggs Royale</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹750</span>
-            </div>
-            <p class="menu-item-desc">Smoked salmon, poached eggs, hollandaise on brioche</p>
+    <div class="showcase-row reverse">
+      <div class="showcase-img">
+        <img src="{{ \'/assets/images/restaurant-main.jpg\' | relative_url }}" alt="Private dining at Varda Resort" loading="lazy">
+      </div>
+      <div class="showcase-content">
+        <span class="label-gold">Exclusive Experience</span>
+        <h2>Private Dining</h2>
+        <p>For those who desire an intimate setting, our private dining rooms offer an exclusive culinary experience. Whether it's a romantic anniversary dinner, a milestone celebration, or a business gathering, our chef will design a bespoke multi-course menu tailored to your preferences.</p>
+        
+        <div class="feature-grid" style="margin-top: 2rem;">
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Seats up to 20 guests</span>
           </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Masala Dosa</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹450</span>
-            </div>
-            <p class="menu-item-desc">Crispy fermented crepe, spiced potato, coconut chutney</p>
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>Bespoke menus</span>
           </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Avocado Toast</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹650</span>
-            </div>
-            <p class="menu-item-desc">Sourdough, heirloom tomato, micro greens, poached egg</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">French Toast Brûlée</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹550</span>
-            </div>
-            <p class="menu-item-desc">Caramelized brioche, vanilla cream, seasonal berries</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Acai Power Bowl</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹600</span>
-            </div>
-            <p class="menu-item-desc">Açaí blend, granola, chia seeds, tropical fruits</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Full English</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹850</span>
-            </div>
-            <p class="menu-item-desc">Eggs, sausages, bacon, beans, toast, grilled tomato</p>
+          <div class="feature-item" style="grid-column: 1 / -1;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Advance booking required</span>
           </div>
         </div>
+        
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary" style="margin-top:1.5rem;">Enquire Now</a>
       </div>
-
-      <!-- DINNER COLUMN -->
-      <div class="glass-card reveal-right">
-        <div style="padding:2rem;">
-          <h3 class="heading-card text-center" style="margin-bottom:.5rem;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:.5rem;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Dinner
-          </h3>
-          <p class="text-muted text-center" style="margin-bottom:1.5rem;font-size:.9rem;">Served 7:00 PM – 11:00 PM</p>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Truffle Risotto</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹1,400</span>
-            </div>
-            <p class="menu-item-desc">Arborio rice, black truffle, aged parmesan, wild mushrooms</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Lamb Rogan Josh</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹1,200</span>
-            </div>
-            <p class="menu-item-desc">Slow-braised lamb, Kashmiri spices, saffron rice</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Pan-Seared Sea Bass</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹1,600</span>
-            </div>
-            <p class="menu-item-desc">Lemon beurre blanc, asparagus, roasted potatoes</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Wagyu Tenderloin</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹3,200</span>
-            </div>
-            <p class="menu-item-desc">A5 wagyu, red wine jus, truffle mash, grilled vegetables</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Paneer Tikka Royale</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹950</span>
-            </div>
-            <p class="menu-item-desc">Chargrilled paneer, mint chutney, saffron naan</p>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-item-header">
-              <span class="menu-item-name">Chocolate Fondant</span>
-              <span class="menu-item-dots"></span>
-              <span class="menu-item-price">₹800</span>
-            </div>
-            <p class="menu-item-desc">Valrhona chocolate, vanilla bean ice cream, gold leaf</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     PRIVATE DINING
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section split-section split-section--reversed reveal">
-  <div class="container">
-    <div class="split-content reveal-left">
-      <span class="label-luxury">Exclusive Experience</span>
-      <h2 class="heading-section">Private Dining</h2>
-      <div class="gold-line"></div>
-      <p class="text-body">
-        For those who desire an intimate setting, our private dining rooms offer 
-        an exclusive culinary experience. Whether it's a romantic anniversary dinner, 
-        a milestone celebration, or a business gathering, our chef will design a 
-        bespoke multi-course menu tailored to your preferences.
-      </p>
-      <ul class="room-amenity-list">
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <span>Seats up to 20 guests</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span>Bespoke menus &amp; wine pairing</span>
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <span>Advance booking required</span>
-        </li>
-      </ul>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold" style="margin-top:1.5rem;">Enquire Now</a>
-    </div>
-    <div class="split-image reveal-right">
-      <picture>
-        <source srcset="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-        <img src="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Private dining at Varda Resort" loading="lazy">
-      </picture>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     CTA
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-emerald text-center reveal">
-  <div class="container-narrow">
-    <span class="label-luxury">Indulge Your Senses</span>
-    <h2 class="heading-section">Reserve Your Dining Experience</h2>
-    <div class="gold-line-center"></div>
-    <p class="text-large">
-      From a leisurely breakfast to an opulent multi-course dinner, 
-      every meal at Varda is an occasion to remember.
-    </p>
-    <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold">Reserve a Table</a>
-      <a href="tel:+917808761001" class="btn btn-outline">Call Us</a>
+<!-- 5. CTA -->
+<section class="section reveal-up">
+  <div class="container text-center" style="text-align: center;">
+    <span class="label-gold">Indulge Your Senses</span>
+    <h2>Reserve Your Dining Experience</h2>
+    <p style="max-width: 600px; margin: 0 auto 2rem auto;">From a leisurely breakfast to an opulent multi-course dinner, every meal at Varda is an occasion to remember.</p>
+    <div class="cta-buttons">
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary" style="min-width: 200px;">Reserve a Table</a>
+      <a href="tel:+917808761001" class="btn btn-outline-dark" style="min-width: 200px;">Call Us</a>
     </div>
   </div>
 </section>

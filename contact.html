@@ -3,161 +3,129 @@ layout: default
 title: 'Contact Us | Varda Resort'
 nav_key: contact
 permalink: /contact/
-body_class: contact-page
-hero_image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=1920"
 ---
 
-<!-- ═══════════════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="hero hero-half">
-  <picture>
-    <source srcset="https://images.unsplash.com/photo-1590490360182-c33d57733427?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1590490360182-c33d57733427?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1590490360182-c33d57733427?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1590490360182-c33d57733427?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1590490360182-c33d57733427?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="Varda Resort exterior" fetchpriority="high">
-  </picture>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-label">Get in Touch</span>
-    <h1 class="hero-title">Contact Us</h1>
-    <p class="hero-subtitle">We await your arrival</p>
+<!-- 1. HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/contact_final_bg.jpg' | relative_url }}');"></div>
+  <div class="page-hero-content reveal-up">
+    <span class="label-gold">Get in Touch</span>
+    <h1>Contact Us</h1>
+    <p>We await your arrival</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     CONTACT INFO + FORM
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
+<!-- 2. CONTACT INFO & FORM -->
+<section class="section section-dark reveal-up">
   <div class="container">
-    <div class="grid-2" style="gap:3rem;align-items:start;">
-
-      <!-- LEFT — CONTACT DETAILS -->
-      <div class="reveal-left">
-        <span class="label-luxury">Reach Us</span>
-        <h2 class="heading-section">We'd Love to Hear From You</h2>
-        <div class="gold-line"></div>
-        <p class="text-body" style="margin-bottom:2rem;">
-          Whether you're planning a stay, hosting an event, or simply curious 
-          about our offerings — our team is here to assist you with warmth and care.
-        </p>
-
-        <div class="contact-info-list">
+    <div class="grid-2" style="align-items: start;">
+      
+      <!-- Left: Contact Details -->
+      <div class="reveal-up">
+        <span class="label-gold">Reach Us</span>
+        <h2>We'd Love to Hear From You</h2>
+        <p style="margin-bottom: 2rem; color: rgba(255,255,255,0.7);">Whether you're planning a stay, hosting an event, or simply curious about our offerings — our team is here to assist you with warmth and care.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
           <!-- Address -->
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <h4 class="contact-info-title">Address</h4>
-              <p class="text-muted">Varda Resort, NH-48, Sector 15,<br>Gurugram, Haryana 122001, India</p>
+              <h4 style="font-family: var(--font-btn); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; color: var(--color-white);">Address</h4>
+              <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem;">Varda Resort, NH-48, Sector 15,<br>Gurugram, Haryana 122001, India</p>
             </div>
           </div>
-
+          
           <!-- Phone -->
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <h4 class="contact-info-title">Phone</h4>
-              <p class="text-muted">
-                <a href="tel:+917808761001" class="text-accent">+91 7808761001</a><br>
-                <a href="tel:+917808761001" class="text-accent">+91 7808761001</a>
+              <h4 style="font-family: var(--font-btn); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; color: var(--color-white);">Phone</h4>
+              <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem;">
+                <a href="tel:+917808761001" style="color: var(--color-gold); text-decoration: none;">+91 7808761001</a><br>
+                <a href="tel:+917808761001" style="color: var(--color-gold); text-decoration: none;">+91 7808761001</a>
               </p>
             </div>
           </div>
-
+          
           <!-- Email -->
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <div>
-              <h4 class="contact-info-title">Email</h4>
-              <p class="text-muted">
-                <a href="mailto:reservations@vardaresort.com" class="text-accent">reservations@vardaresort.com</a><br>
-                <a href="mailto:events@vardaresort.com" class="text-accent">events@vardaresort.com</a>
+              <h4 style="font-family: var(--font-btn); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; color: var(--color-white);">Email</h4>
+              <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem;">
+                <a href="mailto:reservations@vardaresort.com" style="color: var(--color-gold); text-decoration: none;">reservations@vardaresort.com</a><br>
+                <a href="mailto:events@vardaresort.com" style="color: var(--color-gold); text-decoration: none;">events@vardaresort.com</a>
               </p>
             </div>
           </div>
-
+          
           <!-- Hours -->
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <h4 class="contact-info-title">Front Desk Hours</h4>
-              <p class="text-muted">24 hours / 7 days a week<br>Check-in: 2:00 PM &bull; Check-out: 11:00 AM</p>
+              <h4 style="font-family: var(--font-btn); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; color: var(--color-white);">Front Desk Hours</h4>
+              <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem;">24 hours / 7 days a week<br>Check-in: 2:00 PM &bull; Check-out: 11:00 AM</p>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- RIGHT — CONTACT FORM -->
-      <div class="reveal-right">
-        <div class="glass-card" style="padding:2.5rem;">
-          <h3 class="heading-card text-center" style="margin-bottom:.25rem;">Send Us a Message</h3>
-          <p class="text-muted text-center" style="margin-bottom:2rem;font-size:.9rem;">We'll respond within 24 hours</p>
-
-          <form action="https://formspree.io/f/myyrnqeo" method="POST" data-ajax id="contact-form">
-            <div class="form-group">
-              <input type="text" id="contact-name" name="name" class="form-input" placeholder="Full Name" required>
-            </div>
-
-            <div class="form-group">
-              <input type="email" id="contact-email" name="email" class="form-input" placeholder="Email Address" required>
-            </div>
-
-            <div class="form-group">
-              <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="Phone Number">
-            </div>
-
-            <div class="form-group">
-              <select id="contact-subject" name="subject" class="form-select form-input" required>
-                <option value="" disabled selected>Select a Subject</option>
-                <option value="Room Reservation">Room Reservation</option>
-                <option value="Restaurant Booking">Restaurant Booking</option>
-                <option value="Wedding Enquiry">Wedding Enquiry</option>
-                <option value="Banquet/Event Enquiry">Banquet / Event Enquiry</option>
-                <option value="Spa & Wellness">Spa &amp; Wellness</option>
-                <option value="Feedback">Feedback</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <textarea id="contact-message" name="message" class="form-input" rows="5" placeholder="Tell us about your requirements..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-gold" style="width:100%;margin-top:.5rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:.5rem;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send Message
-            </button>
-          </form>
-        </div>
+      
+      <!-- Right: Form -->
+      <div class="glass-panel reveal-up" style="transition-delay: 0.1s;">
+        <h3 style="margin-bottom: 0.5rem; text-align: center;">Send Us a Message</h3>
+        <p style="text-align: center; color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 2rem;">We'll respond within 24 hours</p>
+        
+        <form action="https://formspree.io/f/myyrnqeo" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" class="form-input" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="phone" class="form-input" placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <select name="subject" class="form-input" required style="appearance: none; cursor: pointer;">
+              <option value="" disabled selected>Select a Subject</option>
+              <option value="Room Reservation">Room Reservation</option>
+              <option value="Restaurant Booking">Restaurant Booking</option>
+              <option value="Wedding Enquiry">Wedding Enquiry</option>
+              <option value="Banquet/Event Enquiry">Banquet / Event Enquiry</option>
+              <option value="Spa & Wellness">Spa &amp; Wellness</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea name="message" class="form-input" rows="4" placeholder="Tell us about your requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+        </form>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     GOOGLE MAP
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark reveal" style="padding-bottom:0;">
-  <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">Find Us</span>
-      <h2 class="heading-section">Our Location</h2>
-      <div class="gold-line-center"></div>
+<!-- 3. MAP -->
+<section class="section section-cream" style="padding-bottom: 0;">
+  <div class="container reveal-up">
+    <div class="section-header text-center" style="margin-left: auto; margin-right: auto; margin-bottom: 2rem;">
+      <span class="label-gold">Find Us</span>
+      <h2>Our Location</h2>
     </div>
   </div>
-  <div style="width:100%;margin-top:2rem;">
+  <div style="width: 100%; height: 450px;">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.2033790655366!2d77.0306!3d28.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI3JzM0LjIiTiA3N8KwMDEnNTAuMiJF!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
       width="100%"
-      height="450"
-      style="border:0;display:block;filter:grayscale(80%) contrast(1.1) brightness(0.8);"
+      height="100%"
+      style="border: 0; filter: grayscale(80%) contrast(1.1) brightness(0.8);"
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
@@ -166,122 +134,50 @@ hero_image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=f
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     FAQ ACCORDION
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="container-narrow">
-    <div class="section-header text-center">
-      <span class="label-luxury">Help Centre</span>
-      <h2 class="heading-section">Frequently Asked Questions</h2>
-      <div class="gold-line-center"></div>
+<!-- 4. FAQ -->
+<section class="section reveal-up">
+  <div class="container">
+    <div class="section-header text-center" style="margin-left: auto; margin-right: auto;">
+      <span class="label-gold">Help Centre</span>
+      <h2>Frequently Asked Questions</h2>
     </div>
 
-    <div class="accordion stagger">
-      <!-- FAQ 1 -->
-      <div class="accordion-item reveal-left">
-        <button class="accordion-header" aria-expanded="false">
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'); this.nextElementSibling.style.maxHeight = this.getAttribute('aria-expanded') === 'true' ? this.nextElementSibling.scrollHeight + 'px' : '0';">
           <span>What are the check-in and check-out times?</span>
-          <span class="accordion-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
+          <span class="accordion-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="accordion-body">
           <div class="accordion-content">
-            <p>Check-in time is <strong>2:00 PM</strong> and check-out time is <strong>11:00 AM</strong>. 
-            Early check-in and late check-out are available upon request and subject to availability. 
-            Please contact our front desk to arrange special timing.</p>
+            Check-in time is <strong>2:00 PM</strong> and check-out time is <strong>11:00 AM</strong>. Early check-in and late check-out are available upon request and subject to availability. Please contact our front desk to arrange special timing.
           </div>
         </div>
       </div>
-
-      <!-- FAQ 2 -->
-      <div class="accordion-item reveal-left">
-        <button class="accordion-header" aria-expanded="false">
+      
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'); this.nextElementSibling.style.maxHeight = this.getAttribute('aria-expanded') === 'true' ? this.nextElementSibling.scrollHeight + 'px' : '0';">
           <span>What is your cancellation policy?</span>
-          <span class="accordion-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
+          <span class="accordion-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="accordion-body">
           <div class="accordion-content">
-            <p>Reservations can be cancelled free of charge up to <strong>48 hours</strong> before the scheduled 
-            check-in date. Cancellations made within 48 hours will incur a charge equivalent to one night's stay. 
-            For group bookings and events, specific cancellation terms will be outlined in your contract.</p>
+            Reservations can be cancelled free of charge up to <strong>48 hours</strong> before the scheduled check-in date. Cancellations made within 48 hours will incur a charge equivalent to one night's stay. For group bookings and events, specific cancellation terms will be outlined in your contract.
           </div>
         </div>
       </div>
-
-      <!-- FAQ 3 -->
-      <div class="accordion-item reveal-left">
-        <button class="accordion-header" aria-expanded="false">
+      
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'); this.nextElementSibling.style.maxHeight = this.getAttribute('aria-expanded') === 'true' ? this.nextElementSibling.scrollHeight + 'px' : '0';">
           <span>Are pets allowed at the resort?</span>
-          <span class="accordion-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
+          <span class="accordion-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="accordion-body">
           <div class="accordion-content">
-            <p>We welcome small pets (under 10 kg) in select pet-friendly rooms at a supplementary charge 
-            of <strong>₹2,000 per night</strong>. Please inform us at the time of booking so we can prepare 
-            your room accordingly. Service animals are welcome in all areas of the resort at no extra charge.</p>
+            We welcome small pets (under 10 kg) in select pet-friendly rooms at a supplementary charge of <strong>₹2,000 per night</strong>. Please inform us at the time of booking so we can prepare your room accordingly. Service animals are welcome in all areas of the resort at no extra charge.
           </div>
         </div>
       </div>
-
-      <!-- FAQ 4 -->
-      <div class="accordion-item reveal-left">
-        <button class="accordion-header" aria-expanded="false">
-          <span>Do you provide airport transfer services?</span>
-          <span class="accordion-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
-        </button>
-        <div class="accordion-body">
-          <div class="accordion-content">
-            <p>Yes, we offer luxury airport transfer services from <strong>Indira Gandhi International Airport (DEL)</strong>. 
-            Choose from our fleet of premium sedans and SUVs. Transfers can be booked at the time of reservation 
-            or by contacting our concierge. Complimentary transfers are included with our Premium Suite bookings.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 5 -->
-      <div class="accordion-item reveal-left">
-        <button class="accordion-header" aria-expanded="false">
-          <span>Can you accommodate special requests or dietary needs?</span>
-          <span class="accordion-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
-        </button>
-        <div class="accordion-body">
-          <div class="accordion-content">
-            <p>Absolutely. We pride ourselves on personalized service. Whether it's dietary requirements 
-            (vegan, gluten-free, Jain, halal), room preferences (extra pillows, hypoallergenic bedding), 
-            or special occasions (birthdays, anniversaries), please let us know in advance and our team 
-            will ensure every detail is taken care of.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     CTA
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-emerald text-center reveal">
-  <div class="container-narrow">
-    <span class="label-luxury">We're Here for You</span>
-    <h2 class="heading-section">Ready to Experience Varda?</h2>
-    <div class="gold-line-center"></div>
-    <p class="text-large">
-      From the moment you reach out to the moment you depart, 
-      every interaction with Varda Resort is designed to be exceptional.
-    </p>
-    <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="tel:+917808761001" class="btn btn-gold">Call Now</a>
-      <a href="mailto:reservations@vardaresort.com" class="btn btn-outline">Email Us</a>
     </div>
   </div>
 </section>

@@ -3,299 +3,187 @@ layout: default
 title: "Luxury Hotel in Buxar, Bihar | Varda Resort & Restaurant"
 description: "Experience world-class luxury, fine dining, and majestic banquets at Varda Resort & Restaurant, Buxar, Bihar."
 nav_key: home
-body_class: home-page
-hero_image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1920"
 ---
-{% include intro.html %}
 
-<!-- ═══════════════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="hero" id="main-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('assets/images/hero-varda-resort-1920w.webp');">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-label reveal-scale">Welcome to Varda</span>
-    <h1 class="hero-title reveal">An Oasis of Luxury in Buxar</h1>
-    <p class="hero-subtitle reveal">Where every moment is crafted to perfection</p>
-    <div class="hero-btn-group reveal">
-      <a href="{{ '/rooms/' | relative_url }}" class="btn btn-gold">Discover Our Rooms</a>
-      <a href="{{ '/booking/' | relative_url }}" class="btn btn-outline">Book Your Stay</a>
+<!-- HERO SECTION -->
+<section class="page-hero" style="height: 100vh; min-height: 700px;">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/hero-varda-resort-new.jpg' | relative_url }}'); animation: kenBurns 20s ease-out infinite alternate;"></div>
+  <div class="page-hero-content reveal-up" style="max-width: 900px; padding: 0 20px;">
+    <span class="label-gold" style="margin-bottom: 1rem;">WELCOME TO VARDA</span>
+    <h1 style="margin-bottom: 1rem; line-height: 1.1;">Experience Luxury Beyond Expectations</h1>
+    <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem;">Where timeless elegance, exceptional hospitality, and unforgettable experiences come together in the heart of Buxar.</p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary" style="min-width: 200px;">Book Your Stay</a>
+      <a href="{{ '/rooms/' | relative_url }}" class="btn btn-outline" style="min-width: 200px;">Explore Rooms</a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     WELCOME STATEMENT
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="container-narrow text-center">
-    <span class="label-luxury">Our Philosophy</span>
-    <h2 class="heading-section">A Sanctuary of Elegance</h2>
-    <div class="gold-line-center"></div>
-    <p class="text-large text-muted">
-      Step into a world where modern sophistication meets timeless elegance. 
-      Varda Resort & Restaurant offers an unparalleled experience of luxury, 
-      featuring exquisitely designed rooms, world-class dining, and majestic banquet spaces. 
-      Whether you are seeking a peaceful retreat or a grand celebration, every moment here is crafted to perfection.
-    </p>
+<!-- QUICK BOOKING -->
+<div class="container quick-booking-container" style="position: relative; z-index: 10;">
+  <div class="quick-booking-panel">
+    <form action="{{ '/booking/' | relative_url }}" class="quick-booking-form">
+      <div class="form-group">
+        <label class="form-label">Check In</label>
+        <input type="date" class="form-input" value="2026-07-10">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Check Out</label>
+        <input type="date" class="form-input" value="2026-07-12">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Guests</label>
+        <select class="form-input">
+          <option>1 Adult</option>
+          <option selected>2 Adults</option>
+          <option>2 Adults, 1 Child</option>
+        </select>
+      </div>
+      <div class="form-group form-group-btn">
+        <button type="submit" class="btn btn-primary">Book Now</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- WELCOME SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="showcase-row">
+      <div class="showcase-img reveal-up">
+        <img src="{{ '/assets/images/v2.jpg' | relative_url }}" alt="Varda Resort Luxury" style="width: 100%;">
+      </div>
+      <div class="showcase-content reveal-up">
+        <span class="label-gold">WELCOME TO VARDA</span>
+        <h2 style="margin-bottom: 1.5rem;">Luxury is more than comfort. It is an experience crafted with elegance.</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Whether you're here for a peaceful getaway, destination wedding, family celebration, business event, or fine dining, every detail is designed to create unforgettable memories.</p>
+        
+        <ul style="list-style: none; padding: 0; margin-bottom: 2.5rem;">
+          <li style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center;">
+            <span style="display: block; width: 30px; height: 1px; background: var(--color-gold); margin-right: 15px;"></span> Luxury Accommodation
+          </li>
+          <li style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center;">
+            <span style="display: block; width: 30px; height: 1px; background: var(--color-gold); margin-right: 15px;"></span> Fine Dining
+          </li>
+          <li style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center;">
+            <span style="display: block; width: 30px; height: 1px; background: var(--color-gold); margin-right: 15px;"></span> Grand Weddings
+          </li>
+        </ul>
+        
+        <a href="{{ '/about/' | relative_url }}" class="btn btn-outline-dark" style="width: 100%;">Discover More</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SIGNATURE EXPERIENCES
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark reveal">
+<!-- ROOMS -->
+<section class="section section-cream">
   <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">What We Offer</span>
-      <h2 class="heading-section">Signature Experiences</h2>
-      <div class="gold-line-center"></div>
+    <div class="section-header text-center" style="margin-left: auto; margin-right: auto;">
+      <span class="label-gold">ACCOMMODATION</span>
+      <h2>Refined Luxury Stays</h2>
+      <p>Experience unparalleled comfort in our meticulously designed rooms.</p>
     </div>
     
-    <div class="grid-3 stagger">
-      <div class="glass-card text-center reveal-scale">
-        <div style="margin-bottom: 1.5rem; color: var(--gold);">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
+    <div class="grid-3">
+      <!-- Room 1 -->
+      <a href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="text-decoration: none;">
+        <div class="luxury-card-img-wrap">
+          <img src="{{ '/assets/images/Deluxe%20Sanctum%20Room.jpg' | relative_url }}" alt="Executive Room" loading="lazy">
         </div>
-        <h3 class="heading-card">Luxury Accommodation</h3>
-        <p class="text-body text-muted" style="margin-top: 1rem;">Experience unmatched comfort in our meticulously designed rooms and suites, featuring premium amenities and stunning views.</p>
-      </div>
-
-      <div class="glass-card text-center reveal-scale">
-        <div style="margin-bottom: 1.5rem; color: var(--gold);">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="luxury-card-content">
+          <h3 class="luxury-card-title">Executive Room</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Perfect blend of comfort and modern amenities for business and leisure.</p>
+          <span style="font-family: var(--font-body); color: var(--color-gold); font-weight: 500; display: block; margin-bottom: 1rem;">From ₹4,500 / Night</span>
+          <span class="luxury-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
-        <h3 class="heading-card">Fine Dining</h3>
-        <p class="text-body text-muted" style="margin-top: 1rem;">Indulge in a culinary journey at our signature restaurant, where expert chefs craft exquisite dishes using the finest ingredients.</p>
-      </div>
+      </a>
 
-      <div class="glass-card text-center reveal-scale">
-        <div style="margin-bottom: 1.5rem; color: var(--gold);">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1-.94 3.76h-16a1.93 1.93 0 0 1-.94-3.76z"/><path d="M5 8.33a1.66 1.66 0 0 1-1.64 0L1.6 7.15a1.93 1.93 0 0 1 .94-3.76h16a1.93 1.93 0 0 1 .94 3.76z"/></svg>
+      <!-- Room 2 -->
+      <a href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="transition-delay: 0.1s; text-decoration: none;">
+        <div class="luxury-card-img-wrap">
+          <img src="{{ '/assets/images/room-deluxe.jpg' | relative_url }}" alt="Deluxe Room" loading="lazy">
         </div>
-        <h3 class="heading-card">Grand Banquets</h3>
-        <p class="text-body text-muted" style="margin-top: 1rem;">Host unforgettable events in our majestic banquet halls, perfectly suited for grand weddings and corporate functions.</p>
-      </div>
+        <div class="luxury-card-content">
+          <h3 class="luxury-card-title">Deluxe Room</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Spacious elegance featuring premium bedding and beautiful views.</p>
+          <span style="font-family: var(--font-body); color: var(--color-gold); font-weight: 500; display: block; margin-bottom: 1rem;">From ₹6,000 / Night</span>
+          <span class="luxury-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Room 3 -->
+      <a href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="transition-delay: 0.2s; text-decoration: none;">
+        <div class="luxury-card-img-wrap">
+          <img src="{{ '/assets/images/room-suite.jpg' | relative_url }}" alt="Luxury Suite" loading="lazy">
+        </div>
+        <div class="luxury-card-content">
+          <h3 class="luxury-card-title">Luxury Suite</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">The ultimate sanctuary with expansive living spaces and personalized services.</p>
+          <span style="font-family: var(--font-body); color: var(--color-gold); font-weight: 500; display: block; margin-bottom: 1rem;">From ₹9,500 / Night</span>
+          <span class="luxury-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     LUXURY SUITES (ROOMS TEASER)
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section split-section reveal">
+<!-- RESTAURANT -->
+<section class="section section-dark" style="background-image: url('{{ '/assets/images/restaurant%20final%20bg.jpg' | relative_url }}'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; padding: 10rem 0;">
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7);"></div>
+  <div class="container text-center reveal-up" style="position: relative; z-index: 2;">
+    <span class="label-gold">CULINARY EXCELLENCE</span>
+    <h2 style="font-size: clamp(2rem, 8vw, 4rem); color: var(--color-white);">Fine Dining Experience</h2>
+    <p style="max-width: 700px; margin: 0 auto 3rem auto; color: rgba(255,255,255,0.9);">Experience authentic Indian delicacies, Chinese specialties, Continental cuisine, and handcrafted desserts prepared with exceptional quality.</p>
+    <a href="{{ '/restaurant/' | relative_url }}" class="btn btn-primary">Reserve a Table</a>
+  </div>
+</section>
+
+<!-- WEDDING -->
+<section class="section">
   <div class="container">
-    <div class="split-image reveal-left">
-      <img src="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Deluxe Sanctum Room" loading="lazy">
-    </div>
-    <div class="split-content reveal-right">
-      <span class="label-luxury">Accommodation</span>
-      <h2 class="heading-section">Deluxe Sanctum</h2>
-      <div class="gold-line"></div>
-      <p class="text-body text-muted" style="margin-bottom: 2rem;">
-        Immerse yourself in tranquility in our Deluxe Sanctum. Designed with meticulous attention to detail, these 350 sq ft rooms feature plush king bedding, a beautifully appointed en-suite bathroom, and ambient lighting to ensure a restful stay.
-      </p>
-      <a href="{{ '/rooms/' | relative_url }}" class="btn-ghost">Explore Room &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<section class="section split-section split-section--reversed reveal">
-  <div class="container">
-    <div class="split-content reveal-left">
-      <span class="label-luxury">Accommodation</span>
-      <h2 class="heading-section">Premium Suite</h2>
-      <div class="gold-line"></div>
-      <p class="text-body text-muted" style="margin-bottom: 2rem;">
-        Our Premium Suite offers an expansive 550 sq ft retreat for those who seek the highest level of luxury. Featuring a separate living area, luxurious bathroom with a deep soaking tub, and bespoke furnishings, it's the ultimate urban escape.
-      </p>
-      <a href="{{ '/rooms/' | relative_url }}" class="btn-ghost">Explore Suite &rarr;</a>
-    </div>
-    <div class="split-image reveal-right" id="premium-suite-image">
-      <img src="assets/images/rooms/premium-suite.jpg" alt="Premium Suite" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     STATISTICS
-     ═══════════════════════════════════════════════════════════════ -->
-<section style="padding: 4rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); background: var(--bg-secondary);">
-  <div class="container reveal">
-    <div class="stats-bar stagger">
-      <div class="stat-item reveal-scale">
-        <span class="stat-number text-gold" data-count="50" data-suffix="+">0</span>
-        <span class="stat-label">Luxury Rooms</span>
-      </div>
-      <div class="stat-item reveal-scale">
-        <span class="stat-number text-gold" data-count="15" data-suffix="+">0</span>
-        <span class="stat-label">Years of Excellence</span>
-      </div>
-      <div class="stat-item reveal-scale">
-        <span class="stat-number text-gold" data-count="10000" data-suffix="+">0</span>
-        <span class="stat-label">Happy Guests</span>
-      </div>
-      <div class="stat-item reveal-scale">
-        <span class="stat-number text-gold" data-count="98" data-suffix="%">0</span>
-        <span class="stat-label">Satisfaction Rate</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     RESTAURANT SHOWCASE
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-emerald reveal">
-  <div class="container">
-    <div class="grid-3-2">
-      <div class="reveal-left h-600">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Fine Dining Restaurant" loading="lazy">
-      </div>
-      <div class="glass-card reveal-right ml-neg-100" style="padding: 4rem 3rem;">
-        <span class="label-luxury">Culinary Excellence</span>
-        <h2 class="heading-section">The Art of Fine Dining</h2>
-        <div class="gold-line"></div>
-        <p class="text-body text-muted" style="margin-bottom: 2rem;">
-          Embark on a gastronomic journey at our signature restaurant. Our executive chef curates a seasonal menu that blends local flavors with international techniques, creating dishes that are as visually stunning as they are delicious.
-        </p>
-        <a href="{{ '/restaurant/' | relative_url }}" class="btn-ghost">View Menu &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     WEDDING SHOWCASE (FULL BLEED HERO PATTERN)
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="hero" style="min-height: 500px; padding: 6rem 0;">
-  <picture>
-    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1519167758481-83f550bb49b3?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1519167758481-83f550bb49b3?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1519167758481-83f550bb49b3?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="Luxury Wedding Setup" loading="lazy">
-  </picture>
-  <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.6);"></div>
-  <div class="hero-content reveal">
-    <span class="hero-label">Celebrations</span>
-    <h2 class="hero-title">Your Dream Wedding Awaits</h2>
-    <p class="hero-subtitle">Bespoke events crafted with elegance and precision.</p>
-    <div style="margin-top: 2rem;">
-      <a href="{{ '/weddings/' | relative_url }}" class="btn btn-outline">Discover Weddings</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     TESTIMONIALS
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark reveal">
-  <div class="container text-center">
-    <div class="section-header">
-      <span class="label-luxury">Guest Voices</span>
-      <h2 class="heading-section">What Our Guests Say</h2>
-      <div class="gold-line-center"></div>
-    </div>
-    
-    <div style="position: relative; max-width: 800px; margin: 0 auto; width: 100%;">
-      
-      <!-- Slide 1 -->
-      <div class="testimonial-slide" style="opacity: 1; visibility: visible; position: relative; transition: all 0.5s ease;">
-        <div class="testimonial-card">
-          <div class="testimonial-stars" style="color: var(--gold); margin-bottom: 1rem;">
-            ★★★★★
+    <div class="grid-2" style="align-items: center; gap: 5rem;">
+      <div class="reveal-up">
+        <span class="label-gold">WEDDINGS</span>
+        <h2 style="font-size: clamp(1.8rem, 6vw, 2.5rem); margin-bottom: 1.5rem;">Celebrate the Beginning of Forever</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Our grand resort provides the most enchanting backdrop for your special day. From lavish décor to impeccable catering, we ensure your wedding is nothing short of magical.</p>
+        
+        <div class="grid-2" style="gap: 1.5rem; margin-bottom: 3rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); color: var(--color-gold); display: flex; align-items: center; justify-content: center;">✨</div>
+            <span style="font-weight: 500;">Luxury Decoration</span>
           </div>
-          <p class="testimonial-quote" style="font-family: var(--font-heading); font-size: 1.5rem; font-style: italic; margin-bottom: 2rem; color: var(--text-primary);">
-            "An absolutely phenomenal experience. The attention to detail, the luxurious ambiance, and the impeccable service made our stay unforgettable. Varda Resort truly redefines hospitality."
-          </p>
-          <p class="testimonial-author" style="font-weight: 600; letter-spacing: 0.05em;">Aisha Sharma</p>
-          <p class="testimonial-role" style="color: var(--text-muted); font-size: 0.9rem;">Business Traveler</p>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="testimonial-slide" style="opacity: 0; visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; transition: all 0.5s ease;">
-        <div class="testimonial-card">
-          <div class="testimonial-stars" style="color: var(--gold); margin-bottom: 1rem;">
-            ★★★★★
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); color: var(--color-gold); display: flex; align-items: center; justify-content: center;">🍽️</div>
+            <span style="font-weight: 500;">Premium Catering</span>
           </div>
-          <p class="testimonial-quote" style="font-family: var(--font-heading); font-size: 1.5rem; font-style: italic; margin-bottom: 2rem; color: var(--text-primary);">
-            "We hosted our wedding here, and it was nothing short of a fairy tale. The banquet halls are stunning, and the staff went above and beyond to ensure everything was perfect."
-          </p>
-          <p class="testimonial-author" style="font-weight: 600; letter-spacing: 0.05em;">Rohan &amp; Priya</p>
-          <p class="testimonial-role" style="color: var(--text-muted); font-size: 0.9rem;">Newlyweds</p>
-        </div>
-      </div>
-      
-      <!-- Slide 3 -->
-      <div class="testimonial-slide" style="opacity: 0; visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; transition: all 0.5s ease;">
-        <div class="testimonial-card">
-          <div class="testimonial-stars" style="color: var(--gold); margin-bottom: 1rem;">
-            ★★★★★
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); color: var(--color-gold); display: flex; align-items: center; justify-content: center;">🏰</div>
+            <span style="font-weight: 500;">Grand Ballroom</span>
           </div>
-          <p class="testimonial-quote" style="font-family: var(--font-heading); font-size: 1.5rem; font-style: italic; margin-bottom: 2rem; color: var(--text-primary);">
-            "The culinary experience at the restaurant is world-class. Every dish was a masterpiece. Combined with the serene environment of the resort, it is the perfect weekend getaway."
-          </p>
-          <p class="testimonial-author" style="font-weight: 600; letter-spacing: 0.05em;">Vikram Singh</p>
-          <p class="testimonial-role" style="color: var(--text-muted); font-size: 0.9rem;">Food Critic</p>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); color: var(--color-gold); display: flex; align-items: center; justify-content: center;">👥</div>
+            <span style="font-weight: 500;">1000+ Capacity</span>
+          </div>
         </div>
+        
+        <a href="{{ '/weddings/' | relative_url }}" class="btn btn-outline-dark">Plan Your Wedding</a>
       </div>
-
-    </div>
-    
-    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 2rem;">
-      <button class="testimonial-dot active" aria-label="Slide 1" style="width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--gold); background: var(--gold); cursor: pointer;"></button>
-      <button class="testimonial-dot" aria-label="Slide 2" style="width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--gold); background: transparent; cursor: pointer;"></button>
-      <button class="testimonial-dot" aria-label="Slide 3" style="width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--gold); background: transparent; cursor: pointer;"></button>
+      <div class="reveal-up">
+        <img src="{{ '/assets/images/wedding%20bg%20final.jpg' | relative_url }}" alt="Luxury Wedding" style="border-radius: var(--radius); width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     GALLERY PREVIEW
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
+<!-- CTA -->
+<section class="section section-cream text-center reveal-up">
   <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">Visual Stories</span>
-      <h2 class="heading-section">Gallery</h2>
-      <div class="gold-line-center"></div>
-    </div>
-    
-    <div class="masonry-grid stagger">
-      <div class="masonry-item reveal-scale" data-lightbox="assets/images/gallery-left.jpg">
-        <img src="assets/images/gallery-left.jpg" style="object-position: center;" alt="Resort View" loading="lazy">
-      </div>
-      <div class="masonry-item reveal-scale" data-lightbox="https://images.unsplash.com/photo-1582719478250-c89d14c10122?auto=format&fit=crop&q=80&w=1920">
-        <img src="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Luxury Room" loading="lazy">
-      </div>
-      <div class="masonry-item reveal-scale" data-lightbox="assets/images/gallery-top-right.jpg">
-        <img src="assets/images/gallery-top-right.jpg" style="object-position: center;" alt="Dining" loading="lazy">
-      </div>
-      <div class="masonry-item reveal-scale" data-lightbox="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?auto=format&fit=crop&q=80&w=1920">
-        <img src="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Infinity Pool" loading="lazy">
-      </div>
-      <div class="masonry-item reveal-scale" data-lightbox="assets/images/gallery-bottom-right.jpg">
-        <img src="assets/images/gallery-bottom-right.jpg" style="object-position: center;" alt="Banquet Hall" loading="lazy">
-      </div>
-      <div class="masonry-item reveal-scale" data-lightbox="https://images.unsplash.com/photo-1551882547-ff40c0d129df?auto=format&fit=crop&q=80&w=1920">
-        <img src="https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Spa and Wellness" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     LUXURY CTA
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="hero" style="min-height: 450px; padding: 6rem 0;">
-  <picture>
-    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="Luxury Experience" loading="lazy">
-  </picture>
-  <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.7);"></div>
-  <div class="hero-content reveal">
-    <span class="hero-label">Experience Luxury</span>
-    <h2 class="hero-title">Begin Your Journey</h2>
-    <p class="hero-subtitle">Step into a world of elegance and unmatched hospitality.</p>
-    <div style="margin-top: 2rem;">
-      <a href="{{ '/booking/' | relative_url }}" class="btn btn-gold">Book Your Stay</a>
+    <h2>Create Unforgettable Memories</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Join us for an experience of a lifetime.</p>
+    <div style="display: flex; gap: 1.5rem; justify-content: center;">
+      <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary">Book Your Stay</a>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline-dark">Contact Us</a>
     </div>
   </div>
 </section>

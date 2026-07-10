@@ -2,32 +2,74 @@
 layout: default
 title: "Amenities | Varda Resort"
 permalink: /amenities/
-body_class: page-amenities
-hero_image: "https://images.unsplash.com/photo-1542314831-c6a4d14d837e?auto=format&fit=crop&q=80&w=1920"
 ---
 
-<!-- Hero Section -->
-<section class="hero" style="min-height: 400px; height: 50vh;">
-  <picture>
-    <source srcset="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-    <img src="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1542314831-c6a4d14d837e?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="Resort Amenities" fetchpriority="high">
-  </picture>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Resort Amenities</h1>
-    <span class="hero-subtitle">Unparalleled facilities at your service</span>
+<!-- 1. HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/pool-spa.jpg' | relative_url }}');"></div>
+  <div class="page-hero-content reveal-up">
+    <span class="label-gold">Facilities</span>
+    <h1>Resort Amenities</h1>
+    <p>Unparalleled facilities at your service</p>
   </div>
 </section>
 
-<section class="section-padding">
-  <div class="container" style="max-width: 800px; text-align: center;">
-    <ul style="list-style: none; padding: 0; color: var(--text-muted); font-size: 1.1rem; line-height: 2.5;">
-      <li>&bull; 24-Hour In-Room Dining</li>
-      <li>&bull; High-Speed Wireless Internet</li>
-      <li>&bull; Concierge Services</li>
-      <li>&bull; Valet Parking</li>
-      <li>&bull; State-of-the-art Fitness Center</li>
-      <li>&bull; Infinity Pool & Spa</li>
-    </ul>
+<!-- 2. AMENITIES GRID -->
+<section class="section section-cream reveal-up">
+  <div class="container text-center">
+    <div class="section-header" style="margin-left: auto; margin-right: auto;">
+      <span class="label-gold">At Your Service</span>
+      <h2>Designed for Your Comfort</h2>
+      <p>Every element of Varda Resort is thoughtfully curated to provide a seamless, luxurious experience.</p>
+    </div>
+
+    <div class="grid-3">
+      <!-- Amenity 1 -->
+      <div class="glass-panel text-center reveal-up" style="background: var(--color-white);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <h3 style="margin-bottom: 0.5rem;">24-Hour Dining</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Exquisite culinary creations delivered to your suite at any hour.</p>
+      </div>
+      <!-- Amenity 2 -->
+      <div class="glass-panel text-center reveal-up" style="background: var(--color-white); transition-delay: 0.1s;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        <h3 style="margin-bottom: 0.5rem;">High-Speed Wi-Fi</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Stay connected with complimentary high-speed internet throughout the resort.</p>
+      </div>
+      <!-- Amenity 3 -->
+      <div class="glass-panel text-center reveal-up" style="background: var(--color-white); transition-delay: 0.2s;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <h3 style="margin-bottom: 0.5rem;">Concierge Services</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Our dedicated team is ready to curate personalized local experiences.</p>
+      </div>
+      <!-- Amenity 4 -->
+      <div class="glass-panel text-center reveal-up" style="background: var(--color-white);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <h3 style="margin-bottom: 0.5rem;">Valet Parking</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Complimentary secure parking and premium valet service.</p>
+      </div>
+      <!-- Amenity 5 -->
+      <div class="glass-panel text-center reveal-up" style="background: var(--color-white); transition-delay: 0.1s;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        <h3 style="margin-bottom: 0.5rem;">Fitness Center</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">State-of-the-art equipment for your daily wellness routine.</p>
+      </div>
+      <!-- Amenity 6 -->
+      <div class="glass-panel text-center reveal-up" style="background: var(--color-white); transition-delay: 0.2s;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <h3 style="margin-bottom: 0.5rem;">Infinity Pool</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Relax by our temperature-controlled infinity pool with panoramic views.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. CTA -->
+<section class="section section-dark reveal-up">
+  <div class="container text-center" style="text-align: center;">
+    <span class="label-gold">Experience Luxury</span>
+    <h2>Ready to Indulge?</h2>
+    <p style="max-width: 600px; margin: 0 auto 2rem auto;">Book your stay and enjoy full access to all our world-class amenities.</p>
+    <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary">Book Your Stay</a>
   </div>
 </section>

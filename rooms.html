@@ -3,345 +3,157 @@ layout: default
 title: 'Rooms & Suites | Varda Resort'
 nav_key: rooms
 permalink: /rooms/
-body_class: rooms-page
-hero_image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=1920"
 ---
 
-<!-- ═══════════════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="hero hero-half">
-  <picture>
-    <source srcset="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="Luxury suite at Varda Resort" fetchpriority="high">
-  </picture>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-label">Accommodation</span>
-    <h1 class="hero-title">Rooms &amp; Suites</h1>
-    <p class="hero-subtitle">Your private sanctuary amid nature's grandeur</p>
+<!-- 1. HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/rooms%20main%20background%20image.jpg' | relative_url }}');"></div>
+  <div class="page-hero-content reveal-up">
+    <span class="label-gold">Accommodation</span>
+    <h1>Rooms & Suites</h1>
+    <p>Your private sanctuary amid nature's grandeur</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     INTRO
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="container-narrow text-center">
+<!-- 2. INTRO -->
+<section class="section reveal-up">
+  <div class="container">
     <div class="section-header">
-      <span class="label-luxury">Exquisite Living</span>
-      <h2 class="heading-section">A Retreat Like No Other</h2>
-      <div class="gold-line-center"></div>
+      <span class="label-gold">Exquisite Living</span>
+      <h2>A Retreat Like No Other</h2>
+      <p>Every room at Varda Resort has been curated to offer an immersive experience of luxury, comfort, and tranquility. From the handpicked furnishings to the breathtaking views, each detail has been designed to transform your stay into an unforgettable journey.</p>
     </div>
-    <p class="text-large text-muted">
-      Every room at Varda Resort has been curated to offer an immersive experience 
-      of luxury, comfort, and tranquility. From the handpicked furnishings to the 
-      breathtaking views, each detail has been designed to transform your stay 
-      into an unforgettable journey.
-    </p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     ROOM 1 — DELUXE SANCTUM
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
+<!-- 3. ROOM SHOWCASE 1: EXECUTIVE -->
+<section class="section section-cream reveal-up">
   <div class="container">
-    <div class="luxury-room-showcase">
-      <!-- LEFT SIDE: Image -->
-      <div class="luxury-room-image-col reveal-scale">
-        <div class="luxury-badge-top">Luxury Collection</div>
-        <div class="luxury-img-wrapper">
-          <picture>
-            <source srcset="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89d14c10122?fm=avif&auto=format&fit=crop&q=80&w=1920" alt="Deluxe Sanctum room at Varda Resort" loading="lazy">
-          </picture>
-          <div class="luxury-img-overlay"></div>
-        </div>
-        <div class="luxury-price-badge">
-          <div class="price">₹8,500</div>
-          <div class="label">Per Night</div>
-        </div>
-        <!-- Thumbnails -->
-        <div class="luxury-gallery-thumbs">
-          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80" alt="Room View"></div>
-          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1631049035182-249067d7618e?auto=format&fit=crop&w=600&q=80" alt="Bathroom"></div>
-          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1618773928120-2992ce57b018?auto=format&fit=crop&w=600&q=80" alt="Interior Details"></div>
-        </div>
+    <div class="showcase-row">
+      <div class="showcase-img">
+        <img src="../assets/images/Deluxe%20Sanctum%20Room.jpg" alt="Executive Room" loading="lazy">
       </div>
-
-      <!-- RIGHT SIDE: Content -->
-      <div class="luxury-room-info-col reveal-right">
-        <span class="luxury-category-label">Room Category</span>
-        <h2 class="luxury-room-title">Deluxe Sanctum</h2>
-        <div class="luxury-divider"></div>
-        <p class="luxury-desc">
-          The Deluxe Sanctum is a harmonious blend of contemporary elegance and 
-          timeless comfort. Spanning 450 sq. ft., this room features plush king-size 
-          bedding, a curated minibar, and a private balcony overlooking the lush gardens.
-        </p>
-
-        <!-- Feature Cards Grid -->
-        <div class="luxury-feature-grid">
-          <div class="luxury-feature-card">
-            <div class="luxury-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div class="luxury-feature-text">450 Sq. Ft.</div>
+      <div class="showcase-content">
+        <span class="label-gold">Room Category</span>
+        <h2>Executive Room</h2>
+        <p>A perfect blend of comfort and modern amenities, ideal for business and leisure travelers. Spanning 400 sq. ft., this room features plush king-size bedding and a curated minibar.</p>
+        
+        <div class="feature-grid">
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>400 Sq. Ft.</span>
           </div>
-          <div class="luxury-feature-card">
-            <div class="luxury-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="luxury-feature-text">Max 3 Guests</div>
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Max 2 Guests</span>
           </div>
-          <div class="luxury-feature-card">
-            <div class="luxury-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <div class="luxury-feature-text">Garden View</div>
-          </div>
-          <div class="luxury-feature-card">
-            <div class="luxury-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <div class="luxury-feature-text">55" Smart TV</div>
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>Garden View</span>
           </div>
         </div>
 
-        <!-- Amenities Chips -->
-        <div class="luxury-amenities-section">
-          <div class="luxury-amenities-title">Room Amenities</div>
-          <div class="luxury-amenity-chips">
-            <span class="luxury-amenity-chip">Complimentary Breakfast</span>
-            <span class="luxury-amenity-chip">Rain Shower & Bathtub</span>
-            <span class="luxury-amenity-chip">Curated Minibar</span>
-            <span class="luxury-amenity-chip">Turndown Service</span>
-          </div>
+        <div class="amenity-chips">
+          <span class="chip">Free Wi-Fi</span>
+          <span class="chip">Smart TV</span>
+          <span class="chip">Work Desk</span>
         </div>
 
-        <hr class="luxury-hr">
-
-        <!-- Booking Box -->
-        <div class="luxury-booking-card">
-          <div class="luxury-booking-price">
-            <div class="amount">₹8,500</div>
-            <div class="detail">per night (taxes excl.)</div>
-          </div>
-          <div class="luxury-booking-actions">
-            <a href="{{ '/gallery/' | relative_url }}" class="btn btn-outline">View Gallery</a>
-            <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-
+        <p class="luxury-card-price" style="font-size: 1.25rem;">From ₹4,500 / Night</p>
+        <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary">Book Now</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     ROOM 2 — PREMIUM SUITE
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark reveal">
+<!-- 4. ROOM SHOWCASE 2: DELUXE ROOM -->
+<section class="section reveal-up">
   <div class="container">
-    <div class="luxury-room-showcase" style="grid-template-columns: 1.1fr 1fr;">
-      
-      <!-- LEFT SIDE: Content -->
-      <div class="luxury-room-info-col reveal-left" style="padding-right: 40px; padding-left: 0;">
-        <span class="luxury-category-label">Suite Category</span>
-        <h2 class="luxury-room-title">Premium Suite</h2>
-        <div class="luxury-divider"></div>
-        <p class="luxury-desc">
-          The Premium Suite is the crown jewel of Varda Resort. An expansive 
-          850 sq. ft. suite featuring a separate living area, a private terrace 
-          with panoramic mountain views, a walk-in wardrobe, and an opulent 
-          marble bathroom with a jacuzzi.
-        </p>
-
-        <!-- Feature Cards Grid -->
-        <div class="luxury-feature-grid">
-          <div class="luxury-feature-card">
-            <div class="luxury-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div class="luxury-feature-text">850 Sq. Ft.</div>
-          </div>
-          <div class="luxury-feature-card">
-            <div class="luxury-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="luxury-feature-text">Max 4 Guests</div>
-          </div>
-          <div class="luxury-feature-card">
-            <div class="luxury-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <div class="luxury-feature-text">Mountain View</div>
-          </div>
-          <div class="luxury-feature-card">
-            <div class="luxury-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="luxury-feature-text">24/7 Butler Service</div>
-          </div>
-        </div>
-
-        <!-- Amenities Chips -->
-        <div class="luxury-amenities-section">
-          <div class="luxury-amenities-title">Suite Privileges</div>
-          <div class="luxury-amenity-chips">
-            <span class="luxury-amenity-chip">Private Jacuzzi</span>
-            <span class="luxury-amenity-chip">Separate Living Area</span>
-            <span class="luxury-amenity-chip">Walk-in Wardrobe</span>
-            <span class="luxury-amenity-chip">Premium Lounge Access</span>
-          </div>
-        </div>
-
-        <hr class="luxury-hr">
-
-        <!-- Booking Box -->
-        <div class="luxury-booking-card">
-          <div class="luxury-booking-price">
-            <div class="amount">₹18,000</div>
-            <div class="detail">per night (taxes excl.)</div>
-          </div>
-          <div class="luxury-booking-actions">
-            <a href="{{ '/gallery/' | relative_url }}" class="btn btn-outline">View Gallery</a>
-            <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold">Book Suite</a>
-          </div>
-        </div>
-
+    <div class="showcase-row reverse">
+      <div class="showcase-img">
+        <img src="../assets/images/room-deluxe.jpg" alt="Deluxe Room" loading="lazy">
       </div>
+      <div class="showcase-content">
+        <span class="label-gold">Room Category</span>
+        <h2>Deluxe Room</h2>
+        <p>Spacious elegance featuring premium bedding, a seating area, and beautiful views. Designed for maximum relaxation with elegant aesthetic touches.</p>
+        
+        <div class="feature-grid">
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>550 Sq. Ft.</span>
+          </div>
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Max 3 Guests</span>
+          </div>
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>Pool View</span>
+          </div>
+        </div>
 
-      <!-- RIGHT SIDE: Image -->
-      <div class="luxury-room-image-col reveal-scale">
-        <div class="luxury-badge-top">Signature Suite</div>
-        <div class="luxury-img-wrapper">
-          <picture>
-            <source srcset="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?fm=avif&auto=format&fit=crop&q=80&w=1920" alt="Premium Suite at Varda Resort" loading="lazy">
-          </picture>
-          <div class="luxury-img-overlay"></div>
+        <div class="amenity-chips">
+          <span class="chip">Lounge Area</span>
+          <span class="chip">Minibar</span>
+          <span class="chip">Rain Shower</span>
         </div>
-        <div class="luxury-price-badge" style="left: -20px; right: auto;">
-          <div class="price">₹18,000</div>
-          <div class="label">Per Night</div>
-        </div>
-        <!-- Thumbnails -->
-        <div class="luxury-gallery-thumbs">
-          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" alt="Living Area"></div>
-          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Private Balcony"></div>
-          <div class="luxury-thumb"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=600&q=80" alt="Master Bath"></div>
-        </div>
+
+        <p class="luxury-card-price" style="font-size: 1.25rem;">From ₹6,000 / Night</p>
+        <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary">Book Now</a>
       </div>
-      
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     AMENITIES GRID
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
+<!-- 5. ROOM SHOWCASE 3: LUXURY SUITE -->
+<section class="section section-dark reveal-up">
   <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">Guest Privileges</span>
-      <h2 class="heading-section">Resort Amenities</h2>
-      <div class="gold-line-center"></div>
-      <p class="text-muted">Every stay includes access to our world-class facilities and services.</p>
-    </div>
-
-    <div class="grid-4 stagger">
-      <!-- Amenity 1 -->
-      <div class="glass-card text-center reveal-scale">
-        <div class="amenity-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-        </div>
-        <h3 class="heading-card">High-Speed Wi-Fi</h3>
-        <p class="text-muted">Complimentary 100 Mbps fibre internet throughout the resort.</p>
+    <div class="showcase-row">
+      <div class="showcase-img">
+        <img src="../assets/images/room-suite.jpg" alt="Luxury Suite" loading="lazy">
       </div>
-
-      <!-- Amenity 2 -->
-      <div class="glass-card text-center reveal-scale">
-        <div class="amenity-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      <div class="showcase-content">
+        <span class="label-gold">Signature Suite</span>
+        <h2>Luxury Suite</h2>
+        <p>The ultimate sanctuary. Expansive living spaces, lavish bath, and personalized services. The pinnacle of the Varda Resort experience.</p>
+        
+        <div class="feature-grid">
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>850 Sq. Ft.</span>
+          </div>
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Max 4 Guests</span>
+          </div>
+          <div class="feature-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>Panoramic View</span>
+          </div>
         </div>
-        <h3 class="heading-card">Room Service</h3>
-        <p class="text-muted">24/7 in-room dining from our curated gourmet menu.</p>
-      </div>
 
-      <!-- Amenity 3 -->
-      <div class="glass-card text-center reveal-scale">
-        <div class="amenity-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="amenity-chips">
+          <span class="chip">Private Jacuzzi</span>
+          <span class="chip">Separate Living Area</span>
+          <span class="chip">Walk-in Wardrobe</span>
+          <span class="chip">Premium Lounge Access</span>
         </div>
-        <h3 class="heading-card">Spa &amp; Wellness</h3>
-        <p class="text-muted">Rejuvenate with Ayurvedic therapies, sauna, and steam rooms.</p>
-      </div>
 
-      <!-- Amenity 4 -->
-      <div class="glass-card text-center reveal-scale">
-        <div class="amenity-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <h3 class="heading-card">Valet Parking</h3>
-        <p class="text-muted">Complimentary valet parking with round-the-clock surveillance.</p>
-      </div>
-
-      <!-- Amenity 5 -->
-      <div class="glass-card text-center reveal-scale">
-        <div class="amenity-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-        </div>
-        <h3 class="heading-card">Fitness Centre</h3>
-        <p class="text-muted">State-of-the-art gym with personal trainer on request.</p>
-      </div>
-
-      <!-- Amenity 6 -->
-      <div class="glass-card text-center reveal-scale">
-        <div class="amenity-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3 class="heading-card">Concierge</h3>
-        <p class="text-muted">Dedicated concierge to curate your perfect itinerary.</p>
-      </div>
-
-      <!-- Amenity 7 -->
-      <div class="glass-card text-center reveal-scale">
-        <div class="amenity-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="12" width="22" height="8" rx="2" ry="2"/><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v4"/></svg>
-        </div>
-        <h3 class="heading-card">Laundry</h3>
-        <p class="text-muted">Express laundry &amp; dry-cleaning with same-day delivery.</p>
-      </div>
-
-      <!-- Amenity 8 -->
-      <div class="glass-card text-center reveal-scale">
-        <div class="amenity-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-        </div>
-        <h3 class="heading-card">Airport Transfer</h3>
-        <p class="text-muted">Luxury airport pick-up &amp; drop in premium vehicles.</p>
+        <p class="luxury-card-price" style="font-size: 1.25rem;">From ₹9,500 / Night</p>
+        <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary">Book Suite</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     CTA
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-emerald text-center reveal">
-  <div class="container-narrow">
-    <span class="label-luxury">Reserve Your Stay</span>
-    <h2 class="heading-section">Begin Your Luxury Experience</h2>
-    <div class="gold-line-center"></div>
-    <p class="text-large">
-      Secure your preferred room or suite and let us craft an experience 
-      that exceeds every expectation.
-    </p>
-    <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold">Reserve Now</a>
-      <a href="tel:+917808761001" class="btn btn-outline">Call Us</a>
-    </div>
+<!-- 6. CTA -->
+<section class="section reveal-up">
+  <div class="container text-center" style="text-align: center;">
+    <span class="label-gold">Reserve Your Stay</span>
+    <h2>Begin Your Luxury Experience</h2>
+    <p style="max-width: 600px; margin: 0 auto 2rem auto;">Secure your preferred room or suite and let us craft an experience that exceeds every expectation.</p>
+    <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Reserve Now</a>
+    <a href="tel:+917808761001" class="btn btn-outline-dark" style="margin-left: 1rem;">Call Us</a>
   </div>
 </section>

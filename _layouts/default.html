@@ -15,9 +15,9 @@ layout: compress
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://images.unsplash.com">
 
-  <!-- Fonts — Playfair Display + Inter + Cormorant Garamond -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript>
+  <!-- Fonts — Cormorant Garamond + Poppins + Montserrat -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 
   <!-- Preload Hero Image -->
   {% if page.hero_image %}
@@ -29,7 +29,7 @@ layout: compress
   {% for stylesheet in page.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | relative_url }}?v={{ site.time | date: '%s' }}">
   {% endfor %}
-  <link rel="stylesheet" href="{{ '/assets/css/responsive-master.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+
 
   <!-- Schema -->
   <script type="application/ld+json">

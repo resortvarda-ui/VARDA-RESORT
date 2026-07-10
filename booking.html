@@ -2,56 +2,46 @@
 layout: default
 title: "Book Your Stay | Varda Resort"
 permalink: /booking/
-body_class: page-booking
-hero_image: "https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?auto=format&fit=crop&q=80&w=1920"
+nav_key: booking
 ---
 
-<!-- ════════════════ HERO ════════════════ -->
-<section class="hero hero-half">
-  <picture>
-    <source srcset="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-    <img src="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="Varda Resort luxury view" fetchpriority="high">
-  </picture>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-label">Reservations</span>
-    <h1 class="hero-title">Reserve Your Sanctuary</h1>
-    <p class="hero-subtitle">Begin your journey</p>
+<!-- 1. HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/gallery-left.jpg' | relative_url }}');"></div>
+  <div class="page-hero-content reveal-up">
+    <span class="label-gold">Reservations</span>
+    <h1>Reserve Your Sanctuary</h1>
+    <p>Begin your journey</p>
   </div>
 </section>
 
-<!-- ════════════════ BOOKING FORM ════════════════ -->
-<section class="section">
-  <div class="container-narrow reveal">
-    <div class="section-header text-center">
-      <span class="label-luxury">Book Now</span>
-      <h2 class="heading-section">Plan Your <span class="text-gold">Perfect Stay</span></h2>
-      <div class="gold-line-center"></div>
-      <p class="text-body text-muted" style="max-width: 520px; margin: 0 auto;">
-        Complete the form below and our concierge team will confirm your reservation within 24 hours.
-      </p>
+<!-- 2. BOOKING FORM -->
+<section class="section section-cream reveal-up">
+  <div class="container">
+    <div class="section-header text-center" style="margin-left: auto; margin-right: auto;">
+      <span class="label-gold">Book Now</span>
+      <h2>Plan Your Perfect Stay</h2>
+      <p style="max-width: 520px; margin: 0 auto;">Complete the form below and our concierge team will confirm your reservation within 24 hours.</p>
     </div>
 
-    <div class="glass-card" style="padding: 2.5rem; max-width: 640px; margin: 0 auto;">
+    <div class="glass-panel" style="max-width: 700px; margin: 0 auto; background: var(--color-white); border-color: rgba(0,0,0,0.05); box-shadow: var(--shadow);">
       <form id="booking-form" action="#" method="POST">
-        <div class="grid-2" style="gap: 1.5rem;">
-          <!-- Check-in -->
-          <div class="form-group">
+        
+        <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="form-group" style="margin-bottom: 0;">
             <label class="form-label" for="checkin">Check-in Date</label>
-            <input type="date" id="checkin" name="checkin" class="form-input" required>
+            <input type="date" id="checkin" name="checkin" class="form-input" style="background: var(--color-cream);" required>
           </div>
-          <!-- Check-out -->
-          <div class="form-group">
+          <div class="form-group" style="margin-bottom: 0;">
             <label class="form-label" for="checkout">Check-out Date</label>
-            <input type="date" id="checkout" name="checkout" class="form-input" required>
+            <input type="date" id="checkout" name="checkout" class="form-input" style="background: var(--color-cream);" required>
           </div>
         </div>
 
-        <div class="grid-2" style="gap: 1.5rem; margin-top: 1.5rem;">
-          <!-- Room Type -->
-          <div class="form-group">
+        <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="form-group" style="margin-bottom: 0;">
             <label class="form-label" for="room-type">Room Type</label>
-            <select id="room-type" name="room_type" class="form-select" required>
+            <select id="room-type" name="room_type" class="form-input" style="background: var(--color-cream); appearance: none; cursor: pointer;" required>
               <option value="" disabled selected>Select a room</option>
               <option value="deluxe">Deluxe Room</option>
               <option value="premium-suite">Premium Suite</option>
@@ -59,10 +49,9 @@ hero_image: "https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?auto=f
               <option value="presidential">Presidential Suite</option>
             </select>
           </div>
-          <!-- Guests -->
-          <div class="form-group">
+          <div class="form-group" style="margin-bottom: 0;">
             <label class="form-label" for="guests">Number of Guests</label>
-            <select id="guests" name="guests" class="form-select" required>
+            <select id="guests" name="guests" class="form-input" style="background: var(--color-cream); appearance: none; cursor: pointer;" required>
               <option value="" disabled selected>Select guests</option>
               <option value="1">1 Guest</option>
               <option value="2">2 Guests</option>
@@ -73,63 +62,60 @@ hero_image: "https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?auto=f
           </div>
         </div>
 
-        <!-- Full Name -->
-        <div class="form-group" style="margin-top: 1.5rem;">
+        <div class="form-group">
           <label class="form-label" for="full-name">Full Name</label>
-          <input type="text" id="full-name" name="full_name" class="form-input" placeholder="Enter your full name" required>
+          <input type="text" id="full-name" name="full_name" class="form-input" style="background: var(--color-cream);" placeholder="Enter your full name" required>
         </div>
 
-        <!-- Email -->
-        <div class="form-group" style="margin-top: 1.5rem;">
+        <div class="form-group">
           <label class="form-label" for="email">Email Address</label>
-          <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+          <input type="email" id="email" name="email" class="form-input" style="background: var(--color-cream);" placeholder="you@example.com" required>
         </div>
 
-        <!-- Phone -->
-        <div class="form-group" style="margin-top: 1.5rem;">
+        <div class="form-group">
           <label class="form-label" for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 7808761001">
+          <input type="tel" id="phone" name="phone" class="form-input" style="background: var(--color-cream);" placeholder="+91 7808761001">
         </div>
 
-        <!-- Special Requests -->
-        <div class="form-group" style="margin-top: 1.5rem;">
+        <div class="form-group">
           <label class="form-label" for="requests">Special Requests</label>
-          <textarea id="requests" name="special_requests" class="form-input" rows="4" placeholder="Any special requirements or preferences..."></textarea>
+          <textarea id="requests" name="special_requests" class="form-input" style="background: var(--color-cream);" rows="4" placeholder="Any special requirements or preferences..."></textarea>
         </div>
 
-        <!-- Submit -->
         <div class="text-center" style="margin-top: 2rem;">
-          <button type="submit" class="btn btn-gold" style="width: 100%; max-width: 320px;">Confirm Reservation</button>
+          <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 300px;">Confirm Reservation</button>
         </div>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ════════════════ INFO ════════════════ -->
-<section class="section section-dark">
-  <div class="container reveal">
-    <div class="grid-3 stagger">
-      <div class="glass-card" style="padding: 2rem; text-align: center;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+<!-- 3. INFO SECTION -->
+<section class="section section-dark reveal-up">
+  <div class="container">
+    <div class="grid-3">
+      <div class="glass-panel text-center reveal-up">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
           <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
         </svg>
-        <h3 class="heading-card">Check-in: 2:00 PM</h3>
-        <p class="text-body text-muted">Early check-in subject to availability</p>
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Check-in: 2:00 PM</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem;">Early check-in subject to availability</p>
       </div>
-      <div class="glass-card" style="padding: 2rem; text-align: center;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+      
+      <div class="glass-panel text-center reveal-up" style="transition-delay: 0.1s;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
         </svg>
-        <h3 class="heading-card">Free Cancellation</h3>
-        <p class="text-body text-muted">Cancel up to 48 hours before arrival</p>
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Free Cancellation</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem;">Cancel up to 48 hours before arrival</p>
       </div>
-      <div class="glass-card" style="padding: 2rem; text-align: center;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+      
+      <div class="glass-panel text-center reveal-up" style="transition-delay: 0.2s;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
           <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
         </svg>
-        <h3 class="heading-card">Secure Payment</h3>
-        <p class="text-body text-muted">256-bit SSL encrypted transactions</p>
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Secure Payment</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem;">256-bit SSL encrypted transactions</p>
       </div>
     </div>
   </div>

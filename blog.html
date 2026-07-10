@@ -2,49 +2,61 @@
 layout: default
 title: "Journal | Varda Resort"
 permalink: /blog/
-body_class: page-blog
-hero_image: "https://images.unsplash.com/photo-1551882547-ff40c0d129df?auto=format&fit=crop&q=80&w=1920"
+nav_key: blog
 ---
 
-<!-- Hero Section -->
-<section class="hero" style="min-height: 400px; height: 50vh;">
-  <picture>
-    <source srcset="https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-    <img src="https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1551882547-ff40c0d129df?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="Varda Resort Journal" fetchpriority="high">
-  </picture>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4rem);">Varda Journal</h1>
-    <span class="hero-subtitle">Stories of travel, culture, and luxury living</span>
+<!-- 1. HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/gallery-top-right.jpg' | relative_url }}');"></div>
+  <div class="page-hero-content reveal-up">
+    <span class="label-gold">Journal</span>
+    <h1>Varda Journal</h1>
+    <p>Stories of travel, culture, and luxury living</p>
   </div>
 </section>
 
-<section class="section-padding">
+<!-- 2. BLOG GRID -->
+<section class="section section-cream reveal-up">
   <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-      
-      <a href="#" class="luxury-card">
-        <div class="luxury-card-img-wrap" style="aspect-ratio: 16/9;">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Blog Post" loading="lazy">
+    <div class="grid-3">
+      <!-- Article 1 -->
+      <a href="#" class="luxury-card reveal-up" style="text-decoration: none; height: auto;">
+        <div class="luxury-card-img-wrap" style="aspect-ratio: 4/3;">
+          <img src="{{ \'/assets/images/gallery-left.jpg\' | relative_url }}" alt="Blog Post" loading="lazy">
         </div>
-        <div class="luxury-card-content">
-          <p class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Travel &bull; May 2026</p>
-          <h3 style="font-size: 1.5rem; color: var(--text-light); margin-bottom: 12px; font-family: var(--font-heading);">Discovering the Hidden Gems of Buxar</h3>
-          <p class="text-muted">A curated guide to exploring local heritage and culture during your luxury stay with us.</p>
-        </div>
-      </a>
-
-      <a href="#" class="luxury-card">
-        <div class="luxury-card-img-wrap" style="aspect-ratio: 16/9;">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" alt="Blog Post" loading="lazy">
-        </div>
-        <div class="luxury-card-content">
-          <p class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Culinary &bull; June 2026</p>
-          <h3 style="font-size: 1.5rem; color: var(--text-light); margin-bottom: 12px; font-family: var(--font-heading);">The Art of Fine Dining</h3>
-          <p class="text-muted">An exclusive behind-the-scenes look at how our master chefs craft their seasonal tasting menus.</p>
+        <div class="luxury-card-content" style="padding: 2rem;">
+          <span class="label-gold" style="margin-bottom: 0.5rem;">Travel &bull; May 2026</span>
+          <h3 class="luxury-card-title" style="font-size: 1.4rem;">Discovering the Hidden Gems of Buxar</h3>
+          <p style="margin: 1rem 0 0; color: var(--text-muted); font-size: 0.95rem;">A curated guide to exploring local heritage and culture during your luxury stay with us.</p>
+          <span class="luxury-link" style="margin-top: 1.5rem;">Read More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
 
+      <!-- Article 2 -->
+      <a href="#" class="luxury-card reveal-up" style="text-decoration: none; height: auto; transition-delay: 0.1s;">
+        <div class="luxury-card-img-wrap" style="aspect-ratio: 4/3;">
+          <img src="{{ \'/assets/images/gallery-top-right.jpg\' | relative_url }}" alt="Blog Post" loading="lazy">
+        </div>
+        <div class="luxury-card-content" style="padding: 2rem;">
+          <span class="label-gold" style="margin-bottom: 0.5rem;">Culinary &bull; June 2026</span>
+          <h3 class="luxury-card-title" style="font-size: 1.4rem;">The Art of Fine Dining</h3>
+          <p style="margin: 1rem 0 0; color: var(--text-muted); font-size: 0.95rem;">An exclusive behind-the-scenes look at how our master chefs craft their seasonal tasting menus.</p>
+          <span class="luxury-link" style="margin-top: 1.5rem;">Read More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Article 3 -->
+      <a href="#" class="luxury-card reveal-up" style="text-decoration: none; height: auto; transition-delay: 0.2s;">
+        <div class="luxury-card-img-wrap" style="aspect-ratio: 4/3;">
+          <img src="{{ \'/assets/images/banquet-main.jpg\' | relative_url }}" alt="Blog Post" loading="lazy">
+        </div>
+        <div class="luxury-card-content" style="padding: 2rem;">
+          <span class="label-gold" style="margin-bottom: 0.5rem;">Wellness &bull; July 2026</span>
+          <h3 class="luxury-card-title" style="font-size: 1.4rem;">A Journey to Inner Peace</h3>
+          <p style="margin: 1rem 0 0; color: var(--text-muted); font-size: 0.95rem;">Explore the holistic wellness therapies offered at our award-winning spa sanctuary.</p>
+          <span class="luxury-link" style="margin-top: 1.5rem;">Read More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>

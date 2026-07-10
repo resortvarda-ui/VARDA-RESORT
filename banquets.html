@@ -3,147 +3,104 @@ layout: default
 title: 'Banquets & Events | Varda Resort'
 nav_key: banquets
 permalink: /banquets/
-body_class: banquets-page
-hero_image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1920"
 ---
 
-<!-- ═══════════════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="hero hero-half">
-  <picture>
-    <source srcset="https://images.unsplash.com/photo-1519225421980-715cb0215aed?fm=avif&auto=format&fit=crop&q=80&w=1920" type="image/webp">
-    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?fm=avif&auto=format&fit=crop&q=80&w=1920" srcset="https://images.unsplash.com/photo-1519225421980-715cb0215aed?fm=avif&auto=format&fit=crop&q=80&w=480 480w, https://images.unsplash.com/photo-1519225421980-715cb0215aed?fm=avif&auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1519225421980-715cb0215aed?fm=avif&auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1519225421980-715cb0215aed?fm=avif&auto=format&fit=crop&q=80&w=1920 1920w" sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, (max-width: 1200px) 1200px, 100vw" class="hero-img" alt="Grand banquet hall at Varda Resort" fetchpriority="high">
-  </picture>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-label">Grand Banquets</span>
-    <h1 class="hero-title">Banquets &amp; Events</h1>
-    <p class="hero-subtitle">Events of distinction, crafted with precision</p>
+<!-- 1. HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/banquets%20final%20bg.jpg' | relative_url }}');"></div>
+  <div class="page-hero-content reveal-up">
+    <span class="label-gold">Grand Banquets</span>
+    <h1>Banquets & Events</h1>
+    <p>Events of distinction, crafted with precision</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     INTRO
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="container-narrow text-center">
-    <div class="section-header">
-      <span class="label-luxury">World-Class Venues</span>
-      <h2 class="heading-section">Where Every Event Shines</h2>
-      <div class="gold-line-center"></div>
+<!-- 2. INTRO -->
+<section class="section reveal-up">
+  <div class="container text-center">
+    <div class="section-header" style="margin-left: auto; margin-right: auto;">
+      <span class="label-gold">World-Class Venues</span>
+      <h2>Where Every Event Shines</h2>
+      <p>Whether it's a high-powered corporate summit, an elegant social gathering, or a grand product launch, Varda Resort offers versatile venues equipped with cutting-edge technology and impeccable service to ensure your event is nothing short of extraordinary.</p>
     </div>
-    <p class="text-large text-muted">
-      Whether it's a high-powered corporate summit, an elegant social gathering, 
-      or a grand product launch, Varda Resort offers versatile venues equipped 
-      with cutting-edge technology and impeccable service to ensure your event 
-      is nothing short of extraordinary.
-    </p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     EVENT TYPES — GRID
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark reveal">
+<!-- 3. EVENT TYPES -->
+<section class="section section-dark reveal-up">
   <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">Event Types</span>
-      <h2 class="heading-section">Tailored for Every Occasion</h2>
-      <div class="gold-line-center"></div>
+    <div class="section-header text-center" style="margin-left: auto; margin-right: auto;">
+      <span class="label-gold">Event Types</span>
+      <h2>Tailored for Every Occasion</h2>
     </div>
 
-    <div class="grid-3 stagger">
+    <div class="grid-3">
 
       <!-- Corporate Events -->
-      <div class="glass-card reveal-scale">
-        <div style="padding:2.5rem 2rem;text-align:center;">
-          <div class="amenity-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </div>
-          <h3 class="heading-card">Corporate Events</h3>
-          <div class="gold-line-center" style="margin:1rem auto;"></div>
-          <p class="text-muted">
-            Board meetings, conferences, seminars, and team-building retreats. 
-            Our state-of-the-art AV systems, high-speed connectivity, and 
-            dedicated event coordinators make every corporate event seamless.
-          </p>
-          <ul class="package-feature-list" style="text-align:left;margin-top:1.5rem;">
-            <li>HD projectors &amp; sound systems</li>
-            <li>Video conferencing setup</li>
-            <li>Breakout rooms available</li>
-            <li>Custom catering menus</li>
-            <li>Stationery &amp; branding support</li>
-          </ul>
-          <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="margin-top:1.5rem;width:100%;">Get Quote</a>
+      <div class="glass-panel reveal-up">
+        <div style="text-align: center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <h3 style="margin-bottom: 1rem;">Corporate Events</h3>
         </div>
+        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Board meetings, conferences, seminars, and team-building retreats. Our state-of-the-art AV systems, high-speed connectivity, and dedicated event coordinators make every corporate event seamless.</p>
+        <ul class="package-feature-list">
+          <li>HD projectors &amp; sound systems</li>
+          <li>Video conferencing setup</li>
+          <li>Breakout rooms available</li>
+          <li>Custom catering menus</li>
+          <li>Stationery &amp; branding support</li>
+        </ul>
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="width: 100%;">Get Quote</a>
       </div>
 
       <!-- Social Gatherings -->
-      <div class="glass-card reveal-scale">
-        <div style="padding:2.5rem 2rem;text-align:center;">
-          <div class="amenity-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 class="heading-card">Social Gatherings</h3>
-          <div class="gold-line-center" style="margin:1rem auto;"></div>
-          <p class="text-muted">
-            Birthday milestones, anniversaries, reunions, and gala dinners. 
-            Our event designers craft personalized themes, stunning décor, 
-            and unforgettable entertainment experiences.
-          </p>
-          <ul class="package-feature-list" style="text-align:left;margin-top:1.5rem;">
-            <li>Custom theme &amp; décor design</li>
-            <li>Live entertainment options</li>
-            <li>Gourmet multi-cuisine buffet</li>
-            <li>Photo booth &amp; DJ setup</li>
-            <li>Dedicated event manager</li>
-          </ul>
-          <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="margin-top:1.5rem;width:100%;">Get Quote</a>
+      <div class="glass-panel reveal-up" style="transition-delay: 0.1s;">
+        <div style="text-align: center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3 style="margin-bottom: 1rem;">Social Gatherings</h3>
         </div>
+        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Birthday milestones, anniversaries, reunions, and gala dinners. Our event designers craft personalized themes, stunning décor, and unforgettable entertainment experiences.</p>
+        <ul class="package-feature-list">
+          <li>Custom theme &amp; décor design</li>
+          <li>Live entertainment options</li>
+          <li>Gourmet multi-cuisine buffet</li>
+          <li>Photo booth &amp; DJ setup</li>
+          <li>Dedicated event manager</li>
+        </ul>
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="width: 100%;">Get Quote</a>
       </div>
 
-      <!-- Product Launch -->
-      <div class="glass-card reveal-scale">
-        <div style="padding:2.5rem 2rem;text-align:center;">
-          <div class="amenity-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-          </div>
-          <h3 class="heading-card">Product Launches</h3>
-          <div class="gold-line-center" style="margin:1rem auto;"></div>
-          <p class="text-muted">
-            Make a lasting impression with your product reveal. Our versatile 
-            spaces transform into immersive brand experiences with cutting-edge 
-            staging, lighting, and multimedia capabilities.
-          </p>
-          <ul class="package-feature-list" style="text-align:left;margin-top:1.5rem;">
-            <li>Customizable stage &amp; lighting</li>
-            <li>LED walls &amp; multimedia rigs</li>
-            <li>Press &amp; media coordination</li>
-            <li>VIP lounge &amp; green room</li>
-            <li>Live streaming capability</li>
-          </ul>
-          <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="margin-top:1.5rem;width:100%;">Get Quote</a>
+      <!-- Product Launches -->
+      <div class="glass-panel reveal-up" style="transition-delay: 0.2s;">
+        <div style="text-align: center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          <h3 style="margin-bottom: 1rem;">Product Launches</h3>
         </div>
+        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Make a lasting impression with your product reveal. Our versatile spaces transform into immersive brand experiences with cutting-edge staging, lighting, and multimedia capabilities.</p>
+        <ul class="package-feature-list">
+          <li>Customizable stage &amp; lighting</li>
+          <li>LED walls &amp; multimedia rigs</li>
+          <li>Press &amp; media coordination</li>
+          <li>VIP lounge &amp; green room</li>
+          <li>Live streaming capability</li>
+        </ul>
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="width: 100%;">Get Quote</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     VENUE CAPACITY TABLE
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
+<!-- 4. VENUE CAPACITY TABLE -->
+<section class="section section-cream reveal-up">
   <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">Our Venues</span>
-      <h2 class="heading-section">Venue Specifications</h2>
-      <div class="gold-line-center"></div>
-      <p class="text-muted">Choose from our versatile spaces, each designed to elevate your event experience.</p>
+    <div class="section-header text-center" style="margin-left: auto; margin-right: auto;">
+      <span class="label-gold">Our Venues</span>
+      <h2>Venue Specifications</h2>
+      <p>Choose from our versatile spaces, each designed to elevate your event experience.</p>
     </div>
 
-    <div class="reveal-scale" style="overflow-x:auto;">
+    <div style="overflow-x: auto; padding-bottom: 1rem;">
       <table class="luxury-table">
         <thead>
           <tr>
@@ -158,8 +115,8 @@ hero_image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=f
         <tbody>
           <tr>
             <td>
-              <strong class="text-gold">Grand Ballroom</strong>
-              <br><span class="text-muted" style="font-size:.8rem;">Indoor &bull; Pillarless</span>
+              <strong class="text-gold">Grand Ballroom</strong><br>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Indoor &bull; Pillarless</span>
             </td>
             <td>8,000</td>
             <td>800</td>
@@ -169,8 +126,8 @@ hero_image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=f
           </tr>
           <tr>
             <td>
-              <strong class="text-gold">Executive Lounge</strong>
-              <br><span class="text-muted" style="font-size:.8rem;">Indoor &bull; Boardroom Style</span>
+              <strong class="text-gold">Executive Lounge</strong><br>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Indoor &bull; Boardroom Style</span>
             </td>
             <td>2,500</td>
             <td>150</td>
@@ -180,8 +137,8 @@ hero_image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=f
           </tr>
           <tr>
             <td>
-              <strong class="text-gold">Garden Terrace</strong>
-              <br><span class="text-muted" style="font-size:.8rem;">Outdoor &bull; Landscaped</span>
+              <strong class="text-gold">Garden Terrace</strong><br>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Outdoor &bull; Landscaped</span>
             </td>
             <td>12,000</td>
             <td>—</td>
@@ -191,8 +148,8 @@ hero_image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=f
           </tr>
           <tr>
             <td>
-              <strong class="text-gold">Poolside Deck</strong>
-              <br><span class="text-muted" style="font-size:.8rem;">Outdoor &bull; Evening Events</span>
+              <strong class="text-gold">Poolside Deck</strong><br>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Outdoor &bull; Evening Events</span>
             </td>
             <td>5,000</td>
             <td>—</td>
@@ -206,242 +163,39 @@ hero_image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=f
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     STATS BAR
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark reveal">
+<!-- 5. STATS BAR -->
+<section class="section section-dark reveal-up" style="padding: 4rem 0;">
   <div class="container">
     <div class="stats-bar">
-      <div class="stat-item">
-        <span class="stat-number" data-count="500" data-suffix="+">0</span>
+      <div>
+        <span class="stat-number">500+</span>
         <span class="stat-label">Events Hosted</span>
       </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count="50000" data-suffix="+">0</span>
+      <div>
+        <span class="stat-number">50k+</span>
         <span class="stat-label">Happy Guests</span>
       </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count="4" data-suffix="">0</span>
+      <div>
+        <span class="stat-number">4</span>
         <span class="stat-label">Unique Venues</span>
       </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count="100" data-suffix="%">0</span>
+      <div>
+        <span class="stat-number">100%</span>
         <span class="stat-label">Client Satisfaction</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     CTA
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-emerald text-center reveal">
-  <div class="container-narrow">
-    <span class="label-luxury">Plan Your Event</span>
-    <h2 class="heading-section">Let's Create Something Extraordinary</h2>
-    <div class="gold-line-center"></div>
-    <p class="text-large">
-  <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">Event Types</span>
-      <h2 class="heading-section">Tailored for Every Occasion</h2>
-      <div class="gold-line-center"></div>
-    </div>
-
-    <div class="grid-3 stagger">
-
-      <!-- Corporate Events -->
-      <div class="glass-card reveal-scale">
-        <div style="padding:2.5rem 2rem;text-align:center;">
-          <div class="amenity-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </div>
-          <h3 class="heading-card">Corporate Events</h3>
-          <div class="gold-line-center" style="margin:1rem auto;"></div>
-          <p class="text-muted">
-            Board meetings, conferences, seminars, and team-building retreats. 
-            Our state-of-the-art AV systems, high-speed connectivity, and 
-            dedicated event coordinators make every corporate event seamless.
-          </p>
-          <ul class="package-feature-list" style="text-align:left;margin-top:1.5rem;">
-            <li>HD projectors &amp; sound systems</li>
-            <li>Video conferencing setup</li>
-            <li>Breakout rooms available</li>
-            <li>Custom catering menus</li>
-            <li>Stationery &amp; branding support</li>
-          </ul>
-          <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="margin-top:1.5rem;width:100%;">Get Quote</a>
-        </div>
-      </div>
-
-      <!-- Social Gatherings -->
-      <div class="glass-card reveal-scale">
-        <div style="padding:2.5rem 2rem;text-align:center;">
-          <div class="amenity-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 class="heading-card">Social Gatherings</h3>
-          <div class="gold-line-center" style="margin:1rem auto;"></div>
-          <p class="text-muted">
-            Birthday milestones, anniversaries, reunions, and gala dinners. 
-            Our event designers craft personalized themes, stunning décor, 
-            and unforgettable entertainment experiences.
-          </p>
-          <ul class="package-feature-list" style="text-align:left;margin-top:1.5rem;">
-            <li>Custom theme &amp; décor design</li>
-            <li>Live entertainment options</li>
-            <li>Gourmet multi-cuisine buffet</li>
-            <li>Photo booth &amp; DJ setup</li>
-            <li>Dedicated event manager</li>
-          </ul>
-          <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="margin-top:1.5rem;width:100%;">Get Quote</a>
-        </div>
-      </div>
-
-      <!-- Product Launch -->
-      <div class="glass-card reveal-scale">
-        <div style="padding:2.5rem 2rem;text-align:center;">
-          <div class="amenity-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-          </div>
-          <h3 class="heading-card">Product Launches</h3>
-          <div class="gold-line-center" style="margin:1rem auto;"></div>
-          <p class="text-muted">
-            Make a lasting impression with your product reveal. Our versatile 
-            spaces transform into immersive brand experiences with cutting-edge 
-            staging, lighting, and multimedia capabilities.
-          </p>
-          <ul class="package-feature-list" style="text-align:left;margin-top:1.5rem;">
-            <li>Customizable stage &amp; lighting</li>
-            <li>LED walls &amp; multimedia rigs</li>
-            <li>Press &amp; media coordination</li>
-            <li>VIP lounge &amp; green room</li>
-            <li>Live streaming capability</li>
-          </ul>
-          <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline" style="margin-top:1.5rem;width:100%;">Get Quote</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     VENUE CAPACITY TABLE
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="container">
-    <div class="section-header text-center">
-      <span class="label-luxury">Our Venues</span>
-      <h2 class="heading-section">Venue Specifications</h2>
-      <div class="gold-line-center"></div>
-      <p class="text-muted">Choose from our versatile spaces, each designed to elevate your event experience.</p>
-    </div>
-
-    <div class="reveal-scale" style="overflow-x:auto;">
-      <table class="luxury-table">
-        <thead>
-          <tr>
-            <th>Venue</th>
-            <th>Area (Sq. Ft.)</th>
-            <th>Theatre</th>
-            <th>Classroom</th>
-            <th>Banquet</th>
-            <th>Reception</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <strong class="text-gold">Grand Ballroom</strong>
-              <br><span class="text-muted" style="font-size:.8rem;">Indoor &bull; Pillarless</span>
-            </td>
-            <td>8,000</td>
-            <td>800</td>
-            <td>400</td>
-            <td>500</td>
-            <td>1,000</td>
-          </tr>
-          <tr>
-            <td>
-              <strong class="text-gold">Executive Lounge</strong>
-              <br><span class="text-muted" style="font-size:.8rem;">Indoor &bull; Boardroom Style</span>
-            </td>
-            <td>2,500</td>
-            <td>150</td>
-            <td>80</td>
-            <td>100</td>
-            <td>200</td>
-          </tr>
-          <tr>
-            <td>
-              <strong class="text-gold">Garden Terrace</strong>
-              <br><span class="text-muted" style="font-size:.8rem;">Outdoor &bull; Landscaped</span>
-            </td>
-            <td>12,000</td>
-            <td>—</td>
-            <td>—</td>
-            <td>600</td>
-            <td>1,200</td>
-          </tr>
-          <tr>
-            <td>
-              <strong class="text-gold">Poolside Deck</strong>
-              <br><span class="text-muted" style="font-size:.8rem;">Outdoor &bull; Evening Events</span>
-            </td>
-            <td>5,000</td>
-            <td>—</td>
-            <td>—</td>
-            <td>250</td>
-            <td>400</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     STATS BAR
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-dark reveal">
-  <div class="container">
-    <div class="stats-bar">
-      <div class="stat-item">
-        <span class="stat-number" data-count="500" data-suffix="+">0</span>
-        <span class="stat-label">Events Hosted</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count="50000" data-suffix="+">0</span>
-        <span class="stat-label">Happy Guests</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count="4" data-suffix="">0</span>
-        <span class="stat-label">Unique Venues</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count="100" data-suffix="%">0</span>
-        <span class="stat-label">Client Satisfaction</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     CTA
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="section section-emerald text-center reveal">
-  <div class="container-narrow">
-    <span class="label-luxury">Plan Your Event</span>
-    <h2 class="heading-section">Let's Create Something Extraordinary</h2>
-    <div class="gold-line-center"></div>
-    <p class="text-large">
-      From intimate board meetings to grand galas, our team is ready to bring 
-      your vision to life with unmatched precision and elegance.
-    </p>
-    <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-gold">Request a Proposal</a>
-      <a href="tel:+917808761001" class="btn btn-outline">Call Our Events Team</a>
+<!-- 6. CTA -->
+<section class="section reveal-up">
+  <div class="container text-center" style="text-align: center;">
+    <span class="label-gold">Plan Your Event</span>
+    <h2>Let's Create Something Extraordinary</h2>
+    <p style="max-width: 600px; margin: 0 auto 2rem auto;">From intimate board meetings to grand galas, our team is ready to bring your vision to life with unmatched precision and elegance.</p>
+    <div class="cta-buttons">
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary" style="min-width: 250px;">Request a Proposal</a>
+      <a href="tel:+917808761001" class="btn btn-outline-dark" style="min-width: 250px;">Call Our Events Team</a>
     </div>
   </div>
 </section>
