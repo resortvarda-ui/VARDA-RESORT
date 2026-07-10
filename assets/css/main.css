@@ -1872,3 +1872,33 @@ textarea.form-input {
     }
 }
 
+/* ==========================================================================
+   Premium Suite Image Responsiveness (Mobile & Tablet)
+   ========================================================================== */
+@media (max-width: 767px) {
+    #premium-suite-image {
+        min-height: unset !important;
+        height: auto !important;
+        width: 100%;
+    }
+    #premium-suite-image img {
+        height: auto !important; /* Lets the image define the container height naturally */
+        width: 100%;
+        object-fit: contain !important;
+        display: block;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #premium-suite-image {
+        min-height: unset !important;
+        height: auto !important;
+        width: 100%;
+    }
+    #premium-suite-image img {
+        height: auto !important;
+        width: 100%;
+        object-fit: contain !important;
+        display: block;
+    }
+}
