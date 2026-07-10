@@ -1,6 +1,121 @@
-<div id="preloader">
-  <div class="preloader-logo">VARDA</div>
-  <div class="preloader-bar">
-    <div class="preloader-progress"></div>
+<div id="varda-preloader">
+  <div class="varda-preloader-content">
+    <div class="varda-preloader-logo">VARDA</div>
+    <div class="varda-preloader-line">
+      <div class="varda-preloader-progress"></div>
+    </div>
   </div>
 </div>
+<style>
+  /* Lock scrolling and hide ALL website content except the preloader */
+  body.preloader-active {
+    overflow: hidden !important;
+    background-color: #000000 !important;
+  }
+  
+  /* Hide the entire website DOM while loading */
+  body.preloader-active > *:not(#varda-preloader):not(script):not(style) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  
+  /* Add smooth transition for when the website is revealed */
+  body > *:not(#varda-preloader):not(script):not(style) {
+    transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+  }
+  
+  #varda-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+  }
+
+  .varda-preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    animation: luxuryFadeIn 0.8s ease forwards;
+  }
+
+  .varda-preloader-logo {
+    color: #D4AF37;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: 0.35em;
+    font-weight: 400;
+    margin-right: -0.35em;
+  }
+
+  .varda-preloader-line {
+    width: 80px;
+    height: 1px;
+    background-color: rgba(212, 175, 55, 0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .varda-preloader-progress {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #D4AF37;
+    animation: luxuryLoading 1.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  @keyframes luxuryFadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes luxuryLoading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  #varda-preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+</style>
+<script>
+  (function() {
+    // Immediately hide website content synchronously during HTML parsing
+    document.body.classList.add('preloader-active');
+    
+    function hidePreloader() {
+      const preloader = document.getElementById('varda-preloader');
+      if (!preloader) return;
+      
+      // Step 1: Fade out the preloader
+      preloader.classList.add('loaded');
+      
+      // Step 2: Reveal the website content and unlock scroll
+      document.body.classList.remove('preloader-active');
+      
+      // Step 3: Destroy preloader from DOM entirely
+      setTimeout(() => {
+        preloader.remove();
+      }, 300);
+    }
+
+    // If assets are already cached and ready, reveal instantly
+    if (document.readyState === 'complete') {
+      hidePreloader();
+    } else {
+      // Otherwise strictly wait for the browser's native load event
+      window.addEventListener('load', hidePreloader);
+    }
+  })();
+</script>

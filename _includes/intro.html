@@ -1,0 +1,90 @@
+<div id="varda-intro-wrapper">
+  <div class="varda-intro-bg"></div>
+  <div class="varda-intro-content">
+    <div class="varda-intro-logo">VARDA</div>
+    <div class="varda-intro-line"></div>
+  </div>
+</div>
+<style>
+  #varda-intro-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Guarantee no interaction blocking */
+  }
+
+  .varda-intro-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    animation: bgSequence 0.9s ease-in-out forwards;
+  }
+
+  .varda-intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .varda-intro-logo {
+    color: #D4AF37;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.45em; /* Luxurious wide spacing */
+    font-weight: 400;
+    margin-right: -0.45em;
+    opacity: 0;
+    animation: logoSequence 0.9s cubic-bezier(0.21, 0.83, 0.26, 1) forwards;
+  }
+
+  .varda-intro-line {
+    width: 100px;
+    height: 2px;
+    background-color: #D4AF37;
+    margin-top: 1.2rem;
+    border-radius: 2px;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: lineSequence 0.9s ease-in-out forwards;
+  }
+
+  /* 900ms Timeline */
+  @keyframes bgSequence {
+    0%   { opacity: 1; }
+    78%  { opacity: 1; } /* 700ms */
+    100% { opacity: 0; } /* 900ms */
+  }
+
+  @keyframes logoSequence {
+    0%   { opacity: 0; transform: scale(0.98); text-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+    15%  { opacity: 1; transform: scale(1); text-shadow: 0 0 10px rgba(212, 175, 55, 0.2); } /* 135ms */
+    78%  { opacity: 1; transform: scale(1); text-shadow: 0 0 10px rgba(212, 175, 55, 0.2); } /* 700ms */
+    100% { opacity: 0; transform: scale(1.02); text-shadow: 0 0 0 rgba(212, 175, 55, 0); } /* 900ms */
+  }
+
+  @keyframes lineSequence {
+    0%   { transform: scaleX(0); box-shadow: 0 0 0 rgba(212, 175, 55, 0); opacity: 1; }
+    61%  { transform: scaleX(1); box-shadow: 0 0 0 rgba(212, 175, 55, 0); opacity: 1; } /* 550ms draw complete */
+    69%  { transform: scaleX(1); box-shadow: 0 0 12px rgba(212, 175, 55, 0.6); opacity: 1; } /* 620ms glow peaks */
+    78%  { transform: scaleX(1); box-shadow: 0 0 6px rgba(212, 175, 55, 0.3); opacity: 1; } /* 700ms hold */
+    100% { transform: scaleX(1); box-shadow: 0 0 0 rgba(212, 175, 55, 0); opacity: 0; } /* 900ms fade out */
+  }
+</style>
+<script>
+  // DOM cleanup only. Total animation completes safely at 900ms.
+  setTimeout(() => {
+    const introWrapper = document.getElementById('varda-intro-wrapper');
+    if (introWrapper) introWrapper.remove();
+  }, 950);
+</script>
