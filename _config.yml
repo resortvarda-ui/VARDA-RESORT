@@ -8,16 +8,15 @@ lang: en
 
 # Contact & location
 location: Buxar, Bihar
-email: info@vardaresort.com
-phone: "+91 7808761001"
-address: Main Highway Crossing, Buxar, Bihar
-twitter:
-  username: vardaresort
+email: resortvarda@gmail.com
+phone: "+91 78087 61001"
+address: OR Sadar Hospital, beside Buxar Airport, Near Central Jail Road, Chaudhary Nagar, Buxar, Bihar 802102/802103
 social:
   name: Varda Resort
   links:
-    - https://www.facebook.com/vardaresort
-    - https://www.instagram.com/vardaresort
+    - https://www.facebook.com/share/1E9xSSdi2j/
+    - https://www.instagram.com/varda.resort
+    - https://youtube.com/@vardaresort
 logo: /assets/images/logo-placeholder.png
 image: /assets/images/varda-resort-og.jpg
 

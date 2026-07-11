@@ -3,6 +3,7 @@ layout: default
 title: "Luxury Hotel in Buxar, Bihar | Varda Resort & Restaurant"
 description: "Experience world-class luxury, fine dining, and majestic banquets at Varda Resort & Restaurant, Buxar, Bihar."
 nav_key: home
+hero_image: /assets/images/hero-varda-resort-new.jpg
 ---
 
 <!-- HERO SECTION -->
@@ -55,16 +56,16 @@ nav_key: home
   <div class="quick-booking-panel">
     <form action="{{ '/booking/' | relative_url }}" class="quick-booking-form">
       <div class="form-group">
-        <label class="form-label">Check In</label>
-        <input type="date" class="form-input" value="2026-07-10">
+        <label class="form-label" for="booking_checkin">Check In</label>
+        <input type="date" id="booking_checkin" class="form-input" value="2026-07-10">
       </div>
       <div class="form-group">
-        <label class="form-label">Check Out</label>
-        <input type="date" class="form-input" value="2026-07-12">
+        <label class="form-label" for="booking_checkout">Check Out</label>
+        <input type="date" id="booking_checkout" class="form-input" value="2026-07-12">
       </div>
       <div class="form-group">
-        <label class="form-label">Guests</label>
-        <select class="form-input">
+        <label class="form-label" for="booking_guests">Guests</label>
+        <select id="booking_guests" class="form-input">
           <option>1 Adult</option>
           <option selected>2 Adults</option>
           <option>2 Adults, 1 Child</option>
@@ -82,7 +83,7 @@ nav_key: home
   <div class="container">
     <div class="showcase-row">
       <div class="showcase-img reveal-up">
-        <img src="{{ '/assets/images/v2.jpg' | relative_url }}" alt="Varda Resort Luxury" style="width: 100%;">
+        <img src="{{ '/assets/images/v2.jpg' | relative_url }}" alt="Varda Resort Luxury" style="width: 100%;" width="800" height="600">
       </div>
       <div class="showcase-content reveal-up">
         <span class="label-gold">WELCOME TO VARDA</span>
@@ -120,12 +121,12 @@ nav_key: home
       <!-- Room 1 -->
       <a href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="text-decoration: none;">
         <div class="luxury-card-img-wrap">
-          <img src="{{ '/assets/images/Deluxe%20Sanctum%20Room.jpg' | relative_url }}" alt="Executive Room" loading="lazy">
+          <img src="{{ '/assets/images/Deluxe%20Sanctum%20Room.jpg' | relative_url }}" alt="Super Deluxe Room" loading="lazy" width="800" height="600">
         </div>
         <div class="luxury-card-content">
-          <h3 class="luxury-card-title">Executive Room</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Perfect blend of comfort and modern amenities for business and leisure.</p>
-          <span style="font-family: var(--font-body); color: var(--color-gold); font-weight: 500; display: block; margin-bottom: 1rem;">From ₹4,500 / Night</span>
+          <h3 class="luxury-card-title">Super Deluxe</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">The pinnacle of comfort with expansive space, premium bedding, and our finest amenities.</p>
+          <span style="font-family: var(--font-body); color: var(--color-gold); font-weight: 500; display: block; margin-bottom: 1rem;">₹3,500 / Night</span>
           <span class="luxury-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
@@ -133,12 +134,12 @@ nav_key: home
       <!-- Room 2 -->
       <a href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="transition-delay: 0.1s; text-decoration: none;">
         <div class="luxury-card-img-wrap">
-          <img src="{{ '/assets/images/room-deluxe.jpg' | relative_url }}" alt="Deluxe Room" loading="lazy">
+          <img src="{{ '/assets/images/room-deluxe.jpg' | relative_url }}" alt="Deluxe Room" loading="lazy" width="800" height="600">
         </div>
         <div class="luxury-card-content">
-          <h3 class="luxury-card-title">Deluxe Room</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Spacious elegance featuring premium bedding and beautiful views.</p>
-          <span style="font-family: var(--font-body); color: var(--color-gold); font-weight: 500; display: block; margin-bottom: 1rem;">From ₹6,000 / Night</span>
+          <h3 class="luxury-card-title">Deluxe</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Spacious elegance featuring a beautiful layout and thoughtful touches for a relaxing stay.</p>
+          <span style="font-family: var(--font-body); color: var(--color-gold); font-weight: 500; display: block; margin-bottom: 1rem;">₹2,500 / Night</span>
           <span class="luxury-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
@@ -146,12 +147,12 @@ nav_key: home
       <!-- Room 3 -->
       <a href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="transition-delay: 0.2s; text-decoration: none;">
         <div class="luxury-card-img-wrap">
-          <img src="{{ '/assets/images/room-suite.jpg' | relative_url }}" alt="Luxury Suite" loading="lazy">
+          <img src="{{ '/assets/images/room-suite.jpg' | relative_url }}" alt="Executive Room" loading="lazy" width="800" height="600">
         </div>
         <div class="luxury-card-content">
-          <h3 class="luxury-card-title">Luxury Suite</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">The ultimate sanctuary with expansive living spaces and personalized services.</p>
-          <span style="font-family: var(--font-body); color: var(--color-gold); font-weight: 500; display: block; margin-bottom: 1rem;">From ₹9,500 / Night</span>
+          <h3 class="luxury-card-title">Executive</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">A perfect blend of modern amenities and essential comfort, ideal for business and leisure.</p>
+          <span style="font-family: var(--font-body); color: var(--color-gold); font-weight: 500; display: block; margin-bottom: 1rem;">₹2,000 / Night</span>
           <span class="luxury-link">View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
@@ -194,14 +195,14 @@ nav_key: home
           </div>
           <div style="display: flex; align-items: center; gap: 1rem;">
             <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); color: var(--color-gold); display: flex; align-items: center; justify-content: center;">👥</div>
-            <span style="font-weight: 500;">1000+ Capacity</span>
+            <span style="font-weight: 500;">Up to 2,500 Guests</span>
           </div>
         </div>
         
         <a href="{{ '/weddings/' | relative_url }}" class="btn btn-outline-dark">Plan Your Wedding</a>
       </div>
       <div class="reveal-up">
-        <img src="{{ '/assets/images/wedding%20bg%20final.jpg' | relative_url }}" alt="Luxury Wedding" style="border-radius: var(--radius); width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+        <img src="{{ '/assets/images/wedding%20bg%20final.jpg' | relative_url }}" alt="Luxury Wedding" style="border-radius: var(--radius); width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" width="800" height="600">
       </div>
     </div>
   </div>
