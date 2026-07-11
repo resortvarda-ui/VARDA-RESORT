@@ -1,0 +1,75 @@
+
+--- c:\Users\Viraj rai\Projects\varda-resort\404.html ---
+gallery-bottom-right.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\about.html ---
+hero-resort.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\amenities.html ---
+pool-spa.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\banquets.html ---
+banquets%20final%20bg.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\blog.html ---
+gallery-left.webp
+gallery-top-right.webp
+banquet-main.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\booking.html ---
+gallery-left.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\contact.html ---
+contact_final_bg.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\gallery.html ---
+wedding-main.jpg
+room-suite.jpg
+gallery-bottom-right.webp
+pool-spa.webp
+banquet-main.webp
+gallery-left.webp
+hero-resort.webp
+gallery-top-right.webp
+restaurant-main.jpg
+Deluxe%20Sanctum%20Room.jpg
+
+--- c:\Users\Viraj rai\Projects\varda-resort\index.html ---
+room-suite.jpg
+wedding%20bg%20final.webp
+v2.webp
+hero-varda-resort-new.webp
+room-deluxe.jpg
+Deluxe%20Sanctum%20Room.jpg
+restaurant%20final%20bg.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\offers.html ---
+Deluxe%20Sanctum%20Room.jpg
+pool-spa.webp
+room-suite.jpg
+
+--- c:\Users\Viraj rai\Projects\varda-resort\packages.html ---
+room-suite.jpg
+
+--- c:\Users\Viraj rai\Projects\varda-resort\privacy-policy.html ---
+gallery-bottom-right.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\restaurant.html ---
+restaurant-main.jpg
+restaurant%20final%20bg.webp
+luxury_executive_chef.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\rooms.html ---
+room-deluxe.jpg
+Deluxe%20Sanctum%20Room.jpg
+rooms%20main%20background%20image.webp
+room-suite.jpg
+
+--- c:\Users\Viraj rai\Projects\varda-resort\terms.html ---
+gallery-bottom-right.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\weddings.html ---
+wedding%20bg%20final.webp
+
+--- c:\Users\Viraj rai\Projects\varda-resort\assets\css\responsive-master.css ---
+hero-varda-resort-1920w.webp
