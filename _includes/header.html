@@ -11,11 +11,14 @@
       <span></span>
     </button>
     
-    <nav class="nav-links" id="navMenu">
+    <!-- Overlay for the drawer -->
+    <div class="mobile-nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <nav class="nav-links" id="navMenu" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
       <div class="mobile-nav-header">
-        <a href="{{ '/' | relative_url }}" class="logo">
-          <span class="logo-main">VARDA</span>
-        </a>
+        <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
       </div>
       <div class="mobile-nav-scroll">
         <a href="{{ '/' | relative_url }}">Home</a>
@@ -26,10 +29,9 @@
         <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
         <a href="{{ '/about/' | relative_url }}">About</a>
         <a href="{{ '/contact/' | relative_url }}">Contact</a>
-        <a href="{{ '/booking/' | relative_url }}" class="btn-book" data-booking>Book Now</a>
       </div>
-      <div class="mobile-nav-footer">
-        <p>Reservations: +91 78087 61001</p>
+      <div class="mobile-nav-footer desktop-btn-container">
+        <a href="{{ '/booking/' | relative_url }}" class="btn-book" data-booking>Book Now</a>
       </div>
     </nav>
   </div>

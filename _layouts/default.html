@@ -25,6 +25,7 @@ layout: compress
   {% endif %}
 
   <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ '/assets/css/preloader.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   {% for stylesheet in page.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet | relative_url }}?v={{ site.time | date: '%s' }}">
@@ -83,6 +84,7 @@ layout: compress
   </style>
 </head>
 <body class="{{ page.body_class | default: 'site-page' }}" data-page="{{ page.nav_key | default: '' }}">
+  {% include preloader.html %}
 
   {% include header.html %}
 
@@ -104,6 +106,7 @@ layout: compress
   </div>
 
   <!-- Scripts -->
+  <script src="{{ '/assets/js/preloader.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   {% for script in page.scripts %}
   <script src="{{ script | relative_url }}" defer></script>

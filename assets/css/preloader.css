@@ -1,0 +1,144 @@
+/* assets/css/preloader.css */
+body.varda-loading {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+.varda-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #050505;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
+}
+
+.varda-preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.varda-preloader-radial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(198, 167, 106, 0.08) 0%, rgba(5, 5, 5, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: varda-pulse-radial 4s infinite alternate ease-in-out;
+}
+
+@keyframes varda-pulse-radial {
+  0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+
+.varda-preloader-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.varda-particle {
+  position: absolute;
+  background-color: #C6A76A;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: varda-float-particle linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes varda-float-particle {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+.varda-preloader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.varda-preloader-logo {
+  display: flex;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 500;
+  color: #C6A76A;
+  letter-spacing: 0.5em;
+  margin-right: -0.5em;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 25px rgba(198, 167, 106, 0.4);
+}
+
+.varda-letter {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: varda-letter-fade 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.varda-letter:nth-child(1) { animation-delay: 0.2s; }
+.varda-letter:nth-child(2) { animation-delay: 0.4s; }
+.varda-letter:nth-child(3) { animation-delay: 0.6s; }
+.varda-letter:nth-child(4) { animation-delay: 0.8s; }
+.varda-letter:nth-child(5) { animation-delay: 1.0s; }
+
+@keyframes varda-letter-fade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.varda-preloader-bar-container {
+  width: 180px;
+  height: 1px;
+  background: rgba(198, 167, 106, 0.15);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.varda-preloader-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, transparent, #C6A76A, #D8BE8A);
+  animation: varda-load-bar 2.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  will-change: width;
+}
+
+@keyframes varda-load-bar {
+  0% { width: 0%; }
+  50% { width: 75%; }
+  100% { width: 100%; }
+}
+
+.varda-content-reveal {
+  animation: varda-content-fade 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes varda-content-fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
