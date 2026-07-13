@@ -454,6 +454,81 @@
   }
 
   /* ==========================================================================
+     Booking Flow
+     ========================================================================== */
+  function initBookingFlow() {
+    // 1. Homepage Widget -> Save to sessionStorage & Validate
+    var quickForm = document.querySelector('.quick-booking-form');
+    if (quickForm) {
+      quickForm.addEventListener('submit', function (e) {
+        var checkin = document.getElementById('booking_checkin');
+        var checkout = document.getElementById('booking_checkout');
+        var guests = document.getElementById('booking_guests');
+        
+        if (!checkin || !checkout || !guests) return;
+        
+        if (!checkin.value || !checkout.value || !guests.value) {
+          e.preventDefault();
+          alert('Please select Check In, Check Out, and Guests.');
+          return;
+        }
+
+        // Save to session storage for fallback
+        sessionStorage.setItem('varda_booking_checkin', checkin.value);
+        sessionStorage.setItem('varda_booking_checkout', checkout.value);
+        sessionStorage.setItem('varda_booking_guests', guests.value);
+      });
+      
+      // Auto-fill from sessionStorage if coming back
+      var savedCheckin = sessionStorage.getItem('varda_booking_checkin');
+      var savedCheckout = sessionStorage.getItem('varda_booking_checkout');
+      var savedGuests = sessionStorage.getItem('varda_booking_guests');
+      
+      var ciInput = document.getElementById('booking_checkin');
+      var coInput = document.getElementById('booking_checkout');
+      var gInput = document.getElementById('booking_guests');
+      
+      if (ciInput && savedCheckin) ciInput.value = savedCheckin;
+      if (coInput && savedCheckout) coInput.value = savedCheckout;
+      if (gInput && savedGuests) gInput.value = savedGuests;
+    }
+
+    // 2. Booking Page -> Populate from URL or sessionStorage
+    var bookingForm = document.getElementById('booking-form');
+    if (bookingForm) {
+      var urlParams = new URLSearchParams(window.location.search);
+      
+      var checkinVal = urlParams.get('checkin') || sessionStorage.getItem('varda_booking_checkin');
+      var checkoutVal = urlParams.get('checkout') || sessionStorage.getItem('varda_booking_checkout');
+      var guestsVal = urlParams.get('guests') || sessionStorage.getItem('varda_booking_guests');
+
+      if (checkinVal) {
+        var bCiInput = document.getElementById('checkin');
+        if (bCiInput) {
+          bCiInput.value = checkinVal;
+          bCiInput.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+      
+      if (checkoutVal) {
+        var bCoInput = document.getElementById('checkout');
+        if (bCoInput) {
+          bCoInput.value = checkoutVal;
+          bCoInput.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+      
+      if (guestsVal) {
+        var bgInput = document.getElementById('guests');
+        if (bgInput) {
+          bgInput.value = guestsVal;
+          bgInput.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+    }
+  }
+
+  /* ==========================================================================
      Initialize Everything
      ========================================================================== */
   ready(function () {
@@ -470,5 +545,6 @@
     initSmoothScroll();
     initLazyImages();
     initForms();
+    initBookingFlow();
   });
 }());
