@@ -33,7 +33,7 @@ hero_image: /assets/images/rooms%20main%20background%20image.webp
   <div class="container">
     <div class="showcase-row">
       <div class="showcase-img">
-        <img src="{{ '/assets/images/room-super-deluxe-new.jpg' | relative_url }}" alt="Executive Room" loading="lazy" width="800" height="600" style="object-position: center;">
+        <img loading="lazy" src="{{ '/assets/images/room-super-deluxe-new.jpg' | relative_url }}" alt="Executive Room" loading="lazy" width="800" height="600" style="object-position: center;">
       </div>
       <div class="showcase-content">
         <span class="label-gold">Room Category</span>
@@ -73,7 +73,7 @@ hero_image: /assets/images/rooms%20main%20background%20image.webp
   <div class="container">
     <div class="showcase-row reverse">
       <div class="showcase-img">
-        <img src="{{ '/assets/images/room-executive-new.jpg' | relative_url }}" alt="Deluxe Room" loading="lazy" width="800" height="600" style="object-position: 45% 80%;">
+        <img loading="lazy" src="{{ '/assets/images/room-executive-new.jpg' | relative_url }}" alt="Deluxe Room" loading="lazy" width="800" height="600" style="object-position: 45% 80%;">
       </div>
       <div class="showcase-content">
         <span class="label-gold">Room Category</span>
@@ -113,7 +113,7 @@ hero_image: /assets/images/rooms%20main%20background%20image.webp
   <div class="container">
     <div class="showcase-row">
       <div class="showcase-img">
-        <img src="{{ '/assets/images/room-deluxe-new.jpg' | relative_url }}" alt="Luxury Suite" loading="lazy" width="800" height="600" style="object-position: center 80%;">
+        <img loading="lazy" src="{{ '/assets/images/room-deluxe-new.jpg' | relative_url }}" alt="Luxury Suite" loading="lazy" width="800" height="600" style="object-position: center 80%;">
       </div>
       <div class="showcase-content">
         <span class="label-gold">Room Category</span>
@@ -148,13 +148,46 @@ hero_image: /assets/images/rooms%20main%20background%20image.webp
   </div>
 </section>
 
+<!-- LUXURY AMENITIES -->
+<section class="section section-dark reveal-up">
+  <div class="container text-center">
+    <span class="label-gold">BEYOND THE ROOM</span>
+    <h2 style="margin-bottom: 3rem;">Signature Room Amenities</h2>
+    <div class="grid-4">
+      <div class="glass-panel reveal-up">
+        <h3 style="font-size: 1.2rem; color: var(--color-gold); margin-bottom: 0.5rem;">24/7 Room Service</h3>
+        <p style="font-size: 0.9rem; margin:0;">Gourmet dining delivered to your door.</p>
+      </div>
+      <div class="glass-panel reveal-up" style="transition-delay: 0.1s;">
+        <h3 style="font-size: 1.2rem; color: var(--color-gold); margin-bottom: 0.5rem;">Premium Wi-Fi</h3>
+        <p style="font-size: 0.9rem; margin:0;">High-speed connectivity for all your devices.</p>
+      </div>
+      <div class="glass-panel reveal-up" style="transition-delay: 0.2s;">
+        <h3 style="font-size: 1.2rem; color: var(--color-gold); margin-bottom: 0.5rem;">Plush Bedding</h3>
+        <p style="font-size: 0.9rem; margin:0;">Cloud-like comfort for a restful sleep.</p>
+      </div>
+      <div class="glass-panel reveal-up" style="transition-delay: 0.3s;">
+        <h3 style="font-size: 1.2rem; color: var(--color-gold); margin-bottom: 0.5rem;">Luxury Bath</h3>
+        <p style="font-size: 0.9rem; margin:0;">Premium toiletries and spacious layouts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUEST EXPERIENCE -->
+<section class="full-width-image reveal-up" style="background-image: url('{{ '/assets/images/gallery-left.webp' | relative_url }}'); min-height: 50vh;">
+  <div class="full-width-image-content">
+    <h2 style="line-height: 1.4; font-size: clamp(1.8rem, 5vw, 2.5rem);">"A stay at Varda Resort is nothing short of magical. The attention to detail in the rooms is exceptional."</h2>
+    <p style="font-size: 1.2rem; color: var(--color-gold); font-family: var(--font-heading); font-style: italic; margin-top: 2rem;">— The Luxury Traveler</p>
+  </div>
+</section>
+
 <!-- 6. CTA -->
-<section class="section reveal-up">
+<section class="cta-banner cream reveal-up">
   <div class="container text-center" style="text-align: center;">
     <span class="label-gold">Reserve Your Stay</span>
     <h2>Begin Your Luxury Experience</h2>
     <p style="max-width: 600px; margin: 0 auto 2rem auto;">Secure your preferred room or suite and let us craft an experience that exceeds every expectation.</p>
-    <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Reserve Now</a>
-    <a href="tel:+917808761001" class="btn btn-outline-dark" style="margin-left: 1rem;">Call Us</a>
+    <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary">Book Now</a>
   </div>
 </section>

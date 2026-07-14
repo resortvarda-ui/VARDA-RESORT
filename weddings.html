@@ -29,17 +29,27 @@ hero_image: /assets/images/wedding%20bg%20final.webp
 </section>
 
 <!-- 3. HIGHLIGHT SHOWCASE -->
-<section class="section section-dark" style="padding: 0;">
-  <div class="grid-2" style="align-items: center; gap: 0;">
-    <div class="reveal-up" style="padding: 5rem 3rem;">
-      <span class="label-gold">Bespoke Elegance</span>
-      <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; color: var(--color-white);">Unforgettable Moments</h2>
-      <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">Experience world-class catering, stunning floral arrangements, and personalized themes designed exclusively for your grand day.</p>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Start Planning</a>
-    </div>
-    <div class="reveal-up" style="height: 100%; min-height: 50vh;">
-      <img src="{{ '/assets/images/wedding-main.jpg' | relative_url }}" alt="Luxury Wedding Celebration" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
+<section class="split-section">
+  <div class="split-section-image reveal-up">
+    <img loading="lazy" src="{{ '/assets/images/wedding-main.jpg' | relative_url }}" alt="Luxury Wedding Celebration">
+  </div>
+  <div class="split-section-content reveal-up" style="background: var(--color-black);">
+    <span class="label-gold">BESPOKE ELEGANCE</span>
+    <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; color: var(--color-white);">Unforgettable Moments</h2>
+    <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">Experience world-class catering, stunning floral arrangements, and personalized themes designed exclusively for your grand day. We turn your vision into reality.</p>
+    <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary" style="align-self: flex-start;">Start Planning</a>
+  </div>
+</section>
+
+<!-- FLAWLESS EXECUTION -->
+<section class="split-section reverse">
+  <div class="split-section-image reveal-up">
+    <img loading="lazy" src="{{ '/assets/images/wedding-section-new.jpg' | relative_url }}" alt="Flawless Execution">
+  </div>
+  <div class="split-section-content reveal-up">
+    <span class="label-gold">OUR PROMISE</span>
+    <h2 style="font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 1.5rem;">Flawless Execution</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Your wedding day should be about you. Our dedicated team of event specialists manages every intricate detail, from vendor coordination to timeline execution, ensuring a seamless and stress-free celebration.</p>
   </div>
 </section>
 
@@ -76,8 +86,32 @@ hero_image: /assets/images/wedding%20bg%20final.webp
   </div>
 </section>
 
+<!-- STATS -->
+<section class="section section-dark reveal-up" style="padding: 6rem 0;">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal-up">
+        <h3 data-count="300" data-suffix="+">0</h3>
+        <p>Weddings Hosted</p>
+      </div>
+      <div class="stat-item reveal-up" style="transition-delay: 0.1s;">
+        <h3 data-count="15" data-suffix="+">0</h3>
+        <p>Years of Excellence</p>
+      </div>
+      <div class="stat-item reveal-up" style="transition-delay: 0.2s;">
+        <h3 data-count="50" data-suffix="+">0</h3>
+        <p>Expert Planners</p>
+      </div>
+      <div class="stat-item reveal-up" style="transition-delay: 0.3s;">
+        <h3 data-count="2500" data-suffix="">0</h3>
+        <p>Max Guest Capacity</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 5. CTA -->
-<section class="section reveal-up">
+<section class="cta-banner cream reveal-up">
   <div class="container text-center" style="text-align: center;">
     <h2>Let Us Plan Your Perfect Day</h2>
     <div class="cta-buttons" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">

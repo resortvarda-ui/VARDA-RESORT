@@ -17,7 +17,20 @@ hero_image: /assets/images/hero-resort.webp
   </div>
 </section>
 
-<!-- 2. OUR STORY -->
+<!-- 2. OUR HERITAGE (SPLIT SECTION) -->
+<section class="split-section">
+  <div class="split-section-image reveal-up">
+    <img loading="lazy" src="{{ '/assets/images/gallery-bottom-right.webp' | relative_url }}" alt="Varda Resort Heritage">
+  </div>
+  <div class="split-section-content reveal-up">
+    <span class="label-gold">OUR HERITAGE</span>
+    <h2 style="font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 1.5rem;">Rooted in Tradition</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Varda Resort was founded with a deep appreciation for the rich cultural heritage of Buxar. Our architecture gracefully intertwines timeless traditions with modern sophistication, offering a sanctuary where history meets luxury.</p>
+    <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline-dark" style="align-self: flex-start;">Discover More</a>
+  </div>
+</section>
+
+<!-- 3. OUR STORY -->
 <section class="section section-cream reveal-up">
   <div class="container text-center">
     <div class="section-header" style="margin-left: auto; margin-right: auto;">
@@ -34,7 +47,11 @@ hero_image: /assets/images/hero-resort.webp
   </div>
 </section>
 
-<!-- 3. OUR VALUES -->
+<!-- IMMERSIVE IMAGE -->
+<section class="full-width-image reveal-up" style="background-image: url('{{ '/assets/images/banquets%20final%20bg.webp' | relative_url }}'); min-height: 50vh;">
+</section>
+
+<!-- 4. OUR VALUES -->
 <section class="section section-dark reveal-up">
   <div class="container">
     <div class="section-header text-center" style="margin-left: auto; margin-right: auto;">
@@ -73,8 +90,32 @@ hero_image: /assets/images/hero-resort.webp
   </div>
 </section>
 
-<!-- 4. CTA -->
-<section class="section reveal-up">
+<!-- STATS -->
+<section class="section section-cream reveal-up" style="padding: 6rem 0;">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal-up">
+        <h3 data-count="99" data-suffix="%">0</h3>
+        <p>Guest Satisfaction</p>
+      </div>
+      <div class="stat-item reveal-up" style="transition-delay: 0.1s;">
+        <h3 data-count="24" data-suffix="/7">0</h3>
+        <p>Concierge Service</p>
+      </div>
+      <div class="stat-item reveal-up" style="transition-delay: 0.2s;">
+        <h3 data-count="3" data-suffix="">0</h3>
+        <p>Gourmet Restaurants</p>
+      </div>
+      <div class="stat-item reveal-up" style="transition-delay: 0.3s;">
+        <h3 data-count="1" data-suffix="">0</h3>
+        <p>Unforgettable Experience</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. CTA -->
+<section class="cta-banner reveal-up">
   <div class="container text-center" style="text-align: center;">
     <span class="label-gold">Begin Your Story</span>
     <h2>Experience the Varda Difference</h2>
