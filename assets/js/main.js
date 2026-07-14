@@ -326,36 +326,6 @@
     });
   }
 
-  /* ==========================================================================
-     Booking Dialog
-     ========================================================================== */
-  function initBookingDialog() {
-    var overlay = document.getElementById('bookingOverlay');
-    var closeBtn = document.getElementById('closeBooking');
-    if (!overlay) return;
-
-    var triggers = document.querySelectorAll('[data-booking]');
-    triggers.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function close() {
-      overlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    if (closeBtn) closeBtn.addEventListener('click', close);
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) close();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && overlay.classList.contains('active')) close();
-    });
-  }
 
   /* ==========================================================================
      Smooth Scroll for Anchor Links
@@ -541,7 +511,6 @@
     initLightbox();
     initTestimonialSlider();
     initAccordion();
-    initBookingDialog();
     initSmoothScroll();
     initLazyImages();
     initForms();

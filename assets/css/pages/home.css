@@ -311,7 +311,7 @@
     .featured-suite-box, .features-matrix, .gallery-mosaic, .proposition-grid, 
     .space-layout-row, .luxury-matrix-grid, .stats-editorial-flex, .glass-form-grid,
     .weddings-catalogue, .timeline-content, .contact-content-grid, .location-details, .form-container,
-    .booking-dialog, .lightbox-box, .hero-content, .split-content, .accordion-header, .accordion-content {
+    .lightbox-box, .hero-content, .split-content, .accordion-header, .accordion-content {
         padding-left: 20px !important;
         padding-right: 20px !important;
         box-sizing: border-box;
