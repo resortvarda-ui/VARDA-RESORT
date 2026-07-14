@@ -22,7 +22,7 @@ hero_image: /assets/images/restaurant%20final%20bg.webp
   <div class="container">
     <div class="showcase-row">
       <div class="showcase-img">
-        <img src="{{ '/assets/images/luxury_executive_chef.webp' | relative_url }}" alt="Head Chef at Varda Resort" loading="lazy" width="800" height="600">
+        <img loading="lazy" src="{{ '/assets/images/luxury_executive_chef.webp' | relative_url }}" alt="Head Chef at Varda Resort" loading="lazy" width="800" height="600">
       </div>
       <div class="showcase-content">
         <span class="label-gold">Our Culinary Philosophy</span>
@@ -115,12 +115,25 @@ hero_image: /assets/images/restaurant%20final%20bg.webp
   </div>
 </section>
 
+<!-- THE CHEF'S VISION -->
+<section class="split-section">
+  <div class="split-section-image reveal-up">
+    <img loading="lazy" src="{{ '/assets/images/luxury_executive_chef.webp' | relative_url }}" alt="Varda Resort Executive Chef">
+  </div>
+  <div class="split-section-content reveal-up">
+    <span class="label-gold">CULINARY MASTERY</span>
+    <h2 style="font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 1.5rem;">The Chef's Vision</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">"Our philosophy is simple: source the finest local ingredients and elevate them using global techniques. Every plate we serve is a harmonious blend of tradition, innovation, and passion. Dining at Varda is a journey of flavors."</p>
+    <p style="font-family: var(--font-heading); font-size: 1.2rem; font-style: italic; color: var(--color-charcoal);">— Executive Chef, Varda Resort</p>
+  </div>
+</section>
+
 <!-- 4. PRIVATE DINING -->
 <section class="section section-cream reveal-up">
   <div class="container">
     <div class="showcase-row reverse">
       <div class="showcase-img">
-        <img src="{{ '/assets/images/restaurant-main.jpg' | relative_url }}" alt="Private dining at Varda Resort" loading="lazy" width="800" height="600">
+        <img loading="lazy" src="{{ '/assets/images/restaurant-main.jpg' | relative_url }}" alt="Private dining at Varda Resort" loading="lazy" width="800" height="600">
       </div>
       <div class="showcase-content">
         <span class="label-gold">Exclusive Experience</span>
@@ -148,15 +161,22 @@ hero_image: /assets/images/restaurant%20final%20bg.webp
   </div>
 </section>
 
+<!-- AMBIANCE -->
+<section class="full-width-image reveal-up" style="background-image: url('{{ '/assets/images/restaurant%20final%20bg.webp' | relative_url }}'); min-height: 50vh;">
+  <div class="full-width-image-content">
+    <h2>A Feast for the Eyes</h2>
+    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.9);">Dine under elegant chandeliers in an atmosphere of refined sophistication. Our restaurant is designed to complement the exquisite flavors of our curated menu.</p>
+  </div>
+</section>
+
 <!-- 5. CTA -->
-<section class="section reveal-up">
+<section class="cta-banner reveal-up">
   <div class="container text-center" style="text-align: center;">
     <span class="label-gold">Indulge Your Senses</span>
     <h2>Reserve Your Dining Experience</h2>
     <p style="max-width: 600px; margin: 0 auto 2rem auto;">From a leisurely breakfast to an opulent multi-course dinner, every meal at Varda is an occasion to remember.</p>
     <div class="cta-buttons">
       <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary" style="min-width: 200px;">Reserve a Table</a>
-      <a href="tel:+917808761001" class="btn btn-outline-dark" style="min-width: 200px;">Call Us</a>
     </div>
   </div>
 </section>
