@@ -1520,3 +1520,28 @@ textarea.form-input {
 .section-dark .stat-item p {
   color: rgba(255,255,255,0.7);
 }
+
+/* CTA Buttons Container */
+.cta-buttons-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .cta-buttons-container {
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+  .cta-buttons-container .btn {
+    flex: 1;
+    max-width: 160px;
+    min-width: 120px;
+    width: auto;
+    padding: 14px 20px;
+    box-sizing: border-box;
+  }
+}
