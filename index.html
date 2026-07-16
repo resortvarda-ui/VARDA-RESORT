@@ -45,8 +45,8 @@ hero_image: /assets/images/hero-varda-resort-new.webp
     <p class="hero-element" style="font-family: 'Inter', sans-serif; font-size: 1.05rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 3.5rem; font-weight: 300;">Stay &bull; Dine &bull; Celebrate</p>
     
     <div class="hero-element" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-      <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary" style="font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; padding: 1rem 2.5rem; min-width: 180px;">Book Your Stay</a>
-      <a href="{{ '/rooms/' | relative_url }}" class="btn btn-outline" style="font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; padding: 1rem 2.5rem; min-width: 180px;">Explore Rooms</a>
+      <a href="{{ '/booking/' | relative_url }}" class="btn btn-primary" style="font-size: 0.85rem; padding: 1rem 2.5rem; min-width: 180px;">Book Your Stay</a>
+      <a href="{{ '/rooms/' | relative_url }}" class="btn btn-outline" style="font-size: 0.85rem; padding: 1rem 2.5rem; min-width: 180px;">Explore Rooms</a>
     </div>
   </div>
 </section>
@@ -86,7 +86,7 @@ hero_image: /assets/images/hero-varda-resort-new.webp
   <div class="container">
     <div class="showcase-row">
       <div class="showcase-img reveal-up">
-        <img loading="lazy" src="{{ '/assets/images/welcome-varda.jpg' | relative_url }}" alt="Varda Resort Luxury" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" width="800" height="600">
+        <img src="{{ '/assets/images/welcome-varda.jpg' | relative_url }}" alt="Varda Resort Luxury" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" width="800" height="600" fetchpriority="high" decoding="async">
       </div>
       <div class="showcase-content reveal-up">
         <span class="label-gold">WELCOME TO VARDA</span>
@@ -114,7 +114,7 @@ hero_image: /assets/images/hero-varda-resort-new.webp
 <!-- WHY CHOOSE VARDA -->
 <section class="split-section reverse">
   <div class="split-section-image reveal-up">
-    <img loading="lazy" src="{{ '/assets/images/why-choose-varda.webp' | relative_url }}" alt="Varda Resort Night View">
+    <img loading="lazy" src="{{ '/assets/images/why-choose-varda.webp' | relative_url }}" alt="Varda Resort Night View" decoding="async">
   </div>
   <div class="split-section-content reveal-up">
     <span class="label-gold">UNMATCHED EXCELLENCE</span>
@@ -139,9 +139,9 @@ hero_image: /assets/images/hero-varda-resort-new.webp
     
     <div class="grid-3">
       <!-- Room 1 -->
-      <a href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="text-decoration: none;">
+      <a aria-label="Action link" href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="text-decoration: none;">
         <div class="luxury-card-img-wrap">
-          <img loading="lazy" src="{{ '/assets/images/room-super-deluxe-new.jpg' | relative_url }}" alt="Super Deluxe Room" loading="lazy" width="800" height="600" style="object-position: center;">
+          <img loading="lazy" src="{{ '/assets/images/room-super-deluxe-new.jpg' | relative_url }}" alt="Super Deluxe Room" loading="lazy" width="800" height="600" style="object-position: center;" decoding="async">
         </div>
         <div class="luxury-card-content">
           <h3 class="luxury-card-title">Super Deluxe</h3>
@@ -152,9 +152,9 @@ hero_image: /assets/images/hero-varda-resort-new.webp
       </a>
 
       <!-- Room 2 -->
-      <a href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="transition-delay: 0.1s; text-decoration: none;">
+      <a aria-label="Action link" href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="transition-delay: 0.1s; text-decoration: none;">
         <div class="luxury-card-img-wrap">
-          <img loading="lazy" src="{{ '/assets/images/room-executive-new.jpg' | relative_url }}" alt="Deluxe Room" loading="lazy" width="800" height="600" style="object-position: 45% 80%;">
+          <img loading="lazy" src="{{ '/assets/images/room-executive-new.jpg' | relative_url }}" alt="Deluxe Room" loading="lazy" width="800" height="600" style="object-position: 45% 80%;" decoding="async">
         </div>
         <div class="luxury-card-content">
           <h3 class="luxury-card-title">Deluxe</h3>
@@ -165,9 +165,9 @@ hero_image: /assets/images/hero-varda-resort-new.webp
       </a>
 
       <!-- Room 3 -->
-      <a href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="transition-delay: 0.2s; text-decoration: none;">
+      <a aria-label="Action link" href="{{ '/rooms/' | relative_url }}" class="luxury-card reveal-up" style="transition-delay: 0.2s; text-decoration: none;">
         <div class="luxury-card-img-wrap">
-          <img loading="lazy" src="{{ '/assets/images/room-deluxe-new.jpg' | relative_url }}" alt="Executive Room" loading="lazy" width="800" height="600" style="object-position: center 80%;">
+          <img loading="lazy" src="{{ '/assets/images/room-deluxe-new.jpg' | relative_url }}" alt="Executive Room" loading="lazy" width="800" height="600" style="object-position: center 80%;" decoding="async">
         </div>
         <div class="luxury-card-content">
           <h3 class="luxury-card-title">Executive</h3>
@@ -222,7 +222,7 @@ hero_image: /assets/images/hero-varda-resort-new.webp
         <a href="{{ '/weddings/' | relative_url }}" class="btn btn-outline-dark">Plan Your Wedding</a>
       </div>
       <div class="reveal-up">
-        <img loading="lazy" src="{{ '/assets/images/wedding-section-latest.jpg' | relative_url }}" alt="Luxury Wedding" style="border-radius: var(--radius); width: 100%; height: 100%; object-fit: cover; object-position: center; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" width="800" height="600">
+        <img loading="lazy" src="{{ '/assets/images/wedding-section-latest.jpg' | relative_url }}" alt="Luxury Wedding" style="border-radius: var(--radius); width: 100%; height: 100%; object-fit: cover; object-position: center; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" width="800" height="600" decoding="async">
       </div>
     </div>
   </div>

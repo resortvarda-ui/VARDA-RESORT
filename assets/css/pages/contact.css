@@ -6,7 +6,7 @@
     --contact-gold: #C89B3C;
     --contact-accent-gold: #D4AF37;
     --contact-black: #000000;
-    --contact-card: #0F0F0F;
+    --contact-card: var(--color-black);
     --contact-text: #FFFFFF;
     --contact-muted: #BBBBBB;
     --glass-bg: rgba(15, 15, 15, 0.6);
@@ -321,7 +321,7 @@ section {
     top: 10px;
     color: var(--contact-muted);
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease;
     pointer-events: none;
 }
 
@@ -503,7 +503,7 @@ section {
     border-radius: 2px;
     filter: grayscale(80%) contrast(1.2) invert(90%) hue-rotate(180deg);
     opacity: 0.8;
-    transition: all 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, fill 0.5s ease;
 }
 
 .glass-frame:hover iframe {

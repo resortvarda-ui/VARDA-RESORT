@@ -2,12 +2,12 @@
    GLOBAL LUXURY CSS - MOBILE FIRST
    ========================================================================== */
 :root {
-  --color-black: #0D0D0D;
-  --color-charcoal: #1A1A1A;
-  --color-white: #FFFFFF;
+  --color-black: #101010;
+  --color-charcoal: #101010;
+  --color-white: #FDFBF7;
   --color-gold: #D4AF37;
-  --color-gold-hover: #b5952f;
-  --color-cream: #F8F6F2;
+  --color-gold-hover: #C5A030;
+  --color-cream: #FDFBF7;
   --text-muted: #7A7A7A;
   
   --font-heading: 'Cormorant Garamond', serif;
@@ -19,7 +19,7 @@
   --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.2);
   --shadow-dark: 0 20px 50px rgba(0, 0, 0, 0.5);
   
-  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), fill 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ==========================================================================
@@ -205,14 +205,14 @@ p {
 
 .btn-outline-gold {
   background: transparent;
-  color: #FDFBF7;
+  color: var(--color-white);
   border: 2px solid var(--color-gold);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease;
 }
 
 .btn-outline-gold:hover {
   background: var(--color-gold);
-  color: #101010;
+  color: var(--color-black);
   border-color: var(--color-gold);
 }
 
@@ -274,7 +274,7 @@ p {
   position: fixed;
   top: 0; left: 0; width: 100%;
   z-index: 1000;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, fill 0.5s ease;
   background: rgba(13, 13, 13, 0.98); /* Always solid on mobile */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -293,6 +293,8 @@ p {
 }
 
 .site-header.scrolled {
+  transform: translateZ(0);
+  will-change: background-color, backdrop-filter;
   background: rgba(13, 13, 13, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -385,7 +387,7 @@ p {
   .nav-links {
     position: fixed; top: 0; right: 0; left: auto;
     width: 85vw; max-width: 360px; height: 100vh; height: 100dvh;
-    background: #0F0F0F;
+    background: var(--color-black);
     z-index: 1000; display: flex; flex-direction: column; padding: 0;
     transform: translateX(100%); visibility: hidden;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.3s;
@@ -400,26 +402,26 @@ p {
     gap: 0; flex: 1; width: 100%;
   }
   .nav-links a {
-    color: #F5F3EE; text-decoration: none; font-family: var(--font-heading);
-    font-size: 28px; font-weight: 400; letter-spacing: 0.02em; transition: all 0.3s ease;
+    color: var(--color-white); text-decoration: none; font-family: var(--font-heading);
+    font-size: 28px; font-weight: 400; letter-spacing: 0.02em; transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease;
     opacity: 0; transform: translateX(20px); position: relative; display: flex; align-items: center; padding: 0; width: 100%; height: 60px;
   }
   .nav-links.active a { opacity: 1; transform: translateX(0); }
   
-  .nav-links.active a:nth-child(1) { transition: all 0.3s ease 0.05s; }
-  .nav-links.active a:nth-child(2) { transition: all 0.3s ease 0.1s; }
-  .nav-links.active a:nth-child(3) { transition: all 0.3s ease 0.15s; }
-  .nav-links.active a:nth-child(4) { transition: all 0.3s ease 0.2s; }
-  .nav-links.active a:nth-child(5) { transition: all 0.3s ease 0.25s; }
-  .nav-links.active a:nth-child(6) { transition: all 0.3s ease 0.3s; }
-  .nav-links.active a:nth-child(7) { transition: all 0.3s ease 0.35s; }
-  .nav-links.active a:nth-child(8) { transition: all 0.3s ease 0.4s; }
+  .nav-links.active a:nth-child(1) { transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s, background-color 0.3s ease 0.05s, color 0.3s ease 0.05s, border-color 0.3s ease 0.05s, box-shadow 0.3s ease 0.05s, fill 0.3s ease 0.05s; }
+  .nav-links.active a:nth-child(2) { transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s, background-color 0.3s ease 0.1s, color 0.3s ease 0.1s, border-color 0.3s ease 0.1s, box-shadow 0.3s ease 0.1s, fill 0.3s ease 0.1s; }
+  .nav-links.active a:nth-child(3) { transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s, background-color 0.3s ease 0.15s, color 0.3s ease 0.15s, border-color 0.3s ease 0.15s, box-shadow 0.3s ease 0.15s, fill 0.3s ease 0.15s; }
+  .nav-links.active a:nth-child(4) { transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s, background-color 0.3s ease 0.2s, color 0.3s ease 0.2s, border-color 0.3s ease 0.2s, box-shadow 0.3s ease 0.2s, fill 0.3s ease 0.2s; }
+  .nav-links.active a:nth-child(5) { transition: opacity 0.3s ease 0.25s, transform 0.3s ease 0.25s, background-color 0.3s ease 0.25s, color 0.3s ease 0.25s, border-color 0.3s ease 0.25s, box-shadow 0.3s ease 0.25s, fill 0.3s ease 0.25s; }
+  .nav-links.active a:nth-child(6) { transition: opacity 0.3s ease 0.3s, transform 0.3s ease 0.3s, background-color 0.3s ease 0.3s, color 0.3s ease 0.3s, border-color 0.3s ease 0.3s, box-shadow 0.3s ease 0.3s, fill 0.3s ease 0.3s; }
+  .nav-links.active a:nth-child(7) { transition: opacity 0.3s ease 0.35s, transform 0.3s ease 0.35s, background-color 0.3s ease 0.35s, color 0.3s ease 0.35s, border-color 0.3s ease 0.35s, box-shadow 0.3s ease 0.35s, fill 0.3s ease 0.35s; }
+  .nav-links.active a:nth-child(8) { transition: opacity 0.3s ease 0.4s, transform 0.3s ease 0.4s, background-color 0.3s ease 0.4s, color 0.3s ease 0.4s, border-color 0.3s ease 0.4s, box-shadow 0.3s ease 0.4s, fill 0.3s ease 0.4s; }
 
-  .nav-links a:hover, .nav-links a.current-page { color: #D4AF37; }
+  .nav-links a:hover, .nav-links a.current-page { color: var(--color-gold); }
   .nav-links a:not(.btn-book):hover, .nav-links.active a:not(.btn-book).current-page { transform: translateX(10px); }
   .nav-links a:not(.btn-book)::after { display: none; }
 
-  .mobile-nav-footer { padding: 24px; opacity: 0; transform: translateY(20px); transition: all 0.3s ease 0.45s; width: 100%; margin-top: auto; }
+  .mobile-nav-footer { padding: 24px; opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease 0.45s, transform 0.3s ease 0.45s, background-color 0.3s ease 0.45s, color 0.3s ease 0.45s, border-color 0.3s ease 0.45s, box-shadow 0.3s ease 0.45s, fill 0.3s ease 0.45s; width: 100%; margin-top: auto; }
   .nav-links.active .mobile-nav-footer { opacity: 1; transform: translateY(0); }
   .nav-links a.btn-book {
     font-family: var(--font-btn); color: var(--color-gold); border: 1px solid var(--color-gold);
@@ -428,7 +430,7 @@ p {
     box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1); transform: none; height: 54px;
   }
   .nav-links a.btn-book:hover {
-    background: var(--color-gold); color: #0F0F0F; transform: translateY(-3px) !important;
+    background: var(--color-gold); color: var(--color-black); transform: translateY(-3px) !important;
     box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
   }
 }
@@ -513,20 +515,20 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #C6A76A;
+    color: var(--color-gold);
     background: transparent;
-    border: 1px solid #C6A76A;
+    border: 1px solid var(--color-gold);
     height: 44px;
     padding: 0 32px;
     font-size: 0.75rem;
     border-radius: 0;
-    transition: all 0.35s ease;
+    transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, fill 0.35s ease;
   }
   
   .nav-links a.btn-book:hover,
   .nav-links a.btn-book:active {
-    background: #C6A76A;
-    color: #050505;
+    background: var(--color-gold);
+    color: var(--color-black);
   }
 }
 
@@ -667,12 +669,12 @@ p {
 .reveal-up {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Faster on mobile */
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), fill 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Faster on mobile */
 }
 
 @media (min-width: 768px) {
   .reveal-up {
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), fill 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 }
 

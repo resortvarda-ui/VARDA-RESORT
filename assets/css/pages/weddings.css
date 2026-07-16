@@ -87,7 +87,7 @@
         }
         .gold-shine-effect:hover::after {
             left: 150%;
-            transition: all 0.8s ease-in-out;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, background-color 0.8s ease-in-out, color 0.8s ease-in-out, border-color 0.8s ease-in-out, box-shadow 0.8s ease-in-out, fill 0.8s ease-in-out;
         }
 
         /* Scroll Reveal Structural States */
@@ -914,7 +914,7 @@
            10. MASTER BRAND FOOTER (EXACTLY MATCHING)
            ========================================================================== */
         .footer {
-            background-color: #050505;
+            background-color: var(--color-black);
             border-top: 1px solid var(--border-gold);
             padding: 100px 5% 40px;
         }

@@ -19,8 +19,15 @@
     var header = document.querySelector('.site-header');
     if (!header) return;
 
+    var ticking = false;
     function update() {
-      header.classList.toggle('scrolled', window.scrollY > 60);
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          header.classList.toggle('scrolled', window.scrollY > 60);
+          ticking = false;
+        });
+        ticking = true;
+      }
     }
 
     window.addEventListener('scroll', update, { passive: true });
@@ -208,16 +215,35 @@
     var heroes = document.querySelectorAll('.hero-img');
     if (!heroes.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    var ticking = false;
+    var heroData = [];
+    function calculateBounds() {
+      heroData = [];
+      heroes.forEach(function (img) {
+        var container = img.closest('.hero');
+        if (container) {
+          var rect = container.getBoundingClientRect();
+          heroData.push({
+            img: img,
+            top: rect.top + window.scrollY,
+            height: rect.height
+          });
+        }
+      });
+    }
 
+    // Delay calculation slightly to ensure layout is settled
+    setTimeout(calculateBounds, 100);
+    window.addEventListener('resize', calculateBounds, { passive: true });
+
+    var ticking = false;
     window.addEventListener('scroll', function () {
       if (!ticking) {
         requestAnimationFrame(function () {
-          var scrollY = window.pageYOffset;
-          heroes.forEach(function (img) {
-            var rect = img.closest('.hero').getBoundingClientRect();
-            if (rect.bottom > 0 && rect.top < window.innerHeight) {
-              img.style.transform = 'translateY(' + (scrollY * 0.15) + 'px) scale(1.08)';
+          var scrollY = window.scrollY;
+          var winHeight = window.innerHeight;
+          heroData.forEach(function (data) {
+            if (data.top < scrollY + winHeight && data.top + data.height > scrollY) {
+              data.img.style.transform = 'translate3d(0, ' + (scrollY * 0.15) + 'px, 0) scale(1.08)';
             }
           });
           ticking = false;

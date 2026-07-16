@@ -12,9 +12,15 @@ layout: compress
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- SEO & Open Graph -->
   {% seo %}
-
-  <!-- Resource Hints -->
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:image" content="{{ site.url }}{{ page.image | default: site.image }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">  <!-- Resource Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -77,16 +83,7 @@ layout: compress
         },
         "priceRange": "₹₹₹"
       }
-    ]
-  }
   </script>
-  <!-- Core Variables -->
-  <style>
-    :root {
-      --varda-gold: #C8A96A;
-      --varda-black: #050505;
-    }
-  </style>
 </head>
 <body class="{{ page.body_class | default: 'site-page' }}" data-page="{{ page.nav_key | default: '' }}">
   {% include preloader.html %}
