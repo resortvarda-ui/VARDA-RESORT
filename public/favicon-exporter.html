@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Varda Resort Favicon Exporter</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #222; color: white; text-align: center; padding: 50px; }
+    .container { display: flex; justify-content: center; gap: 40px; margin-top: 20px; }
+    .card { background: #333; padding: 20px; border-radius: 12px; }
+    button { background: #D4AF37; color: black; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 6px; margin-top: 15px; }
+    button:hover { background: #C49F27; }
+    img { max-width: 200px; display: block; margin: 0 auto; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><rect width="1" height="1" fill="white"/><rect x="1" width="1" height="1" fill="%23ccc"/><rect y="1" width="1" height="1" fill="%23ccc"/><rect x="1" y="1" width="1" height="1" fill="white"/></svg>') background-size: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Varda Resort Favicon</h1>
+  <p>Your master SVGs have been generated. Use this tool to download pixel-perfect PNGs.</p>
+  
+  <div class="container">
+    <div class="card">
+      <h3>Master (Charcoal Background)</h3>
+      <img id="img-master" src="varda-favicon-master.svg" alt="Master SVG">
+      <button onclick="downloadPNG('varda-favicon-master.svg', 'varda-favicon-master.png')">Download 512x512 PNG</button>
+    </div>
+    <div class="card">
+      <h3>Transparent (No Background)</h3>
+      <img id="img-transparent" src="varda-favicon-transparent.svg" alt="Transparent SVG">
+      <button onclick="downloadPNG('varda-favicon-transparent.svg', 'varda-favicon-transparent.png')">Download 512x512 PNG</button>
+    </div>
+  </div>
+
+  <canvas id="canvas" width="512" height="512" style="display:none;"></canvas>
+
+  <script>
+    function downloadPNG(svgPath, filename) {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+        
+        const link = document.createElement('a');
+        link.download = filename;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      img.src = svgPath;
+    }
+  </script>
+</body>
+</html>

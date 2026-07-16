@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <mask id="cutout">
+      <rect width="512" height="512" fill="white" />
+      <line x1="66" y1="46" x2="351" y2="466" stroke="black" stroke-width="120" stroke-linecap="square" />
+    </mask>
+  </defs>
+
+  <!-- Champagne Gold Monogram (Transparent Background) -->
+  <g fill="none" stroke="#D4AF37" stroke-linecap="square">
+    <!-- Right stroke (goes behind) -->
+    <line x1="446" y1="46" x2="161" y2="466" stroke-width="40" mask="url(#cutout)" />
+    <!-- Left stroke (in front) -->
+    <line x1="66" y1="46" x2="351" y2="466" stroke-width="40" />
+  </g>
+</svg>
