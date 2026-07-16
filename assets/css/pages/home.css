@@ -3,7 +3,7 @@
            ========================================================================== */
         :root {
             --primary-gold: #C89B3C;
-            --accent-gold: #D4AF37;
+            --accent-gold: var(--color-gold);
             --bg-black: #000000;
             --bg-dark: #111111;
             --text-light: #FFFFFF;

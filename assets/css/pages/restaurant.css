@@ -3,7 +3,7 @@
            ========================================================================== */
         :root {
             --primary-gold: #C89B3C;
-            --accent-gold: #D4AF37;
+            --accent-gold: var(--color-gold);
             --bg-black: #000000;
             --bg-dark: #0A0A0A;
             --bg-card: #111111;
@@ -57,7 +57,7 @@
             background: linear-gradient(to right, transparent, rgba(200, 155, 60, 0.25), transparent);
             transform: skewX(-30deg); transition: none;
         }
-        .gold-shine:hover::after { left: 150%; transition: all 0.8s ease-in-out; }
+        .gold-shine:hover::after { left: 150%; transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, background-color 0.8s ease-in-out, color 0.8s ease-in-out, border-color 0.8s ease-in-out, box-shadow 0.8s ease-in-out, fill 0.8s ease-in-out; }
 
         /* Smooth Scroll Reveal Framework States */
         .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition-smooth); }
@@ -269,7 +269,7 @@
         .slider-viewport { max-width: 850px; margin: 0 auto; position: relative; min-height: 320px; }
         .review-slide {
             position: absolute; top: 0; left: 0; width: 100%; opacity: 0;
-            transform: translateX(50px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), color 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1), fill 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             text-align: center; pointer-events: none;
         }
         .review-slide.active { opacity: 1; transform: translateX(0); pointer-events: auto; position: relative; }

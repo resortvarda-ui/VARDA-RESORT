@@ -24,6 +24,7 @@ h3, .heading-card { font-size: var(--fs-h3) !important; line-height: 1.3 !import
 body, html {
   max-width: 100vw;
   overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
 
 img, picture, video {
