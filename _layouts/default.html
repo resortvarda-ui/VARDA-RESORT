@@ -56,7 +56,10 @@ layout: compress
         "url": "{{ site.url }}",
         "logo": "{{ site.url }}{{ site.logo }}",
         "image": "{{ site.url }}{{ site.image }}",
-        "telephone": "{{ site.phone }}",
+        "telephone": [
+          "{{ site.phone }}",
+          "{{ site.phone_secondary }}"
+        ],
         "priceRange": "₹₹₹₹",
         "starRating": { "@type": "Rating", "ratingValue": "5" },
         "address": {
@@ -73,7 +76,10 @@ layout: compress
         "name": "Varda Restaurant",
         "description": "Fine dining luxury restaurant at Varda Resort.",
         "image": "{{ site.url }}{{ site.image }}",
-        "telephone": "{{ site.phone }}",
+        "telephone": [
+          "{{ site.phone }}",
+          "{{ site.phone_secondary }}"
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "{{ site.address }}",
