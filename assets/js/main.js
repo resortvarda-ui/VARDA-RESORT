@@ -531,7 +531,7 @@
     var form = document.getElementById('booking-form');
     if (!form) return;
 
-    var BOOKING_API_URL = "PASTE_GOOGLE_APPS_SCRIPT_URL_HERE";
+    const BOOKING_API_URL = "https://script.google.com/macros/s/AKfycbwy_Y0JjdujZuXRRoAIXcrzPfEUkMw0CFhqCZt22O1xVygh2d0-REzagePZfSixkHB2/exec";
     var overlay = document.getElementById('booking-modal-overlay');
     var successModal = document.getElementById('booking-success-modal');
     var errorModal = document.getElementById('booking-error-modal');
