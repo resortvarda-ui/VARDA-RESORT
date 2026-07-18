@@ -525,6 +525,85 @@
   }
 
   /* ==========================================================================
+     Booking Form Submission
+     ========================================================================== */
+  function setupBookingSubmission() {
+    var form = document.getElementById('booking-form');
+    if (!form) return;
+
+    var BOOKING_API_URL = "PASTE_GOOGLE_APPS_SCRIPT_URL_HERE";
+    var overlay = document.getElementById('booking-modal-overlay');
+    var successModal = document.getElementById('booking-success-modal');
+    var errorModal = document.getElementById('booking-error-modal');
+    
+    // Close modal handlers
+    var closeBtns = document.querySelectorAll('.btn-close-modal');
+    closeBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (overlay) overlay.style.display = 'none';
+        if (successModal) successModal.style.display = 'none';
+        if (errorModal) errorModal.style.display = 'none';
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var btn = form.querySelector('button[type="submit"]');
+      if (!btn || btn.disabled) return;
+
+      var originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+      btn.style.opacity = '0.7';
+
+      var formData = new FormData(form);
+      var payload = {
+        checkin: formData.get('checkin'),
+        checkout: formData.get('checkout'),
+        room_type: formData.get('room_type'),
+        guests: formData.get('guests'),
+        full_name: formData.get('full_name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        special_requests: formData.get('special_requests')
+      };
+
+      fetch(BOOKING_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8' // Standard for avoiding CORS preflight in GAS
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function(response) {
+        if (response.ok || response.type === 'opaque') {
+          // Success
+          if (overlay) overlay.style.display = 'flex';
+          if (successModal) successModal.style.display = 'block';
+          form.reset();
+        } else {
+          // Failure
+          if (overlay) overlay.style.display = 'flex';
+          if (errorModal) errorModal.style.display = 'block';
+          console.error('Booking submission failed with status:', response.status);
+        }
+      })
+      .catch(function(error) {
+        // Network error or CORS issue
+        if (overlay) overlay.style.display = 'flex';
+        if (errorModal) errorModal.style.display = 'block';
+        console.error('Booking submission error:', error);
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        btn.style.opacity = '1';
+      });
+    });
+  }
+
+  /* ==========================================================================
      Initialize Everything
      ========================================================================== */
   ready(function () {
@@ -541,5 +620,6 @@
     initLazyImages();
     initForms();
     initBookingFlow();
+    setupBookingSubmission();
   });
 }());
