@@ -559,6 +559,7 @@
 
       var formData = new FormData(form);
       var payload = {
+        type: 'booking',
         checkin: formData.get('checkin'),
         checkout: formData.get('checkout'),
         room_type: formData.get('room_type'),
@@ -604,6 +605,79 @@
   }
 
   /* ==========================================================================
+     Contact Form Submission
+     ========================================================================== */
+  function setupContactSubmission() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const CONTACT_API_URL = "https://script.google.com/macros/s/AKfycbwy_Y0JjdujZuXRRoAIXcrzPfEUkMw0CFhqCZt22O1xVygh2d0-REzagePZfSixkHB2/exec";
+    var overlay = document.getElementById('contact-modal-overlay');
+    var successModal = document.getElementById('contact-success-modal');
+    var errorModal = document.getElementById('contact-error-modal');
+    
+    var closeBtns = document.querySelectorAll('#contact-modal-overlay .btn-close-modal');
+    closeBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (overlay) overlay.style.display = 'none';
+        if (successModal) successModal.style.display = 'none';
+        if (errorModal) errorModal.style.display = 'none';
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var btn = form.querySelector('button[type="submit"]');
+      if (!btn || btn.disabled) return;
+
+      var originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      btn.style.opacity = '0.7';
+
+      var formData = new FormData(form);
+      var payload = {
+        type: 'contact',
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+      };
+
+      fetch(CONTACT_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function(response) {
+        if (response.ok || response.type === 'opaque') {
+          if (overlay) overlay.style.display = 'flex';
+          if (successModal) successModal.style.display = 'block';
+          form.reset();
+        } else {
+          if (overlay) overlay.style.display = 'flex';
+          if (errorModal) errorModal.style.display = 'block';
+          console.error('Contact submission failed with status:', response.status);
+        }
+      })
+      .catch(function(error) {
+        if (overlay) overlay.style.display = 'flex';
+        if (errorModal) errorModal.style.display = 'block';
+        console.error('Contact submission error:', error);
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        btn.style.opacity = '1';
+      });
+    });
+  }
+
+  /* ==========================================================================
      Initialize Everything
      ========================================================================== */
   ready(function () {
@@ -621,5 +695,6 @@
     initForms();
     initBookingFlow();
     setupBookingSubmission();
+    setupContactSubmission();
   });
 }());
