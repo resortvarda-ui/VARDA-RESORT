@@ -1555,3 +1555,115 @@ textarea.form-input {
     box-sizing: border-box;
   }
 }
+
+/* ==========================================================================
+   THEME VARIABLES & FORM FIXES (Light / Dark Mode Support)
+   ========================================================================== */
+
+/* Light Theme Variables (Default) */
+:root {
+  --bg: var(--color-cream);
+  --surface: #FFFFFF;
+  --surface-2: #F5F5F5;
+  --text: var(--color-charcoal);
+  --text-muted: #666666; /* Dark gray for light mode */
+  --border: rgba(0, 0, 0, 0.15);
+  --primary: var(--color-gold);
+  
+  /* Form specific */
+  --input-bg: #FFFFFF;
+  --input-text: var(--color-charcoal);
+  --placeholder: #666666; 
+  --dropdown-bg: #FFFFFF;
+  --dropdown-text: var(--color-charcoal);
+  --dropdown-hover: #F0F0F0;
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Theme Variables */
+.section-dark, body.dark-mode, [data-theme="dark"] {
+  --bg: var(--color-black);
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-2: rgba(255, 255, 255, 0.1);
+  --text: var(--color-white);
+  --text-muted: rgba(255, 255, 255, 0.7); /* Light gray for dark mode */
+  --border: rgba(255, 255, 255, 0.15);
+  --primary: var(--color-gold);
+  
+  /* Form specific */
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-text: var(--color-white);
+  --placeholder: rgba(255, 255, 255, 0.5);
+  --dropdown-bg: #1A1A1A;
+  --dropdown-text: var(--color-white);
+  --dropdown-hover: #333333;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Base structural overrides using new variables */
+.section-dark {
+  background-color: var(--bg);
+  color: var(--text);
+}
+.section-dark h1, .section-dark h2, .section-dark h3 {
+  color: var(--text);
+}
+
+/* Glass panel adaptation */
+.glass-panel {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+.glass-panel h3 {
+  color: var(--text) !important;
+}
+
+/* Form Styles overriding existing ones */
+.form-input {
+  background-color: var(--input-bg) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--input-text) !important;
+}
+
+/* Remove hover/focus bugs in dark mode */
+.section-dark .form-input,
+.glass-panel .form-input {
+  background-color: var(--input-bg) !important;
+  border-color: var(--border) !important;
+  color: var(--input-text) !important;
+}
+
+.form-input::placeholder {
+  color: var(--placeholder) !important;
+}
+
+.section-dark .form-input::placeholder,
+.glass-panel .form-input::placeholder {
+  color: var(--placeholder) !important;
+}
+
+.form-input:focus {
+  border-color: var(--primary) !important;
+  background-color: var(--surface-2) !important;
+}
+
+/* Select Dropdown Fixes */
+select.form-input {
+  appearance: none;
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+}
+
+select.form-input option {
+  background-color: var(--dropdown-bg);
+  color: var(--dropdown-text);
+}
+
+select.form-input option:hover,
+select.form-input option:focus,
+select.form-input option:active,
+select.form-input option:checked {
+  background-color: var(--dropdown-hover) !important;
+  color: var(--dropdown-text) !important;
+}
