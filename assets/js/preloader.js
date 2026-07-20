@@ -2,8 +2,13 @@
 (function() {
   // 1. Determine if we should show the preloader
   let shouldShowPreloader = true;
+  let instantFadeOut = false;
   
-  if (window.performance) {
+  if (sessionStorage.getItem('varda_instant_fadeout') === 'true') {
+    shouldShowPreloader = true;
+    instantFadeOut = true;
+    sessionStorage.removeItem('varda_instant_fadeout');
+  } else if (window.performance) {
     let navType = '';
     
     // Modern Performance Navigation Timing API
@@ -105,8 +110,17 @@
     const preloader = document.getElementById('varda-preloader');
     if (!preloader) return;
 
-    const minLoadingTime = 2500;
+    const path = window.location.pathname;
+    const isHome = path === '/' || path === '/index.html' || path === '';
+
+    const minLoadingTime = instantFadeOut ? 0 : 2500;
     setTimeout(function() {
+      if (!isHome && !instantFadeOut) {
+        sessionStorage.setItem('varda_instant_fadeout', 'true');
+        window.location.replace('/');
+        return;
+      }
+
       preloader.classList.add('fade-out');
 
       setTimeout(function() {
