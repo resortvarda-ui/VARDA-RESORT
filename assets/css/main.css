@@ -35,8 +35,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: var(--color-charcoal);
-  background: var(--color-white);
+  color: var(--text, var(--color-charcoal));
+  background: var(--bg, var(--color-white));
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -54,7 +54,7 @@ img {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--color-black);
+  color: var(--text, var(--color-black));
   margin: 0 0 1rem 0;
   line-height: 1.2;
   font-weight: 500;
@@ -1359,7 +1359,7 @@ textarea.form-input {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--color-black);
+  color: var(--text, var(--color-black));
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -1607,6 +1607,9 @@ textarea.form-input {
 }
 .section-dark h1, .section-dark h2, .section-dark h3 {
   color: var(--text);
+}
+body.dark-mode .section-cream, [data-theme="dark"] .section-cream {
+  background-color: var(--surface-2);
 }
 
 /* Glass panel adaptation */
