@@ -155,12 +155,15 @@
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            entry.target.classList.add('active'); // for reveal-up
+            // Slight timeout ensures smooth class application without blocking rendering thread
+            setTimeout(function() {
+              entry.target.classList.add('revealed');
+              entry.target.classList.add('active'); // for reveal-up
+            }, 50);
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+      }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
 
       els.forEach(function (el) { observer.observe(el); });
     } else {
@@ -185,7 +188,8 @@
       function step(timestamp) {
         if (!startTime) startTime = timestamp;
         var progress = Math.min((timestamp - startTime) / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
+        // Exponential ease out for a more elegant deceleration
+        var eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
         var current = Math.floor(eased * target);
         el.textContent = current.toLocaleString() + suffix;
         if (progress < 1) requestAnimationFrame(step);
@@ -243,7 +247,8 @@
           var winHeight = window.innerHeight;
           heroData.forEach(function (data) {
             if (data.top < scrollY + winHeight && data.top + data.height > scrollY) {
-              data.img.style.transform = 'translate3d(0, ' + (scrollY * 0.15) + 'px, 0) scale(1.08)';
+              // Subtler, smoother parallax effect (0.1 instead of 0.15)
+              data.img.style.transform = 'translate3d(0, ' + (scrollY * 0.1) + 'px, 0) scale(1.05)';
             }
           });
           ticking = false;

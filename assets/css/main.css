@@ -2,24 +2,26 @@
    GLOBAL LUXURY CSS - MOBILE FIRST
    ========================================================================== */
 :root {
-  --color-black: #101010;
-  --color-charcoal: #101010;
-  --color-white: #FDFBF7;
+  --color-black: #0a0a0a;
+  --color-charcoal: #141414;
+  --color-white: #FCFAf5;
   --color-gold: #D4AF37;
-  --color-gold-hover: #C5A030;
-  --color-cream: #FDFBF7;
-  --text-muted: #7A7A7A;
+  --color-gold-hover: #b8972e;
+  --color-cream: #F9F6F0;
+  --text-muted: #888888;
   
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Poppins', sans-serif;
   --font-btn: 'Montserrat', sans-serif;
   
-  --radius: 16px;
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-  --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.2);
-  --shadow-dark: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --radius: 12px;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --shadow-gold: 0 12px 25px rgba(212, 175, 55, 0.25);
+  --shadow-dark: 0 20px 50px rgba(0, 0, 0, 0.6);
   
-  --transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), fill 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-slow: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 /* ==========================================================================
@@ -41,8 +43,9 @@ body {
   padding: 0;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 img {
@@ -55,9 +58,10 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--text, var(--color-black));
-  margin: 0 0 1rem 0;
-  line-height: 1.2;
-  font-weight: 500;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 h1 { font-size: clamp(2.25rem, 8vw, 2.5rem); }
@@ -98,16 +102,16 @@ p {
 }
 
 .section {
-  padding: 4rem 0; /* Optimized for mobile */
+  padding: 5rem 0; /* Optimized for mobile */
   position: relative;
 }
 
 @media (min-width: 768px) {
-  .section { padding: 5rem 0; }
+  .section { padding: 7rem 0; }
 }
 
 @media (min-width: 1024px) {
-  .section { padding: 8rem 0; }
+  .section { padding: 10rem 0; }
 }
 
 .section-dark {
@@ -152,7 +156,7 @@ p {
   font-family: var(--font-btn);
   font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   padding: 1rem 2.5rem;
   border-radius: 50px;
@@ -165,6 +169,23 @@ p {
   text-align: center;
   min-height: 54px; /* Enhanced Touch target */
   min-width: 200px;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  z-index: -1;
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .btn-primary {
@@ -180,8 +201,8 @@ p {
 
 .btn-primary:hover {
   background: var(--color-gold-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
 }
 
 .btn-outline {
@@ -278,32 +299,32 @@ p {
   position: fixed;
   top: 0; left: 0; width: 100%;
   z-index: 1000;
-  transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, fill 0.5s ease;
-  background: rgba(13, 13, 13, 0.98); /* Always solid on mobile */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: 1rem 0;
 }
 
 @media (min-width: 1150px) {
   .site-header {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: none;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-bottom: 1px solid transparent;
     padding: 1.5rem 0;
   }
 }
 
 .site-header.scrolled {
   transform: translateZ(0);
-  will-change: background-color, backdrop-filter;
-  background: rgba(13, 13, 13, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .nav-container {
@@ -584,12 +605,15 @@ p {
 .footer-links a {
   color: rgba(255,255,255,0.6);
   text-decoration: none;
-  transition: var(--transition);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease;
   display: inline-block;
   padding: 4px 0; /* touch target */
 }
 
-.footer-links a:hover { color: var(--color-gold); }
+.footer-links a:hover { 
+  color: var(--color-gold); 
+  transform: translateX(6px);
+}
 
 .newsletter { display: flex; margin-top: 1rem; flex-direction: column; gap: 10px; }
 
@@ -672,20 +696,21 @@ p {
 
 .reveal-up {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), fill 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Faster on mobile */
+  transform: translateY(50px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
 }
 
 @media (min-width: 768px) {
   .reveal-up {
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), fill 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal-up {
     transform: none;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.6s ease;
   }
 }
 
@@ -757,12 +782,13 @@ p {
 }
 
 .quick-booking-panel {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 2rem;
   border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .quick-booking-form {
@@ -842,15 +868,16 @@ p {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: var(--transition);
+  transition: var(--transition-slow);
   height: 100%;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(0,0,0,0.03);
 }
 
 .luxury-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-hover);
 }
 
 .luxury-card-img-wrap {
@@ -859,15 +886,28 @@ p {
   aspect-ratio: 4/3;
 }
 
+.luxury-card-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.2) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.luxury-card:hover .luxury-card-img-wrap::after {
+  opacity: 1;
+}
+
 .luxury-card-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s ease;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .luxury-card:hover .luxury-card-img-wrap img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .luxury-card-content {
@@ -938,13 +978,28 @@ p {
   width: 100%;
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-hover);
+  position: relative;
+}
+
+.showcase-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  pointer-events: none;
 }
 
 .showcase-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.showcase-img:hover img {
+  transform: scale(1.05);
 }
 
 .showcase-content {
@@ -1233,17 +1288,23 @@ p {
   box-shadow: var(--shadow);
   cursor: pointer;
   aspect-ratio: 4/5;
+  transition: var(--transition-slow);
+}
+
+.masonry-item:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-8px);
 }
 
 .masonry-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s ease;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .masonry-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .masonry-overlay {
@@ -1330,6 +1391,14 @@ p {
 
 .form-input:focus {
   border-color: var(--color-gold);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+  background: #ffffff;
+}
+
+.section-dark .form-input:focus,
+.glass-panel .form-input:focus {
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
 }
 
 textarea.form-input {
