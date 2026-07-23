@@ -150,7 +150,7 @@
             z-index: 1000;
             transition: var(--transition-smooth);
             padding: 30px 5%;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: none;
             background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
         }
 
@@ -159,8 +159,8 @@
             padding: 18px 5%;
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-bottom: none;
+            box-shadow: none;
         }
 
         .nav-container {

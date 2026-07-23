@@ -303,7 +303,7 @@ p {
   background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: none;
   padding: 1rem 0;
 }
 
@@ -312,7 +312,7 @@ p {
     background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-    border-bottom: 1px solid transparent;
+    border-bottom: none;
     padding: 1.5rem 0;
   }
 }
@@ -322,9 +322,9 @@ p {
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: none;
   padding: 1rem 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: none;
 }
 
 .nav-container {
@@ -337,6 +337,7 @@ p {
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: var(--color-white);
   z-index: 1001; /* Above mobile menu */
 }
@@ -346,6 +347,7 @@ p {
   font-size: 1.8rem;
   font-weight: 400;
   letter-spacing: 0.2em;
+  margin-right: -0.2em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -354,6 +356,7 @@ p {
   font-family: var(--font-btn);
   font-size: 0.6rem;
   letter-spacing: 0.3em;
+  margin-right: -0.3em;
   color: var(--color-gold);
   margin-top: 6px;
   text-transform: uppercase;
