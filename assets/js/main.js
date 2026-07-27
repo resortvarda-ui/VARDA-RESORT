@@ -314,6 +314,7 @@
       });
       dots.forEach(function (d, i) {
         d.classList.toggle('active', i === idx);
+        d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
       });
       current = idx;
     }
@@ -334,9 +335,28 @@
       });
     });
 
+    // Keyboard arrow navigation on the slider region
+    var sliderEl = document.querySelector('.testimonials-slider');
+    if (sliderEl) {
+      sliderEl.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { next(); startTimer(); }
+        if (e.key === 'ArrowLeft') { showSlide((current - 1 + slides.length) % slides.length); startTimer(); }
+      });
+    }
+
+    // Pause on hover / focus for accessibility
+    var trackEl = document.querySelector('.testimonials-track');
+    if (trackEl) {
+      trackEl.addEventListener('mouseenter', function () { clearInterval(timer); });
+      trackEl.addEventListener('mouseleave', startTimer);
+      trackEl.addEventListener('focusin', function () { clearInterval(timer); });
+      trackEl.addEventListener('focusout', startTimer);
+    }
+
     showSlide(0);
     startTimer();
   }
+
 
   /* ==========================================================================
      Accordion

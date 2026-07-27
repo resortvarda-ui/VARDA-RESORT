@@ -1742,3 +1742,301 @@ select.form-input option:checked {
   background-color: var(--dropdown-hover) !important;
   color: var(--dropdown-text) !important;
 }
+
+/* ==========================================================================
+   Testimonials / Guest Reviews Section
+   ========================================================================== */
+
+/* ── Rating Summary ─────────────────────────────────────────────────────── */
+.testimonials-rating-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 680px;
+  margin: 0 auto 4rem auto;
+  padding: 2.5rem 2rem;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.04);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .testimonials-rating-summary {
+    flex-direction: row;
+    text-align: left;
+    gap: 2.5rem;
+    padding: 2.5rem 3rem;
+  }
+}
+
+.rating-score {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 10vw, 5.5rem);
+  font-weight: 400;
+  color: var(--color-gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.rating-details {
+  flex: 1;
+}
+
+.rating-stars {
+  font-size: 1.4rem;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+  line-height: 1;
+}
+
+.rating-label {
+  font-family: var(--font-btn);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem 0;
+}
+
+/* Rating Distribution Bars */
+.rating-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rating-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-btn);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.rating-bar-row > span:first-child {
+  width: 2.6rem;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.rating-bar-row > span:last-child {
+  width: 2.2rem;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.rating-bar-track {
+  flex: 1;
+  height: 5px;
+  background: rgba(0,0,0,0.07);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.rating-bar-fill {
+  height: 100%;
+  background: var(--color-gold);
+  border-radius: 50px;
+  transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.rating-bar-fill--low {
+  background: rgba(212, 175, 55, 0.35);
+}
+
+/* ── Testimonial Slider ─────────────────────────────────────────────────── */
+.testimonials-slider {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonials-track {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Individual Testimonial Card ────────────────────────────────────────── */
+.testimonial-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 3rem 2.5rem 2.5rem 2.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.04);
+  position: relative;
+  transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: opacity;
+}
+
+@media (min-width: 768px) {
+  .testimonial-card {
+    padding: 3.5rem 3.5rem 3rem 3.5rem;
+  }
+}
+
+/* Hidden slide state — overrides the JS inline styles gracefully */
+.testimonial-slide {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.testimonial-slide:first-child {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+/* Decorative oversized quote glyph */
+.testimonial-quote-mark {
+  font-family: var(--font-heading);
+  font-size: 7rem;
+  line-height: 0.6;
+  color: var(--color-gold);
+  opacity: 0.18;
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+  pointer-events: none;
+  user-select: none;
+  font-weight: 400;
+}
+
+/* Stars */
+.testimonial-stars {
+  font-size: 1.2rem;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+  line-height: 1;
+}
+
+/* Review text */
+.testimonial-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 3vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-charcoal);
+  margin: 0 0 2rem 0;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  padding: 0;
+  border: none;
+}
+
+/* Author row */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 1.5rem;
+  margin-top: auto;
+}
+
+/* Avatar initials circle */
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-hover) 100%);
+  color: var(--color-white);
+  font-family: var(--font-btn);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.testimonial-name {
+  font-family: var(--font-btn);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-black);
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.testimonial-location {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.testimonial-stay {
+  font-family: var(--font-btn);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+
+/* ── Dot Navigation ─────────────────────────────────────────────────────── */
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.testimonial-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.15);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.35s ease, transform 0.35s ease, width 0.35s ease;
+}
+
+.testimonial-dot:hover {
+  background: var(--color-gold-hover);
+  transform: scale(1.2);
+}
+
+.testimonial-dot.active {
+  background: var(--color-gold);
+  width: 24px;
+  border-radius: 50px;
+}
+
+.testimonial-dot:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* ── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card {
+    transition: opacity 0.4s ease;
+  }
+  .rating-bar-fill {
+    transition: none;
+  }
+  .testimonial-dot {
+    transition: background 0.2s ease;
+  }
+}
+
