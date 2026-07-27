@@ -2040,3 +2040,112 @@ select.form-input option:checked {
   }
 }
 
+/* ── Review CTA Row ─────────────────────────────────────────────────────── */
+.testimonials-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.25rem;
+  flex-wrap: wrap;
+}
+
+/* Shared base for both review buttons */
+.btn-review {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-btn);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+/* Primary — "Write a Review" filled dark button that turns gold on hover */
+.btn-review--primary {
+  font-size: 0.78rem;
+  padding: 0.85rem 1.75rem;
+  background: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.btn-review--primary:hover,
+.btn-review--primary:focus-visible {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.3);
+}
+
+.btn-review-icon {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+/* Secondary — "View All Reviews" lightweight underline-link */
+.btn-review--secondary {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0;
+  gap: 0.4rem;
+  position: relative;
+}
+
+.btn-review--secondary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width 0.35s ease;
+}
+
+.btn-review--secondary:hover,
+.btn-review--secondary:focus-visible {
+  color: var(--color-gold);
+}
+
+.btn-review--secondary:hover::after,
+.btn-review--secondary:focus-visible::after {
+  width: 100%;
+}
+
+.btn-review-arrow {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.btn-review--secondary:hover .btn-review-arrow {
+  transform: translateX(3px);
+}
+
+/* Focus rings for keyboard users */
+.btn-review--primary:focus-visible,
+.btn-review--secondary:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-review {
+    transition: none;
+  }
+  .btn-review--secondary::after {
+    transition: none;
+  }
+  .btn-review-arrow {
+    transition: none;
+  }
+}
