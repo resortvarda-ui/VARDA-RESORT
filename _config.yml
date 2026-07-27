@@ -18,8 +18,8 @@ social:
     - https://www.facebook.com/share/1E9xSSdi2j/
     - https://www.instagram.com/varda.resort
     - https://youtube.com/@vardaresort
-logo: /assets/images/logo-placeholder.png
-image: /assets/images/varda-resort-og.jpg
+logo: /favicon.svg
+image: /assets/images/hero-varda-resort-new.webp
 
 # Build settings
 markdown: kramdown
