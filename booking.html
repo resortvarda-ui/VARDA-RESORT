@@ -27,16 +27,16 @@ hero_image: /assets/images/gallery-left.webp
     </div>
 
     <div style="max-width: 700px; margin: 0 auto; background: var(--color-white); border-color: rgba(0,0,0,0.05); box-shadow: var(--shadow); padding: 2rem; border-radius: var(--radius);">
-      <form id="booking-form">
+      <form id="booking-form" novalidate>
         
         <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem;">
           <div class="form-group" style="margin-bottom: 0;">
             <label class="form-label" for="checkin">Check-in Date</label>
-            <input type="date" id="checkin" name="checkin" class="form-input" style="background: var(--color-cream);" required>
+            <input type="date" id="checkin" name="checkin" class="form-input" style="background: var(--color-cream);" autocomplete="off" required>
           </div>
           <div class="form-group" style="margin-bottom: 0;">
             <label class="form-label" for="checkout">Check-out Date</label>
-            <input type="date" id="checkout" name="checkout" class="form-input" style="background: var(--color-cream);" required>
+            <input type="date" id="checkout" name="checkout" class="form-input" style="background: var(--color-cream);" autocomplete="off" required>
           </div>
         </div>
 
@@ -66,17 +66,17 @@ hero_image: /assets/images/gallery-left.webp
 
         <div class="form-group">
           <label class="form-label" for="full-name">Full Name</label>
-          <input type="text" id="full-name" name="full_name" class="form-input" style="background: var(--color-cream);" placeholder="Enter your full name" required>
+          <input type="text" id="full-name" name="full_name" class="form-input" style="background: var(--color-cream);" placeholder="Enter your full name" autocomplete="name" required>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="email">Email Address</label>
-          <input type="email" id="email" name="email" class="form-input" style="background: var(--color-cream);" placeholder="you@example.com" required>
+          <input type="email" id="email" name="email" class="form-input" style="background: var(--color-cream);" placeholder="you@example.com" autocomplete="email" required>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="form-input" style="background: var(--color-cream);" placeholder="+91 78087 61001">
+          <label class="form-label" for="phone">Phone Number <span style="font-size:0.75rem;text-transform:none;letter-spacing:0;color:var(--text-muted);font-weight:400;">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" class="form-input" style="background: var(--color-cream);" placeholder="10-digit mobile number" inputmode="numeric" maxlength="10" autocomplete="tel">
         </div>
 
         <div class="form-group">
@@ -85,7 +85,7 @@ hero_image: /assets/images/gallery-left.webp
         </div>
 
         <div class="text-center" style="margin-top: 2rem;">
-          <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 300px;">Confirm Reservation</button>
+          <button type="submit" id="booking-submit-btn" class="btn btn-primary" style="width: 100%; max-width: 300px;">Confirm Reservation</button>
         </div>
       </form>
     </div>

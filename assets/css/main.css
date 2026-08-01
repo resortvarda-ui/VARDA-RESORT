@@ -2261,3 +2261,87 @@ select.form-input option:checked {
   flex-grow: 1;
 }
 
+/* ==========================================================================
+   Form Validation States — Inline Error & Success
+   ========================================================================== */
+
+/* Error State */
+.form-input.has-error {
+  border-color: #e53e3e !important;
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.12) !important;
+  background-color: rgba(229, 62, 62, 0.02) !important;
+}
+
+/* Success State */
+.form-input.has-success {
+  border-color: #38a169 !important;
+  box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.10) !important;
+}
+
+/* Inline error message */
+.field-error-msg {
+  display: block;
+  color: #e53e3e;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+  padding-left: 0.1rem;
+  animation: varda-error-in 0.2s ease-out both;
+}
+
+/* Dark section & glass panel: keep error red visible */
+.section-dark .field-error-msg,
+.glass-panel .field-error-msg {
+  color: #fc8181;
+}
+
+@keyframes varda-error-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Submit Button Loading State
+   ========================================================================== */
+
+/* Spinner animation used in setBtnLoading() */
+@keyframes varda-spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn-loading {
+  pointer-events: none;
+  opacity: 0.80;
+  cursor: not-allowed;
+}
+
+.btn-loading svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Quick Booking Widget — Error message variant (light background)
+   ========================================================================== */
+.quick-booking-panel .field-error-msg {
+  color: #c53030;
+}
+
+/* ==========================================================================
+   Booking / Contact Modal Overlay — Flex centering fix
+   ========================================================================== */
+#booking-modal-overlay,
+#contact-modal-overlay {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Focus ring on close buttons in modals */
+.btn-close-modal:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+

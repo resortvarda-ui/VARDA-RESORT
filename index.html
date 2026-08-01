@@ -54,7 +54,7 @@ hero_image: /assets/images/hero-varda-resort-new.webp
 <!-- QUICK BOOKING -->
 <div class="container quick-booking-container" style="position: relative; z-index: 10;">
   <div class="quick-booking-panel">
-    <form action="{{ '/booking/' | relative_url }}" class="quick-booking-form">
+    <form action="{{ '/booking/' | relative_url }}" class="quick-booking-form" novalidate>
       <div class="form-group">
         <label class="form-label" for="booking_checkin">Check In</label>
         <input type="date" id="booking_checkin" name="checkin" class="form-input" required>
