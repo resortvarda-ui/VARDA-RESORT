@@ -427,17 +427,89 @@
   }
 
   /**
-   * Validate email with strict regex.
-   * Rejects: abc@, abc.com, abc@com, abc@.com, spaces, etc.
+   * CENTRALIZED EMAIL VALIDATOR — single source of truth for the entire site.
+   *
+   * Rules enforced (in order):
+   *  1. Must be a non-empty string.
+   *  2. Trim only leading/trailing whitespace — then reject any remaining internal whitespace.
+   *  3. Exactly one @ symbol.
+   *  4. Local part (before @): 1–64 chars, no leading/trailing dot, no consecutive dots.
+   *     Allowed chars: a-z A-Z 0-9 . _ + - % '
+   *  5. Domain part (after @): 1–253 chars total.
+   *  6. Domain must contain at least one dot (i.e. at least two labels).
+   *  7. Each domain label: 1–63 chars, alphanumeric + internal hyphens, must not
+   *     start or end with a hyphen.
+   *  8. TLD (last label): 2+ alphabetic characters only (no digits, no hyphens).
+   *  9. No consecutive dots anywhere in the address.
+   * 10. No trailing dot in the domain.
+   *
+   * REJECTS: abc, abc@, @gmail.com, abc@gmail, abc@com, abc@.com, abc.com,
+   *          abc..def@gmail.com, .abc@gmail.com, abc.@gmail.com,
+   *          abc@-gmail.com, abc@gmail..com, "abc @gmail.com", "abc@gmail .com",
+   *          abc@domain., abc@domain..com
+   *
+   * ACCEPTS: user@gmail.com, name.surname@gmail.com, user123@yahoo.com,
+   *          contact@vardaresort.com, user+tag@sub.domain.co.in
    */
   function validateEmail(val) {
-    var trimmed = val.trim();
-    // Must have: local@domain.tld
-    // local: no whitespace or @
-    // domain: no whitespace or @
-    // tld: 2+ non-whitespace, non-@ chars after final dot
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(trimmed);
+    if (typeof val !== 'string') return false;
+
+    // Step 1: trim only leading/trailing whitespace
+    var trimmed = val.replace(/^\s+|\s+$/g, '');
+
+    if (trimmed.length === 0) return false;
+
+    // Step 2: reject any internal whitespace (spaces, tabs, etc.)
+    if (/\s/.test(trimmed)) return false;
+
+    // Step 3: exactly one @ symbol
+    var atIndex = trimmed.indexOf('@');
+    if (atIndex === -1) return false;                     // no @
+    if (trimmed.indexOf('@', atIndex + 1) !== -1) return false; // more than one @
+
+    var local  = trimmed.slice(0, atIndex);
+    var domain = trimmed.slice(atIndex + 1);
+
+    // Step 4: Local part validation
+    if (local.length === 0 || local.length > 64) return false;
+    // Allowed characters in local part
+    if (!/^[a-zA-Z0-9._%+\-']+$/.test(local)) return false;
+    // Must not start or end with a dot
+    if (local.charAt(0) === '.' || local.charAt(local.length - 1) === '.') return false;
+    // Must not contain consecutive dots
+    if (/\.\./.test(local)) return false;
+
+    // Step 5: Domain presence
+    if (domain.length === 0 || domain.length > 253) return false;
+
+    // Step 6: Domain must contain at least one dot (two labels minimum)
+    if (domain.indexOf('.') === -1) return false;
+
+    // Step 7: Domain must not start or end with a dot (catches abc@.com and abc@domain.)
+    if (domain.charAt(0) === '.' || domain.charAt(domain.length - 1) === '.') return false;
+
+    // Step 8: No consecutive dots in domain
+    if (/\.\./.test(domain)) return false;
+
+    // Step 9: Validate each domain label individually
+    var labels = domain.split('.');
+    for (var i = 0; i < labels.length; i++) {
+      var label = labels[i];
+      if (label.length === 0 || label.length > 63) return false;
+      // Each label: alphanumeric + internal hyphens
+      if (!/^[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?$/.test(label) && label.length > 1) return false;
+      if (!/^[a-zA-Z0-9]$/.test(label) && label.length === 1) return false;
+      // Must not start or end with a hyphen (already covered by regex above, belt-and-suspenders)
+      if (label.charAt(0) === '-' || label.charAt(label.length - 1) === '-') return false;
+    }
+
+    // Step 10: TLD (last label) must be 2+ alphabetic chars only
+    var tld = labels[labels.length - 1];
+    if (!/^[a-zA-Z]{2,}$/.test(tld)) return false;
+
+    return true;
   }
+
 
   /** Validate non-empty, non-whitespace string. */
   function validateNotEmpty(val) {
